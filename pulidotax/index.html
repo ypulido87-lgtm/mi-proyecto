@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulido Tax & Accounting LLC — Contadora en Orlando, Florida</title>
+  <meta name="description" content="Contadora para pequeños negocios latinos en Orlando, Florida. Bookkeeping, payroll, impuestos, sales tax y más. Atención en español. Consulta gratis de 30 minutos." />
+  <meta name="keywords" content="contador para pequeños negocios Orlando, tax accountant Orlando Florida, bookkeeping para negocios latinos Florida, sales tax Florida pequeño negocio, payroll services Orlando, preparación de impuestos Orlando, contadora en Orlando Florida" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a3a5c;
+      --navy2:   #0f2640;
+      --navy3:   #162e4a;
+      --gold:    #c9a84c;
+      --gold2:   #a8893a;
+      --white:   #ffffff;
+      --offwhite:#f5f7fa;
+      --gray:    #6b7280;
+      --light:   #e4eaf2;
+      --text:    #1e293b;
+      --radius:  12px;
+      --shadow:  0 4px 24px rgba(26,58,92,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: .95rem;
+      cursor: pointer; border: none;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    .btn-gold  { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold2); }
+    .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+    .btn-whatsapp { background: #25d366; color: var(--white); }
+    .btn-whatsapp:hover { background: #1ebe5c; }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn-navy:hover { background: var(--navy2); }
+
+    .section-label {
+      font-family: 'Inter', sans-serif; font-size: .72rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--navy); margin-bottom: 16px; }
+    .section-sub   { font-size: 1rem; color: var(--gray); max-width: 560px; line-height: 1.7; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy2);
+      box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo  { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px; background: var(--gold); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--white);
+    }
+    .logo-text       { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; line-height: 1.2; }
+    .logo-text span  { display: block; font-family: 'Inter', sans-serif; font-size: .67rem; font-weight: 400; color: var(--gold); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links       { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a     { color: rgba(255,255,255,.8); font-size: .88rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta         { padding: 9px 20px; font-size: .85rem; }
+    .nav-hamburger   { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 60%, #1e4a70 100%);
+      padding: 90px 0 80px; position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      position: relative; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,.13); border: 1px solid rgba(201,168,76,.28);
+      border-radius: 50px; padding: 6px 14px; margin-bottom: 24px;
+    }
+    .hero-badge span { font-size: .76rem; font-weight: 600; color: var(--gold); letter-spacing: .07em; text-transform: uppercase; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.1rem); color: var(--white); margin-bottom: 20px; }
+    .hero-title em { font-style: normal; color: var(--gold); }
+    .hero-sub  { font-size: 1.05rem; color: rgba(255,255,255,.75); margin-bottom: 36px; line-height: 1.75; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+    .hero-stats   { display: flex; gap: 32px; }
+    .hero-stat .num { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--gold); font-weight: 700; line-height: 1; }
+    .hero-stat .lbl { font-size: .76rem; color: rgba(255,255,255,.55); margin-top: 4px; }
+    .hero-photo { display: flex; align-items: center; justify-content: center; }
+    .photo-card { position: relative; width: 340px; max-width: 100%; }
+    .photo-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(160deg, rgba(255,255,255,.05) 0%, rgba(201,168,76,.07) 100%);
+      border: 2px dashed rgba(201,168,76,.3); border-radius: 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; color: rgba(255,255,255,.4); font-size: .85rem; text-align: center; padding: 32px;
+    }
+    .photo-badge {
+      position: absolute; bottom: -16px; left: -16px;
+      background: var(--gold); color: var(--white);
+      border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); min-width: 155px;
+    }
+    .photo-badge .pb-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
+    .photo-badge .pb-txt { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .9; }
+
+    /* ── SVG ICON ── */
+    .icon-box {
+      width: 50px; height: 50px; min-width: 50px;
+      background: var(--navy); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .icon-box svg { width: 24px; height: 24px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-box.gold { background: var(--gold); }
+
+    /* ── SERVICIOS ── */
+    #servicios { padding: 90px 0; background: var(--offwhite); }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-sub { margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(256px, 1fr)); gap: 22px; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius); padding: 30px 26px;
+      box-shadow: var(--shadow); border-bottom: 3px solid transparent;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(26,58,92,.13); }
+    .service-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .service-card p  { font-size: .86rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── WHY ── */
+    #por-que {
+      padding: 90px 0;
+      background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 100%);
+      position: relative; overflow: hidden;
+    }
+    #por-que::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; }
+    .why-left .section-title { color: var(--white); }
+    .why-left .section-sub  { color: rgba(255,255,255,.68); }
+    .why-cta-wrap { margin-top: 32px; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .why-item {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius); padding: 22px 18px; transition: background .2s;
+    }
+    .why-item:hover { background: rgba(255,255,255,.09); }
+    .why-item .wi-icon-wrap {
+      width: 40px; height: 40px; border-radius: 9px;
+      background: rgba(201,168,76,.18); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .why-item .wi-icon-wrap svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .why-item h4 { font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .why-item p  { font-size: .8rem; color: rgba(255,255,255,.62); line-height: 1.55; }
+
+    /* ── ABOUT ── */
+    #sobre-yudit { padding: 90px 0; background: var(--white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; }
+    .about-photo-wrap { position: relative; }
+    .about-photo-placeholder {
+      width: 100%; aspect-ratio: 4/5;
+      background: linear-gradient(160deg, var(--offwhite) 0%, var(--light) 100%);
+      border-radius: 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: var(--gray); font-size: .85rem; text-align: center; padding: 24px;
+    }
+    .about-photo-placeholder svg { width: 64px; height: 64px; stroke: #9ca3af; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .about-deco {
+      position: absolute; bottom: -20px; right: -20px;
+      width: 110px; height: 110px; background: var(--gold);
+      border-radius: 16px; opacity: .12; z-index: -1;
+    }
+    .about-content p { color: var(--gray); margin-bottom: 16px; line-height: 1.75; }
+    .about-creds { display: flex; flex-direction: column; gap: 10px; margin: 28px 0; }
+    .cred-item { display: flex; align-items: flex-start; gap: 12px; font-size: .9rem; color: var(--text); }
+    .cred-dot  { width: 8px; height: 8px; min-width: 8px; background: var(--gold); border-radius: 50%; margin-top: 7px; }
+
+    /* ── BLOG ── */
+    #blog { padding: 90px 0; background: var(--offwhite); }
+    .blog-header { text-align: center; margin-bottom: 56px; }
+    .blog-header .section-sub { margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
+    .blog-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(26,58,92,.13); }
+    .blog-thumb {
+      height: 180px; background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .blog-thumb.t1 { background: linear-gradient(135deg, var(--navy2), #2a5080); }
+    .blog-thumb.t2 { background: linear-gradient(135deg, #1a3a5c, #0d3349); }
+    .blog-thumb.t3 { background: linear-gradient(135deg, #162e4a, #1f4a6e); }
+    .blog-thumb svg { width: 56px; height: 56px; stroke: rgba(255,255,255,.18); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .blog-thumb .blog-tag {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--gold); color: var(--white);
+      font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: 4px 10px; border-radius: 50px;
+    }
+    .blog-body { padding: 26px 24px; flex: 1; display: flex; flex-direction: column; }
+    .blog-date { font-size: .74rem; color: var(--gray); margin-bottom: 10px; }
+    .blog-body h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+    .blog-body p  { font-size: .85rem; color: var(--gray); line-height: 1.68; flex: 1; }
+    .blog-read-more {
+      margin-top: 18px; font-size: .82rem; font-weight: 700;
+      color: var(--navy); display: flex; align-items: center; gap: 6px;
+      transition: color .2s; cursor: pointer;
+    }
+    .blog-read-more:hover { color: var(--gold); }
+
+    /* Blog modal */
+    .blog-modal-overlay {
+      position: fixed; inset: 0; background: rgba(15,38,64,.75);
+      z-index: 200; display: none; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .blog-modal-overlay.open { display: flex; animation: fadeIn .25s ease; }
+    .blog-modal {
+      background: var(--white); border-radius: 20px; max-width: 660px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 44px 40px; position: relative;
+    }
+    .blog-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--offwhite); border: none; cursor: pointer;
+      font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+      color: var(--gray); transition: background .2s;
+    }
+    .blog-modal-close:hover { background: var(--light); }
+    .blog-modal .bm-tag  { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 10px; }
+    .blog-modal h2 { font-size: 1.6rem; color: var(--navy); margin-bottom: 6px; }
+    .blog-modal .bm-date { font-size: .8rem; color: var(--gray); margin-bottom: 24px; border-bottom: 1px solid var(--light); padding-bottom: 16px; }
+    .blog-modal .bm-body p { color: var(--gray); margin-bottom: 16px; line-height: 1.78; font-size: .93rem; }
+    .blog-modal .bm-body h4 { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--navy); margin: 22px 0 8px; }
+    .blog-modal .bm-body ul { margin: 0 0 16px 18px; }
+    .blog-modal .bm-body ul li { font-size: .9rem; color: var(--gray); margin-bottom: 6px; line-height: 1.6; }
+    .blog-modal .bm-cta { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--light); text-align: center; }
+    .blog-modal .bm-cta p { font-size: .88rem; color: var(--gray); margin-bottom: 14px; }
+
+    /* ── RESEÑAS ── */
+    #resenas { padding: 90px 0; background: var(--white); }
+    .resenas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .resenas-left .section-sub { margin-bottom: 28px; }
+    .resenas-steps { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+    .res-step { display: flex; align-items: flex-start; gap: 14px; }
+    .res-step-num {
+      width: 32px; height: 32px; min-width: 32px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      font-size: .8rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .res-step-text h4 { font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .res-step-text p  { font-size: .82rem; color: var(--gray); }
+    .resenas-card {
+      background: var(--offwhite); border-radius: 20px; padding: 40px 36px; text-align: center;
+      border: 2px dashed var(--light);
+    }
+    .resenas-stars { font-size: 2rem; margin-bottom: 16px; letter-spacing: 4px; color: var(--gold); }
+    .resenas-card h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 10px; }
+    .resenas-card p  { font-size: .9rem; color: var(--gray); margin-bottom: 28px; line-height: 1.7; }
+    .resenas-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); border: 1.5px solid var(--light);
+      border-radius: 50px; padding: 8px 16px;
+      font-size: .78rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .google-g {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      font-size: .65rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;
+    }
+
+    /* ── CONTACTO ── */
+    #contacto { padding: 90px 0; background: var(--offwhite); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+    .contact-info .section-title { margin-bottom: 16px; }
+    .contact-info .section-sub   { margin-bottom: 32px; }
+    .contact-detail { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--light); }
+    .contact-detail .cd-icon { width: 42px; height: 42px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-detail .cd-icon svg { width: 20px; height: 20px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-detail .cd-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--gray); }
+    .contact-detail .cd-value { font-weight: 600; color: var(--navy); font-size: .94rem; }
+    .hours-box { background: var(--white); border-radius: var(--radius); padding: 20px 22px; margin-top: 24px; box-shadow: var(--shadow); }
+    .hours-box .hb-title { font-weight: 700; color: var(--navy); font-size: .88rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .hours-box .hb-title svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; }
+    .hours-box p { font-size: .84rem; color: var(--gray); margin-bottom: 14px; }
+
+    /* Form */
+    .contact-form-wrap { background: var(--white); border-radius: 20px; padding: 40px 36px; box-shadow: var(--shadow); }
+    .cf-title { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--navy); margin-bottom: 6px; }
+    .cf-sub   { font-size: .84rem; color: var(--gray); margin-bottom: 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .76rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--light); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: .9rem; color: var(--text); background: var(--white);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(26,58,92,.08); }
+    .form-group textarea { resize: vertical; min-height: 86px; }
+    .form-submit { width: 100%; padding: 14px; font-size: .98rem; border-radius: 10px; margin-top: 6px; justify-content: center; }
+
+    #contact-reveal {
+      display: none; margin-top: 20px;
+      background: linear-gradient(135deg, var(--navy2), var(--navy));
+      border-radius: var(--radius); padding: 28px; text-align: center; color: var(--white);
+      animation: fadeIn .5s ease;
+    }
+    #contact-reveal h3 { font-size: 1.25rem; color: var(--white); margin-bottom: 8px; }
+    #contact-reveal p  { font-size: .86rem; color: rgba(255,255,255,.72); margin-bottom: 20px; }
+    .reveal-contacts { display: flex; flex-direction: column; gap: 10px; }
+    .reveal-item {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: rgba(255,255,255,.07); border-radius: 8px; padding: 11px 14px;
+      font-size: .88rem; color: var(--white); transition: background .2s;
+    }
+    .reveal-item:hover { background: rgba(255,255,255,.12); }
+    .reveal-item a { color: var(--gold); font-weight: 700; }
+    .reveal-item svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+    .reveal-wa-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 13px; background: #25d366; color: var(--white);
+      border-radius: 8px; font-weight: 700; font-size: .94rem; margin-top: 8px;
+      transition: background .2s;
+    }
+    .reveal-wa-btn:hover { background: #1ebe5c; }
+    .reveal-wa-btn svg { width: 18px; height: 18px; fill: white; }
+
+    @keyframes fadeIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: none; } }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy2); color: rgba(255,255,255,.65); padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand p { font-size: .84rem; line-height: 1.7; margin-top: 14px; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: .84rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .social-links { display: flex; gap: 10px; margin-top: 20px; }
+    .social-link {
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center; transition: border-color .2s, background .2s;
+    }
+    .social-link svg { width: 16px; height: 16px; stroke: rgba(255,255,255,.6); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .social-link:hover { background: rgba(255,255,255,.08); border-color: var(--gold); }
+    .social-link:hover svg { stroke: var(--gold); }
+    .footer-bottom { padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .76rem; }
+
+    /* ── WhatsApp Float ── */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+    .wa-float-bubble {
+      background: var(--white); border-radius: 10px 10px 0 10px;
+      padding: 9px 13px; font-size: .78rem; font-weight: 600; color: var(--navy);
+      box-shadow: 0 4px 16px rgba(0,0,0,.14); white-space: nowrap;
+      opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s; pointer-events: none;
+    }
+    .wa-float:hover .wa-float-bubble { opacity: 1; transform: translateY(0); }
+    .wa-float-btn {
+      width: 56px; height: 56px; border-radius: 50%; background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,.55); }
+    .wa-float-btn svg { width: 28px; height: 28px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner, .why-inner, .about-inner, .contact-inner, .resenas-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo { order: -1; }
+      .photo-card { width: 260px; margin: 0 auto; }
+      .why-grid   { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links  { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute;
+        top: 68px; left: 0; right: 0; background: var(--navy2);
+        padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(255,255,255,.08); z-index: 99;
+      }
+      .blog-modal { padding: 32px 24px; }
+    }
+    @media (max-width: 600px) {
+      #hero { padding: 60px 0 56px; }
+      .hero-stats { gap: 18px; }
+      .why-grid   { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .contact-form-wrap { padding: 28px 20px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="logo-mark">P</div>
+        <div class="logo-text">Pulido Tax <span>& Accounting LLC</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#por-que">Por qué nosotros</a></li>
+        <li><a href="#sobre-yudit">Sobre Yudit</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto" class="btn btn-gold nav-cta">Consulta Gratis</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>Orlando, Florida · Atención en Español e Inglés</span>
+        </div>
+        <h1 class="hero-title">Tu negocio merece<br/>una contadora que<br/><em>habla tu idioma</em></h1>
+        <p class="hero-sub">Bookkeeping, impuestos, payroll y más — para empresarios latinos en Florida Central. Sin complicaciones, sin sorpresas, con comunicación directa.</p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn btn-gold">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Agenda tu consulta gratis
+          </a>
+          <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20me%20interesa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.217 6.338L4.5 28l6.84-1.692A11.93 11.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3z"/><path d="M21.5 18.5c-.3-.15-1.75-.863-2.025-.963-.275-.1-.475-.15-.675.15-.2.3-.775.963-.95 1.163-.175.2-.35.225-.65.075-.3-.15-1.263-.463-2.413-1.475-.888-.788-1.488-1.763-1.663-2.063-.175-.3-.019-.463.131-.613.136-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.49-.505-.675-.514l-.575-.01c-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.1 3.2 5.075 4.488.71.306 1.263.488 1.694.625.713.226 1.363.194 1.875.119.573-.085 1.75-.713 2-1.4.25-.687.25-1.275.175-1.4-.075-.125-.275-.2-.575-.35z" fill="#25d366"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">30</div><div class="lbl">Min. consulta<br/>gratuita</div></div>
+          <div class="hero-stat"><div class="num">8+</div><div class="lbl">Servicios<br/>especializados</div></div>
+          <div class="hero-stat"><div class="num">100%</div><div class="lbl">Atención<br/>personalizada</div></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:64px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.5;stroke-linecap:round">
+              <circle cx="32" cy="22" r="11"/><path d="M8 54c0-13.255 10.745-22 24-22s24 8.745 24 22"/>
+            </svg>
+            <p>Foto profesional de Yudit<br/><small style="opacity:.55">(próximamente)</small></p>
+          </div>
+          <div class="photo-badge">
+            <div class="pb-num">★ 5.0</div>
+            <div class="pb-txt">Calificación de clientes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICIOS ══ -->
+<section id="servicios">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label">Lo que hacemos</div>
+      <h2 class="section-title">Servicios diseñados para tu pequeño negocio</h2>
+      <p class="section-sub">Cada servicio está pensado para que tú te enfoques en crecer mientras nosotros nos encargamos de los números.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        </div>
+        <h3>Bookkeeping Mensual</h3>
+        <p>Mantén tus libros al día. Registramos cada transacción para que siempre sepas cómo está tu negocio y estés listo para cualquier auditoría.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Contabilidad General</h3>
+        <p>Estados financieros claros y precisos. Te damos la información que necesitas para tomar decisiones inteligentes y hacer crecer tu empresa.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.87"/></svg>
+        </div>
+        <h3>Payroll (Nómina)</h3>
+        <p>Paga a tus empleados correctamente y a tiempo. Manejamos cálculos, deducciones y reportes para que nunca tengas problemas con el IRS.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M9 14l6-6"/><circle cx="9.5" cy="8.5" r=".5" fill="white"/><circle cx="14.5" cy="13.5" r=".5" fill="white"/><path d="M3 7c0-1.1.9-2 2-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>
+        </div>
+        <h3>Sales Tax — Florida</h3>
+        <p>Cumple con las obligaciones de Sales Tax del Estado de Florida. Presentamos tus declaraciones a tiempo y correctamente.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+        </div>
+        <h3>Preparación de Impuestos</h3>
+        <p>Declaraciones personales y empresariales. Maximizamos tus deducciones legalmente para que pagues solo lo justo, ni un dólar más.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </div>
+        <h3>Advisory Financiero</h3>
+        <p>Consejos estratégicos para el crecimiento de tu negocio. Planificación fiscal proactiva y guía en las decisiones financieras más importantes.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Cumplimiento Fiscal</h3>
+        <p>Nos aseguramos de que tu negocio esté siempre en regla con todas las obligaciones fiscales federales y estatales.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Representación ante el IRS</h3>
+        <p>Si el IRS llama, nosotros respondemos. Te representamos en auditorías y negociaciones para proteger tu negocio y tu tranquilidad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ POR QUÉ ══ -->
+<section id="por-que">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-left">
+        <div class="section-label">Nuestra diferencia</div>
+        <h2 class="section-title">¿Por qué elegir Pulido Tax?</h2>
+        <p class="section-sub">No somos una gran firma fría. Somos tu contadora de confianza, que conoce tu comunidad, tu idioma y tus necesidades.</p>
+        <div class="why-cta-wrap">
+          <a href="#contacto" class="btn btn-gold">Agenda tu consulta gratis</a>
+        </div>
+      </div>
+      <div class="why-grid">
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h4>Español e Inglés</h4>
+          <p>Comunicación sin barreras. Explicamos todo en el idioma que prefieras.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Especialistas en Negocios Latinos</h4>
+          <p>Entendemos los desafíos únicos de los empresarios de nuestra comunidad.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Florida Central</h4>
+          <p>Conocemos las regulaciones de Orlando y el Estado de Florida a fondo.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h4>Consulta Gratis 30 min</h4>
+          <p>Sin compromiso. Conversamos sobre tu negocio y cómo podemos ayudarte.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Acceso Directo a la Contadora</h4>
+          <p>Hablas con Yudit directamente, no con asistentes o intermediarios.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="wi-icon-wrap">
+            <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h4>Respuesta Rápida</h4>
+          <p>Sabemos que los negocios no esperan. Respondemos rápido y somos proactivos.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOBRE YUDIT ══ -->
+<section id="sobre-yudit">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo-wrap">
+        <div class="about-photo-placeholder">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="22" r="11"/><path d="M8 54c0-13.255 10.745-22 24-22s24 8.745 24 22"/>
+          </svg>
+          <p>Foto profesional de Yudit<br/><small style="opacity:.55">(próximamente)</small></p>
+        </div>
+        <div class="about-deco"></div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Sobre Yudit</div>
+        <h2 class="section-title">Una contadora que entiende tu mundo</h2>
+        <p>Soy Yudit Pulido Blanco, contadora y fundadora de Pulido Tax & Accounting LLC. Llegué a Orlando con la misma visión que muchos de mis clientes: construir algo propio, con esfuerzo y dedicación.</p>
+        <p>Esa experiencia me da una perspectiva única. Entiendo los desafíos de los empresarios latinos porque he vivido muchos de ellos. Por eso fundé esta firma — para ser el apoyo contable que a mí me hubiera gustado tener desde el principio.</p>
+        <p>Mi misión es simple: que tú te enfoques en hacer crecer tu negocio mientras yo me aseguro de que los números estén perfectos, los impuestos al día y las finanzas en orden.</p>
+        <div class="about-creds">
+          <div class="cred-item"><div class="cred-dot"></div><span>Especialista en pequeños negocios y empresarios independientes</span></div>
+          <div class="cred-item"><div class="cred-dot"></div><span>Experiencia en contabilidad, impuestos y cumplimiento fiscal en Florida</span></div>
+          <div class="cred-item"><div class="cred-dot"></div><span>Atención a contratistas, servicios, comercio y negocios familiares</span></div>
+          <div class="cred-item"><div class="cred-dot"></div><span>Comunicación directa, transparente y sin tecnicismos innecesarios</span></div>
+          <div class="cred-item"><div class="cred-dot"></div><span>Comprometida con el éxito de la comunidad latina en Orlando</span></div>
+        </div>
+        <a href="#contacto" class="btn btn-gold">Habla con Yudit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section id="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div class="section-label">Educación Financiera</div>
+      <h2 class="section-title">Aprende a manejar mejor<br/>las finanzas de tu negocio</h2>
+      <p class="section-sub">Artículos cortos, en español simple, para que tomes mejores decisiones con tu dinero sin necesitar ser experto en contabilidad.</p>
+    </div>
+    <div class="blog-grid">
+
+      <!-- Artículo 1 -->
+      <div class="blog-card" onclick="openBlog('b1')">
+        <div class="blog-thumb t1">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span class="blog-tag">Impuestos</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Junio 2024</div>
+          <h3>¿Qué gastos de tu negocio puedes deducir en los impuestos?</h3>
+          <p>Muchos dueños de negocios pagan más impuestos de lo que deben simplemente porque no saben qué pueden deducir. Aquí te explicamos los más comunes de forma sencilla.</p>
+          <div class="blog-read-more">
+            Leer artículo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artículo 2 -->
+      <div class="blog-card" onclick="openBlog('b2')">
+        <div class="blog-thumb t2">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          <span class="blog-tag">Bookkeeping</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Junio 2024</div>
+          <h3>¿Por qué separar tus cuentas personales de las del negocio te ahorra dinero?</h3>
+          <p>Es uno de los errores más comunes entre los nuevos empresarios. Mezclar el dinero personal con el del negocio puede costarte caro. Te explicamos por qué y cómo evitarlo.</p>
+          <div class="blog-read-more">
+            Leer artículo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artículo 3 -->
+      <div class="blog-card" onclick="openBlog('b3')">
+        <div class="blog-thumb t3">
+          <svg viewBox="0 0 24 24"><path d="M9 14l6-6"/><circle cx="9.5" cy="8.5" r="1.5" fill="rgba(255,255,255,.2)"/><circle cx="14.5" cy="13.5" r="1.5" fill="rgba(255,255,255,.2)"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          <span class="blog-tag">Sales Tax</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Junio 2024</div>
+          <h3>Sales Tax en Florida: ¿qué es, quién lo paga y cuándo debes reportarlo?</h3>
+          <p>Si tienes un negocio en Florida que vende productos o ciertos servicios, necesitas entender el Sales Tax. Esta guía rápida te explica todo lo básico sin complicaciones.</p>
+          <div class="blog-read-more">
+            Leer artículo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Blog Modals -->
+<div class="blog-modal-overlay" id="modal-b1" onclick="closeBlogOnOverlay(event, 'b1')">
+  <div class="blog-modal">
+    <button class="blog-modal-close" onclick="closeBlog('b1')">✕</button>
+    <div class="bm-tag">Impuestos</div>
+    <h2>¿Qué gastos de tu negocio puedes deducir en los impuestos?</h2>
+    <div class="bm-date">Junio 2024 · Por Pulido Tax & Accounting LLC</div>
+    <div class="bm-body">
+      <p>Muchos dueños de pequeños negocios terminan pagando más impuestos de lo que deberían, simplemente porque no conocen todas las deducciones a las que tienen derecho. Una deducción es un gasto legítimo del negocio que reduce tus ingresos gravables — es decir, pagas impuestos sobre menos dinero.</p>
+      <h4>Gastos que generalmente puedes deducir:</h4>
+      <ul>
+        <li><strong>Renta o hipoteca de tu local:</strong> si pagas por el espacio donde operas tu negocio, ese gasto es deducible.</li>
+        <li><strong>Vehículo de trabajo:</strong> si usas tu carro para el negocio (visitar clientes, hacer entregas, etc.), puedes deducir los gastos de gasolina o un porcentaje del uso vehicular.</li>
+        <li><strong>Teléfono e internet:</strong> el porcentaje que uses para el negocio es deducible.</li>
+        <li><strong>Equipos y herramientas:</strong> desde computadoras hasta herramientas de trabajo, si las compraste para el negocio, aplican.</li>
+        <li><strong>Sueldos y payroll:</strong> lo que pagas a tus empleados también reduce tu carga tributaria.</li>
+        <li><strong>Publicidad y marketing:</strong> tu sitio web, redes sociales, tarjetas de presentación — todo cuenta.</li>
+        <li><strong>Servicios profesionales:</strong> lo que le pagas a tu contadora, abogado o consultor también es deducible.</li>
+        <li><strong>Seguro de negocio:</strong> las primas de seguros comerciales son deducibles.</li>
+      </ul>
+      <h4>¿Qué necesitas para deducir correctamente?</h4>
+      <p>Lo más importante es tener recibos y registros de cada gasto. Por eso el bookkeeping mensual es tan valioso — cuando llega la época de impuestos, todo está organizado y no pierdes ninguna deducción.</p>
+      <p>Si no estás seguro de qué gastos aplican para tu tipo de negocio, es el momento perfecto para hablar con Yudit. Una consulta puede ahorrarte cientos o miles de dólares al año.</p>
+    </div>
+    <div class="bm-cta">
+      <p>¿Quieres revisar las deducciones de tu negocio? La primera consulta es gratis.</p>
+      <a href="#contacto" class="btn btn-gold" onclick="closeBlog('b1')">Agendar consulta gratis</a>
+    </div>
+  </div>
+</div>
+
+<div class="blog-modal-overlay" id="modal-b2" onclick="closeBlogOnOverlay(event, 'b2')">
+  <div class="blog-modal">
+    <button class="blog-modal-close" onclick="closeBlog('b2')">✕</button>
+    <div class="bm-tag">Bookkeeping</div>
+    <h2>¿Por qué separar tus cuentas personales de las del negocio te ahorra dinero?</h2>
+    <div class="bm-date">Junio 2024 · Por Pulido Tax & Accounting LLC</div>
+    <div class="bm-body">
+      <p>Es uno de los errores más comunes, y más costosos, entre los nuevos empresarios: usar la misma cuenta bancaria para los gastos personales y los del negocio. Parece conveniente al principio, pero con el tiempo se convierte en un problema serio.</p>
+      <h4>¿Qué pasa si mezclas las cuentas?</h4>
+      <ul>
+        <li>No puedes saber con claridad si tu negocio está ganando o perdiendo dinero de verdad.</li>
+        <li>Pierdes deducciones fiscales porque no puedes separar con precisión qué fue gasto del negocio y qué fue personal.</li>
+        <li>Si el IRS te audita, tendrás que explicar cada transacción — y eso se vuelve muy complicado.</li>
+        <li>Puede afectar tu responsabilidad legal: si tienes una LLC, mezclar cuentas puede hacer que pierdas la protección que te da esa estructura.</li>
+      </ul>
+      <h4>¿Cómo separarlas correctamente?</h4>
+      <ul>
+        <li>Abre una cuenta bancaria exclusiva para el negocio — la mayoría de los bancos tienen opciones sin costo para small business.</li>
+        <li>Consigue una tarjeta de crédito separada para los gastos del negocio.</li>
+        <li>Págarte un "sueldo" a ti mismo desde la cuenta del negocio hacia tu cuenta personal, en lugar de pagar tus cosas directamente desde la cuenta del negocio.</li>
+      </ul>
+      <h4>El resultado:</h4>
+      <p>Cuando tus cuentas están separadas, el bookkeeping es más sencillo, los reportes financieros son más precisos y tu contador puede encontrar todas las deducciones que te corresponden. Ganas claridad y ahorras dinero en impuestos.</p>
+    </div>
+    <div class="bm-cta">
+      <p>¿Necesitas ayuda para organizar las finanzas de tu negocio desde cero?</p>
+      <a href="#contacto" class="btn btn-gold" onclick="closeBlog('b2')">Habla con Yudit — es gratis</a>
+    </div>
+  </div>
+</div>
+
+<div class="blog-modal-overlay" id="modal-b3" onclick="closeBlogOnOverlay(event, 'b3')">
+  <div class="blog-modal">
+    <button class="blog-modal-close" onclick="closeBlog('b3')">✕</button>
+    <div class="bm-tag">Sales Tax</div>
+    <h2>Sales Tax en Florida: ¿qué es, quién lo paga y cuándo debes reportarlo?</h2>
+    <div class="bm-date">Junio 2024 · Por Pulido Tax & Accounting LLC</div>
+    <div class="bm-body">
+      <p>Si tienes un negocio en Florida, es muy probable que tengas obligaciones de Sales Tax — y no cumplirlas puede traer multas y problemas con el estado. Aquí te lo explicamos de forma simple.</p>
+      <h4>¿Qué es el Sales Tax?</h4>
+      <p>El Sales Tax es un impuesto sobre las ventas que se cobra al cliente final. En Florida, la tasa estatal es del <strong>6%</strong>, y algunos condados agregan un porcentaje adicional (normalmente entre 0.5% y 1.5%). Como dueño del negocio, tú recolectas ese impuesto de tus clientes y luego se lo reportas y pagas al estado.</p>
+      <h4>¿Mi negocio está obligado?</h4>
+      <ul>
+        <li><strong>Sí, si vendes productos físicos</strong> — ropa, repuestos, materiales, alimentos preparados, etc.</li>
+        <li><strong>Sí, si vendes ciertos servicios</strong> — servicios de limpieza comercial, reparaciones, etc.</li>
+        <li><strong>Posiblemente no</strong> si ofreces servicios profesionales puros (consultoría, contabilidad, diseño), aunque hay excepciones.</li>
+      </ul>
+      <h4>¿Cuándo hay que reportarlo?</h4>
+      <p>Depende del volumen de tu negocio. La mayoría de los pequeños negocios reportan mensualmente antes del día 20 del mes siguiente. Si tus ventas son bajas, el estado puede asignarte un ciclo trimestral o anual.</p>
+      <h4>¿Qué pasa si no lo hago?</h4>
+      <p>Florida cobra multas e intereses por reportes tardíos o incorrectos. Es uno de los errores más costosos y evitables. Con un buen servicio de Sales Tax Filing, nunca tendrás que preocuparte por esto.</p>
+    </div>
+    <div class="bm-cta">
+      <p>¿No estás seguro si tu negocio aplica para Sales Tax? Pregúntale a Yudit — sin costo.</p>
+      <a href="#contacto" class="btn btn-gold" onclick="closeBlog('b3')">Consulta gratis ahora</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ RESEÑAS ══ -->
+<section id="resenas">
+  <div class="container">
+    <div class="resenas-inner">
+      <div class="resenas-left">
+        <div class="section-label">Tu opinión importa</div>
+        <h2 class="section-title">Sé el primero en compartir tu experiencia</h2>
+        <p class="section-sub">Pulido Tax & Accounting LLC es una empresa nueva con un compromiso muy serio. Si trabajas con nosotros y quedas satisfecho, una reseña en Google ayuda a otros empresarios latinos a encontrarnos.</p>
+        <div class="resenas-steps">
+          <div class="res-step">
+            <div class="res-step-num">1</div>
+            <div class="res-step-text">
+              <h4>Agenda tu consulta gratis</h4>
+              <p>Conócenos sin compromiso. 30 minutos para hablar de tu negocio.</p>
+            </div>
+          </div>
+          <div class="res-step">
+            <div class="res-step-num">2</div>
+            <div class="res-step-text">
+              <h4>Trabaja con Yudit</h4>
+              <p>Experimenta la diferencia de tener una contadora que realmente te escucha.</p>
+            </div>
+          </div>
+          <div class="res-step">
+            <div class="res-step-num">3</div>
+            <div class="res-step-text">
+              <h4>Comparte tu experiencia</h4>
+              <p>Tu reseña ayuda a otros empresarios como tú a tomar la mejor decisión.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="resenas-card">
+        <div class="resenas-stars">★★★★★</div>
+        <div class="resenas-badge">
+          <div class="google-g">G</div>
+          Google Reviews
+        </div>
+        <h3>¡Ayúdanos a crecer!</h3>
+        <p>Somos una empresa nueva y cada reseña cuenta muchísimo. Si ya trabajaste con nosotros, tu opinión hace la diferencia para otros empresarios latinos en Orlando.</p>
+        <a href="https://g.page/r/review" target="_blank" rel="noopener" class="btn btn-navy" style="width:100%;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          Dejar reseña en Google
+        </a>
+        <p style="font-size:.75rem;color:var(--gray);margin-top:14px">* Agrega el link de tu perfil de Google Business cuando esté listo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-label">Hablemos</div>
+        <h2 class="section-title">¿Listo para poner tus finanzas en orden?</h2>
+        <p class="section-sub">Completa el formulario y te respondemos en menos de 24 horas. Tu primera consulta es completamente gratis.</p>
+        <div style="margin-top:32px">
+          <div class="contact-detail">
+            <div class="cd-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="cd-label">Ubicación</div>
+              <div class="cd-value">Orlando, Florida — toda Florida Central</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="cd-label">Horario de atención</div>
+              <div class="cd-value">Lunes a Viernes: 9:00 AM – 6:30 PM</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <div>
+              <div class="cd-label">Idiomas</div>
+              <div class="cd-value">Español e Inglés</div>
+            </div>
+          </div>
+        </div>
+        <div class="hours-box">
+          <div class="hb-title">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            WhatsApp disponible
+          </div>
+          <p>También puedes escribirnos por WhatsApp para consultas rápidas o para agendar tu cita.</p>
+          <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20me%20interesa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="btn btn-whatsapp" style="width:100%;justify-content:center">
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.217 6.338L4.5 28l6.84-1.692A11.93 11.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <div id="contact-form-section">
+          <h3 class="cf-title">Agenda tu consulta gratis</h3>
+          <p class="cf-sub">Completa el formulario — rápido y sin compromiso.</p>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Tu nombre *</label>
+              <input type="text" id="cf-name" name="nombre" placeholder="Ej: Carlos Martínez" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Tu teléfono *</label>
+              <input type="tel" id="cf-phone" name="telefono" placeholder="(407) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Tu correo electrónico *</label>
+              <input type="email" id="cf-email" name="correo" placeholder="tu@correo.com" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-service">¿Qué servicio necesitas? *</label>
+              <select id="cf-service" name="servicio" required>
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option>Bookkeeping Mensual</option>
+                <option>Contabilidad General</option>
+                <option>Payroll / Nómina</option>
+                <option>Sales Tax Florida</option>
+                <option>Preparación de Impuestos</option>
+                <option>Advisory Financiero</option>
+                <option>Cumplimiento Fiscal</option>
+                <option>Representación ante el IRS</option>
+                <option>No sé aún / Necesito orientación</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Cuéntame sobre tu negocio (opcional)</label>
+              <textarea id="cf-message" name="mensaje" placeholder="Tipo de negocio, empleados, en qué puedo ayudarte..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-submit">
+              Enviar y ver contacto directo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <div id="contact-reveal">
+          <h3>¡Gracias, <span id="reveal-name"></span>!</h3>
+          <p>Yudit revisará tu mensaje y te contactará muy pronto. También puedes comunicarte directamente:</p>
+          <div class="reveal-contacts">
+            <div class="reveal-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16l-.08.92z"/></svg>
+              Teléfono: <a href="tel:+16892708845">(689) 270-8845</a>
+            </div>
+            <div class="reveal-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Correo: <a href="mailto:yudit@pulidotax.com">yudit@pulidotax.com</a>
+            </div>
+            <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20me%20interesa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="reveal-wa-btn">
+              <svg viewBox="0 0 32 32" fill="white" style="width:18px;height:18px"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.217 6.338L4.5 28l6.84-1.692A11.93 11.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3z"/></svg>
+              Escribir por WhatsApp ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:white">Pulido Tax & Accounting LLC</div>
+        <p>Contadora para pequeños negocios latinos en Orlando, Florida. Bookkeeping, impuestos, payroll y más — con atención en español.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/pulidotax.accounting" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.6)" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Bookkeeping Mensual</a></li>
+          <li><a href="#servicios">Contabilidad General</a></li>
+          <li><a href="#servicios">Payroll / Nómina</a></li>
+          <li><a href="#servicios">Sales Tax Florida</a></li>
+          <li><a href="#servicios">Preparación de Impuestos</a></li>
+          <li><a href="#servicios">Representación ante el IRS</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#sobre-yudit">Sobre Yudit</a></li>
+          <li><a href="#por-que">Por qué elegirnos</a></li>
+          <li><a href="#blog">Blog Financiero</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div style="margin-top:18px">
+          <div style="font-size:.72rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Síguenos</div>
+          <a href="https://instagram.com/pulidotax.accounting" target="_blank" rel="noopener" style="font-size:.82rem">@pulidotax.accounting</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Pulido Tax & Accounting LLC. Todos los derechos reservados.</p>
+      <p>Orlando, Florida · Servicio en toda Florida Central</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ WhatsApp Flotante ══ -->
+<div class="wa-float">
+  <div class="wa-float-bubble">¡Escríbenos por WhatsApp!</div>
+  <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20me%20interesa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="wa-float-btn" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.217 6.338L4.5 28l6.84-1.692A11.93 11.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3z" fill="white"/>
+      <path d="M21.5 18.5c-.3-.15-1.75-.863-2.025-.963-.275-.1-.475-.15-.675.15-.2.3-.775.963-.95 1.163-.175.2-.35.225-.65.075-.3-.15-1.263-.463-2.413-1.475-.888-.788-1.488-1.763-1.663-2.063-.175-.3-.019-.463.131-.613.136-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.584-.49-.505-.675-.514l-.575-.01c-.2 0-.525.075-.8.375s-1.05 1.025-1.05 2.5 1.075 2.9 1.225 3.1c.15.2 2.1 3.2 5.075 4.488.71.306 1.263.488 1.694.625.713.226 1.363.194 1.875.119.573-.085 1.75-.713 2-1.4.25-.687.25-1.275.175-1.4-.075-.125-.275-.2-.575-.35z" fill="#25d366"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  // Nav hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Contact form gate
+  const form        = document.getElementById('contactForm');
+  const formSection = document.getElementById('contact-form-section');
+  const reveal      = document.getElementById('contact-reveal');
+  const revealName  = document.getElementById('reveal-name');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name    = document.getElementById('cf-name').value.trim();
+    const phone   = document.getElementById('cf-phone').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const service = document.getElementById('cf-service').value;
+    const message = document.getElementById('cf-message').value.trim();
+    if (!name || !phone || !email || !service) {
+      alert('Por favor completa todos los campos marcados con *.');
+      return;
+    }
+    const subject = encodeURIComponent('Nueva consulta — ' + service);
+    const body    = encodeURIComponent('Nombre: ' + name + '\nTeléfono: ' + phone + '\nCorreo: ' + email + '\nServicio: ' + service + '\n\nMensaje:\n' + (message || '(sin mensaje adicional)'));
+    window.location.href = 'mailto:yudit@pulidotax.com?subject=' + subject + '&body=' + body;
+    revealName.textContent = name.split(' ')[0];
+    formSection.style.display = 'none';
+    reveal.style.display = 'block';
+  });
+
+  // Blog modals
+  function openBlog(id) {
+    document.getElementById('modal-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBlog(id) {
+    document.getElementById('modal-' + id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeBlogOnOverlay(e, id) {
+    if (e.target === e.currentTarget) closeBlog(id);
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      ['b1','b2','b3'].forEach(id => {
+        const m = document.getElementById('modal-' + id);
+        if (m && m.classList.contains('open')) closeBlog(id);
+      });
+    }
+  });
+</script>
+</body>
+</html>

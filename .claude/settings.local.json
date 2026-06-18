@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; node --version; & \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" install -g @anthropic-ai/claude-code)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; \\(Get-Command claude -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell([Environment]::SetEnvironmentVariable\\(\"PATH\", [Environment]::GetEnvironmentVariable\\(\"PATH\", \"User\"\\) + \";C:\\\\Users\\\\yudit\\\\AppData\\\\Roaming\\\\npm\", \"User\"\\))",
+      "Bash(cp \"C:\\\\Users\\\\yudit\\\\Downloads\\\\pulido-tax-v3.html\" \"C:\\\\Users\\\\yudit\\\\Downloads\\\\pulido-tax-v4.html\")",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget",
+      "WebSearch"
+    ]
+  }
+}
