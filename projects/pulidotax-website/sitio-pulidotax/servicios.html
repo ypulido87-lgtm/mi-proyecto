@@ -1,0 +1,838 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Pulido Tax &amp; Accounting LLC · Orlando, FL</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Bookkeeping mensual, declaración de impuestos, contabilidad para LLC y corporaciones, y nómina. Servicios contables en español para pequeños negocios en Orlando, Florida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── BASE VARIABLES ─────────────────────────────────── */
+    :root {
+      --blue:#0D2B45;--blue-mid:#1A4A72;--blue-deep:#0A2038;--blue-pale:#E6EEF5;
+      --gold:#B87333;--gold-pale:#FDF0E4;--gold-mid:#9A5E24;--charcoal:#2C2C2C;
+      --text:#3D3D3D;--muted:#6B7685;--hint:#9AAAB8;--surface:#FDF6EE;
+      --white:#FFFFFF;--border:#E0DDD8;--border-warm:#D9C8B4;
+      --wa:#25D366;--wa-dark:#1DA851;
+      --font-d:'Cormorant Garamond',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --max:1160px;--r:6px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-b);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+    /* ─── BUTTONS ────────────────────────────────────────── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:.92rem;font-weight:500;letter-spacing:.02em;cursor:pointer;border:none;transition:all .22s ease;white-space:nowrap;}
+    .btn-white{background:var(--white);color:var(--blue);}
+    .btn-white:hover{background:var(--blue-pale);}
+    .btn-wa{background:var(--wa);color:var(--white);}
+    .btn-wa:hover{background:var(--wa-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.28);}
+    .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.45);}
+    .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+    .btn-gold{background:var(--gold);color:var(--white);}
+    .btn-gold:hover{background:var(--gold-mid);}
+    .btn-blue{background:var(--blue);color:var(--white);}
+    .btn-blue:hover{background:var(--blue-mid);}
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    #site-header{position:sticky;top:0;z-index:1000;background:var(--white);transition:box-shadow .3s ease;}
+    #site-header.scrolled{box-shadow:0 2px 20px rgba(13,43,69,.12);}
+    nav.main-nav{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:72px;}
+    .nav-logo{flex-shrink:0;}
+    .nav-links{display:flex;list-style:none;gap:28px;margin-left:auto;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--charcoal);letter-spacing:.02em;transition:color .2s;padding-bottom:2px;border-bottom:1.5px solid transparent;}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);border-bottom-color:var(--gold);}
+    .nav-links a.active{font-weight:600;color:var(--gold);border-bottom-color:var(--gold);}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+    .btn-nav-cta{background:var(--blue);color:var(--white);padding:10px 20px;border-radius:var(--r);font-size:.84rem;font-weight:500;transition:background .2s;white-space:nowrap;}
+    .btn-nav-cta:hover{background:var(--blue-mid);}
+    .lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+    .lang-btn{padding:5px 12px;font-size:.78rem;font-weight:600;font-family:var(--font-b);cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .2s;}
+    .lang-btn.active{background:var(--blue);color:var(--white);}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s ease;}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:24px;gap:20px;position:fixed;top:72px;left:0;right:0;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.12);transform:translateY(-10px);opacity:0;transition:all .3s ease;}
+    .mobile-menu.open{display:flex;transform:translateY(0);opacity:1;}
+    .mobile-menu a{font-size:1rem;font-weight:500;color:var(--charcoal);padding:4px 0;}
+    .mobile-menu a:hover{color:var(--blue);}
+    .mobile-menu a.active{color:var(--gold);font-weight:600;}
+    .mob-wa-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:var(--white);padding:12px 20px;border-radius:var(--r);font-size:.9rem;font-weight:500;margin-top:4px;}
+
+    /* ─── PAGE HERO ──────────────────────────────────────── */
+    .page-hero{background:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");padding:64px 0 56px;min-height:340px;display:flex;align-items:center;}
+    .page-hero-inner{max-width:700px;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:20px;letter-spacing:.02em;}
+    .breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s;}
+    .breadcrumb a:hover{color:rgba(255,255,255,.85);}
+    .breadcrumb-sep{color:rgba(255,255,255,.3);}
+    .page-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#e8b080;margin-bottom:14px;}
+    .page-h1{font-family:var(--font-d);font-size:52px;font-weight:600;color:var(--white);line-height:1.12;margin-bottom:18px;}
+    .page-hero-p{font-size:1.02rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:600px;}
+
+    /* ─── INTRO ──────────────────────────────────────────── */
+    .intro-section{background:var(--white);padding:110px 0 100px;text-align:center;}
+    .intro-line{width:60px;height:2px;background:var(--gold);margin:0 auto 32px;}
+    .intro-p{font-family:var(--font-d);font-size:29px;font-weight:500;color:var(--blue);line-height:1.5;max-width:720px;margin:0 auto 64px;}
+    .intro-features{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;}
+    .mini-feature{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:220px;}
+    .mini-feature svg{width:42px;height:42px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+    .mini-feature span{font-size:.9rem;font-weight:500;color:var(--charcoal);letter-spacing:.01em;line-height:1.5;}
+
+    /* ─── SERVICIOS ──────────────────────────────────────── */
+    .service-block{padding:120px 0;}
+    .service-block.alt{background:var(--surface);}
+    .service-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start;}
+    .service-block.flip .service-grid{grid-template-columns:1.25fr 1fr;}
+    .service-block.flip .service-visual{order:2;}
+    .service-block.flip .service-content{order:1;}
+    .service-visual{position:relative;padding-top:8px;}
+    .service-num{font-family:var(--font-d);font-size:120px;font-weight:600;color:var(--gold);line-height:1;opacity:.9;}
+    .service-num-line{width:70px;height:2px;background:var(--gold);margin:24px 0 36px;}
+    .service-icon{width:88px;height:88px;border:1.5px solid var(--border-warm);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gold-pale);transition:transform .3s ease,box-shadow .3s ease;}
+    .service-visual:hover .service-icon{transform:translateY(-4px);box-shadow:0 14px 30px rgba(184,115,51,.18);}
+    .service-icon svg{width:42px;height:42px;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;}
+    .service-tag{display:inline-block;background:var(--gold);color:var(--white);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:18px;}
+    .service-h2{font-family:var(--font-d);font-size:40px;font-weight:600;color:var(--blue);line-height:1.18;margin-bottom:20px;}
+    .service-desc{font-size:.98rem;line-height:1.8;color:var(--text);margin-bottom:34px;max-width:560px;}
+    .service-sub{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:16px;}
+    .service-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:34px;}
+    .service-list li{display:flex;align-items:flex-start;gap:12px;font-size:.94rem;color:var(--text);line-height:1.6;}
+    .service-list li svg{width:19px;height:19px;flex-shrink:0;margin-top:2px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .service-who{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:30px;max-width:560px;transition:box-shadow .3s ease,transform .3s ease;}
+    .service-who:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,43,69,.08);}
+    .service-who strong{color:var(--blue);font-weight:600;}
+    .service-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+    .price-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid var(--border-warm);color:var(--gold-mid);font-size:.82rem;font-weight:600;padding:10px 18px;border-radius:20px;letter-spacing:.02em;}
+
+    /* ─── STATS BAND ─────────────────────────────────────── */
+    .stats-band{background:var(--blue-deep);padding:110px 0;}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;}
+    .stat-num{font-family:var(--font-d);font-size:64px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:12px;}
+    .stat-label{font-size:.88rem;color:rgba(255,255,255,.6);letter-spacing:.04em;line-height:1.5;}
+
+    /* ─── PROCESO ────────────────────────────────────────── */
+    .process-section{background:var(--white);padding:120px 0;}
+    .section-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;text-align:center;}
+    .section-h2{font-family:var(--font-d);font-size:42px;font-weight:600;color:var(--blue);text-align:center;line-height:1.2;margin-bottom:72px;}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;position:relative;}
+    .process-step{text-align:center;padding:0 12px;position:relative;transition:transform .3s ease;}
+    .process-step:hover{transform:translateY(-5px);}
+    .process-num{font-family:var(--font-d);font-size:72px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:20px;}
+    .process-step h3{font-family:var(--font-d);font-size:26px;font-weight:600;color:var(--blue);margin-bottom:12px;}
+    .process-step p{font-size:.92rem;color:var(--muted);line-height:1.7;max-width:280px;margin:0 auto;}
+    .process-arrow{position:absolute;top:26px;right:-32px;color:var(--border-warm);font-size:1.6rem;font-family:var(--font-d);}
+
+    /* ─── FAQ ────────────────────────────────────────────── */
+    .faq-section{background:var(--surface);padding:120px 0;}
+    .faq-wrap{max-width:760px;margin:0 auto;}
+    .faq-item{background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:14px;overflow:hidden;transition:box-shadow .3s ease;}
+    .faq-item.open{box-shadow:0 10px 30px rgba(13,43,69,.08);}
+    .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-d);font-size:21px;font-weight:600;color:var(--blue);transition:color .2s;}
+    .faq-q:hover{color:var(--gold-mid);}
+    .faq-chevron{flex-shrink:0;width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease;}
+    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .faq-a p{padding:0 26px 24px;font-size:.93rem;color:var(--muted);line-height:1.75;}
+
+    /* ─── CTA FINAL ──────────────────────────────────────── */
+    #cta-final{background:#060F18;padding:110px 0;text-align:center;}
+    .cta-line{width:80px;height:2px;background:var(--gold);margin:0 auto 40px;}
+    #cta-final h2{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto;}
+    #cta-final p{font-size:1rem;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 44px;line-height:1.7;}
+    .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer{background:#060F18;border-top:1px solid rgba(255,255,255,.07);padding:64px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:.88rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.7;max-width:260px;}
+    .footer-col h4{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer-col ul li a,.footer-col ul li{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s;line-height:1.5;}
+    .footer-col ul li a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;max-width:600px;}
+
+    /* ─── WA FLOAT ───────────────────────────────────────── */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .25s ease;}
+    .wa-float:hover{background:var(--wa-dark);transform:scale(1.08);}
+    .wa-float svg{width:28px;height:28px;fill:var(--white);}
+
+    /* ─── REVEAL ANIMATION ───────────────────────────────── */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:900px){
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+      .page-h1{font-size:38px;}
+      #cta-final h2{font-size:34px;}
+      .section-h2{font-size:32px;margin-bottom:52px;}
+      .intro-p{font-size:24px;}
+      .intro-section{padding:80px 0 72px;}
+      .service-block{padding:80px 0;}
+      .service-grid,.service-block.flip .service-grid{grid-template-columns:1fr;gap:36px;}
+      .service-block.flip .service-visual{order:1;}
+      .service-block.flip .service-content{order:2;}
+      .service-num{font-size:88px;}
+      .service-h2{font-size:32px;}
+      .stats-band{padding:80px 0;}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:44px;}
+      .stat-num{font-size:52px;}
+      .process-section,.faq-section{padding:80px 0;}
+      .process-grid{grid-template-columns:1fr;gap:48px;}
+      .process-arrow{display:none;}
+      .intro-features{gap:36px;}
+    }
+    @media(max-width:600px){
+      .page-hero{padding:48px 0 42px;min-height:280px;}
+      .page-h1{font-size:30px;}
+      .footer-grid{grid-template-columns:1fr;gap:28px;}
+      .intro-p{font-size:21px;}
+      .service-h2{font-size:27px;}
+      .service-num{font-size:72px;}
+      .stats-grid{grid-template-columns:1fr 1fr;gap:36px;}
+      .stat-num{font-size:44px;}
+      .faq-q{font-size:18px;padding:18px 20px;}
+      .faq-a p{padding:0 20px 20px;}
+      .service-cta-row{align-items:flex-start;flex-direction:column;}
+      .btn{white-space:normal;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- WA FLOAT BUTTON -->
+<a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════ -->
+<header id="site-header">
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting LLC">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="220" height="55">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+      <li><a href="servicios.html" class="active" data-i18n="nav-servicios">Servicios</a></li>
+      <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+      <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+      <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn-nav-cta" data-i18n="nav-cta">Consulta gratis</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+  <a href="servicios.html" class="active" data-i18n="nav-servicios">Servicios</a>
+  <a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a>
+  <a href="blog.html" data-i18n="nav-blog">Blog</a>
+  <a href="contacto.html" data-i18n="nav-contacto">Contacto</a>
+  <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+    <span data-i18n="nav-wa-full">Escribir por WhatsApp</span>
+  </a>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO DE PÁGINA
+════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="breadcrumb-home">Inicio</a>
+        <span class="breadcrumb-sep">›</span>
+        <span data-i18n="breadcrumb-serv">Servicios</span>
+      </div>
+      <p class="page-eyebrow" data-i18n="page-eyebrow">Lo que hacemos</p>
+      <h1 class="page-h1" data-i18n="page-h1">Servicios contables para su negocio</h1>
+      <p class="page-hero-p" data-i18n="page-hero-p">Cada servicio está diseñado para ahorrarle tiempo, cumplir con el IRS y darle claridad sobre sus finanzas. Sin letra chica, sin sorpresas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     INTRO
+════════════════════════════════════════════════ -->
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-line reveal"></div>
+    <p class="intro-p reveal" data-i18n="intro-p">En Pulido Tax &amp; Accounting no hay paquetes rígidos. Conversamos sobre su negocio y diseñamos el servicio que realmente necesita — con la experiencia de más de 15 años en contabilidad internacional.</p>
+    <div class="intro-features">
+      <div class="mini-feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4 21v-1a7 7 0 0 1 7-7h2a7 7 0 0 1 7 7v1"/></svg>
+        <span data-i18n="feat-1">Atención directa de la fundadora</span>
+      </div>
+      <div class="mini-feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2 2.7 5 3.3 5 1.4 5 3.4-2.2 3.3-5 3.3-5-1.3-5-3.2"/></svg>
+        <span data-i18n="feat-2">Precio según su negocio</span>
+      </div>
+      <div class="mini-feature reveal">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.6-3 8-7 9-4-1-7-4.4-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span data-i18n="feat-3">Sin contratos forzosos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SERVICIO 01 — BOOKKEEPING
+════════════════════════════════════════════════ -->
+<section class="service-block alt" id="bookkeeping">
+  <div class="container">
+    <div class="service-grid">
+      <div class="service-visual reveal">
+        <div class="service-num">01</div>
+        <div class="service-num-line"></div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16"/><path d="M12 9h5"/><path d="M12 13h5"/><path d="M12 17h3"/></svg>
+        </div>
+      </div>
+      <div class="service-content reveal">
+        <span class="service-tag" data-i18n="s1-tag">Más solicitado</span>
+        <h2 class="service-h2" data-i18n="s1-title">Bookkeeping Mensual</h2>
+        <p class="service-desc" data-i18n="s1-desc">Sus números al día, todos los meses, sin que usted tenga que tocar una hoja de cálculo. Sabrá exactamente cuánto entra, cuánto sale y cuánto gana — y en abril, sus impuestos estarán listos sin carreras de último minuto.</p>
+        <p class="service-sub" data-i18n="incl-label">¿Qué incluye?</p>
+        <ul class="service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s1-i1">Registro de todas sus transacciones</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s1-i2">Conciliación bancaria</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s1-i3">Estado de resultados mensual</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s1-i4">Balance general</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s1-i5">Reportes listos para la temporada de impuestos</span></li>
+        </ul>
+        <p class="service-who"><strong data-i18n="who-label">¿Para quién es?</strong> <span data-i18n="s1-who">Pequeños negocios, freelancers y LLC con actividad mensual que quieren dejar de perseguir recibos.</span></p>
+        <div class="service-cta-row">
+          <span class="price-badge" data-i18n="price-badge">Precio según su negocio — Consultar</span>
+          <a href="https://wa.me/16892708845?text=Hola,%20me%20interesa%20el%20servicio%20de%20Bookkeeping%20Mensual" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SERVICIO 02 — IMPUESTOS
+════════════════════════════════════════════════ -->
+<section class="service-block flip" id="impuestos">
+  <div class="container">
+    <div class="service-grid">
+      <div class="service-visual reveal">
+        <div class="service-num">02</div>
+        <div class="service-num-line"></div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 19l6-6"/><circle cx="10" cy="14" r="1.2"/><circle cx="14" cy="18" r="1.2"/></svg>
+        </div>
+      </div>
+      <div class="service-content reveal">
+        <h2 class="service-h2" data-i18n="s2-title">Declaración de Impuestos</h2>
+        <p class="service-desc" data-i18n="s2-desc">Declaramos sus impuestos correctamente y a tiempo, buscando cada deducción legítima que le corresponde. Y si el IRS tiene preguntas después, no está solo: le acompañamos en la respuesta.</p>
+        <p class="service-sub" data-i18n="incl-label">¿Qué incluye?</p>
+        <ul class="service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s2-i1">Declaración federal (1040, 1120, 1065 según aplique)</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s2-i2">Declaración estatal cuando corresponde</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s2-i3">Análisis de deducciones aplicables</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s2-i4">Revisión de años anteriores</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s2-i5">Soporte ante consultas del IRS</span></li>
+        </ul>
+        <p class="service-who"><strong data-i18n="who-label">¿Para quién es?</strong> <span data-i18n="s2-who">Individuos, LLC, S-Corp, C-Corp y trabajadores independientes.</span></p>
+        <div class="service-cta-row">
+          <span class="price-badge" data-i18n="price-badge">Precio según su negocio — Consultar</span>
+          <a href="https://wa.me/16892708845?text=Hola,%20me%20interesa%20el%20servicio%20de%20Declaraci%C3%B3n%20de%20Impuestos" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SERVICIO 03 — LLC / CORP
+════════════════════════════════════════════════ -->
+<section class="service-block alt" id="llc-corp">
+  <div class="container">
+    <div class="service-grid">
+      <div class="service-visual reveal">
+        <div class="service-num">03</div>
+        <div class="service-num-line"></div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg>
+        </div>
+      </div>
+      <div class="service-content reveal">
+        <h2 class="service-h2" data-i18n="s3-title">Contabilidad LLC / Corporaciones</h2>
+        <p class="service-desc" data-i18n="s3-desc">Su empresa en Florida tiene obligaciones que van más allá de los impuestos: reportes anuales, requisitos estatales, decisiones de estructura. Nos encargamos de que todo esté en regla — y de que su estructura le convenga, no le cueste.</p>
+        <p class="service-sub" data-i18n="incl-label">¿Qué incluye?</p>
+        <ul class="service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s3-i1">Contabilidad mensual o trimestral</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s3-i2">Reportes financieros para decisiones</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s3-i3">Annual Report del estado de Florida</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s3-i4">BOI Reporting cuando aplica</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s3-i5">Asesoría de estructura empresarial</span></li>
+        </ul>
+        <p class="service-who"><strong data-i18n="who-label">¿Para quién es?</strong> <span data-i18n="s3-who">LLC, S-Corp y C-Corp registradas en Florida.</span></p>
+        <div class="service-cta-row">
+          <span class="price-badge" data-i18n="price-badge">Precio según su negocio — Consultar</span>
+          <a href="https://wa.me/16892708845?text=Hola,%20me%20interesa%20el%20servicio%20de%20Contabilidad%20para%20LLC%20o%20Corporaciones" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SERVICIO 04 — NÓMINA
+════════════════════════════════════════════════ -->
+<section class="service-block flip" id="nomina">
+  <div class="container">
+    <div class="service-grid">
+      <div class="service-visual reveal">
+        <div class="service-num">04</div>
+        <div class="service-num-line"></div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20v-.8a5.5 5.5 0 0 1 5.5-5.5h0a5.5 5.5 0 0 1 5.5 5.5V20"/><path d="M16 4.5a3.2 3.2 0 0 1 0 7"/><path d="M18.5 14.2a5.5 5.5 0 0 1 2 4.3V20"/></svg>
+        </div>
+      </div>
+      <div class="service-content reveal">
+        <h2 class="service-h2" data-i18n="s4-title">Nómina (Payroll)</h2>
+        <p class="service-desc" data-i18n="s4-desc">Pagar a sus empleados correctamente cada quincena — con las retenciones exactas y los depósitos al IRS a tiempo — es una de las tareas donde más multas se generan. Nosotros la manejamos completa, de principio a fin.</p>
+        <p class="service-sub" data-i18n="incl-label">¿Qué incluye?</p>
+        <ul class="service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s4-i1">Cálculo de salarios y deducciones</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s4-i2">Depósito de impuestos de nómina</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s4-i3">Cheques o depósito directo</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span data-i18n="s4-i4">W-2 y 1099 al final del año</span></li>
+        </ul>
+        <p class="service-who"><strong data-i18n="who-label">¿Para quién es?</strong> <span data-i18n="s4-who">Negocios con empleados en Florida, sin importar el tamaño del equipo.</span></p>
+        <div class="service-cta-row">
+          <span class="price-badge" data-i18n="price-badge">Precio según su negocio — Consultar</span>
+          <a href="https://wa.me/16892708845?text=Hola,%20me%20interesa%20el%20servicio%20de%20N%C3%B3mina%20(Payroll)" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     EXPERIENCIA — STATS
+════════════════════════════════════════════════ -->
+<section class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="15">0</span>+</div>
+        <p class="stat-label" data-i18n="stat-1">Años de experiencia</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="3">0</span></div>
+        <p class="stat-label" data-i18n="stat-2">Países</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="5">0</span></div>
+        <p class="stat-label" data-i18n="stat-3">Sistemas contables</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-num"><span class="counter" data-target="100">0</span>%</div>
+        <p class="stat-label" data-i18n="stat-4">En español</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROCESO
+════════════════════════════════════════════════ -->
+<section class="process-section">
+  <div class="container">
+    <p class="section-eyebrow reveal" data-i18n="proc-eyebrow">Así de simple</p>
+    <h2 class="section-h2 reveal" data-i18n="proc-h2">¿Cómo empezamos?</h2>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <span class="process-arrow" aria-hidden="true">→</span>
+        <h3 data-i18n="proc-1-t">Consulta gratuita</h3>
+        <p data-i18n="proc-1-p">Conversamos sobre su negocio y sus necesidades. Sin compromiso y sin costo.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <span class="process-arrow" aria-hidden="true">→</span>
+        <h3 data-i18n="proc-2-t">Plan a su medida</h3>
+        <p data-i18n="proc-2-p">Le proponemos exactamente lo que necesita, con un precio justo según su negocio.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <h3 data-i18n="proc-3-t">Manos a la obra</h3>
+        <p data-i18n="proc-3-p">Nosotros nos encargamos de los números. Usted se enfoca en hacer crecer su negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="section-eyebrow reveal" data-i18n="faq-eyebrow">Preguntas frecuentes</p>
+    <h2 class="section-h2 reveal" data-i18n="faq-h2">Antes de escribirnos</h2>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span data-i18n="faq-1-q">¿Cuánto cuestan los servicios?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p data-i18n="faq-1-a">Depende de cada negocio: el volumen de transacciones, el tipo de entidad y lo que realmente necesita. Por eso la primera consulta es gratuita — ahí le damos un precio claro, sin sorpresas después.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span data-i18n="faq-2-q">¿Puedo contratar solo un servicio?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p data-i18n="faq-2-a">Sí. No trabajamos con paquetes forzosos: si solo necesita la declaración de impuestos o solo la nómina, contrata exactamente eso.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span data-i18n="faq-3-q">¿Atienden solo en Orlando?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p data-i18n="faq-3-a">Atendemos clientes en toda Florida. Podemos trabajar de forma remota o presencial en el área de Orlando — usted elige lo que le resulte más cómodo.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span data-i18n="faq-4-q">¿En qué idioma es el servicio?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p data-i18n="faq-4-a">La atención es en español: todas sus dudas se explican en su idioma, con claridad. El sitio web está disponible en español e inglés.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA FINAL
+════════════════════════════════════════════════ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-line"></div>
+    <h2 class="reveal" data-i18n="cta-h2">¿No está seguro de qué necesita?</h2>
+    <p class="reveal" data-i18n="cta-p">En la primera consulta — gratuita — le recomendamos exactamente qué le conviene.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-white" data-i18n="cta-btn1">Solicitar consulta</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-i18n="cta-btn2">Escribir por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="footer-tagline">Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+          <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-serv">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html#bookkeeping" data-i18n="s1-title">Bookkeeping Mensual</a></li>
+          <li><a href="servicios.html#impuestos" data-i18n="s2-title">Declaración de Impuestos</a></li>
+          <li><a href="servicios.html#llc-corp" data-i18n="s3-title">Contabilidad LLC / Corp</a></li>
+          <li><a href="servicios.html#nomina" data-i18n="s4-title">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-contact">Contacto</h4>
+        <ul>
+          <li>📍 Orlando, Florida</li>
+          <li id="footer-gate-btn" style="list-style:none;">
+            <a href="#" onclick="revealFooterContact(event)" style="color:#B87333;font-size:0.85rem;">
+              📲 Ver datos de contacto
+            </a>
+          </li>
+          <li id="footer-email" style="display:none;list-style:none;"><a href="mailto:yudit@pulidotax.com">yudit@pulidotax.com</a></li>
+          <li id="footer-phone" style="display:none;list-style:none;"><a href="https://wa.me/16892708845">(689) 270-8845</a></li>
+          <li style="margin-top:12px;color:rgba(255,255,255,.6);font-size:.82rem;" data-i18n="footer-hours">Lun–Vie: 9am–6pm<br>Sáb y Dom: Cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Pulido Tax &amp; Accounting LLC · Orlando, FL · <span data-i18n="footer-copy">Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.</span></p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.25);" data-i18n="footer-design">Diseño web profesional</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T={
+  es:{
+    /* ── NAV ── */
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-blog':'Blog',
+    'nav-contacto':'Contacto','nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
+    /* ── BREADCRUMB / HERO ── */
+    'breadcrumb-home':'Inicio','breadcrumb-serv':'Servicios',
+    'page-eyebrow':'Lo que hacemos',
+    'page-h1':'Servicios contables para su negocio',
+    'page-hero-p':'Cada servicio está diseñado para ahorrarle tiempo, cumplir con el IRS y darle claridad sobre sus finanzas. Sin letra chica, sin sorpresas.',
+    /* ── INTRO ── */
+    'intro-p':'En Pulido Tax & Accounting no hay paquetes rígidos. Conversamos sobre su negocio y diseñamos el servicio que realmente necesita — con la experiencia de más de 15 años en contabilidad internacional.',
+    'feat-1':'Atención directa de la fundadora','feat-2':'Precio según su negocio','feat-3':'Sin contratos forzosos',
+    /* ── COMUNES SERVICIOS ── */
+    'incl-label':'¿Qué incluye?','who-label':'¿Para quién es? ',
+    'price-badge':'Precio según su negocio — Consultar','cta-wa':'Consultar por WhatsApp →',
+    /* ── S1 ── */
+    's1-tag':'Más solicitado','s1-title':'Bookkeeping Mensual',
+    's1-desc':'Sus números al día, todos los meses, sin que usted tenga que tocar una hoja de cálculo. Sabrá exactamente cuánto entra, cuánto sale y cuánto gana — y en abril, sus impuestos estarán listos sin carreras de último minuto.',
+    's1-i1':'Registro de todas sus transacciones','s1-i2':'Conciliación bancaria',
+    's1-i3':'Estado de resultados mensual','s1-i4':'Balance general',
+    's1-i5':'Reportes listos para la temporada de impuestos',
+    's1-who':'Pequeños negocios, freelancers y LLC con actividad mensual que quieren dejar de perseguir recibos.',
+    /* ── S2 ── */
+    's2-title':'Declaración de Impuestos',
+    's2-desc':'Declaramos sus impuestos correctamente y a tiempo, buscando cada deducción legítima que le corresponde. Y si el IRS tiene preguntas después, no está solo: le acompañamos en la respuesta.',
+    's2-i1':'Declaración federal (1040, 1120, 1065 según aplique)','s2-i2':'Declaración estatal cuando corresponde',
+    's2-i3':'Análisis de deducciones aplicables','s2-i4':'Revisión de años anteriores',
+    's2-i5':'Soporte ante consultas del IRS',
+    's2-who':'Individuos, LLC, S-Corp, C-Corp y trabajadores independientes.',
+    /* ── S3 ── */
+    's3-title':'Contabilidad LLC / Corporaciones',
+    's3-desc':'Su empresa en Florida tiene obligaciones que van más allá de los impuestos: reportes anuales, requisitos estatales, decisiones de estructura. Nos encargamos de que todo esté en regla — y de que su estructura le convenga, no le cueste.',
+    's3-i1':'Contabilidad mensual o trimestral','s3-i2':'Reportes financieros para decisiones',
+    's3-i3':'Annual Report del estado de Florida','s3-i4':'BOI Reporting cuando aplica',
+    's3-i5':'Asesoría de estructura empresarial',
+    's3-who':'LLC, S-Corp y C-Corp registradas en Florida.',
+    /* ── S4 ── */
+    's4-title':'Nómina (Payroll)',
+    's4-desc':'Pagar a sus empleados correctamente cada quincena — con las retenciones exactas y los depósitos al IRS a tiempo — es una de las tareas donde más multas se generan. Nosotros la manejamos completa, de principio a fin.',
+    's4-i1':'Cálculo de salarios y deducciones','s4-i2':'Depósito de impuestos de nómina',
+    's4-i3':'Cheques o depósito directo','s4-i4':'W-2 y 1099 al final del año',
+    's4-who':'Negocios con empleados en Florida, sin importar el tamaño del equipo.',
+    /* ── STATS ── */
+    'stat-1':'Años de experiencia','stat-2':'Países','stat-3':'Sistemas contables','stat-4':'En español',
+    /* ── PROCESO ── */
+    'proc-eyebrow':'Así de simple','proc-h2':'¿Cómo empezamos?',
+    'proc-1-t':'Consulta gratuita','proc-1-p':'Conversamos sobre su negocio y sus necesidades. Sin compromiso y sin costo.',
+    'proc-2-t':'Plan a su medida','proc-2-p':'Le proponemos exactamente lo que necesita, con un precio justo según su negocio.',
+    'proc-3-t':'Manos a la obra','proc-3-p':'Nosotros nos encargamos de los números. Usted se enfoca en hacer crecer su negocio.',
+    /* ── FAQ ── */
+    'faq-eyebrow':'Preguntas frecuentes','faq-h2':'Antes de escribirnos',
+    'faq-1-q':'¿Cuánto cuestan los servicios?',
+    'faq-1-a':'Depende de cada negocio: el volumen de transacciones, el tipo de entidad y lo que realmente necesita. Por eso la primera consulta es gratuita — ahí le damos un precio claro, sin sorpresas después.',
+    'faq-2-q':'¿Puedo contratar solo un servicio?',
+    'faq-2-a':'Sí. No trabajamos con paquetes forzosos: si solo necesita la declaración de impuestos o solo la nómina, contrata exactamente eso.',
+    'faq-3-q':'¿Atienden solo en Orlando?',
+    'faq-3-a':'Atendemos clientes en toda Florida. Podemos trabajar de forma remota o presencial en el área de Orlando — usted elige lo que le resulte más cómodo.',
+    'faq-4-q':'¿En qué idioma es el servicio?',
+    'faq-4-a':'La atención es en español: todas sus dudas se explican en su idioma, con claridad. El sitio web está disponible en español e inglés.',
+    /* ── CTA FINAL ── */
+    'cta-h2':'¿No está seguro de qué necesita?',
+    'cta-p':'En la primera consulta — gratuita — le recomendamos exactamente qué le conviene.',
+    'cta-btn1':'Solicitar consulta','cta-btn2':'Escribir por WhatsApp',
+    /* ── FOOTER ── */
+    'footer-tagline':'Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.',
+    'footer-nav':'Navegación','footer-serv':'Servicios','footer-contact':'Contacto',
+    'footer-hours':'Lun–Vie: 9am–6pm · Sáb y Dom: Cerrado',
+    'footer-copy':'Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.',
+    'footer-design':'Diseño web profesional'
+  },
+  en:{
+    /* ── NAV ── */
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-blog':'Blog',
+    'nav-contacto':'Contact','nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
+    /* ── BREADCRUMB / HERO ── */
+    'breadcrumb-home':'Home','breadcrumb-serv':'Services',
+    'page-eyebrow':'What we do',
+    'page-h1':'Accounting services for your business',
+    'page-hero-p':'Every service is designed to save you time, keep you compliant with the IRS, and give you clarity about your finances. No fine print, no surprises.',
+    /* ── INTRO ── */
+    'intro-p':'At Pulido Tax & Accounting there are no rigid packages. We talk about your business and design the service you actually need — backed by more than 15 years of international accounting experience.',
+    'feat-1':'Direct attention from the founder','feat-2':'Pricing based on your business','feat-3':'No forced contracts',
+    /* ── COMUNES SERVICIOS ── */
+    'incl-label':'What’s included?','who-label':'Who is it for? ',
+    'price-badge':'Pricing based on your business — Ask us','cta-wa':'Ask on WhatsApp →',
+    /* ── S1 ── */
+    's1-tag':'Most requested','s1-title':'Monthly Bookkeeping',
+    's1-desc':'Your numbers up to date, every month, without you touching a spreadsheet. You will know exactly what comes in, what goes out and what you earn — and in April, your taxes will be ready with no last-minute scramble.',
+    's1-i1':'Recording of all your transactions','s1-i2':'Bank reconciliation',
+    's1-i3':'Monthly profit & loss statement','s1-i4':'Balance sheet',
+    's1-i5':'Reports ready for tax season',
+    's1-who':'Small businesses, freelancers and LLCs with monthly activity who want to stop chasing receipts.',
+    /* ── S2 ── */
+    's2-title':'Tax Filing',
+    's2-desc':'We file your taxes correctly and on time, looking for every legitimate deduction you are entitled to. And if the IRS has questions later, you are not alone: we support you in the response.',
+    's2-i1':'Federal return (1040, 1120, 1065 as applicable)','s2-i2':'State return when applicable',
+    's2-i3':'Analysis of applicable deductions','s2-i4':'Review of prior years',
+    's2-i5':'Support with IRS inquiries',
+    's2-who':'Individuals, LLCs, S-Corps, C-Corps and independent contractors.',
+    /* ── S3 ── */
+    's3-title':'LLC / Corporation Accounting',
+    's3-desc':'Your Florida company has obligations that go beyond taxes: annual reports, state requirements, structure decisions. We keep everything in order — and make sure your structure works for you, not against you.',
+    's3-i1':'Monthly or quarterly accounting','s3-i2':'Financial reports for decision-making',
+    's3-i3':'Florida Annual Report','s3-i4':'BOI Reporting when applicable',
+    's3-i5':'Business structure advice',
+    's3-who':'LLCs, S-Corps and C-Corps registered in Florida.',
+    /* ── S4 ── */
+    's4-title':'Payroll',
+    's4-desc':'Paying your employees correctly every pay period — with exact withholdings and on-time IRS deposits — is one of the tasks that generates the most penalties. We handle it completely, start to finish.',
+    's4-i1':'Salary and deduction calculations','s4-i2':'Payroll tax deposits',
+    's4-i3':'Checks or direct deposit','s4-i4':'W-2s and 1099s at year end',
+    's4-who':'Businesses with employees in Florida, no matter the size of the team.',
+    /* ── STATS ── */
+    'stat-1':'Years of experience','stat-2':'Countries','stat-3':'Accounting systems','stat-4':'In Spanish',
+    /* ── PROCESO ── */
+    'proc-eyebrow':'It’s that simple','proc-h2':'How do we start?',
+    'proc-1-t':'Free consultation','proc-1-p':'We talk about your business and your needs. No commitment and no cost.',
+    'proc-2-t':'A plan made for you','proc-2-p':'We propose exactly what you need, with fair pricing based on your business.',
+    'proc-3-t':'We get to work','proc-3-p':'We take care of the numbers. You focus on growing your business.',
+    /* ── FAQ ── */
+    'faq-eyebrow':'Frequently asked questions','faq-h2':'Before you write to us',
+    'faq-1-q':'How much do the services cost?',
+    'faq-1-a':'It depends on each business: transaction volume, entity type and what you actually need. That is why the first consultation is free — there we give you a clear price, with no surprises later.',
+    'faq-2-q':'Can I hire just one service?',
+    'faq-2-a':'Yes. We do not work with forced packages: if you only need tax filing or only payroll, you hire exactly that.',
+    'faq-3-q':'Do you only serve Orlando?',
+    'faq-3-a':'We serve clients throughout Florida. We can work remotely or in person in the Orlando area — you choose what is most convenient for you.',
+    'faq-4-q':'What language is the service in?',
+    'faq-4-a':'Service is provided in Spanish: all your questions are explained in your language, with clarity. The website is available in Spanish and English.',
+    /* ── CTA FINAL ── */
+    'cta-h2':'Not sure what you need?',
+    'cta-p':'In the first consultation — free of charge — we recommend exactly what suits you.',
+    'cta-btn1':'Request consultation','cta-btn2':'Message on WhatsApp',
+    /* ── FOOTER ── */
+    'footer-tagline':'Accountant for small Latino businesses in Orlando, Florida. Service in Spanish.',
+    'footer-nav':'Navigation','footer-serv':'Services','footer-contact':'Contact',
+    'footer-hours':'Mon–Fri: 9am–6pm · Sat & Sun: Closed',
+    'footer-copy':'All rights reserved. Services offered do not constitute legal advice. Consult a certified professional for your specific situation.',
+    'footer-design':'Professional web design'
+  }
+};
+
+function setLang(l){
+  localStorage.setItem('ptaLang',l);
+  document.documentElement.lang=l;
+  document.body.classList.toggle('en-mode',l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(e=>{
+    const k=e.getAttribute('data-i18n');
+    if(T[l][k])e.textContent=T[l][k];
+  });
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+}
+const sl=localStorage.getItem('ptaLang')||'es';
+if(sl!=='es')setLang(sl);
+
+/* scroll shadow */
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+/* burger */
+const brg=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+brg.addEventListener('click',()=>{const o=brg.classList.toggle('open');brg.setAttribute('aria-expanded',o);mm.classList.toggle('open',o);});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{brg.classList.remove('open');mm.classList.remove('open');brg.setAttribute('aria-expanded','false');}));
+
+/* scroll reveal escalonado */
+const ro=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*90);ro.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(e=>ro.observe(e));
+
+/* counters animados */
+const co=new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    co.unobserve(e.target);
+    const el=e.target,target=+el.dataset.target,dur=1400,t0=performance.now();
+    function tick(t){
+      const p=Math.min((t-t0)/dur,1);
+      el.textContent=Math.round(target*(1-Math.pow(1-p,3)));
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+},{threshold:0.4});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+
+/* acordeones FAQ */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item'),body=item.querySelector('.faq-a'),open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(o=>{
+    o.classList.remove('open');
+    o.querySelector('.faq-a').style.maxHeight='0';
+    o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if(!open){
+    item.classList.add('open');
+    body.style.maxHeight=body.scrollHeight+'px';
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
+/* footer contact gate */
+function revealFooterContact(e){
+  e.preventDefault();
+  document.getElementById('footer-gate-btn').style.display='none';
+  document.getElementById('footer-email').style.display='list-item';
+  document.getElementById('footer-phone').style.display='list-item';
+}
+</script>
+</body>
+</html>
+
+

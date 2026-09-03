@@ -47,7 +47,15 @@
       "WebFetch(domain:www.irs.gov)",
       "Bash(cp \"C:\\\\Users\\\\yudit\\\\Downloads\\\\sitio-pulidotax\\\\blog.html\" \"C:\\\\Users\\\\yudit\\\\Downloads\\\\blog.html\")",
       "mcp__claude-in-chrome__navigate",
-      "mcp__scheduled-tasks__list_scheduled_tasks"
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "Read(//c/Users/yudit/Downloads/sitio-pulidotax//**)",
+      "Read(//c/Users/yudit/Downloads/**)",
+      "Bash(grep -c \"band-nomina\" \"/c/Users/yudit/Downloads/sitio-pulidotax/blog.html\"; grep -c \"modal-11\" \"/c/Users/yudit/Downloads/sitio-pulidotax/blog.html\"; grep -c '<article class=\"post-card' \"/c/Users/yudit/Downloads/sitio-pulidotax/blog.html\"; cp \"/c/Users/yudit/Downloads/sitio-pulidotax/blog.html\" \"/c/Users/yudit/Downloads/blog.html\" && ls -la \"/c/Users/yudit/Downloads/blog.html\")",
+      "WebFetch(domain:www.journalofaccountancy.com)",
+      "Bash(curl -sI https://pulidotax.com/favicon.ico)",
+      "Bash(curl -s https://pulidotax.com/)",
+      "Bash(curl -s https://pulidotax.com/blog.html)",
+      "PowerShell(Write-Output \"Hoy: $\\(Get-Date -Format 'dddd, dd MMMM yyyy HH:mm'\\)\")"
     ]
   }
 }

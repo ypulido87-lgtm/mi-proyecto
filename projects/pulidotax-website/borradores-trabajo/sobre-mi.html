@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí — Yudit Pulido Blanco · Pulido Tax &amp; Accounting LLC</title>
+  <meta name="description" content="La historia de Yudit Pulido Blanco: Licenciada en Economía, +15 años de experiencia en 3 países. Fundadora de Pulido Tax &amp; Accounting LLC en Orlando, FL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#0D2B45;--blue-mid:#1A4A72;--blue-deep:#0A2038;--blue-pale:#E6EEF5;
+      --gold:#B87333;--gold-pale:#FDF0E4;--gold-mid:#9A5E24;--charcoal:#2C2C2C;
+      --text:#3D3D3D;--muted:#6B7685;--hint:#9AAAB8;--surface:#FDF6EE;
+      --white:#FFFFFF;--border:#E0DDD8;--border-warm:#D9C8B4;
+      --wa:#25D366;--wa-dark:#1DA851;
+      --font-d:'Cormorant Garamond',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --max:1160px;--r:6px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-b);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:.92rem;font-weight:500;letter-spacing:.02em;cursor:pointer;border:none;transition:all .22s ease;white-space:nowrap;}
+    .btn-white{background:var(--white);color:var(--blue);}
+    .btn-white:hover{background:var(--blue-pale);}
+    .btn-wa{background:var(--wa);color:var(--white);}
+    .btn-wa:hover{background:var(--wa-dark);}
+    .btn-gold{background:var(--gold);color:var(--white);}
+    .btn-gold:hover{background:var(--gold-mid);}
+    /* ── NAV ── */
+    #site-header{position:sticky;top:0;z-index:1000;background:var(--white);transition:box-shadow .3s ease;}
+    #site-header.scrolled{box-shadow:0 2px 20px rgba(13,43,69,.12);}
+    nav.main-nav{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:72px;}
+    .nav-logo{flex-shrink:0;}
+    .nav-links{display:flex;list-style:none;gap:28px;margin-left:auto;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--charcoal);letter-spacing:.02em;transition:color .2s;padding-bottom:2px;border-bottom:1.5px solid transparent;}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);border-bottom-color:var(--gold);}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+    .btn-nav-cta{background:var(--blue);color:var(--white);padding:10px 20px;border-radius:var(--r);font-size:.84rem;font-weight:500;transition:background .2s;white-space:nowrap;}
+    .btn-nav-cta:hover{background:var(--blue-mid);}
+    .lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+    .lang-btn{padding:5px 12px;font-size:.78rem;font-weight:600;font-family:var(--font-b);cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .2s;}
+    .lang-btn.active{background:var(--blue);color:var(--white);}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s ease;}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:24px;gap:20px;position:fixed;top:72px;left:0;right:0;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.12);transform:translateY(-10px);opacity:0;transition:all .3s ease;}
+    .mobile-menu.open{display:flex;transform:translateY(0);opacity:1;}
+    .mobile-menu a{font-size:1rem;font-weight:500;color:var(--charcoal);padding:4px 0;}
+    .mobile-menu a:hover{color:var(--blue);}
+    .mob-wa-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:var(--white);padding:12px 20px;border-radius:var(--r);font-size:.9rem;font-weight:500;margin-top:4px;}
+    /* ── HERO ── */
+    #page-hero{background:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");padding:90px 0 72px;min-height:380px;display:flex;align-items:center;position:relative;overflow:hidden;}
+    #page-hero::after{content:'';position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:1px solid rgba(184,115,51,.18);transform:rotate(45deg);pointer-events:none;}
+    #page-hero::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border:1px solid rgba(184,115,51,.1);transform:rotate(45deg);pointer-events:none;}
+    .page-hero-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+    .page-hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold);}
+    .page-hero-h1{font-family:var(--font-d);font-size:56px;font-weight:600;color:var(--white);line-height:1.08;margin-bottom:14px;}
+    .page-hero-sub{font-size:1.02rem;color:rgba(255,255,255,.68);margin-bottom:30px;letter-spacing:.01em;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.45);}
+    .breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s;}
+    .breadcrumb a:hover{color:var(--gold);}
+    .breadcrumb span{color:rgba(255,255,255,.3);}
+    /* ── INTRO / FOTO ── */
+    #intro{background:var(--white);padding:100px 0;}
+    .intro-inner{display:grid;grid-template-columns:42% 1fr;gap:76px;align-items:start;}
+    .photo-frame{position:relative;}
+    .photo-frame::before{content:'';position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1.5px solid var(--gold);border-radius:16px;z-index:0;}
+    .bio-photo-wrap{position:relative;z-index:1;border-radius:16px;overflow:hidden;box-shadow:0 20px 56px rgba(13,43,69,.18);}
+    .bio-photo-wrap img{width:100%;display:block;}
+    .photo-caption{margin-top:40px;display:inline-flex;align-items:center;gap:10px;background:var(--gold-pale);border:1px solid var(--border-warm);color:var(--gold-mid);padding:9px 18px;border-radius:22px;font-size:.82rem;font-weight:600;}
+    .intro-quote{font-family:var(--font-d);font-style:italic;font-size:31px;font-weight:500;color:var(--blue);line-height:1.45;margin:26px 0 14px;position:relative;padding-left:28px;}
+    .intro-quote::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--gold);border-radius:2px;}
+    .intro-quote-note{font-size:.85rem;color:var(--muted);margin-bottom:34px;padding-left:28px;font-style:italic;}
+    .section-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+    .section-h2{font-family:var(--font-d);font-size:42px;font-weight:600;color:var(--blue);line-height:1.2;margin-bottom:20px;}
+    .intro-paras p{font-size:.97rem;color:var(--text);line-height:1.85;margin-bottom:18px;}
+    /* ── TIMELINE ── */
+    #camino{background:var(--surface);padding:104px 0 112px;}
+    .timeline{position:relative;max-width:820px;margin:64px auto 0;}
+    .timeline::before{content:'';position:absolute;left:29px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--gold) 0%,var(--border-warm) 100%);}
+    .tl-item{position:relative;padding:0 0 52px 92px;}
+    .tl-item:last-child{padding-bottom:0;}
+    .tl-node{position:absolute;left:18px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;}
+    .tl-node::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);}
+    .tl-item.tl-final .tl-node{background:var(--gold);}
+    .tl-item.tl-final .tl-node::after{background:var(--white);}
+    .tl-year{font-family:var(--font-d);font-size:34px;font-weight:600;color:var(--gold);line-height:1;display:inline-block;margin-bottom:4px;}
+    .tl-place{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:12px;transform:translateY(-4px);}
+    .tl-title{font-family:var(--font-d);font-size:23px;font-weight:600;color:var(--blue);margin:6px 0 8px;}
+    .tl-desc{font-size:.93rem;color:var(--text);line-height:1.75;max-width:620px;}
+    .tl-desc em{font-family:var(--font-d);font-style:italic;font-size:1.08rem;color:var(--blue-mid);}
+    .tl-item.tl-final{background:var(--white);border:1px solid var(--border-warm);border-left:3px solid var(--gold);border-radius:12px;padding:32px 32px 32px 92px;box-shadow:0 10px 34px rgba(13,43,69,.08);}
+    .tl-item.tl-final .tl-node{top:38px;}
+    /* ── PROPÓSITO ── */
+    #proposito{background:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");padding:110px 0;text-align:center;}
+    .prop-line{width:60px;height:2px;background:var(--gold);margin:0 auto 48px;position:relative;}
+    .prop-line::before,.prop-line::after{content:'';position:absolute;top:-2.5px;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+    .prop-line::before{left:-16px;}
+    .prop-line::after{right:-16px;}
+    .prop-quote{font-family:var(--font-d);font-size:33px;font-style:italic;font-weight:400;color:var(--white);line-height:1.55;max-width:820px;margin:0 auto 36px;}
+    .prop-firma{font-size:.9rem;color:rgba(255,255,255,.5);}
+    .prop-firma strong{color:var(--gold);letter-spacing:.04em;}
+    .prop-words{display:flex;justify-content:center;gap:14px;margin-top:44px;flex-wrap:wrap;}
+    .prop-word{font-family:var(--font-d);font-size:20px;font-style:italic;color:rgba(255,255,255,.85);border:1px solid rgba(184,115,51,.45);border-radius:30px;padding:8px 26px;}
+    /* ── CREDENCIALES ── */
+    #credenciales{background:var(--white);padding:100px 0;}
+    .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px;}
+    .cred-col h3{font-family:var(--font-d);font-size:27px;font-weight:600;color:var(--blue);margin-bottom:26px;padding-bottom:14px;border-bottom:1.5px solid var(--border-warm);}
+    .cred-list{list-style:none;display:flex;flex-direction:column;gap:22px;}
+    .cred-item{display:flex;gap:16px;align-items:flex-start;}
+    .cred-icon{width:44px;height:44px;background:var(--gold-pale);border:1px solid var(--border-warm);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .cred-item h4{font-size:.97rem;font-weight:600;color:var(--blue);margin-bottom:3px;}
+    .cred-item p{font-size:.86rem;color:var(--muted);line-height:1.6;}
+    .pills{display:flex;flex-wrap:wrap;gap:12px;}
+    .pill{font-size:.86rem;font-weight:500;color:var(--blue);background:var(--blue-pale);border:1px solid transparent;border-radius:24px;padding:10px 20px;transition:all .2s;}
+    .pill:hover{border-color:var(--gold);background:var(--gold-pale);color:var(--gold-mid);}
+    .skills-note{margin-top:28px;font-size:.88rem;color:var(--muted);line-height:1.7;background:var(--surface);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 20px;}
+    /* ── PERSONAL ── */
+    #personal{background:var(--surface);padding:88px 0;}
+    .personal-inner{max-width:760px;margin:0 auto;text-align:center;}
+    .personal-icon{width:56px;height:56px;background:var(--gold-pale);border:1px solid var(--border-warm);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+    .personal-inner p{font-size:1rem;color:var(--text);line-height:1.85;}
+    .personal-inner p em{font-family:var(--font-d);font-size:1.25rem;color:var(--blue);}
+    /* ── CTA ── */
+    #cta-final{background:#060F18;padding:104px 0;text-align:center;}
+    .cta-line{width:80px;height:2px;background:var(--gold);margin:0 auto 40px;}
+    #cta-final h2{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto;}
+    #cta-final p{font-size:1rem;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 44px;line-height:1.7;}
+    .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
+    /* ── FOOTER ── */
+    footer{background:#060F18;border-top:1px solid rgba(255,255,255,.07);padding:64px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:.88rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.7;max-width:260px;}
+    .footer-col h4{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer-col ul li a,.footer-col ul li{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s;line-height:1.5;}
+    .footer-col ul li a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;max-width:600px;}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .25s ease;}
+    .wa-float:hover{background:var(--wa-dark);transform:scale(1.08);}
+    .wa-float svg{width:28px;height:28px;fill:var(--white);}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .intro-inner{grid-template-columns:1fr;gap:56px;}
+      .photo-frame{max-width:360px;}
+      .cred-grid{grid-template-columns:1fr;gap:48px;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+      #cta-final h2{font-size:34px;}
+      .page-hero-h1{font-size:40px;}
+      .prop-quote{font-size:26px;}
+      .intro-quote{font-size:25px;}
+    }
+    @media(max-width:600px){
+      #page-hero{padding:56px 0 48px;min-height:auto;}
+      .page-hero-h1{font-size:31px;}
+      .footer-grid{grid-template-columns:1fr;gap:28px;}
+      .section-h2{font-size:31px;}
+      #cta-final h2{font-size:28px;}
+      .prop-quote{font-size:22px;}
+      .intro-quote{font-size:22px;}
+      .timeline::before{left:21px;}
+      .tl-node{left:10px;}
+      .tl-item{padding-left:64px;}
+      .tl-item.tl-final{padding:26px 20px 26px 64px;}
+      .tl-item.tl-final .tl-node{left:10px;}
+      .tl-year{font-size:27px;}
+      .tl-place{display:block;margin:2px 0 0;transform:none;}
+    }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<header id="site-header">
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting LLC">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="220" height="55">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+      <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+      <li><a href="sobre-mi.html" class="active" style="font-weight:600;color:var(--gold);border-bottom-color:var(--gold);" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn-nav-cta" data-i18n="nav-cta">Consulta gratis</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="navigation">
+  <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+  <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
+  <a href="sobre-mi.html" style="font-weight:600;color:var(--gold);" data-i18n="nav-sobre">Sobre mí</a> <a href="blog.html" data-i18n="nav_blog">Blog</a>
+  <a href="contacto.html" data-i18n="nav-contacto">Contacto</a>
+  <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+    <span data-i18n="nav-wa-full">Escribir por WhatsApp</span>
+  </a>
+</div>
+
+<section id="page-hero">
+  <div class="container">
+    <p class="page-hero-eyebrow reveal" data-i18n="ph-eyebrow">Mi historia</p>
+    <h1 class="page-hero-h1 reveal">Yudit Pulido Blanco</h1>
+    <p class="page-hero-sub reveal" data-i18n="ph-sub">Licenciada en Economía · +15 años de experiencia · 3 países</p>
+    <nav class="breadcrumb reveal" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+      <span>›</span>
+      <span data-i18n="nav-sobre">Sobre mí</span>
+    </nav>
+  </div>
+</section>
+
+<section id="intro">
+  <div class="container">
+    <div class="intro-inner">
+      <div class="reveal">
+        <div class="photo-frame">
+          <div class="bio-photo-wrap">
+            <img alt="Yudit Pulido Blanco, fundadora de Pulido Tax &amp; Accounting LLC" src="yudit-pulido.png">
+          </div>
+        </div>
+        <div class="photo-caption">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9A5E24" stroke-width="1.8" width="16" height="16"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <span data-i18n="photo-caption">Fundadora · Pulido Tax &amp; Accounting LLC</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="section-eyebrow" data-i18n="intro-eyebrow">Todo empezó con una niña y muchos papeles</p>
+        <blockquote class="intro-quote" data-i18n="intro-quote">"Yo quiero ser alguien que siempre ande con muchos papeles, organizando y buscando información."</blockquote>
+        <p class="intro-quote-note" data-i18n="intro-quote-note">— Yudit, de niña, a sus padres</p>
+        <div class="intro-paras">
+          <p data-i18n="intro-p1">Desde niña supe que quería dedicar mi vida a los números. Se lo decía a mis padres entre risas, sin imaginar cuánto de verdad había en ese juego. Mi padre, economista, me respondía: "Entonces serás economista, como yo."</p>
+          <p data-i18n="intro-p2">Tenía razón. A los 18 años entré a estudiar Economía en la Universidad Hermanos Saiz Montes de Oca, en Pinar del Río, Cuba. Cinco años después me gradué de Licenciada en Economía — y comenzó un camino que ha cruzado tres países, ha pasado por empresas de todos los tamaños y me ha enseñado que la contabilidad es mucho más que registrar números: es una herramienta para tomar mejores decisiones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="camino">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-eyebrow reveal" data-i18n="tl-eyebrow">El camino</p>
+      <h2 class="section-h2 reveal" data-i18n="tl-h2">Tres países, una misma pasión</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2005–2010</span><span class="tl-place" data-i18n="tl1-place">Cuba</span>
+        <h3 class="tl-title" data-i18n="tl1-title">Licenciatura en Economía</h3>
+        <p class="tl-desc" data-i18n="tl1-desc">Cinco años de formación en la Universidad Hermanos Saiz Montes de Oca, Pinar del Río. El sueño de la niña de los papeles se convierte en título universitario.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2010–2012</span><span class="tl-place" data-i18n="tl2-place">Cuba</span>
+        <h3 class="tl-title" data-i18n="tl2-title">Primeros pasos profesionales</h3>
+        <p class="tl-desc" data-i18n="tl2-desc">Área económica de la empresa de Acueducto y Alcantarillado: la teoría se encuentra con la práctica por primera vez.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2012–2014</span><span class="tl-place" data-i18n="tl3-place">La Habana</span>
+        <h3 class="tl-title" data-i18n="tl3-title">CIMEX Corporation — Regional Chief Accountant</h3>
+        <p class="tl-desc" data-i18n="tl3-desc">En una de las empresas comerciales más importantes de Cuba: cuentas por cobrar, ingresos y operaciones de Western Union. Ahí confirmé que la contabilidad era una herramienta para tomar mejores decisiones.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2014–2015</span><span class="tl-place" data-i18n="tl4-place">Ecuador</span>
+        <h3 class="tl-title" data-i18n="tl4-title">Nueva etapa, nuevo país</h3>
+        <p class="tl-desc" data-i18n="tl4-desc">Junto a mi esposo Darío comenzamos una nueva vida en Ecuador, donde revalidé mi título profesional.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2015–2022</span><span class="tl-place" data-i18n="tl5-place">Quito</span>
+        <h3 class="tl-title" data-i18n="tl5-title">Zafiro S.A. — de contadora a Gerente Administrativa</h3>
+        <p class="tl-desc" data-i18n="tl5-desc">Siete años en una empresa que evolucionó de constructora e inmobiliaria a industria de producción de chocolates. Crecí con ella: contabilidad, administración y decisiones estratégicas.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2020</span><span class="tl-place" data-i18n="tl6-place">Ecuador</span>
+        <h3 class="tl-title" data-i18n="tl6-title">La etapa más importante</h3>
+        <p class="tl-desc" data-i18n="tl6-desc">Una pausa profesional para el rol que más me enorgullece: la maternidad.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2022</span><span class="tl-place" data-i18n="tl7-place">Estados Unidos</span>
+        <h3 class="tl-title" data-i18n="tl7-title">Empezar de nuevo</h3>
+        <p class="tl-desc" data-i18n="tl7-desc">Como muchos inmigrantes, comenzar de cero significó trabajar en una fábrica y como asociada de ventas mientras organizaba mi documentación — sin dejar de enviar currículums ni un solo mes. La perseverancia no negocia.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2024</span><span class="tl-place" data-i18n="tl8-place">Orlando</span>
+        <h3 class="tl-title" data-i18n="tl8-title">ACD America Corporation — Administradora</h3>
+        <p class="tl-desc" data-i18n="tl8-desc">La perseverancia dio resultado: contabilidad, logística, compras internacionales, cuentas por pagar y cobrar, inventarios y reportes financieros.</p>
+      </div>
+      <div class="tl-item tl-final reveal">
+        <div class="tl-node"></div>
+        <span class="tl-year">2026</span><span class="tl-place" data-i18n="tl9-place">Orlando</span>
+        <h3 class="tl-title" data-i18n="tl9-title">Nace Pulido Tax &amp; Accounting LLC</h3>
+        <p class="tl-desc" data-i18n="tl9-desc"><em>"Si soy capaz de administrar y llevar la contabilidad de empresas de otras personas, ¿por qué no puedo construir la mía?"</em> Una idea que crecía desde Ecuador se convierte, por fin, en realidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proposito">
+  <div class="container">
+    <div class="prop-line reveal"></div>
+    <blockquote class="prop-quote reveal" data-i18n="prop-quote">"No abrí esta empresa únicamente para ofrecer servicios contables. La creé porque detrás de cada negocio hay una persona que ha invertido tiempo, esfuerzo y sueños para construirlo."</blockquote>
+    <p class="prop-firma reveal">— <strong data-i18n="prop-firma">Yudit Pulido Blanco, Fundadora</strong></p>
+    <div class="prop-words reveal">
+      <span class="prop-word" data-i18n="prop-w1">Confianza</span>
+      <span class="prop-word" data-i18n="prop-w2">Orden</span>
+      <span class="prop-word" data-i18n="prop-w3">Tranquilidad</span>
+    </div>
+  </div>
+</section>
+
+<section id="credenciales">
+  <div class="container">
+    <div style="text-align:center;">
+      <p class="section-eyebrow reveal" data-i18n="cred-eyebrow">Respaldo profesional</p>
+      <h2 class="section-h2 reveal" data-i18n="cred-h2">Formación, certificaciones y herramientas</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-col reveal">
+        <h3 data-i18n="cred-col1">Formación y certificaciones</h3>
+        <ul class="cred-list">
+          <li class="cred-item">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9A5E24" stroke-width="1.8" width="22" height="22"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="cred1-t">Licenciatura en Economía</h4>
+              <p data-i18n="cred1-d">Universidad Hermanos Saiz Montes de Oca · Pinar del Río, Cuba</p>
+            </div>
+          </li>
+          <li class="cred-item">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9A5E24" stroke-width="1.8" width="22" height="22"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="cred2-t">Income Tax Course</h4>
+              <p data-i18n="cred2-d">Certificación en preparación de impuestos · 2023</p>
+            </div>
+          </li>
+          <li class="cred-item">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9A5E24" stroke-width="1.8" width="22" height="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="cred3-t">BOI Reporting</h4>
+              <p data-i18n="cred3-d">Beneficial Ownership Information · cumplimiento federal</p>
+            </div>
+          </li>
+          <li class="cred-item">
+            <div class="cred-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#9A5E24" stroke-width="1.8" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h4 data-i18n="cred4-t">+15 años de experiencia · 3 países</h4>
+              <p data-i18n="cred4-d">Cuba · Ecuador · Estados Unidos</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="cred-col reveal">
+        <h3 data-i18n="cred-col2">Herramientas que domino</h3>
+        <div class="pills">
+          <span class="pill">QuickBooks Desktop</span>
+          <span class="pill">Zoho Books</span>
+          <span class="pill">Zoho Inventory</span>
+          <span class="pill" data-i18n="pill-excel">Excel Avanzado</span>
+          <span class="pill" data-i18n="pill-erp">Sistemas ERP</span>
+        </div>
+        <p class="skills-note" data-i18n="skills-note">General Ledger · cierres de mes · cuentas por pagar y cobrar · nómina (payroll) · conciliaciones bancarias · reportes financieros · inventarios · presupuestos · flujo de caja. Experiencia con ERP: CONDOR, Sentain, CIAD, Bersaf y Mcont.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="personal">
+  <div class="container">
+    <div class="personal-inner reveal">
+      <div class="personal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="26" height="26"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <p class="section-eyebrow" data-i18n="per-eyebrow">Fuera del trabajo</p>
+      <p data-i18n="per-p">Me apasiona la inversión en la bolsa de valores y la educación financiera. <em>"Creo firmemente que la educación financiera es una de las mejores herramientas para alcanzar la libertad financiera."</em> Es la misma convicción que llevo a cada cliente: que entender sus números es el primer paso para hacerlos crecer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-line"></div>
+    <h2 class="reveal" data-i18n="cta-h2">¿Hablamos de su negocio?</h2>
+    <p class="reveal" data-i18n="cta-p">La primera consulta es gratuita. Conversamos sobre su negocio y vemos cómo puedo ayudarle.</p>
+    <div class="cta-btns reveal">
+      <a href="contacto.html" class="btn btn-white" data-i18n="cta-btn1">Consulta gratuita</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-i18n="cta-btn2">Escribir por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="footer-tagline">Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-serv">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html" data-i18n="s1-title">Bookkeeping Mensual</a></li>
+          <li><a href="servicios.html" data-i18n="s2-title">Declaración de Impuestos</a></li>
+          <li><a href="servicios.html" data-i18n="s3-title">Contabilidad LLC / Corp</a></li>
+          <li><a href="servicios.html" data-i18n="s4-title">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-contact">Contacto</h4>
+        <ul>
+          <li>📍 Orlando, Florida</li>
+          <li id="footer-gate-btn" style="list-style:none;">
+            <a href="#" onclick="revealFooterContact(event)" style="color:#B87333;font-size:0.85rem;" data-i18n="footer-gate">📲 Ver datos de contacto</a>
+          </li>
+          <li id="footer-email" style="display:none;list-style:none;"><a href="mailto:yudit@pulidotax.com">yudit@pulidotax.com</a></li>
+          <li id="footer-phone" style="display:none;list-style:none;"><a href="https://wa.me/16892708845">(689) 270-8845</a></li>
+          <li style="margin-top:12px;color:rgba(255,255,255,.6);font-size:.82rem;" data-i18n="footer-hours">Lun–Vie: 9am–6pm<br>Sáb y Dom: Cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Pulido Tax &amp; Accounting LLC · Orlando, FL · <span data-i18n="footer-copy">Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.</span></p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.25);" data-i18n="footer-design">Diseño web profesional</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T={
+  es:{
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-blog':'Blog','nav-contacto':'Contacto',
+    'nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
+    'ph-eyebrow':'Mi historia','ph-sub':'Licenciada en Economía · +15 años de experiencia · 3 países',
+    'photo-caption':'Fundadora · Pulido Tax & Accounting LLC',
+    'intro-eyebrow':'Todo empezó con una niña y muchos papeles',
+    'intro-quote':'"Yo quiero ser alguien que siempre ande con muchos papeles, organizando y buscando información."',
+    'intro-quote-note':'— Yudit, de niña, a sus padres',
+    'intro-p1':'Desde niña supe que quería dedicar mi vida a los números. Se lo decía a mis padres entre risas, sin imaginar cuánto de verdad había en ese juego. Mi padre, economista, me respondía: "Entonces serás economista, como yo."',
+    'intro-p2':'Tenía razón. A los 18 años entré a estudiar Economía en la Universidad Hermanos Saiz Montes de Oca, en Pinar del Río, Cuba. Cinco años después me gradué de Licenciada en Economía — y comenzó un camino que ha cruzado tres países, ha pasado por empresas de todos los tamaños y me ha enseñado que la contabilidad es mucho más que registrar números: es una herramienta para tomar mejores decisiones.',
+    'tl-eyebrow':'El camino','tl-h2':'Tres países, una misma pasión',
+    'tl1-place':'Cuba','tl1-title':'Licenciatura en Economía','tl1-desc':'Cinco años de formación en la Universidad Hermanos Saiz Montes de Oca, Pinar del Río. El sueño de la niña de los papeles se convierte en título universitario.',
+    'tl2-place':'Cuba','tl2-title':'Primeros pasos profesionales','tl2-desc':'Área económica de la empresa de Acueducto y Alcantarillado: la teoría se encuentra con la práctica por primera vez.',
+    'tl3-place':'La Habana','tl3-title':'CIMEX Corporation — Regional Chief Accountant','tl3-desc':'En una de las empresas comerciales más importantes de Cuba: cuentas por cobrar, ingresos y operaciones de Western Union. Ahí confirmé que la contabilidad era una herramienta para tomar mejores decisiones.',
+    'tl4-place':'Ecuador','tl4-title':'Nueva etapa, nuevo país','tl4-desc':'Junto a mi esposo Darío comenzamos una nueva vida en Ecuador, donde revalidé mi título profesional.',
+    'tl5-place':'Quito','tl5-title':'Zafiro S.A. — de contadora a Gerente Administrativa','tl5-desc':'Siete años en una empresa que evolucionó de constructora e inmobiliaria a industria de producción de chocolates. Crecí con ella: contabilidad, administración y decisiones estratégicas.',
+    'tl6-place':'Ecuador','tl6-title':'La etapa más importante','tl6-desc':'Una pausa profesional para el rol que más me enorgullece: la maternidad.',
+    'tl7-place':'Estados Unidos','tl7-title':'Empezar de nuevo','tl7-desc':'Como muchos inmigrantes, comenzar de cero significó trabajar en una fábrica y como asociada de ventas mientras organizaba mi documentación — sin dejar de enviar currículums ni un solo mes. La perseverancia no negocia.',
+    'tl8-place':'Orlando','tl8-title':'ACD America Corporation — Administradora','tl8-desc':'La perseverancia dio resultado: contabilidad, logística, compras internacionales, cuentas por pagar y cobrar, inventarios y reportes financieros.',
+    'tl9-place':'Orlando','tl9-title':'Nace Pulido Tax & Accounting LLC','tl9-desc':'"Si soy capaz de administrar y llevar la contabilidad de empresas de otras personas, ¿por qué no puedo construir la mía?" Una idea que crecía desde Ecuador se convierte, por fin, en realidad.',
+    'prop-quote':'"No abrí esta empresa únicamente para ofrecer servicios contables. La creé porque detrás de cada negocio hay una persona que ha invertido tiempo, esfuerzo y sueños para construirlo."',
+    'prop-firma':'Yudit Pulido Blanco, Fundadora',
+    'prop-w1':'Confianza','prop-w2':'Orden','prop-w3':'Tranquilidad',
+    'cred-eyebrow':'Respaldo profesional','cred-h2':'Formación, certificaciones y herramientas',
+    'cred-col1':'Formación y certificaciones','cred-col2':'Herramientas que domino',
+    'cred1-t':'Licenciatura en Economía','cred1-d':'Universidad Hermanos Saiz Montes de Oca · Pinar del Río, Cuba',
+    'cred2-t':'Income Tax Course','cred2-d':'Certificación en preparación de impuestos · 2023',
+    'cred3-t':'BOI Reporting','cred3-d':'Beneficial Ownership Information · cumplimiento federal',
+    'cred4-t':'+15 años de experiencia · 3 países','cred4-d':'Cuba · Ecuador · Estados Unidos',
+    'pill-excel':'Excel Avanzado','pill-erp':'Sistemas ERP',
+    'skills-note':'General Ledger · cierres de mes · cuentas por pagar y cobrar · nómina (payroll) · conciliaciones bancarias · reportes financieros · inventarios · presupuestos · flujo de caja. Experiencia con ERP: CONDOR, Sentain, CIAD, Bersaf y Mcont.',
+    'per-eyebrow':'Fuera del trabajo',
+    'per-p':'Me apasiona la inversión en la bolsa de valores y la educación financiera. "Creo firmemente que la educación financiera es una de las mejores herramientas para alcanzar la libertad financiera." Es la misma convicción que llevo a cada cliente: que entender sus números es el primer paso para hacerlos crecer.',
+    'cta-h2':'¿Hablamos de su negocio?',
+    'cta-p':'La primera consulta es gratuita. Conversamos sobre su negocio y vemos cómo puedo ayudarle.',
+    'cta-btn1':'Consulta gratuita','cta-btn2':'Escribir por WhatsApp',
+    'footer-tagline':'Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.',
+    'footer-nav':'Navegación','footer-serv':'Servicios','footer-contact':'Contacto',
+    'footer-gate':'📲 Ver datos de contacto',
+    'footer-hours':'Lun–Vie: 9am–6pm · Sáb y Dom: Cerrado',
+    'footer-copy':'Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.',
+    'footer-design':'Diseño web profesional',
+    's1-title':'Bookkeeping Mensual','s2-title':'Declaración de Impuestos','s3-title':'Contabilidad LLC / Corp','s4-title':'Nómina (Payroll)'
+  },
+  en:{
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-contacto':'Contact',
+    'nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
+    'ph-eyebrow':'My story','ph-sub':'Economics Degree · 15+ years of experience · 3 countries',
+    'photo-caption':'Founder · Pulido Tax & Accounting LLC',
+    'intro-eyebrow':'It all began with a little girl and lots of papers',
+    'intro-quote':'"I want to be someone who always carries lots of papers, organizing and looking up information."',
+    'intro-quote-note':'— Yudit, as a child, to her parents',
+    'intro-p1':'Ever since I was a little girl, I knew I wanted to dedicate my life to numbers. I would tell my parents so, laughing, never imagining how much truth there was in that game. My father, an economist, would reply: "Then you will be an economist, like me."',
+    'intro-p2':'He was right. At 18 I began studying Economics at Hermanos Saiz Montes de Oca University in Pinar del Río, Cuba. Five years later I graduated with a degree in Economics — and began a journey that has crossed three countries, passed through companies of every size, and taught me that accounting is far more than recording numbers: it is a tool for making better decisions.',
+    'tl-eyebrow':'The journey','tl-h2':'Three countries, one passion',
+    'tl1-place':'Cuba','tl1-title':'Degree in Economics','tl1-desc':'Five years of study at Hermanos Saiz Montes de Oca University, Pinar del Río. The dream of the girl with the papers becomes a university degree.',
+    'tl2-place':'Cuba','tl2-title':'First professional steps','tl2-desc':'Economics department of the Water and Sewage utility: theory meets practice for the first time.',
+    'tl3-place':'Havana','tl3-title':'CIMEX Corporation — Regional Chief Accountant','tl3-desc':'At one of the most important commercial companies in Cuba: accounts receivable, revenue, and Western Union operations. There I confirmed that accounting was a tool for making better decisions.',
+    'tl4-place':'Ecuador','tl4-title':'New chapter, new country','tl4-desc':'Together with my husband Darío we began a new life in Ecuador, where I revalidated my professional degree.',
+    'tl5-place':'Quito','tl5-title':'Zafiro S.A. — from accountant to Administrative Manager','tl5-desc':'Seven years at a company that evolved from construction and real estate into a chocolate manufacturing business. I grew with it: accounting, administration, and strategic decisions.',
+    'tl6-place':'Ecuador','tl6-title':'The most important chapter','tl6-desc':'A professional pause for the role I am proudest of: motherhood.',
+    'tl7-place':'United States','tl7-title':'Starting over','tl7-desc':'Like many immigrants, starting from scratch meant working in a factory and as a sales associate while I organized my paperwork — never once pausing the résumés. Perseverance does not negotiate.',
+    'tl8-place':'Orlando','tl8-title':'ACD America Corporation — Administrator','tl8-desc':'Perseverance paid off: accounting, logistics, international purchasing, accounts payable and receivable, inventory, and financial reporting.',
+    'tl9-place':'Orlando','tl9-title':'Pulido Tax & Accounting LLC is born','tl9-desc':'"If I can manage and keep the books for other people\'s companies, why can\'t I build my own?" An idea that had been growing since Ecuador finally becomes reality.',
+    'prop-quote':'"I did not open this firm only to offer accounting services. I created it because behind every business there is a person who has invested time, effort, and dreams to build it."',
+    'prop-firma':'Yudit Pulido Blanco, Founder',
+    'prop-w1':'Trust','prop-w2':'Order','prop-w3':'Peace of mind',
+    'cred-eyebrow':'Professional credentials','cred-h2':'Education, certifications, and tools',
+    'cred-col1':'Education and certifications','cred-col2':'Tools I work with',
+    'cred1-t':'Degree in Economics','cred1-d':'Hermanos Saiz Montes de Oca University · Pinar del Río, Cuba',
+    'cred2-t':'Income Tax Course','cred2-d':'Tax preparation certification · 2023',
+    'cred3-t':'BOI Reporting','cred3-d':'Beneficial Ownership Information · federal compliance',
+    'cred4-t':'15+ years of experience · 3 countries','cred4-d':'Cuba · Ecuador · United States',
+    'pill-excel':'Advanced Excel','pill-erp':'ERP Systems',
+    'skills-note':'General Ledger · month-end closing · accounts payable and receivable · payroll · bank reconciliations · financial reporting · inventory · budgeting · cash flow. ERP experience: CONDOR, Sentain, CIAD, Bersaf, and Mcont.',
+    'per-eyebrow':'Outside of work',
+    'per-p':'I am passionate about stock market investing and financial education. "I firmly believe financial education is one of the best tools for reaching financial freedom." It is the same conviction I bring to every client: understanding your numbers is the first step to growing them.',
+    'cta-h2':'Shall we talk about your business?',
+    'cta-p':'The first consultation is free. We talk about your business and see how I can help.',
+    'cta-btn1':'Free consultation','cta-btn2':'Message on WhatsApp',
+    'footer-tagline':'Bilingual accountant for small Latino businesses in Orlando, Florida.',
+    'footer-nav':'Navigation','footer-serv':'Services','footer-contact':'Contact',
+    'footer-gate':'📲 Show contact details',
+    'footer-hours':'Mon–Fri: 9am–6pm · Sat & Sun: Closed',
+    'footer-copy':'All rights reserved. Services offered do not constitute legal advice. Consult a certified professional for your specific situation.',
+    'footer-design':'Professional web design',
+    's1-title':'Monthly Bookkeeping','s2-title':'Tax Filing','s3-title':'LLC / Corp Accounting','s4-title':'Payroll'
+  }
+};
+function setLang(l){
+  localStorage.setItem('ptaLang',l);
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i18n]').forEach(e=>{
+    const k=e.getAttribute('data-i18n');
+    if(T[l][k])e.textContent=T[l][k];
+  });
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+}
+const sl=localStorage.getItem('ptaLang')||'es';
+if(sl!=='es')setLang(sl);
+function revealFooterContact(ev){
+  ev.preventDefault();
+  document.getElementById('footer-gate-btn').style.display='none';
+  document.getElementById('footer-email').style.display='block';
+  document.getElementById('footer-phone').style.display='block';
+}
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+const brg=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+brg.addEventListener('click',()=>{const o=brg.classList.toggle('open');brg.setAttribute('aria-expanded',o);mm.classList.toggle('open',o);});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{brg.classList.remove('open');mm.classList.remove('open');brg.setAttribute('aria-expanded','false');}));
+const ro=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*90);ro.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
+
+
+
+

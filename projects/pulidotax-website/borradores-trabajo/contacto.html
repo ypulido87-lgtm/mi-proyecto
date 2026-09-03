@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Pulido Tax &amp; Accounting LLC · Orlando, FL</title>
+  <meta name="description" content="Hable directamente con Yudit Pulido Blanco, contadora para pequeños negocios latinos en Orlando, FL. La primera consulta es gratuita. Escríbanos por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── BASE VARIABLES ─────────────────────────────────── */
+    :root {
+      --blue:#0D2B45;--blue-mid:#1A4A72;--blue-deep:#0A2038;--blue-pale:#E6EEF5;
+      --gold:#B87333;--gold-pale:#FDF0E4;--gold-mid:#9A5E24;--charcoal:#2C2C2C;
+      --text:#3D3D3D;--muted:#6B7685;--hint:#9AAAB8;--surface:#FDF6EE;
+      --white:#FFFFFF;--border:#E0DDD8;--border-warm:#D9C8B4;
+      --wa:#25D366;--wa-dark:#1DA851;
+      --font-d:'Cormorant Garamond',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --max:1160px;--r:6px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-b);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+    /* ─── BUTTONS ────────────────────────────────────────── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:.92rem;font-weight:500;letter-spacing:.02em;cursor:pointer;border:none;transition:all .22s ease;white-space:nowrap;}
+    .btn-white{background:var(--white);color:var(--blue);}
+    .btn-white:hover{background:var(--blue-pale);}
+    .btn-wa{background:var(--wa);color:var(--white);}
+    .btn-wa:hover{background:var(--wa-dark);}
+    .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.45);}
+    .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+    .btn-gold{background:var(--gold);color:var(--white);}
+    .btn-gold:hover{background:var(--gold-mid);}
+    .btn-blue{background:var(--blue);color:var(--white);}
+    .btn-blue:hover{background:var(--blue-mid);}
+    .btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue-pale);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale);}
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    #site-header{position:sticky;top:0;z-index:1000;background:var(--white);transition:box-shadow .3s ease;}
+    #site-header.scrolled{box-shadow:0 2px 20px rgba(13,43,69,.12);}
+    nav.main-nav{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:72px;}
+    .nav-logo{flex-shrink:0;}
+    .nav-links{display:flex;list-style:none;gap:28px;margin-left:auto;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--charcoal);letter-spacing:.02em;transition:color .2s;padding-bottom:2px;border-bottom:1.5px solid transparent;}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);border-bottom-color:var(--gold);}
+    .nav-links a.active{font-weight:600;color:var(--gold);border-bottom-color:var(--gold);}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+    .btn-nav-cta{background:var(--blue);color:var(--white);padding:10px 20px;border-radius:var(--r);font-size:.84rem;font-weight:500;transition:background .2s;white-space:nowrap;}
+    .btn-nav-cta:hover{background:var(--blue-mid);}
+    .lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+    .lang-btn{padding:5px 12px;font-size:.78rem;font-weight:600;font-family:var(--font-b);cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .2s;}
+    .lang-btn.active{background:var(--blue);color:var(--white);}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s ease;}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:24px;gap:20px;position:fixed;top:72px;left:0;right:0;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.12);transform:translateY(-10px);opacity:0;transition:all .3s ease;}
+    .mobile-menu.open{display:flex;transform:translateY(0);opacity:1;}
+    .mobile-menu a{font-size:1rem;font-weight:500;color:var(--charcoal);padding:4px 0;}
+    .mobile-menu a:hover{color:var(--blue);}
+    .mobile-menu a.active{color:var(--gold);font-weight:600;}
+    .mob-wa-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:var(--white);padding:12px 20px;border-radius:var(--r);font-size:.9rem;font-weight:500;margin-top:4px;}
+
+    /* ─── PAGE HERO ──────────────────────────────────────── */
+    .page-hero{background:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");padding:56px 0 48px;min-height:300px;display:flex;align-items:center;}
+    .page-hero-inner{max-width:700px;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:20px;letter-spacing:.02em;}
+    .breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s;}
+    .breadcrumb a:hover{color:rgba(255,255,255,.85);}
+    .breadcrumb-sep{color:rgba(255,255,255,.3);}
+    .page-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#e8b080;margin-bottom:14px;}
+    .page-h1{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.15;margin-bottom:18px;}
+    .page-hero-p{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:580px;}
+
+    /* ─── CONTACT MAIN ───────────────────────────────────── */
+    .contact-section{background:var(--white);padding:80px 0;}
+    .contact-grid{display:grid;grid-template-columns:55fr 45fr;gap:48px;align-items:start;}
+    .contact-cards{display:flex;flex-direction:column;gap:22px;}
+    .c-card{position:relative;border:1px solid var(--border);border-radius:12px;padding:30px 30px 32px;background:var(--white);transition:all .28s ease;}
+    .c-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(13,43,69,.1);border-color:var(--border-warm);}
+    .c-card.featured{border:2px solid var(--gold);background:linear-gradient(180deg,#FFFDFA 0%,var(--gold-pale) 140%);}
+    .c-badge{position:absolute;top:-12px;left:26px;background:var(--gold);color:var(--white);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+    .c-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+    .c-icon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid var(--border-warm);background:var(--white);}
+    .c-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+    .c-card.featured .c-icon{border-color:var(--wa);}
+    .c-card.featured .c-icon svg{stroke:var(--wa);}
+    .c-title{font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--blue);}
+    .c-desc{font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+    .btn-wa-big{font-size:.98rem;padding:15px 32px;width:100%;box-shadow:0 6px 18px rgba(37,211,102,.28);}
+    .revealed{display:none;align-items:center;flex-wrap:wrap;gap:12px;opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease;}
+    .revealed.show{display:flex;opacity:1;transform:translateY(0);}
+    .revealed a{font-family:var(--font-d);font-size:26px;font-weight:600;color:var(--blue);border-bottom:1.5px solid var(--gold);transition:color .2s;}
+    .revealed a:hover{color:var(--gold);}
+    .revealed .rev-note{font-size:.76rem;color:var(--hint);}
+    #lead-form{display:flex;flex-direction:column;gap:14px;}
+    #lead-form input,#lead-form textarea{width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:8px;font-family:var(--font-b);font-size:.92rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;resize:vertical;}
+    #lead-form input:focus,#lead-form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.12);}
+    #lead-form input::placeholder,#lead-form textarea::placeholder{color:var(--hint);}
+    .form-privacy{font-size:.75rem;color:var(--hint);text-align:center;margin:0;}
+    .form-ok{display:none;background:#E8F7EE;border:1px solid #9FD8B4;color:#1D7A44;border-radius:8px;padding:14px 16px;font-size:.9rem;text-align:center;margin:0;}
+    .form-err{display:none;background:#FDECEC;border:1px solid #F0B4B4;color:#A33030;border-radius:8px;padding:14px 16px;font-size:.9rem;text-align:center;margin:0;}
+
+    /* info card right */
+    .info-card{background:var(--blue);border-radius:14px;padding:44px 40px;color:rgba(255,255,255,.75);position:relative;overflow:hidden;}
+    .info-card::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border:1px solid rgba(184,115,51,.25);transform:rotate(45deg);pointer-events:none;}
+    .avatar-circle{width:96px;height:96px;border-radius:50%;background:var(--blue-mid);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+    .avatar-circle span{font-family:var(--font-d);font-size:36px;font-weight:600;color:var(--white);letter-spacing:2px;}
+    .info-name{font-family:var(--font-d);font-size:27px;font-weight:600;color:var(--white);line-height:1.25;}
+    .info-role{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#e8b080;margin-top:6px;}
+    .info-sep{width:56px;height:2px;background:var(--gold);margin:24px 0;}
+    .info-block{margin-bottom:20px;}
+    .info-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
+    .info-line{font-size:.92rem;line-height:1.75;color:rgba(255,255,255,.8);}
+    .info-note{margin-top:26px;background:rgba(184,115,51,.14);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 18px;font-family:var(--font-d);font-size:19px;font-style:italic;line-height:1.5;color:rgba(255,255,255,.9);}
+
+    /* ─── QUÉ ESPERAR ────────────────────────────────────── */
+    .steps-section{background:var(--surface);padding:88px 0;}
+    .steps-h2{font-family:var(--font-d);font-size:40px;font-weight:600;color:var(--blue);text-align:center;margin-bottom:14px;line-height:1.2;}
+    .steps-sub{font-size:.95rem;color:var(--muted);text-align:center;max-width:520px;margin:0 auto 56px;line-height:1.7;}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+    .step{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:36px 30px 34px;text-align:left;transition:all .28s ease;}
+    .step:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,43,69,.1);}
+    .step-num{font-family:var(--font-d);font-size:44px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:16px;}
+    .step-title{font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--blue);margin-bottom:10px;}
+    .step-p{font-size:.9rem;color:var(--muted);line-height:1.65;}
+
+    /* ─── FAQ ────────────────────────────────────────────── */
+    .faq-section{background:var(--white);padding:88px 0;}
+    .faq-wrap{max-width:760px;margin:0 auto;}
+    .faq-h2{font-family:var(--font-d);font-size:40px;font-weight:600;color:var(--blue);text-align:center;margin-bottom:48px;line-height:1.2;}
+    .faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:14px;overflow:hidden;transition:border-color .25s ease;}
+    .faq-item.open{border-color:var(--border-warm);box-shadow:0 6px 20px rgba(13,43,69,.06);}
+    .faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;font-family:var(--font-d);font-size:21px;font-weight:600;color:var(--blue);text-align:left;transition:color .2s;}
+    .faq-q:hover{color:var(--gold-mid);}
+    .faq-chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border-warm);display:flex;align-items:center;justify-content:center;transition:transform .3s ease;font-size:.85rem;color:var(--gold);}
+    .faq-item.open .faq-chev{transform:rotate(180deg);background:var(--gold-pale);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .faq-a-inner{padding:0 26px 24px;font-size:.92rem;color:var(--muted);line-height:1.7;}
+
+    /* ─── CTA FINAL ──────────────────────────────────────── */
+    #cta-final{background:#060F18;padding:100px 0;text-align:center;}
+    .cta-line{width:80px;height:2px;background:var(--gold);margin:0 auto 40px;}
+    #cta-final h2{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto;}
+    #cta-final p{font-size:1rem;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 44px;line-height:1.7;}
+    .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer{background:#060F18;border-top:1px solid rgba(255,255,255,.07);padding:64px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:.88rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.7;max-width:260px;}
+    .footer-col h4{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer-col ul li a,.footer-col ul li{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s;line-height:1.5;}
+    .footer-col ul li a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;max-width:600px;}
+
+    /* ─── WA FLOAT ───────────────────────────────────────── */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .25s ease;animation:waPulse 2.6s ease-out infinite;}
+    .wa-float:hover{background:var(--wa-dark);transform:scale(1.08);animation:none;}
+    .wa-float svg{width:28px;height:28px;fill:var(--white);}
+    @keyframes waPulse{
+      0%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.45);}
+      70%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 18px rgba(37,211,102,0);}
+      100%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,0);}
+    }
+
+    /* ─── REVEAL ANIMATION ───────────────────────────────── */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:900px){
+      .contact-grid{grid-template-columns:1fr;gap:32px;}
+      .steps-grid{grid-template-columns:1fr;gap:20px;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+      .page-h1{font-size:36px;}
+      #cta-final h2{font-size:34px;}
+      .steps-h2,.faq-h2{font-size:32px;}
+      .info-card{padding:36px 28px;}
+    }
+    @media(max-width:600px){
+      .page-hero{padding:44px 0 40px;min-height:260px;}
+      .page-h1{font-size:28px;}
+      .contact-section{padding:56px 0;}
+      .steps-section,.faq-section{padding:64px 0;}
+      .steps-h2,.faq-h2{font-size:27px;}
+      .footer-grid{grid-template-columns:1fr;gap:28px;}
+      .c-card{padding:26px 22px 28px;}
+      .faq-q{font-size:18px;padding:18px 20px;}
+      .faq-a-inner{padding:0 20px 20px;}
+      .revealed a{font-size:22px;}
+      .btn-wa-big{white-space:normal;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- WA FLOAT BUTTON -->
+<a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════ -->
+<header id="site-header">
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting LLC">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="220" height="55">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+      <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+      <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+      <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+      <li><a href="contacto.html" class="active" data-i18n="nav-contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn-nav-cta" data-i18n="nav-cta">Consulta gratis</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+  <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
+  <a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a>
+  <a href="blog.html" data-i18n="nav-blog">Blog</a>
+  <a href="contacto.html" class="active" data-i18n="nav-contacto">Contacto</a>
+  <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+    <span data-i18n="nav-wa-full">Escribir por WhatsApp</span>
+  </a>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO DE PÁGINA
+════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="breadcrumb-home">Inicio</a>
+        <span class="breadcrumb-sep">›</span>
+        <span data-i18n="breadcrumb-contacto">Contacto</span>
+      </div>
+      <p class="page-eyebrow" data-i18n="page-eyebrow">Estamos para ayudarle</p>
+      <h1 class="page-h1" data-i18n="page-h1">Hablemos sobre su negocio</h1>
+      <p class="page-hero-p" data-i18n="page-hero-p">La primera consulta es gratuita. Sin presiones, sin compromisos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECCIÓN PRINCIPAL DE CONTACTO
+════════════════════════════════════════════════ -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- IZQUIERDA: cards de contacto -->
+      <div class="contact-cards">
+
+        <!-- WHATSAPP (destacada) -->
+        <div class="c-card featured reveal">
+          <span class="c-badge" data-i18n="wa-badge">Recomendado</span>
+          <div class="c-head">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h2 class="c-title">WhatsApp</h2>
+          </div>
+          <p class="c-desc" data-i18n="wa-desc">La forma más rápida. Escríbanos y le respondemos en horario de atención.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20me%20gustar%C3%ADa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="btn btn-wa btn-wa-big">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+            <span data-i18n="wa-btn">Escribir por WhatsApp ahora</span>
+          </a>
+        </div>
+
+        <!-- FORMULARIO DE CONSULTA -->
+        <div class="c-card reveal">
+          <div class="c-head">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            </div>
+            <h2 class="c-title" data-i18n="form-title">Déjenos sus datos</h2>
+          </div>
+          <p class="c-desc" data-i18n="form-desc">Complete el formulario y le contactamos nosotros — en horario de atención, sin compromiso.</p>
+          <form id="lead-form" method="POST" onsubmit="return sendLead(event)">
+            <input type="text" name="nombre" id="lf-nombre" data-i18n-ph="ph-nombre" placeholder="Su nombre" required>
+            <input type="tel" name="telefono" id="lf-telefono" data-i18n-ph="ph-telefono" placeholder="Su teléfono" required>
+            <input type="email" name="correo" id="lf-correo" data-i18n-ph="ph-correo" placeholder="Su correo electrónico" required>
+            <textarea name="pregunta" id="lf-pregunta" rows="4" data-i18n-ph="ph-pregunta" placeholder="¿En qué podemos ayudarle? Cuéntenos brevemente sobre su negocio o su pregunta." required></textarea>
+            <button type="submit" class="btn btn-blue" id="lf-submit" style="width:100%;justify-content:center;" data-i18n="form-btn">Enviar consulta →</button>
+            <p class="form-privacy" data-i18n="form-privacy">Sus datos solo se usan para responderle. No enviamos spam.</p>
+            <p class="form-ok" id="lf-ok" data-i18n="form-ok">✓ ¡Recibido! Le contactaremos pronto. Gracias por su confianza.</p>
+            <p class="form-err" id="lf-err" data-i18n="form-err">No se pudo enviar. Por favor intente de nuevo o escríbanos por WhatsApp.</p>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- DERECHA: card de información -->
+      <aside class="info-card reveal">
+        <div class="avatar-circle"><span>YP</span></div>
+        <h3 class="info-name">Yudit Pulido Blanco</h3>
+        <p class="info-role" data-i18n="info-role">Fundadora</p>
+        <div class="info-sep"></div>
+        <div class="info-block">
+          <p class="info-label" data-i18n="info-hours-label">Horario de atención</p>
+          <p class="info-line" data-i18n="info-hours">Lunes a viernes: 9:00 am – 6:00 pm<br>Sábado y domingo: cerrado</p>
+        </div>
+        <div class="info-block">
+          <p class="info-label" data-i18n="info-loc-label">Ubicación</p>
+          <p class="info-line" data-i18n="info-loc">Orlando, Florida — servicio remoto y presencial<br>Atendemos clientes en toda Florida</p>
+        </div>
+        <div class="info-note" data-i18n="info-note">«Cuando me escribe, habla directamente conmigo — no con un asistente.»</div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     QUÉ ESPERAR
+════════════════════════════════════════════════ -->
+<section class="steps-section">
+  <div class="container">
+    <h2 class="steps-h2 reveal" data-i18n="steps-h2">¿Qué pasa después de escribirnos?</h2>
+    <p class="steps-sub reveal" data-i18n="steps-sub">Sin procesos complicados. Tres pasos simples y usted sabrá exactamente dónde está parado.</p>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <p class="step-num">01</p>
+        <h3 class="step-title" data-i18n="step1-t">Le respondemos</h3>
+        <p class="step-p" data-i18n="step1-p">Recibimos su mensaje y le respondemos personalmente en horario de atención.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-num">02</p>
+        <h3 class="step-title" data-i18n="step2-t">Agendamos su consulta gratuita</h3>
+        <p class="step-p" data-i18n="step2-p">Por teléfono o video, cuando le quede cómodo. Conversamos sobre su negocio y sus dudas.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-num">03</p>
+        <h3 class="step-title" data-i18n="step3-t">Recibe su plan</h3>
+        <p class="step-p" data-i18n="step3-p">Le decimos con claridad qué necesita y cuánto costaría — sin compromiso de ningún tipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="container faq-wrap">
+    <h2 class="faq-h2 reveal" data-i18n="faq-h2">Preguntas frecuentes</h2>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span data-i18n="faq1-q">¿Cuánto cuesta la primera consulta?</span>
+        <span class="faq-chev">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq1-a">Nada. La primera consulta es completamente gratuita y sin compromiso. Es una conversación para conocer su situación y decirle honestamente cómo podemos ayudarle — y cuánto costaría, sin letra chica.</div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span data-i18n="faq2-q">¿Tienen oficina física?</span>
+        <span class="faq-chev">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq2-a">Trabajamos de forma remota y presencial en Orlando. La mayoría de nuestros clientes prefiere lo remoto por comodidad, pero si desea reunirse en persona, coordinamos un encuentro en Orlando sin problema.</div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span data-i18n="faq3-q">¿En qué idioma atienden?</span>
+        <span class="faq-chev">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq3-a">Atendemos en español — puede explicar su situación con toda confianza, en su idioma. Nuestro sitio web está disponible en español e inglés.</div></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        <span data-i18n="faq4-q">¿Trabajan con clientes fuera de Orlando?</span>
+        <span class="faq-chev">▾</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq4-a">Sí. Atendemos clientes en toda Florida de forma remota: documentos por vía segura, reuniones por video o teléfono, y el mismo servicio personalizado sin importar en qué ciudad esté.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA FINAL
+════════════════════════════════════════════════ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-line"></div>
+    <h2 class="reveal" data-i18n="cta-h2">No espere más — la consulta es gratis</h2>
+    <p class="reveal" data-i18n="cta-p">Un mensaje hoy puede ahorrarle dinero, multas y dolores de cabeza mañana.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/16892708845?text=Hola,%20me%20gustar%C3%ADa%20una%20consulta%20gratuita" target="_blank" rel="noopener" class="btn btn-wa" style="font-size:1rem;padding:16px 36px;">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-i18n="cta-btn1">Escribir por WhatsApp</span>
+      </a>
+      <a href="servicios.html" class="btn btn-ghost" data-i18n="cta-btn2">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="footer-tagline">Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+          <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-serv">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html#bookkeeping" data-i18n="s1-title">Bookkeeping Mensual</a></li>
+          <li><a href="servicios.html#impuestos" data-i18n="s2-title">Declaración de Impuestos</a></li>
+          <li><a href="servicios.html#llc-corp" data-i18n="s3-title">Contabilidad LLC / Corp</a></li>
+          <li><a href="servicios.html#nomina" data-i18n="s4-title">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-contact">Contacto</h4>
+        <ul>
+          <li>📍 Orlando, Florida</li>
+          <li id="footer-gate-btn" style="list-style:none;">
+            <a href="#" onclick="revealFooterContact(event)" style="color:#B87333;font-size:0.85rem;">
+              📲 <span data-i18n="footer-gate">Ver datos de contacto</span>
+            </a>
+          </li>
+          <li id="footer-email" style="display:none;list-style:none;"></li>
+          <li id="footer-phone" style="display:none;list-style:none;"></li>
+          <li style="margin-top:12px;color:rgba(255,255,255,.6);font-size:.82rem;" data-i18n="footer-hours">Lun–Vie: 9am–6pm<br>Sáb y Dom: Cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Pulido Tax &amp; Accounting LLC · Orlando, FL · <span data-i18n="footer-copy">Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.</span></p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.25);" data-i18n="footer-design">Diseño web profesional</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T={
+  es:{
+    /* ── NAV ── */
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-blog':'Blog',
+    'nav-contacto':'Contacto','nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
+    /* ── BREADCRUMB / HERO ── */
+    'breadcrumb-home':'Inicio','breadcrumb-contacto':'Contacto',
+    'page-eyebrow':'Estamos para ayudarle',
+    'page-h1':'Hablemos sobre su negocio',
+    'page-hero-p':'La primera consulta es gratuita. Sin presiones, sin compromisos.',
+    /* ── CARDS ── */
+    'wa-badge':'Recomendado',
+    'wa-desc':'La forma más rápida. Escríbanos y le respondemos en horario de atención.',
+    'wa-btn':'Escribir por WhatsApp ahora',
+    'form-title':'Déjenos sus datos','form-desc':'Complete el formulario y le contactamos nosotros — en horario de atención, sin compromiso.',
+    'form-btn':'Enviar consulta →',
+    'form-privacy':'Sus datos solo se usan para responderle. No enviamos spam.',
+    'form-ok':'✓ ¡Recibido! Le contactaremos pronto. Gracias por su confianza.',
+    'form-err':'No se pudo enviar. Por favor intente de nuevo o escríbanos por WhatsApp.',
+    'ph-nombre':'Su nombre','ph-telefono':'Su teléfono','ph-correo':'Su correo electrónico',
+    'ph-pregunta':'¿En qué podemos ayudarle? Cuéntenos brevemente sobre su negocio o su pregunta.',
+    /* ── INFO CARD ── */
+    'info-role':'Fundadora',
+    'info-hours-label':'Horario de atención',
+    'info-hours':'Lunes a viernes: 9:00 am – 6:00 pm\nSábado y domingo: cerrado',
+    'info-loc-label':'Ubicación',
+    'info-loc':'Orlando, Florida — servicio remoto y presencial\nAtendemos clientes en toda Florida',
+    'info-note':'«Cuando me escribe, habla directamente conmigo — no con un asistente.»',
+    /* ── PASOS ── */
+    'steps-h2':'¿Qué pasa después de escribirnos?',
+    'steps-sub':'Sin procesos complicados. Tres pasos simples y usted sabrá exactamente dónde está parado.',
+    'step1-t':'Le respondemos','step1-p':'Recibimos su mensaje y le respondemos personalmente en horario de atención.',
+    'step2-t':'Agendamos su consulta gratuita','step2-p':'Por teléfono o video, cuando le quede cómodo. Conversamos sobre su negocio y sus dudas.',
+    'step3-t':'Recibe su plan','step3-p':'Le decimos con claridad qué necesita y cuánto costaría — sin compromiso de ningún tipo.',
+    /* ── FAQ ── */
+    'faq-h2':'Preguntas frecuentes',
+    'faq1-q':'¿Cuánto cuesta la primera consulta?',
+    'faq1-a':'Nada. La primera consulta es completamente gratuita y sin compromiso. Es una conversación para conocer su situación y decirle honestamente cómo podemos ayudarle — y cuánto costaría, sin letra chica.',
+    'faq2-q':'¿Tienen oficina física?',
+    'faq2-a':'Trabajamos de forma remota y presencial en Orlando. La mayoría de nuestros clientes prefiere lo remoto por comodidad, pero si desea reunirse en persona, coordinamos un encuentro en Orlando sin problema.',
+    'faq3-q':'¿En qué idioma atienden?',
+    'faq3-a':'Atendemos en español — puede explicar su situación con toda confianza, en su idioma. Nuestro sitio web está disponible en español e inglés.',
+    'faq4-q':'¿Trabajan con clientes fuera de Orlando?',
+    'faq4-a':'Sí. Atendemos clientes en toda Florida de forma remota: documentos por vía segura, reuniones por video o teléfono, y el mismo servicio personalizado sin importar en qué ciudad esté.',
+    /* ── CTA FINAL ── */
+    'cta-h2':'No espere más — la consulta es gratis',
+    'cta-p':'Un mensaje hoy puede ahorrarle dinero, multas y dolores de cabeza mañana.',
+    'cta-btn1':'Escribir por WhatsApp','cta-btn2':'Ver servicios',
+    /* ── FOOTER ── */
+    'footer-tagline':'Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.',
+    'footer-nav':'Navegación','footer-serv':'Servicios','footer-contact':'Contacto',
+    'footer-gate':'Ver datos de contacto',
+    's1-title':'Bookkeeping Mensual','s2-title':'Declaración de Impuestos',
+    's3-title':'Contabilidad LLC / Corp','s4-title':'Nómina (Payroll)',
+    'footer-hours':'Lun–Vie: 9am–6pm · Sáb y Dom: Cerrado',
+    'footer-copy':'Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.',
+    'footer-design':'Diseño web profesional'
+  },
+  en:{
+    /* ── NAV ── */
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-blog':'Blog',
+    'nav-contacto':'Contact','nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
+    /* ── BREADCRUMB / HERO ── */
+    'breadcrumb-home':'Home','breadcrumb-contacto':'Contact',
+    'page-eyebrow':'We are here to help',
+    'page-h1':"Let's talk about your business",
+    'page-hero-p':'The first consultation is free. No pressure, no commitments.',
+    /* ── CARDS ── */
+    'wa-badge':'Recommended',
+    'wa-desc':'The fastest way. Message us and we reply during business hours.',
+    'wa-btn':'Message us on WhatsApp now',
+    'form-title':'Leave us your details','form-desc':'Fill out the form and we will contact you — during business hours, no strings attached.',
+    'form-btn':'Send inquiry →',
+    'form-privacy':'Your information is only used to reply to you. No spam.',
+    'form-ok':'✓ Received! We will contact you soon. Thank you for your trust.',
+    'form-err':'Could not send. Please try again or message us on WhatsApp.',
+    'ph-nombre':'Your name','ph-telefono':'Your phone','ph-correo':'Your email address',
+    'ph-pregunta':'How can we help you? Tell us briefly about your business or your question.',
+    /* ── INFO CARD ── */
+    'info-role':'Founder',
+    'info-hours-label':'Business hours',
+    'info-hours':'Monday–Friday: 9:00 am – 6:00 pm\nSaturday and Sunday: closed',
+    'info-loc-label':'Location',
+    'info-loc':'Orlando, Florida — remote and in-person service\nServing clients across Florida',
+    'info-note':'"When you message me, you talk directly with me — not with an assistant."',
+    /* ── PASOS ── */
+    'steps-h2':'What happens after you write to us?',
+    'steps-sub':'No complicated processes. Three simple steps and you will know exactly where you stand.',
+    'step1-t':'We reply','step1-p':'We receive your message and reply personally during business hours.',
+    'step2-t':'We schedule your free consultation','step2-p':'By phone or video, whenever works for you. We talk about your business and your questions.',
+    'step3-t':'You get your plan','step3-p':'We tell you clearly what you need and how much it would cost — with no commitment of any kind.',
+    /* ── FAQ ── */
+    'faq-h2':'Frequently asked questions',
+    'faq1-q':'How much does the first consultation cost?',
+    'faq1-a':'Nothing. The first consultation is completely free and comes with no commitment. It is a conversation to understand your situation and tell you honestly how we can help — and what it would cost, with no fine print.',
+    'faq2-q':'Do you have a physical office?',
+    'faq2-a':'We work remotely and in person in Orlando. Most of our clients prefer remote for convenience, but if you would like to meet face to face, we can arrange a meeting in Orlando.',
+    'faq3-q':'What language do you work in?',
+    'faq3-a':'We serve clients in Spanish — you can explain your situation with full confidence, in your language. Our website is available in Spanish and English.',
+    'faq4-q':'Do you work with clients outside Orlando?',
+    'faq4-a':'Yes. We serve clients across Florida remotely: documents through secure channels, meetings by video or phone, and the same personalized service no matter what city you are in.',
+    /* ── CTA FINAL ── */
+    'cta-h2':"Don't wait — the consultation is free",
+    'cta-p':'A message today can save you money, penalties and headaches tomorrow.',
+    'cta-btn1':'Message on WhatsApp','cta-btn2':'View services',
+    /* ── FOOTER ── */
+    'footer-tagline':'Accountant for small Latino businesses in Orlando, Florida.',
+    'footer-nav':'Navigation','footer-serv':'Services','footer-contact':'Contact',
+    'footer-gate':'Show contact details',
+    's1-title':'Monthly Bookkeeping','s2-title':'Tax Filing',
+    's3-title':'LLC / Corp Accounting','s4-title':'Payroll',
+    'footer-hours':'Mon–Fri: 9am–6pm · Sat & Sun: Closed',
+    'footer-copy':'All rights reserved. Services offered do not constitute legal advice. Consult a certified professional for your specific situation.',
+    'footer-design':'Professional web design'
+  }
+};
+
+function setLang(l){
+  localStorage.setItem('ptaLang',l);
+  document.documentElement.lang=l;
+  document.body.classList.toggle('en-mode',l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(e=>{
+    const k=e.getAttribute('data-i18n');
+    if(T[l][k]){
+      if(T[l][k].indexOf('\n')>-1){e.innerHTML=T[l][k].replace(/\n/g,'<br>');}
+      else{e.textContent=T[l][k];}
+    }
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(e=>{
+    const k=e.getAttribute('data-i18n-ph');
+    if(T[l][k]){e.setAttribute('placeholder',T[l][k]);}
+  });
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+}
+const sl=localStorage.getItem('ptaLang')||'es';
+if(sl!=='es')setLang(sl);
+
+/* scroll shadow */
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+/* burger */
+const brg=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+brg.addEventListener('click',()=>{const o=brg.classList.toggle('open');brg.setAttribute('aria-expanded',o);mm.classList.toggle('open',o);});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{brg.classList.remove('open');mm.classList.remove('open');brg.setAttribute('aria-expanded','false');}));
+
+/* scroll reveal */
+const ro=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);ro.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(e=>ro.observe(e));
+
+/* ─── GATES ANTI-BOT: teléfono y email ensamblados por JS ───
+   Los datos NO existen como texto plano en el HTML. */
+function phoneParts(){return ['689','270','8845'];}
+function phoneDisplay(){const p=phoneParts();return '('+p[0]+') '+p[1]+'-'+p[2];}
+function phoneHref(){return ['te','l:','+1'].join('')+phoneParts().join('');}
+function emailAddr(){return ['yudit','@','pulidotax','.com'].join('');}
+
+/* ─── FORMULARIO DE CONSULTA (envía a su correo vía FormSubmit, sin exponerlo) ─── */
+function sendLead(e){
+  e.preventDefault();
+  const btn=document.getElementById('lf-submit');
+  const ok=document.getElementById('lf-ok');
+  const err=document.getElementById('lf-err');
+  ok.style.display='none';err.style.display='none';
+  btn.disabled=true;btn.style.opacity='.6';
+  const data={
+    nombre:document.getElementById('lf-nombre').value,
+    telefono:document.getElementById('lf-telefono').value,
+    correo:document.getElementById('lf-correo').value,
+    pregunta:document.getElementById('lf-pregunta').value,
+    _subject:'Nueva consulta desde pulidotax.com',
+    _captcha:'false',
+    _template:'table'
+  };
+  fetch('https://formsubmit.co/ajax/'+emailAddr(),{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(data)
+  }).then(r=>{
+    if(!r.ok)throw new Error();
+    document.getElementById('lead-form').reset();
+    ok.style.display='block';
+  }).catch(()=>{
+    err.style.display='block';
+  }).finally(()=>{
+    btn.disabled=false;btn.style.opacity='1';
+  });
+  return false;
+}
+
+/* footer contact gate — también ensamblado por JS */
+function revealFooterContact(e){
+  e.preventDefault();
+  const em=emailAddr();
+  const fe=document.getElementById('footer-email');
+  const ea=document.createElement('a');
+  ea.href='mailto:'+em;ea.textContent=em;
+  fe.appendChild(ea);
+  const fp=document.getElementById('footer-phone');
+  const pa=document.createElement('a');
+  pa.href=phoneHref();pa.textContent=phoneDisplay();
+  fp.appendChild(pa);
+  document.getElementById('footer-gate-btn').style.display='none';
+  fe.style.display='list-item';
+  fp.style.display='list-item';
+}
+
+/* ─── FAQ ACORDEONES ─── */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const ans=item.querySelector('.faq-a');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(o=>{
+    o.classList.remove('open');
+    o.querySelector('.faq-a').style.maxHeight='0';
+    o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    ans.style.maxHeight=ans.scrollHeight+'px';
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+</script>
+</body>
+</html>
+
+

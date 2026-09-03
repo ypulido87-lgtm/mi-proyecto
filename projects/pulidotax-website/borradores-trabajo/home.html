@@ -1,0 +1,617 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulido Tax &amp; Accounting LLC — Contabilidad e Impuestos en Español · Orlando, FL</title>
+<meta name="description" content="Contabilidad profesional en español para pequeños negocios en Orlando, FL. Bookkeeping, impuestos, nómina y contabilidad para LLC. Más de 15 años de experiencia internacional. Primera consulta gratuita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0D2B45; --blue-mid:#1A4A72; --blue-deep:#0A2038; --blue-pale:#E6EEF5;
+  --gold:#B87333; --gold-pale:#FDF0E4; --gold-mid:#9A5E24;
+  --surface:#FDF6EE; --wa:#25D366; --wa-dark:#1DA851;
+  --ink:#2B3A47; --dark:#060F18;
+  --font-d:'Cormorant Garamond',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+  --radius:14px;
+  --shadow-sm:0 2px 10px rgba(13,43,69,.06);
+  --shadow-md:0 10px 34px rgba(13,43,69,.10);
+  --shadow-lg:0 24px 60px rgba(13,43,69,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--ink);background:#fff;line-height:1.7;font-size:16.5px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--font-b);font-size:12.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height:1.12}
+.section{padding:120px 0}
+.h2{font-size:clamp(32px,4.2vw,48px);margin:18px 0 20px}
+.lead{font-size:18px;color:#4B5A68;max-width:640px}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}.rv.d4{transition-delay:.46s}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 0;transition:all .45s var(--ease);background:transparent}
+.nav.scrolled{background:rgba(253,246,238,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0;box-shadow:0 1px 0 rgba(13,43,69,.07),var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo svg{display:block}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--blue);position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--gold-mid)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang-toggle{display:flex;border:1px solid rgba(13,43,69,.18);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600;letter-spacing:.06em}
+.lang-toggle button{border:0;background:transparent;padding:6px 13px;cursor:pointer;font:inherit;color:var(--blue);transition:all .3s}
+.lang-toggle button.on{background:var(--blue);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-b);font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;cursor:pointer;border:0;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;will-change:transform}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 24px rgba(184,115,51,.32)}
+.btn-gold:hover{background:var(--gold-mid);transform:translateY(-3px);box-shadow:0 14px 34px rgba(184,115,51,.42)}
+.btn-ghost{background:transparent;color:var(--blue);border:1.5px solid rgba(13,43,69,.24)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-mid);transform:translateY(-3px)}
+.btn-white{background:#fff;color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.32)}
+.btn-wa:hover{background:var(--wa-dark);transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.42)}
+.nav .btn{padding:11px 24px;font-size:14px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:210}
+.burger span{width:24px;height:2px;background:var(--blue);transition:all .35s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ HERO ============ */
+.hero{background:linear-gradient(175deg,var(--surface) 0%,#FBF1E4 55%,var(--gold-pale) 100%);padding:190px 0 130px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-220px;right:-220px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.10),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center;position:relative}
+.hero h1{font-size:clamp(40px,5.4vw,64px);margin:22px 0 8px;letter-spacing:-.01em}
+.hero .h1-accent{display:block;font-family:var(--font-d);font-style:italic;font-weight:500;color:var(--gold);font-size:clamp(30px,4vw,46px);margin:4px 0 26px;line-height:1.2}
+.hero p.lead{margin-bottom:38px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-figure{position:relative;justify-self:center}
+.hero-frame{position:relative;border-radius:var(--radius);padding:0}
+.hero-frame::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border:1.5px solid rgba(184,115,51,.55);border-radius:var(--radius);pointer-events:none}
+.hero-frame img{width:min(420px,100%);border-radius:var(--radius);box-shadow:var(--shadow-lg);position:relative}
+.hero-card{position:absolute;left:-46px;bottom:36px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:12px;padding:18px 24px;box-shadow:var(--shadow-md);border-left:3px solid var(--gold);animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.hero-card strong{display:block;font-family:var(--font-d);font-size:20px;color:var(--blue);line-height:1.25}
+.hero-card span{font-size:12.5px;color:var(--gold-mid);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+/* ============ STATS ============ */
+.stats{background:#fff;border-bottom:1px solid rgba(13,43,69,.08)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:74px 0 66px}
+.stat{text-align:center;position:relative}
+.stat + .stat::before{content:"";position:absolute;left:-10px;top:50%;transform:translateY(-50%);height:56px;width:1px;background:rgba(184,115,51,.28)}
+.stat .num{font-family:var(--font-d);font-size:clamp(42px,4.4vw,58px);font-weight:600;color:var(--blue);line-height:1}
+.stat .num em{font-style:normal;color:var(--gold)}
+.stat .lbl{font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#6B7A88;margin-top:10px}
+
+/* ============ CREDENTIALS ============ */
+.creds{background:#fff;padding:0 0 96px}
+.creds-line{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 0;font-family:var(--font-d);font-size:20px;color:var(--blue-mid);text-align:center}
+.creds-line span{padding:0 26px;position:relative;white-space:nowrap}
+.creds-line span + span::before{content:"·";position:absolute;left:-5px;color:var(--gold);font-size:24px}
+
+/* ============ SERVICES ============ */
+.services{background:var(--surface)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.svc-card{background:#fff;border-radius:var(--radius);padding:44px 40px;border:1px solid rgba(13,43,69,.06);box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s;position:relative;overflow:hidden}
+.svc-card::before{content:"";position:absolute;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-pale));transition:width .5s var(--ease)}
+.svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);border-color:rgba(184,115,51,.28)}
+.svc-card:hover::before{width:100%}
+.svc-icon{width:60px;height:60px;border-radius:14px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:26px;transition:transform .4s var(--ease)}
+.svc-card:hover .svc-icon{transform:scale(1.08) rotate(-3deg)}
+.svc-card h3{font-size:26px;margin-bottom:12px}
+.svc-card p{font-size:15.5px;color:#4B5A68;margin-bottom:22px}
+.svc-more{font-size:14.5px;font-weight:600;color:var(--gold-mid);display:inline-flex;align-items:center;gap:8px;transition:gap .3s var(--ease)}
+.svc-more:hover{gap:13px}
+
+/* ============ PROCESS ============ */
+.process{background:#fff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
+.step{position:relative;padding-top:8px}
+.step .n{font-family:var(--font-d);font-size:88px;font-weight:600;color:var(--gold);opacity:.9;line-height:1;display:block}
+.step .n::after{content:"";display:block;width:44px;height:1.5px;background:linear-gradient(90deg,var(--gold),transparent);margin:20px 0 22px}
+.step h3{font-size:26px;margin-bottom:12px}
+.step p{font-size:15.5px;color:#4B5A68}
+
+/* ============ ABOUT ============ */
+.about{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:80px;align-items:center}
+.about-figure{position:relative}
+.about-figure::after{content:"";position:absolute;inset:22px -22px -22px 22px;border:1.5px solid rgba(184,115,51,.45);border-radius:var(--radius);z-index:0}
+.about-figure img{border-radius:var(--radius);box-shadow:var(--shadow-md);position:relative;z-index:1}
+.about-quote{font-family:var(--font-d);font-style:italic;font-size:22px;color:var(--blue-mid);border-left:2px solid var(--gold);padding-left:24px;margin:28px 0 36px;line-height:1.5}
+
+/* ============ WHY ============ */
+.why{background:linear-gradient(165deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;position:relative;overflow:hidden}
+.why::before{content:"";position:absolute;bottom:-260px;left:-260px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.16),transparent 65%)}
+.why .h2{color:#fff}
+.why .lead{color:rgba(255,255,255,.78)}
+.why-head{text-align:center;max-width:720px;margin:0 auto}
+.why-head .lead{margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:64px 0 56px;position:relative}
+.why-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:38px 32px;backdrop-filter:blur(4px);transition:transform .45s var(--ease),background .3s,border-color .3s}
+.why-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.09);border-color:rgba(184,115,51,.5)}
+.why-card h3{color:#fff;font-size:24px;margin:18px 0 10px}
+.why-card p{font-size:15px;color:rgba(255,255,255,.75)}
+.why-icon{width:52px;height:52px;border-radius:12px;background:rgba(184,115,51,.18);display:flex;align-items:center;justify-content:center}
+.why-cta{text-align:center;position:relative}
+
+/* ============ CTA FINAL ============ */
+.cta{background:var(--dark);color:#fff;text-align:center;padding:130px 0}
+.cta-line{width:64px;height:2px;background:var(--gold);margin:0 auto 34px}
+.cta h2{color:#fff;font-size:clamp(34px,4.6vw,52px);max-width:760px;margin:0 auto 18px}
+.cta p{color:rgba(255,255,255,.68);max-width:560px;margin:0 auto 44px;font-size:17.5px}
+.cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--dark);color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.08);padding:84px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:64px}
+.footer h4{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.footer a{transition:color .3s}
+.footer a:hover{color:#fff}
+.footer li{margin-bottom:12px;font-size:14.5px}
+.footer-brand p{font-size:14.5px;margin-top:22px;max-width:300px;line-height:1.75}
+.gate-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);border-radius:999px;padding:10px 22px;font:600 13.5px var(--font-b);cursor:pointer;transition:all .3s}
+.gate-btn:hover{border-color:var(--gold);color:var(--gold)}
+#contactData{display:none;margin-top:16px}
+#contactData li{display:flex;gap:10px;align-items:center}
+.footer-hours{font-size:14.5px;line-height:2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:13px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ============ WHATSAPP FLOAT ============ */
+.wa-float{position:fixed;right:26px;bottom:26px;z-index:150;width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .35s var(--ease),background .3s}
+.wa-float:hover{transform:scale(1.1);background:var(--wa-dark)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);animation:waPulse 2.4s ease-out infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.65);opacity:0}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .section{padding:88px 0}
+  .hero{padding:150px 0 90px}
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:56px}
+  .hero-figure{order:-1}
+  .hero-card{left:8px;bottom:20px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:44px 20px}
+  .stat:nth-child(3)::before{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  .steps,.why-grid{grid-template-columns:1fr;gap:40px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:0;background:rgba(253,246,238,.98);backdrop-filter:blur(16px);flex-direction:column;justify-content:center;gap:34px;transform:translateX(100%);transition:transform .45s var(--ease)}
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:22px;font-family:var(--font-d)}
+  .burger{display:flex}
+  .nav-right .btn{display:none}
+  .about-figure::after{inset:14px -14px -14px 14px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 22px}
+  .section{padding:72px 0}
+  .hero{padding:130px 0 72px}
+  .hero-frame::before{inset:-12px -12px 12px 12px}
+  .hero-card{padding:14px 18px}
+  .hero-card strong{font-size:17px}
+  .stats-grid{grid-template-columns:1fr 1fr;padding:56px 0 48px}
+  .stat + .stat::before{display:none}
+  .creds-line{font-size:17px}
+  .creds-line span{padding:0 14px}
+  .footer-grid{grid-template-columns:1fr}
+  .cta{padding:96px 0}
+  .btn{padding:14px 26px;font-size:14.5px}
+  .wa-float{width:54px;height:54px;right:18px;bottom:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="196" height="49">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active" data-i18n="nav_home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav_services">Servicios</a>
+      <a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a> <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="contacto.html" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button id="langEs" class="on" onclick="setLang('es')">ES</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="contacto.html" class="btn btn-gold" data-i18n="nav_cta">Consulta gratis</a>
+      <button class="burger" id="burger" aria-label="Menú" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv" data-i18n="hero_eyebrow">Contabilidad profesional · Orlando, FL</span>
+      <h1 class="rv d1"><span data-i18n="hero_h1">Sus impuestos bajo control.</span>
+        <span class="h1-accent" data-i18n="hero_h1b">Su negocio listo para crecer.</span>
+      </h1>
+      <p class="lead rv d2" data-i18n="hero_lead">Con más de 15 años de experiencia contable en tres países, le ayudo a ordenar sus finanzas, cumplir con el IRS y tomar decisiones con confianza. Todo en español.</p>
+      <div class="hero-cta rv d3">
+        <a href="contacto.html" class="btn btn-gold" data-i18n="hero_btn1">Consulta gratuita</a>
+        <a href="servicios.html" class="btn btn-ghost" data-i18n="hero_btn2">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-figure rv d2">
+      <div class="hero-frame">
+        <img src="yudit-pulido.png" alt="Yudit Pulido Blanco, fundadora de Pulido Tax &amp; Accounting LLC">
+        <div class="hero-card">
+          <strong>Yudit Pulido Blanco</strong>
+          <span data-i18n="hero_card">Fundadora · +15 años de experiencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat rv"><div class="num"><span class="count" data-target="15">0</span><em>+</em></div><div class="lbl" data-i18n="stat1">Años de experiencia</div></div>
+    <div class="stat rv d1"><div class="num"><span class="count" data-target="3">0</span></div><div class="lbl" data-i18n="stat2">Países</div></div>
+    <div class="stat rv d2"><div class="num"><span class="count" data-target="5">0</span></div><div class="lbl" data-i18n="stat3">Sistemas contables dominados</div></div>
+    <div class="stat rv d3"><div class="num"><span class="count" data-target="100">0</span><em>%</em></div><div class="lbl" data-i18n="stat4">Atención en español</div></div>
+  </div>
+</section>
+
+<!-- ================= CREDENTIALS ================= -->
+<section class="creds">
+  <div class="wrap">
+    <div class="creds-line rv">
+      <span data-i18n="cred1">Licenciada en Economía</span>
+      <span>QuickBooks Desktop</span>
+      <span>Zoho Books</span>
+      <span data-i18n="cred4">IRS Income Tax Course</span>
+      <span data-i18n="cred5">LLC registrada en Florida</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section services" id="servicios">
+  <div class="wrap">
+    <span class="eyebrow rv" data-i18n="svc_eyebrow">Servicios</span>
+    <h2 class="h2 rv d1" data-i18n="svc_h2">Todo lo que su negocio necesita, en un solo lugar</h2>
+    <p class="lead rv d2" data-i18n="svc_lead">Soluciones contables claras y a la medida para pequeños negocios, trabajadores independientes y compañías en crecimiento.</p>
+    <div class="svc-grid">
+      <article class="svc-card rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3 data-i18n="svc1_t">Bookkeeping mensual</h3>
+        <p data-i18n="svc1_p">Registro y conciliación de todas sus transacciones, mes a mes. Sus libros siempre al día y listos para cualquier decisión — o cualquier auditoría.</p>
+        <a class="svc-more" href="servicios.html" data-i18n="svc_more">Saber más →</a>
+      </article>
+      <article class="svc-card rv d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="26" height="26"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+        <h3 data-i18n="svc2_t">Declaración de impuestos</h3>
+        <p data-i18n="svc2_p">Preparación de su declaración personal o de negocio, buscando cada deducción legítima. Cumplimiento con el IRS sin estrés y sin sorpresas.</p>
+        <a class="svc-more" href="servicios.html" data-i18n="svc_more">Saber más →</a>
+      </article>
+      <article class="svc-card rv d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="26" height="26"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <h3 data-i18n="svc3_t">Contabilidad para LLC y Corp</h3>
+        <p data-i18n="svc3_p">Estructura contable correcta desde el primer día: reportes BOI, separación de finanzas, estados financieros y obligaciones de su entidad en Florida.</p>
+        <a class="svc-more" href="servicios.html" data-i18n="svc_more">Saber más →</a>
+      </article>
+      <article class="svc-card rv d3">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="26" height="26"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <h3 data-i18n="svc4_t">Nómina (Payroll)</h3>
+        <p data-i18n="svc4_p">Pagos a empleados puntuales y correctos, con retenciones, formularios y reportes federales y estatales bajo control.</p>
+        <a class="svc-more" href="servicios.html" data-i18n="svc_more">Saber más →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section process">
+  <div class="wrap">
+    <span class="eyebrow rv" data-i18n="pr_eyebrow">Cómo trabajamos</span>
+    <h2 class="h2 rv d1" data-i18n="pr_h2">Un proceso simple, pensado para usted</h2>
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><h3 data-i18n="pr1_t">Conversamos</h3><p data-i18n="pr1_p">Una consulta gratuita para conocer su negocio, sus números y sus preocupaciones. Sin compromiso y sin tecnicismos.</p></div>
+      <div class="step rv d1"><span class="n">02</span><h3 data-i18n="pr2_t">Diseñamos su plan</h3><p data-i18n="pr2_p">Un servicio a la medida de lo que realmente necesita, con un precio justo y claro desde el principio.</p></div>
+      <div class="step rv d2"><span class="n">03</span><h3 data-i18n="pr3_t">Usted crece</h3><p data-i18n="pr3_p">Números claros, IRS al día y tiempo libre para dedicarse a lo que mejor sabe hacer: su negocio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about">
+  <div class="wrap about-grid">
+    <div class="about-figure rv">
+      <img src="yudit-pulido.png" alt="Yudit Pulido Blanco">
+    </div>
+    <div>
+      <span class="eyebrow rv" data-i18n="ab_eyebrow">Sobre mí</span>
+      <h2 class="h2 rv d1" data-i18n="ab_h2">De Cuba a Ecuador a Estados Unidos</h2>
+      <p class="lead rv d2" data-i18n="ab_p1">Más de 15 años haciendo que los números cuenten historias claras: como Regional Chief Accountant en CIMEX Corporation en La Habana, como contadora y gerente administrativa en Quito, y hoy como profesional contable en Orlando.</p>
+      <p class="about-quote rv d3" data-i18n="ab_quote">"Fundé Pulido Tax &amp; Accounting porque creo que detrás de cada negocio hay una persona que invirtió tiempo, esfuerzo y sueños."</p>
+      <a href="sobre-mi.html" class="btn btn-ghost rv d4" data-i18n="ab_btn">Conocer mi historia →</a> <a href="blog.html" data-i18n="nav_blog">Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="section why">
+  <div class="wrap">
+    <div class="why-head">
+      <span class="eyebrow rv" data-i18n="why_eyebrow">Por qué elegirnos</span>
+      <h2 class="h2 rv d1" data-i18n="why_h2">Su experiencia será nuestra primera historia de éxito</h2>
+      <p class="lead rv d2" data-i18n="why_lead">Somos una firma nueva en Florida — y eso es una ventaja para usted. Detrás hay una fundadora con más de 15 años de experiencia internacional que atenderá su negocio personalmente, con el cuidado que solo se le da a los primeros clientes.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="24" height="24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><h3 data-i18n="why1_t">Atención directa de la fundadora</h3><p data-i18n="why1_p">Nada de asistentes ni centros de llamadas. Cada libro, cada declaración y cada consulta pasa por las manos de Yudit.</p></div>
+      <div class="why-card rv d1"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></div><h3 data-i18n="why2_t">Experiencia internacional real</h3><p data-i18n="why2_p">Contabilidad corporativa en Cuba, gerencia administrativa en Ecuador y práctica profesional en Estados Unidos. Tres sistemas, una sola disciplina.</p></div>
+      <div class="why-card rv d2"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="1.8" width="24" height="24"><path d="M12 2l2.9 6.2 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9l6.6-.8z"/></svg></div><h3 data-i18n="why3_t">Primera consulta gratuita</h3><p data-i18n="why3_p">Conozca cómo trabajamos antes de comprometerse. Salga de la primera conversación con al menos una idea útil para su negocio.</p></div>
+    </div>
+    <div class="why-cta rv d3">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="why_btn">Sea nuestro primer cliente →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-line rv"></div>
+    <h2 class="rv d1" data-i18n="cta_h2">La primera consulta es completamente gratuita</h2>
+    <p class="rv d2" data-i18n="cta_p">Cuénteme sobre su negocio y le diré, con total honestidad, cómo puedo ayudarle. En español y sin compromiso.</p>
+    <div class="cta-btns rv d3">
+      <a href="contacto.html" class="btn btn-white" data-i18n="cta_btn1">Agendar consulta</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="cta_btn2">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="ft_brand">Contabilidad profesional en español para pequeños negocios en Orlando, Florida.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft_nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a></li><li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_svcs">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html" data-i18n="svc1_t">Bookkeeping mensual</a></li>
+          <li><a href="servicios.html" data-i18n="svc2_t">Declaración de impuestos</a></li>
+          <li><a href="servicios.html" data-i18n="svc3_t">Contabilidad para LLC y Corp</a></li>
+          <li><a href="servicios.html" data-i18n="svc4_t">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_contact">Contacto</h4>
+        <button class="gate-btn" id="gateBtn" onclick="revealFooterContact()" data-i18n="ft_gate">Ver datos de contacto</button>
+        <ul id="contactData"></ul>
+        <h4 style="margin-top:28px" data-i18n="ft_hours">Horario</h4>
+        <div class="footer-hours">
+          <div data-i18n="ft_h1">Lun–Vie: 9:00 am – 6:00 pm</div>
+          <div data-i18n="ft_h2">Sáb y Dom: Cerrado</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft_copy">© 2026 Pulido Tax &amp; Accounting LLC · Orlando, Florida</span>
+      <span data-i18n="ft_disc">Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/16892708845" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<script>
+/* ---------- Nav scroll blur ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ---------- Burger ---------- */
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- Counters ---------- */
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    const el = e.target, target = +el.dataset.target, dur = 1600, t0 = performance.now();
+    const tick = now => {
+      const p = Math.min((now - t0)/dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1-p, 3)));
+      if(p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}, {threshold:.6});
+document.querySelectorAll('.count').forEach(el => cio.observe(el));
+
+/* ---------- Footer contact gate ---------- */
+function revealFooterContact(){
+  const u = 'yudit', d = 'pulidotax.com';
+  const ph = ['(689)','270','8845'];
+  const ul = document.getElementById('contactData');
+  ul.innerHTML = '<li><a href="mailto:'+u+'@'+d+'">'+u+'@'+d+'</a></li>' +
+    '<li><a href="https://wa.me/16892708845" target="_blank" rel="noopener">'+ph[0]+' '+ph[1]+'-'+ph[2]+'</a></li>' +
+    '<li>Orlando, Florida</li>';
+  ul.style.display = 'block';
+  document.getElementById('gateBtn').style.display = 'none';
+}
+
+/* ---------- i18n ---------- */
+const translations = {
+  es: {
+    nav_home:'Inicio', nav_services:'Servicios', nav_about:'Sobre mí', nav_blog:'Blog', nav_contact:'Contacto', nav_cta:'Consulta gratis',
+    hero_eyebrow:'Contabilidad profesional · Orlando, FL',
+    hero_h1:'Sus impuestos bajo control.',
+    hero_h1b:'Su negocio listo para crecer.',
+    hero_lead:'Con más de 15 años de experiencia contable en tres países, le ayudo a ordenar sus finanzas, cumplir con el IRS y tomar decisiones con confianza. Todo en español.',
+    hero_btn1:'Consulta gratuita', hero_btn2:'Ver servicios',
+    hero_card:'Fundadora · +15 años de experiencia',
+    stat1:'Años de experiencia', stat2:'Países', stat3:'Sistemas contables dominados', stat4:'Atención en español',
+    cred1:'Licenciada en Economía', cred4:'IRS Income Tax Course', cred5:'LLC registrada en Florida',
+    svc_eyebrow:'Servicios', svc_h2:'Todo lo que su negocio necesita, en un solo lugar',
+    svc_lead:'Soluciones contables claras y a la medida para pequeños negocios, trabajadores independientes y compañías en crecimiento.',
+    svc1_t:'Bookkeeping mensual',
+    svc1_p:'Registro y conciliación de todas sus transacciones, mes a mes. Sus libros siempre al día y listos para cualquier decisión — o cualquier auditoría.',
+    svc2_t:'Declaración de impuestos',
+    svc2_p:'Preparación de su declaración personal o de negocio, buscando cada deducción legítima. Cumplimiento con el IRS sin estrés y sin sorpresas.',
+    svc3_t:'Contabilidad para LLC y Corp',
+    svc3_p:'Estructura contable correcta desde el primer día: reportes BOI, separación de finanzas, estados financieros y obligaciones de su entidad en Florida.',
+    svc4_t:'Nómina (Payroll)',
+    svc4_p:'Pagos a empleados puntuales y correctos, con retenciones, formularios y reportes federales y estatales bajo control.',
+    svc_more:'Saber más →',
+    pr_eyebrow:'Cómo trabajamos', pr_h2:'Un proceso simple, pensado para usted',
+    pr1_t:'Conversamos', pr1_p:'Una consulta gratuita para conocer su negocio, sus números y sus preocupaciones. Sin compromiso y sin tecnicismos.',
+    pr2_t:'Diseñamos su plan', pr2_p:'Un servicio a la medida de lo que realmente necesita, con un precio justo y claro desde el principio.',
+    pr3_t:'Usted crece', pr3_p:'Números claros, IRS al día y tiempo libre para dedicarse a lo que mejor sabe hacer: su negocio.',
+    ab_eyebrow:'Sobre mí', ab_h2:'De Cuba a Ecuador a Estados Unidos',
+    ab_p1:'Más de 15 años haciendo que los números cuenten historias claras: como Regional Chief Accountant en CIMEX Corporation en La Habana, como contadora y gerente administrativa en Quito, y hoy como profesional contable en Orlando.',
+    ab_quote:'"Fundé Pulido Tax & Accounting porque creo que detrás de cada negocio hay una persona que invirtió tiempo, esfuerzo y sueños."',
+    ab_btn:'Conocer mi historia →',
+    why_eyebrow:'Por qué elegirnos', why_h2:'Su experiencia será nuestra primera historia de éxito',
+    why_lead:'Somos una firma nueva en Florida — y eso es una ventaja para usted. Detrás hay una fundadora con más de 15 años de experiencia internacional que atenderá su negocio personalmente, con el cuidado que solo se le da a los primeros clientes.',
+    why1_t:'Atención directa de la fundadora',
+    why1_p:'Nada de asistentes ni centros de llamadas. Cada libro, cada declaración y cada consulta pasa por las manos de Yudit.',
+    why2_t:'Experiencia internacional real',
+    why2_p:'Contabilidad corporativa en Cuba, gerencia administrativa en Ecuador y práctica profesional en Estados Unidos. Tres sistemas, una sola disciplina.',
+    why3_t:'Primera consulta gratuita',
+    why3_p:'Conozca cómo trabajamos antes de comprometerse. Salga de la primera conversación con al menos una idea útil para su negocio.',
+    why_btn:'Sea nuestro primer cliente →',
+    cta_h2:'La primera consulta es completamente gratuita',
+    cta_p:'Cuénteme sobre su negocio y le diré, con total honestidad, cómo puedo ayudarle. En español y sin compromiso.',
+    cta_btn1:'Agendar consulta', cta_btn2:'Escribir por WhatsApp',
+    ft_brand:'Contabilidad profesional en español para pequeños negocios en Orlando, Florida.',
+    ft_nav:'Navegación', ft_svcs:'Servicios', ft_contact:'Contacto', ft_gate:'Ver datos de contacto',
+    ft_hours:'Horario', ft_h1:'Lun–Vie: 9:00 am – 6:00 pm', ft_h2:'Sáb y Dom: Cerrado',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.'
+  },
+  en: {
+    nav_home:'Home', nav_services:'Services', nav_about:'About me', nav_blog:'Blog', nav_contact:'Contact', nav_cta:'Free consultation',
+    hero_eyebrow:'Professional accounting · Orlando, FL',
+    hero_h1:'Your taxes under control.',
+    hero_h1b:'Your business ready to grow.',
+    hero_lead:'With over 15 years of accounting experience across three countries, I help you organize your finances, stay compliant with the IRS, and make decisions with confidence. Fully bilingual service.',
+    hero_btn1:'Free consultation', hero_btn2:'View services',
+    hero_card:'Founder · 15+ years of experience',
+    stat1:'Years of experience', stat2:'Countries', stat3:'Accounting systems mastered', stat4:'Spanish-language service',
+    cred1:'Bachelor’s in Economics', cred4:'IRS Income Tax Course', cred5:'Florida-registered LLC',
+    svc_eyebrow:'Services', svc_h2:'Everything your business needs, in one place',
+    svc_lead:'Clear, tailored accounting solutions for small businesses, independent contractors, and growing companies.',
+    svc1_t:'Monthly bookkeeping',
+    svc1_p:'Recording and reconciling all your transactions, month after month. Your books always current and ready for any decision — or any audit.',
+    svc2_t:'Tax preparation',
+    svc2_p:'Personal or business tax returns prepared with every legitimate deduction in mind. IRS compliance without stress or surprises.',
+    svc3_t:'LLC & Corp accounting',
+    svc3_p:'The right accounting structure from day one: BOI reports, financial separation, financial statements, and your Florida entity obligations.',
+    svc4_t:'Payroll',
+    svc4_p:'Accurate, on-time employee payments with withholdings, forms, and federal and state reporting under control.',
+    svc_more:'Learn more →',
+    pr_eyebrow:'How we work', pr_h2:'A simple process, designed around you',
+    pr1_t:'We talk', pr1_p:'A free consultation to understand your business, your numbers, and your concerns. No commitment, no jargon.',
+    pr2_t:'We design your plan', pr2_p:'A service tailored to what you actually need, with fair, transparent pricing from the start.',
+    pr3_t:'You grow', pr3_p:'Clear numbers, the IRS up to date, and free time to focus on what you do best: your business.',
+    ab_eyebrow:'About me', ab_h2:'From Cuba to Ecuador to the United States',
+    ab_p1:'Over 15 years making numbers tell clear stories: as Regional Chief Accountant at CIMEX Corporation in Havana, as accountant and administrative manager in Quito, and today as an accounting professional in Orlando.',
+    ab_quote:'"I founded Pulido Tax & Accounting because I believe that behind every business there is a person who invested time, effort, and dreams."',
+    ab_btn:'Read my story →',
+    why_eyebrow:'Why choose us', why_h2:'Your experience will be our first success story',
+    why_lead:'We are a new firm in Florida — and that works in your favor. Behind it is a founder with over 15 years of international experience who will handle your business personally, with the care that only first clients receive.',
+    why1_t:'Direct attention from the founder',
+    why1_p:'No assistants, no call centers. Every ledger, every return, and every question goes through Yudit’s hands.',
+    why2_t:'Real international experience',
+    why2_p:'Corporate accounting in Cuba, administrative management in Ecuador, and professional practice in the United States. Three systems, one discipline.',
+    why3_t:'Free first consultation',
+    why3_p:'See how we work before committing. Leave the first conversation with at least one useful idea for your business.',
+    why_btn:'Be our first client →',
+    cta_h2:'The first consultation is completely free',
+    cta_p:'Tell me about your business and I will tell you, honestly, how I can help. No commitment.',
+    cta_btn1:'Book a consultation', cta_btn2:'Message on WhatsApp',
+    ft_brand:'Professional Spanish-language accounting for small businesses in Orlando, Florida.',
+    ft_nav:'Navigation', ft_svcs:'Services', ft_contact:'Contact', ft_gate:'Show contact details',
+    ft_hours:'Hours', ft_h1:'Mon–Fri: 9:00 am – 6:00 pm', ft_h2:'Sat & Sun: Closed',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'This site does not constitute legal or tax advice. Every situation is evaluated individually.'
+  }
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  localStorage.setItem('ptax-lang', lang);
+  document.getElementById('langEs').classList.toggle('on', lang === 'es');
+  document.getElementById('langEn').classList.toggle('on', lang === 'en');
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+}
+const saved = localStorage.getItem('ptax-lang');
+if(saved && saved !== 'es') setLang(saved);
+</script>
+</body>
+</html>
+
+
+
+

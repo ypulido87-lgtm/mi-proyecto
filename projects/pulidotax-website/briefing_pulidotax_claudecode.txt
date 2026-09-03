@@ -1,0 +1,151 @@
+BRIEFING — Sitio Web Pulido Tax & Accounting LLC
+Para Claude Code
+================================================
+
+INFORMACIÓN DEL NEGOCIO
+------------------------
+Nombre: Pulido Tax & Accounting LLC
+Dueña: Yudit Pulido Blanco
+Correo: yudit@pulidotax.com
+Teléfono: (689) 270-8845
+Dominio: www.pulidotax.com (en GoDaddy)
+Ubicación: Orlando, Florida
+Mercado: Empresarios latinos en Florida Central
+Instagram: @pulidotax.accounting
+
+
+SITUACIÓN ACTUAL
+----------------
+El sitio en GoDaddy tiene una página muy básica con:
+- Frase: "Contabilidad sin complicaciones"
+- Formulario de contacto simple
+- Chat básico
+- Sin servicios, sin precios, sin foto de la dueña, sin llamada a la acción clara
+
+
+OBJETIVO DEL SITIO WEB
+-----------------------
+Convertir visitantes en clientes reales mediante:
+- Generar confianza inmediata
+- Mostrar servicios claramente
+- Facilitar el contacto por WhatsApp y teléfono
+- Posicionarse en Google (SEO local Orlando)
+- Conectar emocionalmente con empresarios latinos
+
+
+SERVICIOS QUE OFRECE
+---------------------
+1. Bookkeeping mensual
+2. Contabilidad general
+3. Payroll (nómina)
+4. Sales Tax Filing (Florida)
+5. Preparación de impuestos (personal y negocios)
+6. Advisory financiero
+7. Cumplimiento fiscal
+8. Representación ante el IRS
+
+
+CLIENTES IDEALES
+----------------
+- Contratistas
+- Empresas de limpieza
+- Talleres mecánicos
+- Dealers de autos
+- Landscaping
+- Negocios familiares
+- Empresarios latinos en Florida
+
+
+ESTRUCTURA DEL SITIO WEB REQUERIDA
+------------------------------------
+
+SECCIÓN 1 — HERO (Primera pantalla)
+- Logo o nombre del negocio
+- Frase principal poderosa
+- Subtítulo explicando qué hacen y para quién
+- Botón llamada a la acción: "Agenda tu consulta gratis"
+- Botón WhatsApp visible
+- Foto profesional de Yudit (pendiente — se agregará después)
+
+SECCIÓN 2 — SERVICIOS
+- Tarjetas visuales para cada servicio
+- Descripción corta de cada uno
+- Ícono representativo
+- Enfocado en el beneficio para el cliente, no solo el nombre técnico
+
+SECCIÓN 3 — ¿POR QUÉ ELEGIRNOS?
+- Atención en español e inglés
+- Especialistas en pequeños negocios latinos
+- Florida Central — conocemos las leyes locales
+- Consulta gratuita de 30 minutos
+- Comunicación directa con la contadora
+
+SECCIÓN 4 — SOBRE YUDIT
+- Foto profesional (pendiente)
+- Historia breve y personal
+- Credenciales y experiencia
+- Conexión con la comunidad latina
+
+SECCIÓN 5 — TESTIMONIOS
+- Espacio para reseñas de clientes
+- (Se llenarán cuando lleguen los primeros clientes)
+
+SECCIÓN 6 — CONTACTO
+- Número de teléfono clickeable: (689) 270-8845
+- Botón de WhatsApp
+- Correo: yudit@pulidotax.com
+- Formulario de contacto simple
+- Horario: Lunes a Viernes 9:00am - 6:30pm
+
+SECCIÓN 7 — FOOTER
+- Nombre legal: Pulido Tax & Accounting LLC
+- Links importantes
+- Redes sociales: Instagram @pulidotax.accounting
+- Copyright
+
+
+DISEÑO Y ESTILO
+---------------
+Colores sugeridos:
+- Azul marino o azul profesional (transmite confianza)
+- Blanco (limpieza y claridad)
+- Dorado o verde como acento (éxito financiero)
+
+Tipografía: Moderna, limpia, legible
+
+Tono: Profesional pero cercano. Serio pero humano. En español principalmente con opción en inglés.
+
+Estilo general: Firma contable moderna. No genérico, no corporativo frío. Cálido, confiable, latino.
+
+
+SEO LOCAL — PALABRAS CLAVE A INCLUIR
+--------------------------------------
+- Contador para pequeños negocios Orlando
+- Tax accountant Orlando Florida
+- Bookkeeping para negocios latinos Florida
+- Sales tax Florida pequeño negocio
+- Payroll services Orlando
+- Preparación de impuestos Orlando
+- Contadora en Orlando Florida
+
+
+NOTAS TÉCNICAS
+--------------
+- El dominio está en GoDaddy
+- El sitio actual usa el constructor de GoDaddy
+- Se puede reemplazar con código HTML/CSS/JS puro o mejorar dentro de GoDaddy
+- Debe ser 100% responsive (funcionar bien en celular)
+- Botón de WhatsApp flotante en toda la página
+- Velocidad de carga rápida
+- Formulario de contacto funcional dirigido a yudit@pulidotax.com
+
+
+LO QUE NO TENEMOS TODAVÍA
+--------------------------
+- Foto profesional de Yudit (prioridad esta semana)
+- Logo oficial (si no hay, Claude Code puede sugerir tipografía como logo)
+- Testimonios de clientes (se agregarán después)
+
+
+FIN DEL BRIEFING
+================

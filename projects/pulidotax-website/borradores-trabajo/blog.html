@@ -1,0 +1,1370 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Pulido Tax &amp; Accounting LLC · Orlando, FL</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="Noticias y guías del IRS explicadas en español claro para dueños de pequeños negocios: fechas límite, LLC, nómina, ITIN, deducciones y cambios del IRS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── BASE VARIABLES ─────────────────────────────────── */
+    :root {
+      --blue:#0D2B45;--blue-mid:#1A4A72;--blue-deep:#0A2038;--blue-pale:#E6EEF5;
+      --gold:#B87333;--gold-pale:#FDF0E4;--gold-mid:#9A5E24;--charcoal:#2C2C2C;
+      --text:#3D3D3D;--muted:#6B7685;--hint:#9AAAB8;--surface:#FDF6EE;
+      --white:#FFFFFF;--border:#E0DDD8;--border-warm:#D9C8B4;
+      --wa:#25D366;--wa-dark:#1DA851;
+      --cat-personal:#1A4A72;--cat-llc:#B87333;--cat-nomina:#5B7B4F;--cat-fechas:#A0452E;--cat-irs:#5A4A7A;
+      --font-d:'Cormorant Garamond',Georgia,serif;
+      --font-b:'DM Sans',system-ui,sans-serif;
+      --max:1160px;--r:6px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-b);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;}
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+    /* ─── BUTTONS ────────────────────────────────────────── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--r);font-family:var(--font-b);font-size:.92rem;font-weight:500;letter-spacing:.02em;cursor:pointer;border:none;transition:all .22s ease;white-space:nowrap;}
+    .btn-white{background:var(--white);color:var(--blue);}
+    .btn-white:hover{background:var(--blue-pale);}
+    .btn-wa{background:var(--wa);color:var(--white);}
+    .btn-wa:hover{background:var(--wa-dark);}
+    .btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.45);}
+    .btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+    .btn-gold{background:var(--gold);color:var(--white);}
+    .btn-gold:hover{background:var(--gold-mid);}
+    .btn-blue{background:var(--blue);color:var(--white);}
+    .btn-blue:hover{background:var(--blue-mid);}
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    #site-header{position:sticky;top:0;z-index:1000;background:var(--white);transition:box-shadow .3s ease;}
+    #site-header.scrolled{box-shadow:0 2px 20px rgba(13,43,69,.12);}
+    nav.main-nav{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px;height:72px;}
+    .nav-logo{flex-shrink:0;}
+    .nav-links{display:flex;list-style:none;gap:28px;margin-left:auto;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--charcoal);letter-spacing:.02em;transition:color .2s;padding-bottom:2px;border-bottom:1.5px solid transparent;}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);border-bottom-color:var(--gold);}
+    .nav-links a.active{font-weight:600;color:var(--gold);border-bottom-color:var(--gold);}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+    .btn-nav-cta{background:var(--blue);color:var(--white);padding:10px 20px;border-radius:var(--r);font-size:.84rem;font-weight:500;transition:background .2s;white-space:nowrap;}
+    .btn-nav-cta:hover{background:var(--blue-mid);}
+    .lang-toggle{display:flex;border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+    .lang-btn{padding:5px 12px;font-size:.78rem;font-weight:600;font-family:var(--font-b);cursor:pointer;border:none;background:transparent;color:var(--muted);transition:all .2s;}
+    .lang-btn.active{background:var(--blue);color:var(--white);}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .burger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s ease;}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:24px;gap:20px;position:fixed;top:72px;left:0;right:0;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.12);transform:translateY(-10px);opacity:0;transition:all .3s ease;}
+    .mobile-menu.open{display:flex;transform:translateY(0);opacity:1;}
+    .mobile-menu a{font-size:1rem;font-weight:500;color:var(--charcoal);padding:4px 0;}
+    .mobile-menu a:hover{color:var(--blue);}
+    .mobile-menu a.active{color:var(--gold);font-weight:600;}
+    .mob-wa-btn{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:var(--white);padding:12px 20px;border-radius:var(--r);font-size:.9rem;font-weight:500;margin-top:4px;}
+
+    /* ─── PAGE HERO ──────────────────────────────────────── */
+    .page-hero{background:var(--blue);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");padding:56px 0 48px;min-height:300px;display:flex;align-items:center;}
+    .page-hero-inner{max-width:700px;}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:20px;letter-spacing:.02em;}
+    .breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s;}
+    .breadcrumb a:hover{color:rgba(255,255,255,.85);}
+    .breadcrumb-sep{color:rgba(255,255,255,.3);}
+    .page-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#e8b080;margin-bottom:14px;}
+    .page-h1{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.15;margin-bottom:18px;}
+    .page-hero-p{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:580px;}
+
+    /* ─── FILTER BAR ─────────────────────────────────────── */
+    .filter-bar{position:sticky;top:72px;z-index:900;background:var(--white);border-bottom:1px solid var(--border);padding:16px 0;}
+    .filter-inner{display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
+    .filter-pills{display:flex;flex-wrap:wrap;gap:8px;}
+    .pill{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-b);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s ease;white-space:nowrap;}
+    .pill:hover{border-color:var(--gold);color:var(--gold);}
+    .pill.active{background:var(--blue);border-color:var(--blue);color:var(--white);}
+    .sort-wrap{margin-left:auto;display:flex;align-items:center;gap:8px;}
+    .sort-select{font-family:var(--font-b);font-size:.8rem;color:var(--charcoal);padding:7px 12px;border:1px solid var(--border);border-radius:var(--r);background:var(--white);cursor:pointer;}
+
+    /* ─── BLOG GRID ──────────────────────────────────────── */
+    .blog-section{background:var(--surface);padding:64px 0 80px;}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .post-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s ease;opacity:1;transform:translateY(0);}
+    .post-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(13,43,69,.12);}
+    .post-card.hidden-cat{display:none;}
+    .post-card.fading{opacity:0;transform:translateY(10px);}
+    .post-band{padding:10px 22px;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);}
+    .band-personal{background:var(--cat-personal);}
+    .band-llc{background:var(--cat-llc);}
+    .band-nomina{background:var(--cat-nomina);}
+    .band-fechas{background:var(--cat-fechas);}
+    .band-irs{background:var(--cat-irs);}
+    .post-body{padding:24px 22px 26px;display:flex;flex-direction:column;flex:1;}
+    .post-date{font-size:.78rem;color:var(--hint);margin-bottom:10px;letter-spacing:.02em;}
+    .post-title{font-family:var(--font-d);font-size:23px;font-weight:600;color:var(--blue);line-height:1.25;margin-bottom:12px;}
+    .post-excerpt{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .post-meta{font-size:.76rem;color:var(--hint);margin-bottom:16px;}
+    .post-more{margin-top:auto;font-size:.88rem;font-weight:600;color:var(--gold);cursor:pointer;background:none;border:none;font-family:var(--font-b);text-align:left;padding:0;transition:color .2s;}
+    .post-more:hover{color:var(--gold-mid);}
+
+    /* ─── MODAL ──────────────────────────────────────────── */
+    .modal-overlay{position:fixed;inset:0;background:rgba(6,15,24,.72);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;opacity:0;transition:opacity .25s ease;}
+    .modal-overlay.open{display:flex;}
+    .modal-overlay.visible{opacity:1;}
+    .modal-card{background:var(--white);border-radius:12px;max-width:720px;width:100%;margin:auto 0;position:relative;transform:translateY(16px);transition:transform .3s ease;max-height:calc(100vh - 80px);display:flex;flex-direction:column;}
+    .modal-overlay.visible .modal-card{transform:translateY(0);}
+    .modal-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--charcoal);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2;}
+    .modal-close:hover{background:var(--gold-pale);border-color:var(--border-warm);color:var(--gold-mid);}
+    .modal-scroll{overflow-y:auto;padding:44px 44px 40px;}
+    .modal-cat{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);padding:5px 14px;border-radius:20px;margin-bottom:14px;}
+    .modal-date{font-size:.8rem;color:var(--hint);margin-bottom:8px;}
+    .modal-title{font-family:var(--font-d);font-size:34px;font-weight:600;color:var(--blue);line-height:1.2;margin-bottom:22px;}
+    .modal-body p{font-size:.95rem;line-height:1.75;color:var(--text);margin-bottom:16px;}
+    .modal-body h3{font-family:var(--font-d);font-size:23px;font-weight:600;color:var(--blue);margin:26px 0 10px;}
+    .modal-body ul{margin:0 0 16px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .modal-body ul li{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;color:var(--text);line-height:1.6;}
+    .modal-body ul li::before{content:'';display:block;width:7px;height:7px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:8px;}
+    .modal-body strong{color:var(--charcoal);}
+    .modal-cta{background:var(--gold-pale);border:1.5px solid var(--border-warm);border-radius:10px;padding:26px 28px;margin-top:30px;text-align:center;}
+    .modal-cta p{font-family:var(--font-d);font-size:21px;font-weight:600;color:var(--blue);line-height:1.4;margin-bottom:16px;}
+    .modal-note{font-size:.8rem;color:var(--muted);font-style:italic;margin-bottom:18px;display:none;}
+    body.en-mode .modal-note{display:block;}
+
+    /* ─── SUBSCRIBE ──────────────────────────────────────── */
+    .subscribe-section{background:var(--blue);padding:80px 0;text-align:center;}
+    .subscribe-h2{font-family:var(--font-d);font-size:38px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:16px;}
+    .subscribe-p{font-size:1rem;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 36px;line-height:1.7;}
+    .btn-subscribe{font-size:1rem;padding:16px 36px;}
+
+    /* ─── DISCLAIMER ─────────────────────────────────────── */
+    .disclaimer-section{background:var(--white);padding:36px 0;}
+    .disclaimer-p{font-size:.8rem;color:var(--muted);text-align:center;max-width:640px;margin:0 auto;line-height:1.7;}
+
+    /* ─── CTA FINAL ──────────────────────────────────────── */
+    #cta-final{background:#060F18;padding:100px 0;text-align:center;}
+    .cta-line{width:80px;height:2px;background:var(--gold);margin:0 auto 40px;}
+    #cta-final h2{font-family:var(--font-d);font-size:48px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto;}
+    #cta-final p{font-size:1rem;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 44px;line-height:1.7;}
+    .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;}
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer{background:#060F18;border-top:1px solid rgba(255,255,255,.07);padding:64px 0 32px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:.88rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.7;max-width:260px;}
+    .footer-col h4{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .footer-col ul li a,.footer-col ul li{font-size:.85rem;color:rgba(255,255,255,.5);transition:color .2s;line-height:1.5;}
+    .footer-col ul li a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;}
+    .footer-copy{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;max-width:600px;}
+
+    /* ─── WA FLOAT ───────────────────────────────────────── */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .25s ease;}
+    .wa-float:hover{background:var(--wa-dark);transform:scale(1.08);}
+    .wa-float svg{width:28px;height:28px;fill:var(--white);}
+
+    /* ─── REVEAL ANIMATION ───────────────────────────────── */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:900px){
+      .blog-grid{grid-template-columns:1fr 1fr;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+      .page-h1{font-size:36px;}
+      #cta-final h2{font-size:34px;}
+      .subscribe-h2{font-size:30px;}
+      .sort-wrap{margin-left:0;width:100%;}
+      .modal-scroll{padding:40px 28px 32px;}
+      .modal-title{font-size:27px;}
+    }
+    @media(max-width:600px){
+      .page-hero{padding:44px 0 40px;min-height:260px;}
+      .page-h1{font-size:28px;}
+      .blog-grid{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr;gap:28px;}
+      .subscribe-h2{font-size:26px;}
+      .modal-overlay{padding:20px 12px;}
+      .modal-scroll{padding:44px 20px 28px;}
+      .modal-title{font-size:24px;}
+      .btn-subscribe{white-space:normal;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- WA FLOAT BUTTON -->
+<a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════ -->
+<header id="site-header">
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting LLC">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="220" height="55">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+      <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+      <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+      <li><a href="blog.html" class="active" data-i18n="nav-blog">Blog</a></li>
+      <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn-nav-cta" data-i18n="nav-cta">Consulta gratis</a>
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+  <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
+  <a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a>
+  <a href="blog.html" class="active" data-i18n="nav-blog">Blog</a>
+  <a href="contacto.html" data-i18n="nav-contacto">Contacto</a>
+  <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+    <span data-i18n="nav-wa-full">Escribir por WhatsApp</span>
+  </a>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO DE PÁGINA
+════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="breadcrumb">
+        <a href="index.html" data-i18n="breadcrumb-home">Inicio</a>
+        <span class="breadcrumb-sep">›</span>
+        <span data-i18n="breadcrumb-blog">Blog</span>
+      </div>
+      <p class="page-eyebrow" data-i18n="page-eyebrow">Manténgase informado</p>
+      <h1 class="page-h1" data-i18n="page-h1">Noticias y guías del IRS</h1>
+      <p class="page-hero-p" data-i18n="page-hero-p">Las normas cambian constantemente. Aquí se las explicamos en español claro — sin tecnicismos, sin letra chica.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     BARRA DE FILTROS
+════════════════════════════════════════════════ -->
+<div class="filter-bar">
+  <div class="container filter-inner">
+    <div class="filter-pills" id="filter-pills">
+      <button class="pill active" data-cat="all" data-i18n="f-all">Todos</button>
+      <button class="pill" data-cat="personal" data-i18n="f-personal">Impuestos personales</button>
+      <button class="pill" data-cat="llc" data-i18n="f-llc">Negocios y LLC</button>
+      <button class="pill" data-cat="nomina" data-i18n="f-nomina">Nómina</button>
+      <button class="pill" data-cat="fechas" data-i18n="f-fechas">Fechas límite</button>
+      <button class="pill" data-cat="irs" data-i18n="f-irs">Cambios del IRS</button>
+    </div>
+    <div class="sort-wrap">
+      <select class="sort-select" id="sort-select" aria-label="Ordenar artículos">
+        <option value="desc" data-i18n="sort-desc">Más recientes primero</option>
+        <option value="asc" data-i18n="sort-asc">Más antiguos primero</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     GRID DE ARTÍCULOS
+════════════════════════════════════════════════ -->
+<section class="blog-section">
+  <div class="container">
+    <div class="blog-grid" id="blog-grid">
+
+      <!-- ART 1 — Fechas límite -->
+      <article class="post-card reveal" data-cat="fechas" data-date="2026-01-12">
+        <div class="post-band band-fechas" data-i18n="f-fechas">Fechas límite</div>
+        <div class="post-body">
+          <p class="post-date">12 de enero, 2026</p>
+          <h2 class="post-title">Fechas límite de impuestos 2026: el calendario que todo negocio debe conocer</h2>
+          <p class="post-excerpt">Abril 15, marzo 15, pagos trimestrales… Marque estas fechas en su calendario y evite multas por presentar tarde.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-1')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 2 — BOI -->
+      <article class="post-card reveal" data-cat="llc" data-date="2026-02-09">
+        <div class="post-band band-llc" data-i18n="f-llc">Negocios y LLC</div>
+        <div class="post-body">
+          <p class="post-date">9 de febrero, 2026</p>
+          <h2 class="post-title">¿Qué es el BOI Report y por qué su LLC podría necesitarlo?</h2>
+          <p class="post-excerpt">El reporte de beneficiarios reales explicado en palabras simples: qué es, quién debe presentarlo y qué pasó con las reglas recientes.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-2')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 3 — ITIN vs SSN -->
+      <article class="post-card reveal" data-cat="personal" data-date="2026-03-16">
+        <div class="post-band band-personal" data-i18n="f-personal">Impuestos personales</div>
+        <div class="post-body">
+          <p class="post-date">16 de marzo, 2026</p>
+          <h2 class="post-title">ITIN vs SSN: qué necesita para declarar impuestos si es inmigrante</h2>
+          <p class="post-excerpt">No necesita ser ciudadano ni residente para declarar impuestos. Le explicamos la diferencia entre ITIN y SSN y cómo obtener el suyo.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-3')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 4 — Empleado o 1099 -->
+      <article class="post-card reveal" data-cat="nomina" data-date="2026-04-20">
+        <div class="post-band band-nomina" data-i18n="f-nomina">Nómina</div>
+        <div class="post-body">
+          <p class="post-date">20 de abril, 2026</p>
+          <h2 class="post-title">¿Empleado o contratista (1099)? La diferencia que puede costarle multas</h2>
+          <p class="post-excerpt">Clasificar mal a un trabajador es uno de los errores más caros que comete un pequeño negocio. Así se distingue uno del otro.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-4')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 5 — Deducciones -->
+      <article class="post-card reveal" data-cat="llc" data-date="2026-05-18">
+        <div class="post-band band-llc" data-i18n="f-llc">Negocios y LLC</div>
+        <div class="post-body">
+          <p class="post-date">18 de mayo, 2026</p>
+          <h2 class="post-title">5 deducciones que los pequeños negocios olvidan reclamar</h2>
+          <p class="post-excerpt">Oficina en casa, millaje, teléfono… Cada deducción olvidada es dinero que usted regala. Revise si está reclamando estas cinco.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-5')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 6 — Cambios del IRS -->
+      <article class="post-card reveal" data-cat="irs" data-date="2026-06-15">
+        <div class="post-band band-irs" data-i18n="f-irs">Cambios del IRS</div>
+        <div class="post-body">
+          <p class="post-date">15 de junio, 2026</p>
+          <h2 class="post-title">Lo nuevo del IRS este año: cambios que afectan a su negocio</h2>
+          <p class="post-excerpt">Deducción estándar, millaje, límites de retiro y más: los montos que el IRS ajusta cada año y cómo le afectan a usted.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-6')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 7 — Formulario 941 Q2 -->
+      <article class="post-card reveal" data-cat="nomina" data-date="2026-07-06">
+        <div class="post-band band-nomina" data-i18n="f-nomina">Nómina</div>
+        <div class="post-body">
+          <p class="post-date">6 de julio, 2026</p>
+          <h2 class="post-title">31 de julio: vence el Formulario 941 del segundo trimestre</h2>
+          <p class="post-excerpt">Si tiene empleados, este mes debe presentar el reporte trimestral de nómina al IRS. Le explicamos qué es, quién debe presentarlo y cómo evitar multas.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-7')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 8 — Alivio automático de multas -->
+      <article class="post-card reveal" data-cat="irs" data-date="2026-07-14">
+        <div class="post-band band-irs" data-i18n="f-irs">Cambios del IRS</div>
+        <div class="post-body">
+          <p class="post-date">14 de julio, 2026</p>
+          <h2 class="post-title">El IRS ahora perdona ciertas multas de forma automática: ¿su negocio califica?</h2>
+          <p class="post-excerpt">Si usted ha declarado y pagado a tiempo, el IRS ya no le cobrará ciertas multas — y no necesita pedirlo. Le explicamos cómo funciona el nuevo programa.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-8')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 9 — Alerta de estafas IRS -->
+      <article class="post-card reveal" data-cat="irs" data-date="2026-07-20">
+        <div class="post-band band-irs" data-i18n="f-irs">Cambios del IRS</div>
+        <div class="post-body">
+          <p class="post-date">20 de julio, 2026</p>
+          <h2 class="post-title">Alerta del IRS: cuidado con estos correos falsos y créditos fraudulentos</h2>
+          <p class="post-excerpt">El IRS advirtió esta semana sobre correos que se hacen pasar por "nuevos clientes" y un supuesto crédito de trabajo independiente que no existe. Le explicamos cómo reconocer el engaño.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 4 min</p>
+          <button class="post-more" onclick="openModal('modal-9')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 10 — Pago estimado Q3 -->
+      <article class="post-card reveal" data-cat="fechas" data-date="2026-07-27">
+        <div class="post-band band-fechas" data-i18n="f-fechas">Fechas límite</div>
+        <div class="post-body">
+          <p class="post-date">27 de julio, 2026</p>
+          <h2 class="post-title">15 de septiembre: el pago estimado que muchos dueños de negocio olvidan</h2>
+          <p class="post-excerpt">Si trabaja por su cuenta o tiene un negocio, probablemente deba pagar impuestos cada trimestre. Le explicamos cuánto pagar y cómo evitar la multa.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-10')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 11 — Crédito por licencia familiar pagada -->
+      <article class="post-card reveal" data-cat="nomina" data-date="2026-08-03">
+        <div class="post-band band-nomina" data-i18n="f-nomina">Nómina</div>
+        <div class="post-body">
+          <p class="post-date">3 de agosto, 2026</p>
+          <h2 class="post-title">Si le paga licencia a un empleado, el IRS podría devolverle parte de ese dinero</h2>
+          <p class="post-excerpt">El IRS acaba de publicar la guía del crédito por licencia familiar y médica pagada, ahora permanente. Le explicamos si su negocio califica y qué necesita tener por escrito.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-11')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 12 — Deducción de horas extras y código TT -->
+      <article class="post-card reveal" data-cat="nomina" data-date="2026-08-10">
+        <div class="post-band band-nomina" data-i18n="f-nomina">Nómina</div>
+        <div class="post-body">
+          <p class="post-date">10 de agosto, 2026</p>
+          <h2 class="post-title">Horas extras: la casilla nueva del W-2 que este año usted sí tiene que llenar</h2>
+          <p class="post-excerpt">El IRS actualizó las reglas de la deducción de horas extras. Si usted paga overtime, desde 2026 debe reportarlo aparte en el W-2 — y si no lo hace, su empleado pierde la deducción.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-12')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 13 — Business Tax Account -->
+      <article class="post-card reveal" data-cat="irs" data-date="2026-08-17">
+        <div class="post-band band-irs" data-i18n="f-irs">Cambios del IRS</div>
+        <div class="post-body">
+          <p class="post-date">17 de agosto, 2026</p>
+          <h2 class="post-title">Su negocio ya puede ver sus deudas y avisos del IRS en línea, sin llamar por teléfono</h2>
+          <p class="post-excerpt">El IRS amplió su cuenta en línea para negocios: consultar saldos, pagar, bajar transcripciones y leer avisos sin esperas telefónicas. Le explicamos quién puede usarla — y quién todavía no.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-13')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 14 — Serie tarjetas 1/6 -->
+      <article class="post-card reveal" data-cat="llc" data-date="2026-08-24">
+        <div class="post-band band-llc" data-i18n="f-llc">Negocios y LLC</div>
+        <div class="post-body">
+          <p class="post-date">24 de agosto, 2026</p>
+          <h2 class="post-title">Nunca mezcle la tarjeta personal con la del negocio</h2>
+          <p class="post-excerpt">Pagar el mercado y los suministros del negocio con la misma tarjeta parece práctico — hasta que llega la temporada de impuestos o un problema legal. Primera parte de nuestra serie sobre tarjetas de crédito.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-14')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+      <!-- ART 15 — Fecha limite 15 sept extensiones -->
+      <article class="post-card reveal" data-cat="fechas" data-date="2026-09-03">
+        <div class="post-band band-fechas" data-i18n="f-fechas">Fechas límite</div>
+        <div class="post-body">
+          <p class="post-date">3 de septiembre, 2026</p>
+          <h2 class="post-title">15 de septiembre: la fecha final para las LLC y S-Corps que pidieron extensión</h2>
+          <p class="post-excerpt">Si su empresa pidió prórroga en marzo, este es el último plazo — y la multa por presentar tarde se multiplica por cada socio. Faltan pocos días.</p>
+          <p class="post-meta"><span data-i18n="read-time">Tiempo de lectura</span>: 5 min</p>
+          <button class="post-more" onclick="openModal('modal-15')"><span data-i18n="read-more">Leer más →</span></button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     MODALES DE ARTÍCULOS
+════════════════════════════════════════════════ -->
+
+<!-- MODAL 1 -->
+<div class="modal-overlay" id="modal-1" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-fechas" data-i18n="f-fechas">Fechas límite</span>
+      <p class="modal-date">12 de enero, 2026</p>
+      <h2 class="modal-title">Fechas límite de impuestos 2026: el calendario que todo negocio debe conocer</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Presentar tarde puede costarle caro: el IRS cobra multas por no presentar a tiempo (generalmente 5% del impuesto adeudado por cada mes de retraso, hasta un máximo del 25%) y también por no pagar a tiempo. La buena noticia es que evitar esas multas es sencillo — solo hay que conocer el calendario.</p>
+        <h3>Las fechas clave del 2026</h3>
+        <ul>
+          <li><strong>31 de enero:</strong> fecha límite para entregar los formularios W-2 a sus empleados y los 1099-NEC a sus contratistas. También deben enviarse al IRS y al Seguro Social.</li>
+          <li><strong>16 de marzo:</strong> declaración de S-Corporations (Form 1120-S) y sociedades/partnerships (Form 1065). Como el 15 cae domingo en 2026, se corre al lunes 16.</li>
+          <li><strong>15 de abril:</strong> declaración personal (Form 1040), incluidos los dueños de LLC de un solo miembro, y declaración de C-Corporations (Form 1120). También es la fecha del primer pago estimado del año.</li>
+          <li><strong>Pagos estimados trimestrales:</strong> 15 de abril, 15 de junio, 15 de septiembre de 2026 y 15 de enero de 2027. Aplican si usted espera deber $1,000 o más al declarar.</li>
+          <li><strong>1 de mayo:</strong> Annual Report de su LLC o corporación ante el estado de Florida (Sunbiz). No es del IRS, pero si lo olvida hay una multa estatal de $400.</li>
+          <li><strong>15 de octubre:</strong> fecha final si pidió extensión para su declaración personal.</li>
+        </ul>
+        <h3>Ojo con las extensiones</h3>
+        <p>Una extensión (Form 4868 para personas, Form 7004 para empresas) le da más tiempo para <strong>presentar</strong> los papeles, pero no para <strong>pagar</strong>. Si debe dinero, el pago sigue venciendo en la fecha original. Por eso conviene calcular un estimado y pagarlo antes del 15 de abril, aunque la declaración se entregue después.</p>
+        <h3>Nuestro consejo</h3>
+        <p>No espere a la última semana. Si nos entrega sus documentos con tiempo, podemos revisar deducciones con calma, corregir errores y evitarle intereses. Un calendario bien manejado es la forma más barata de ahorrar en impuestos.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 2 -->
+<div class="modal-overlay" id="modal-2" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-llc" data-i18n="f-llc">Negocios y LLC</span>
+      <p class="modal-date">9 de febrero, 2026</p>
+      <h2 class="modal-title">¿Qué es el BOI Report y por qué su LLC podría necesitarlo?</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Si tiene una LLC, seguramente escuchó hablar del "BOI Report" y quizá recibió correos alarmantes al respecto. Vamos a explicarlo sin drama y sin tecnicismos.</p>
+        <h3>¿Qué es, en palabras simples?</h3>
+        <p>BOI significa <strong>Beneficial Ownership Information</strong> — información sobre los "beneficiarios reales" de una empresa, es decir, las personas de carne y hueso que son dueñas o controlan la compañía. La ley que lo creó (Corporate Transparency Act) busca evitar que se usen empresas "fantasma" para lavar dinero. El reporte se presenta ante <strong>FinCEN</strong>, una agencia del Departamento del Tesoro — no ante el IRS.</p>
+        <h3>¿Qué información pide?</h3>
+        <ul>
+          <li>Nombre legal de la empresa y su dirección</li>
+          <li>Nombre, fecha de nacimiento y dirección de cada dueño con 25% o más de la empresa (o con control importante)</li>
+          <li>Una copia de identificación vigente (pasaporte o licencia de conducir)</li>
+        </ul>
+        <h3>¿Mi LLC tiene que presentarlo?</h3>
+        <p>Aquí está el punto importante: las reglas han cambiado varias veces. En 2025, el gobierno anunció que <strong>las empresas creadas en Estados Unidos por personas en Estados Unidos quedaron, en general, exentas</strong> del requisito, y la obligación se enfocó principalmente en empresas extranjeras registradas para operar en el país. Pero como este tema ha ido y venido en las cortes y en las agencias, la regla exacta puede volver a cambiar.</p>
+        <p>Por eso nuestra recomendación es simple: <strong>no presente nada por pánico, pero tampoco lo ignore</strong>. Verifique la regla vigente antes de decidir, o pregúntele a su contador.</p>
+        <h3>Cuidado con las estafas</h3>
+        <p>Han circulado cartas y correos falsos que cobran cientos de dólares por "presentar su BOI". Presentar el reporte ante FinCEN, cuando aplica, es <strong>gratis</strong> y se hace en línea. Nunca pague a alguien que lo contacta de la nada con amenazas de multas.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 3 -->
+<div class="modal-overlay" id="modal-3" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-personal" data-i18n="f-personal">Impuestos personales</span>
+      <p class="modal-date">16 de marzo, 2026</p>
+      <h2 class="modal-title">ITIN vs SSN: qué necesita para declarar impuestos si es inmigrante</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Una de las preguntas que más recibimos: "No tengo Seguro Social, ¿puedo declarar impuestos?" La respuesta es <strong>sí</strong> — y en muchos casos, le conviene hacerlo.</p>
+        <h3>¿Qué es el SSN?</h3>
+        <p>El <strong>Social Security Number</strong> es el número que reciben los ciudadanos, residentes permanentes y personas con permiso de trabajo. Sirve para trabajar legalmente, declarar impuestos y acceder a beneficios del Seguro Social.</p>
+        <h3>¿Qué es el ITIN?</h3>
+        <p>El <strong>Individual Taxpayer Identification Number</strong> es un número de 9 dígitos (siempre empieza con 9) que el IRS otorga a personas que deben declarar impuestos pero <strong>no califican para un SSN</strong>. Puntos importantes:</p>
+        <ul>
+          <li>Sirve <strong>solo para impuestos</strong> — no da permiso de trabajo ni estatus migratorio</li>
+          <li>El IRS no comparte esta información con inmigración para fines de deportación, según sus propias reglas de confidencialidad</li>
+          <li>Se solicita con el <strong>Form W-7</strong>, junto con su declaración de impuestos y su pasaporte u otro documento de identidad</li>
+          <li>Si no lo usa en una declaración durante 3 años seguidos, expira y hay que renovarlo</li>
+        </ul>
+        <h3>¿Por qué conviene declarar con ITIN?</h3>
+        <ul>
+          <li><strong>Historial:</strong> años de declaraciones demuestran presencia física y buena conducta fiscal, algo que puede ayudar en futuros procesos migratorios</li>
+          <li><strong>Créditos:</strong> puede calificar para ciertos créditos, como el Child Tax Credit si sus hijos tienen SSN válido</li>
+          <li><strong>Préstamos:</strong> algunos bancos aceptan ITIN para abrir cuentas y hasta para hipotecas</li>
+          <li><strong>Es la ley:</strong> si genera ingresos en EE.UU., tiene obligación de declararlos, sin importar su estatus</li>
+        </ul>
+        <h3>Un error común</h3>
+        <p>Nunca use un SSN inventado o prestado para trabajar o declarar. Eso sí genera problemas legales serios. El ITIN existe precisamente para que usted pueda cumplir con el IRS de manera correcta.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 4 -->
+<div class="modal-overlay" id="modal-4" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-nomina" data-i18n="f-nomina">Nómina</span>
+      <p class="modal-date">20 de abril, 2026</p>
+      <h2 class="modal-title">¿Empleado o contratista (1099)? La diferencia que puede costarle multas</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>"Le pago como 1099 y me ahorro los impuestos de nómina." Si usted ha pensado esto, cuidado: clasificar mal a un trabajador es uno de los errores más costosos que puede cometer un pequeño negocio. El IRS puede cobrarle los impuestos no retenidos, más intereses y multas — y de forma retroactiva.</p>
+        <h3>La diferencia, en palabras simples</h3>
+        <p>No depende de lo que diga el contrato ni de lo que ambos "acuerden". Depende de <strong>quién controla el trabajo</strong>. El IRS mira tres áreas:</p>
+        <ul>
+          <li><strong>Control del comportamiento:</strong> ¿Usted decide cómo, cuándo y dónde se hace el trabajo? ¿Da entrenamiento y supervisa? Eso apunta a empleado.</li>
+          <li><strong>Control financiero:</strong> ¿El trabajador usa sus propias herramientas, tiene otros clientes, puede ganar o perder dinero? Eso apunta a contratista.</li>
+          <li><strong>Tipo de relación:</strong> ¿Es un trabajo permanente y central para su negocio, con horario fijo? Eso apunta a empleado. ¿Es un proyecto puntual? Contratista.</li>
+        </ul>
+        <h3>Ejemplos prácticos</h3>
+        <ul>
+          <li>La persona que atiende su tienda todos los días, con horario que usted fija → <strong>empleado (W-2)</strong></li>
+          <li>El plomero que viene a reparar una tubería y le cobra por el trabajo → <strong>contratista (1099)</strong></li>
+          <li>La estilista que renta una silla en su salón, pone sus precios y tiene sus clientas → generalmente <strong>contratista</strong></li>
+        </ul>
+        <h3>¿Qué cambia en la práctica?</h3>
+        <p>Con un <strong>empleado</strong>, usted retiene impuestos, paga su parte de Seguro Social y Medicare (7.65%), paga seguro de desempleo y emite un W-2. Con un <strong>contratista</strong>, solo le paga el monto acordado y emite un 1099-NEC si le pagó $600 o más en el año — él se encarga de sus propios impuestos.</p>
+        <p>¿Tiene dudas con un caso específico? Existe el Form SS-8, con el que el propio IRS determina la clasificación. Pero antes de llegar ahí, una consulta con su contador suele resolverlo más rápido.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 5 -->
+<div class="modal-overlay" id="modal-5" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-llc" data-i18n="f-llc">Negocios y LLC</span>
+      <p class="modal-date">18 de mayo, 2026</p>
+      <h2 class="modal-title">5 deducciones que los pequeños negocios olvidan reclamar</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Cada deducción legítima que usted no reclama es dinero que le regala al IRS. Estas cinco son las que más vemos olvidadas cuando revisamos declaraciones de años anteriores:</p>
+        <h3>1. Oficina en casa (home office)</h3>
+        <p>Si usa una parte de su casa <strong>de forma regular y exclusiva</strong> para el negocio, puede deducirla. El método simplificado permite $5 por pie cuadrado, hasta 300 pies cuadrados (máximo $1,500 al año). El método regular deduce el porcentaje correspondiente de renta, luz, internet y seguro. El requisito clave: ese espacio debe ser solo para trabajar — la mesa del comedor no cuenta.</p>
+        <h3>2. Millaje del vehículo</h3>
+        <p>Cada milla que maneja por negocio (visitar clientes, comprar materiales, ir al banco) es deducible a la tarifa estándar del IRS, que ronda los 70 centavos por milla. En un año, 10,000 millas de negocio pueden significar una deducción de unos $7,000. El secreto: <strong>llevar registro</strong>. Una app de millaje en el teléfono lo hace automático.</p>
+        <h3>3. Teléfono e internet</h3>
+        <p>Si usa su celular personal para el negocio, puede deducir el porcentaje de uso comercial. ¿Usa el teléfono 60% para trabajo? Deduzca el 60% de la factura. Lo mismo aplica al internet de casa si trabaja desde allí.</p>
+        <h3>4. Comidas de negocio</h3>
+        <p>Las comidas con clientes, proveedores o empleados donde se habla de negocios son deducibles al <strong>50%</strong>. Guarde el recibo y anote con quién comió y de qué se habló — con eso basta para sustentarla.</p>
+        <h3>5. Educación y suscripciones</h3>
+        <p>Cursos, certificaciones, libros, software y suscripciones relacionadas con su actividad son deducibles. Ese curso de marketing digital o la suscripción a su programa de diseño cuentan.</p>
+        <h3>La regla de oro</h3>
+        <p>Toda deducción debe ser <strong>ordinaria y necesaria</strong> para su negocio, y debe poder demostrarla con recibos o registros. Una contabilidad al día durante el año hace que reclamar todo esto sea fácil en abril.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 6 -->
+<div class="modal-overlay" id="modal-6" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-irs" data-i18n="f-irs">Cambios del IRS</span>
+      <p class="modal-date">15 de junio, 2026</p>
+      <h2 class="modal-title">Lo nuevo del IRS este año: cambios que afectan a su negocio</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Cada año el IRS ajusta docenas de montos por inflación. La mayoría de las noticias sobre esto están escritas para contadores — aquí le resumimos lo que de verdad le afecta a usted como dueño de un pequeño negocio.</p>
+        <h3>Deducción estándar más alta</h3>
+        <p>La deducción estándar — el monto que todos pueden restar de sus ingresos sin necesidad de recibos — sube cada año con la inflación. Para la mayoría de nuestros clientes, esto significa pagar un poco menos de impuestos sin hacer nada. Si sus deducciones detalladas (intereses de hipoteca, donaciones, etc.) no superan la estándar, use la estándar y listo.</p>
+        <h3>Tarifa de millaje actualizada</h3>
+        <p>La tarifa estándar por milla de negocio también se ajusta anualmente y ha venido subiendo — ya ronda los 70 centavos por milla. Si usa su vehículo para el negocio, este es el momento de empezar a registrar millas si no lo hace.</p>
+        <h3>Umbrales de los brackets de impuestos</h3>
+        <p>Los rangos de ingreso de cada tasa de impuesto se amplían con la inflación. En la práctica: si sus ingresos subieron más o menos al ritmo de la inflación, no debería "saltar" a una tasa más alta.</p>
+        <h3>Límites de retiro más generosos</h3>
+        <p>Los límites de aportación a planes de retiro (401(k), SEP IRA, IRA tradicional) también suben. Para un dueño de negocio, un <strong>SEP IRA</strong> sigue siendo una de las formas más simples de reducir impuestos y ahorrar al mismo tiempo: puede aportar hasta el 25% de su compensación, con un tope que ya supera los $70,000.</p>
+        <h3>Reportes de pagos digitales (1099-K)</h3>
+        <p>Si cobra por Zelle, PayPal, Venmo o tarjeta, ojo: las plataformas reportan pagos de bienes y servicios al IRS mediante el formulario 1099-K, y los umbrales de reporte han cambiado varias veces en los últimos años. La regla práctica no cambia: <strong>todo ingreso del negocio se declara</strong>, llegue o no un formulario.</p>
+        <h3>¿Qué hacer con todo esto?</h3>
+        <p>Nada dramático: mantener la contabilidad al día y revisar su estrategia una vez al año con su contador. Los ajustes anuales del IRS casi siempre son oportunidades — si alguien se las explica a tiempo.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-7" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-nomina" data-i18n="f-nomina">Nómina</span>
+      <p class="modal-date">6 de julio, 2026</p>
+      <h2 class="modal-title">31 de julio: vence el Formulario 941 del segundo trimestre</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Si su negocio tiene empleados, hay una fecha este mes que no puede dejar pasar: el <strong>31 de julio de 2026</strong> vence el plazo para presentar el Formulario 941 correspondiente al segundo trimestre del año (abril, mayo y junio).</p>
+        <h3>¿Qué es el Formulario 941?</h3>
+        <p>Es el reporte trimestral de nómina que todo empleador presenta al IRS. En él se informa cuánto pagó a sus empleados, cuánto les retuvo de impuesto federal sobre el ingreso, y las contribuciones de Seguro Social y Medicare — tanto la parte del empleado como la suya como empleador.</p>
+        <h3>¿Quién debe presentarlo?</h3>
+        <ul>
+          <li>Todo negocio con al menos un empleado en nómina (W-2), sin importar el tamaño.</li>
+          <li>Aplica también si su empleado es familiar o trabaja medio tiempo.</li>
+          <li>Si solo trabaja con contratistas independientes (1099), no presenta el 941 — pero cuidado: clasificar mal a un empleado como contratista es un error costoso.</li>
+        </ul>
+        <h3>¿Qué pasa si no lo presenta a tiempo?</h3>
+        <p>El IRS cobra una multa por presentar tarde que crece cada mes de retraso, más intereses. Y si además no depositó los impuestos retenidos, hay una penalidad adicional por depósito tardío. Es dinero que se va directo de su bolsillo por algo totalmente evitable.</p>
+        <h3>Un detalle que muchos no saben</h3>
+        <p>Presentar el formulario y depositar los impuestos son dos obligaciones distintas. La mayoría de los negocios pequeños deben depositar los impuestos de nómina mensualmente — el 941 solo resume lo que ya debió haberse depositado. Si ha estado reteniendo impuestos a sus empleados sin depositarlos, es importante ponerse al día cuanto antes.</p>
+        <h3>Recomendación práctica</h3>
+        <p>No espere al 31 de julio. Presente electrónicamente con anticipación y, si envía algo por correo cerca de la fecha límite, hágalo en la ventanilla del correo con comprobante de envío fechado — el IRS mismo lo recomienda. Y si este trimestre tuvo cambios en su equipo (contrataciones, salidas, bonos), revise que todo esté reflejado correctamente antes de enviar.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20el%20Formulario%20941" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 8 -->
+<div class="modal-overlay" id="modal-8" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-irs" data-i18n="f-irs">Cambios del IRS</span>
+      <p class="modal-date">14 de julio, 2026</p>
+      <h2 class="modal-title">El IRS ahora perdona ciertas multas de forma automática: ¿su negocio califica?</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>El 8 de julio de 2026, el IRS anunció un nuevo programa que perdona ciertas multas de manera automática a los contribuyentes con buen historial de cumplimiento. Se llama <strong>Alivio Automático de Multas</strong> (Automatic Exemption from Penalty, o AEP por sus siglas en inglés), y es una excelente noticia para los pequeños negocios que siempre han tratado de declarar y pagar a tiempo.</p>
+        <h3>¿Qué multas cubre?</h3>
+        <ul>
+          <li><strong>Por no presentar la declaración a tiempo</strong> (failure to file)</li>
+          <li><strong>Por no pagar a tiempo</strong> lo que debía (failure to pay)</li>
+          <li><strong>Por no depositar a tiempo</strong> los impuestos de nómina (failure to deposit) — esta es clave si su negocio tiene empleados y presenta el Formulario 941</li>
+        </ul>
+        <h3>¿Quién califica?</h3>
+        <p>Debe tener un historial de haber presentado y pagado a tiempo durante los <strong>tres años anteriores</strong>. Si presenta declaraciones trimestrales, como el 941 de nómina, la regla equivalente son los <strong>últimos 12 trimestres consecutivos</strong> sin atrasos.</p>
+        <h3>¿Tengo que solicitarlo?</h3>
+        <p>No. A diferencia de otros programas de alivio, como el "First Time Abate" que este nuevo proceso viene a reemplazar, el AEP se aplica de forma <strong>automática</strong>. Si usted califica, el IRS no le cobra la multa durante el procesamiento de su declaración y le envía una notificación confirmando el alivio. No hay formulario que llenar ni llamada que hacer.</p>
+        <h3>¿Desde cuándo aplica?</h3>
+        <p>El programa comienza a implementarse este verano de 2026 y cubre las declaraciones originales a partir del año fiscal 2025, además de las declaraciones trimestrales de 2026 en adelante. El "First Time Abate" tradicional se irá retirando poco a poco, y a partir del 1 de enero de 2027 el AEP será el único programa de este tipo disponible.</p>
+        <h3>¿Y si no califico?</h3>
+        <p>Si tuvo algún atraso en los últimos tres años, es posible que no reciba el alivio automático. Aun así, puede solicitar una reducción de multa por <strong>causa razonable</strong> — por ejemplo, una enfermedad grave, un desastre natural u otra circunstancia fuera de su control que le haya impedido cumplir a tiempo. El IRS revisa cada caso por separado.</p>
+        <h3>Nuestro consejo</h3>
+        <p>Aunque este programa funciona solo, la mejor protección contra las multas sigue siendo la de siempre: presentar y pagar a tiempo cada año. Si recibe una notificación de multa y no está segura de si le aplica este nuevo alivio, no dude en escribirnos — revisamos su caso y, si corresponde, la ayudamos a solicitar la reducción correcta.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20el%20alivio%20autom%C3%A1tico%20de%20multas%20del%20IRS" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 9 -->
+<div class="modal-overlay" id="modal-9" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-irs" data-i18n="f-irs">Cambios del IRS</span>
+      <p class="modal-date">20 de julio, 2026</p>
+      <h2 class="modal-title">Alerta del IRS: cuidado con estos correos falsos y créditos fraudulentos</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Durante julio de 2026, el IRS lanzó una alerta dirigida a los pequeños negocios y a los contadores que los atienden, advirtiendo sobre dos estafas que están circulando con fuerza esta temporada. Conocerlas a tiempo es la mejor forma de protegerse.</p>
+        <h3>Correos que se hacen pasar por "un nuevo cliente"</h3>
+        <p>Los estafadores están enviando correos que parecen solicitudes normales de un cliente nuevo o de alguien pidiendo que se revise un documento. El objetivo es que usted abra un archivo adjunto o haga clic en un enlace que instala software malicioso o roba sus contraseñas. En algunos casos, los delincuentes ya lograron entrar a la cuenta de correo de un contador real y usan conversaciones anteriores para que el mensaje parezca legítimo.</p>
+        <p>Señales de alerta a las que debe prestar atención:</p>
+        <ul>
+          <li>El correo llega de una dirección desconocida o ligeramente distinta a la habitual</li>
+          <li>Le piden "revisar" un documento adjunto de forma urgente</li>
+          <li>Solicitan información sensible — números de Seguro Social, EIN, cuentas bancarias — por correo electrónico</li>
+          <li>El mensaje presiona con amenazas o plazos inmediatos</li>
+        </ul>
+        <h3>El falso "crédito por trabajo independiente"</h3>
+        <p>La segunda estafa circula sobre todo en redes sociales: anuncios que prometen un crédito de impuestos por "trabajo independiente" con reembolsos de miles de dólares, casi sin requisitos. Muchos dueños de negocio no califican para este crédito, y presentar una declaración basada en información falsa puede llevar a auditorías, retrasos en el reembolso y la obligación de devolver el dinero más multas e intereses.</p>
+        <h3>Cómo proteger su negocio</h3>
+        <ul>
+          <li>No abra archivos adjuntos ni haga clic en enlaces de correos inesperados, aunque parezcan venir de alguien conocido</li>
+          <li>Si un correo de su contador le pide información inusual, confírmelo por teléfono antes de responder</li>
+          <li>Use un antivirus actualizado y active la verificación en dos pasos en su correo y su banca en línea</li>
+          <li>Desconfíe de anuncios en redes sociales que prometen créditos o reembolsos "garantizados"</li>
+          <li>Mantenga su número EIN tan confidencial como su Seguro Social</li>
+          <li>Si sospecha de un fraude, repórtelo en IRS.gov/SubmitATip</li>
+        </ul>
+        <h3>Nuestro consejo</h3>
+        <p>Ningún crédito fiscal real se aprueba solo por llenar un formulario que vio en redes sociales, y su contador nunca le pedirá contraseñas o números de cuenta por correo. Ante la duda, no responda ni haga clic — llámenos primero y verificamos juntos si el mensaje o el crédito es legítimo.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20una%20alerta%20de%20estafa%20del%20IRS" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 10 -->
+<div class="modal-overlay" id="modal-10" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-fechas" data-i18n="f-fechas">Fechas límite</span>
+      <p class="modal-date">27 de julio, 2026</p>
+      <h2 class="modal-title">15 de septiembre: el pago estimado que muchos dueños de negocio olvidan</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Cuando usted trabaja por su cuenta o es dueño de un negocio, nadie le descuenta impuestos de su pago como le pasa a un empleado. Esa responsabilidad es suya — y el IRS espera que la cumpla cuatro veces al año, no una sola vez en abril.</p>
+        <p>El próximo vencimiento es el <strong>15 de septiembre de 2026</strong>, y corresponde a lo que ganó entre junio y agosto.</p>
+        <h3>¿Quién debe hacer estos pagos?</h3>
+        <p>La regla general del IRS es sencilla: si espera deber <strong>$1,000 o más</strong> en impuestos al final del año, debe pagar por trimestres. Esto aplica a:</p>
+        <ul>
+          <li>Trabajadores independientes y contratistas que reciben 1099</li>
+          <li>Dueños de LLC de un solo miembro</li>
+          <li>Socios de una sociedad (partnership)</li>
+          <li>Accionistas de una S-Corp que reciben distribuciones</li>
+          <li>Cualquier persona con ingresos de los que no se retiene impuesto</li>
+        </ul>
+        <h3>¿Cuánto tengo que pagar?</h3>
+        <p>Aquí está la parte que le ahorra dolores de cabeza. Existe una regla llamada <strong>"puerto seguro"</strong> (safe harbor) que lo protege de multas aunque su cálculo no sea exacto. Puede escoger entre dos caminos:</p>
+        <ul>
+          <li><strong>Camino 1 — Basarse en el año pasado:</strong> pague el 100% del impuesto total que le salió en su declaración del año anterior, dividido entre cuatro. Si su ingreso ajustado del año pasado superó los $150,000, el porcentaje sube a 110%.</li>
+          <li><strong>Camino 2 — Basarse en este año:</strong> pague el 90% de lo que proyecta deber este año, dividido entre cuatro.</li>
+        </ul>
+        <p>El primer camino es el más seguro para la mayoría, porque se basa en un número que ya conoce con certeza. Si cumple con él, el IRS no le cobra multa por pago insuficiente — aunque al final del año resulte que ganó mucho más.</p>
+        <h3>No olvide el impuesto de trabajo independiente</h3>
+        <p>Un error muy común: calcular solo el impuesto sobre el ingreso y olvidar el <strong>self-employment tax</strong>, que cubre Seguro Social y Medicare. Ese impuesto es del 15.3% sobre su ganancia neta, y también se paga en estos abonos trimestrales. Si no lo incluye en su cálculo, quedará corto.</p>
+        <h3>¿Qué pasa si no pago?</h3>
+        <p>El IRS cobra una multa por pago insuficiente más intereses que se acumulan hasta que se ponga al día. No es una multa enorme, pero es dinero que se va sin necesidad. Y peor aún: llegar a abril debiendo una cantidad grande de golpe descuadra el flujo de efectivo de cualquier negocio pequeño.</p>
+        <h3>Nuestra recomendación</h3>
+        <p>Aparte un porcentaje fijo de cada pago que recibe — muchos de nuestros clientes guardan entre 25% y 30% en una cuenta separada — y así el 15 de septiembre no le tomará por sorpresa. Si no está seguro de cuánto le corresponde pagar, no adivine: con su declaración del año pasado en la mano, el cálculo se hace en minutos.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20los%20pagos%20estimados%20trimestrales" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 11 -->
+<div class="modal-overlay" id="modal-11" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-nomina" data-i18n="f-nomina">Nómina</span>
+      <p class="modal-date">3 de agosto, 2026</p>
+      <h2 class="modal-title">Si le paga licencia a un empleado, el IRS podría devolverle parte de ese dinero</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>El 5 de agosto el IRS y el Departamento del Tesoro publicaron el <strong>Notice 2026-28</strong>, la guía oficial sobre el crédito para empleadores que pagan licencia familiar y médica (en inglés, <em>paid family and medical leave</em> o PFML). La noticia importante es que este crédito, que antes se renovaba cada cierto tiempo, quedó permanente dentro de la ley conocida como Working Families Tax Cuts.</p>
+        <p>Traducido a lo práctico: si usted le sigue pagando el sueldo a un empleado mientras está de licencia, una parte de ese dinero puede regresarle en forma de crédito de impuestos.</p>
+        <h3>¿Qué es un crédito y por qué importa tanto?</h3>
+        <p>Aquí conviene detenerse, porque mucha gente confunde los dos términos. Una <strong>deducción</strong> reduce el ingreso sobre el que usted paga impuestos. Un <strong>crédito</strong> resta directamente del impuesto que debe. Un crédito de $1,000 le ahorra $1,000 completos. Por eso vale la pena revisar si califica.</p>
+        <h3>¿De qué tipo de licencia estamos hablando?</h3>
+        <p>No es cualquier día libre. El crédito aplica a situaciones específicas, entre ellas:</p>
+        <ul>
+          <li>El nacimiento de un hijo, o la llegada de un hijo por adopción o acogida</li>
+          <li>Cuidar a un familiar cercano con una condición de salud seria</li>
+          <li>Una condición de salud seria del propio empleado que le impide trabajar</li>
+          <li>Ciertas situaciones relacionadas con el servicio militar activo de un familiar</li>
+        </ul>
+        <p>Las vacaciones, los días personales y los días por enfermedad común <strong>no</strong> cuentan para este crédito.</p>
+        <h3>¿Qué necesita tener su negocio para calificar?</h3>
+        <p>Este es el punto donde la mayoría de los negocios pequeños se queda fuera, y casi siempre por un detalle administrativo, no por el tamaño de la empresa:</p>
+        <ul>
+          <li><strong>Una política por escrito.</strong> El IRS exige un documento formal que establezca la licencia pagada. Un acuerdo de palabra con su empleado no sirve, por más real que sea.</li>
+          <li><strong>Un mínimo de pago.</strong> La política debe pagar al menos el 50% del salario normal del empleado durante la licencia.</li>
+          <li><strong>Duración mínima.</strong> Debe ofrecer al menos dos semanas de licencia pagada al año a los empleados de tiempo completo (proporcional para los de medio tiempo).</li>
+          <li><strong>Empleados que califican.</strong> Generalmente son quienes llevan al menos un año trabajando con usted y no superan cierto nivel de ingreso.</li>
+        </ul>
+        <h3>¿De cuánto estamos hablando?</h3>
+        <p>El crédito va del <strong>12.5% al 25%</strong> de lo que usted pagó durante la licencia. El porcentaje sube mientras más generosa sea su política: si paga el 50% del salario, recibe el 12.5%; si paga el 100%, llega al 25%. Es decir, el IRS premia al empleador que paga más.</p>
+        <h3>Un detalle que se le escapa a muchos</h3>
+        <p>No puede contar el mismo dinero dos veces. El sueldo que use para calcular este crédito no puede deducirlo también como gasto de nómina, y tampoco puede usarlo para otros créditos de empleo. Es uno u otro. Por eso el cálculo conviene hacerlo con números en mano, para ver cuál de las dos vías le conviene más.</p>
+        <h3>¿Y si mi negocio es pequeño?</h3>
+        <p>No hay un mínimo de empleados. Un negocio con dos o tres personas puede reclamarlo igual que uno con cincuenta, siempre que tenga la política por escrito y cumpla las condiciones. La barrera casi nunca es el tamaño — es el papeleo.</p>
+        <h3>Nuestra recomendación</h3>
+        <p>Si usted tiene empleados y alguna vez le ha seguido pagando a alguien durante una ausencia larga, vale la pena revisar dos cosas: si esa situación calificaba, y si tiene la política por escrito para los casos que vengan. Redactar ese documento toma poco tiempo y puede significar dinero de vuelta el próximo año. Si no lo tiene todavía, este es el momento de armarlo — el crédito ya es permanente, así que el esfuerzo sirve para todos los años que vienen.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20el%20cr%C3%A9dito%20por%20licencia%20familiar%20pagada" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 12 -->
+<div class="modal-overlay" id="modal-12" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-nomina" data-i18n="f-nomina">Nómina</span>
+      <p class="modal-date">10 de agosto, 2026</p>
+      <h2 class="modal-title">Horas extras: la casilla nueva del W-2 que este año usted sí tiene que llenar</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>El 6 de agosto el IRS actualizó sus preguntas frecuentes sobre la deducción de horas extras, y de ahí salió un detalle que muchos dueños de negocio todavía no saben: <strong>desde el año fiscal 2026, el pago de horas extras hay que reportarlo por separado en el W-2</strong>. No es opcional, y si no se hace, el empleado no puede reclamar la deducción.</p>
+        <p>Si usted tiene una cuadrilla de construcción, un equipo de limpieza o personal de landscaping, esto le toca directamente.</p>
+        <h3>Primero, ¿qué es la deducción de horas extras?</h3>
+        <p>Es un beneficio para el <strong>empleado</strong>, no para el empleador. Le permite descontar de su ingreso gravable una parte de lo que ganó por overtime, lo que le baja el impuesto federal que paga al declarar.</p>
+        <p>Los límites son: hasta <strong>$12,500</strong> al año, o <strong>$25,000</strong> si la persona declara casada en conjunto. El beneficio empieza a reducirse cuando el ingreso ajustado pasa de $150,000 (o $300,000 en conjunto), y se pierde $100 por cada $1,000 que se pase de ese umbral. Además, no hace falta detallar deducciones — se puede reclamar aunque la persona use la deducción estándar.</p>
+        <h3>El error más común: no es todo el pago de overtime</h3>
+        <p>Aquí es donde casi todo el mundo se equivoca. La deducción <strong>solo cubre la parte extra</strong>, no el pago completo de las horas extras.</p>
+        <p>Un ejemplo con números. Un empleado gana $20 la hora y trabaja 10 horas extras. Por ley federal esas horas se pagan a tiempo y medio, o sea $30 la hora:</p>
+        <ul>
+          <li>Total pagado por esas 10 horas: <strong>$300</strong></li>
+          <li>Lo que habría ganado a tarifa normal: <strong>$200</strong></li>
+          <li>La parte que califica para la deducción: <strong>$100</strong> — solo esos $10 de más por hora</li>
+        </ul>
+        <p>Ese número de $100 es el que va reportado, no los $300.</p>
+        <h3>Su obligación como empleador: la casilla 12, código TT</h3>
+        <p>Desde el año fiscal 2026 usted debe reportar el monto de horas extras calificadas <strong>en la casilla 12 del Formulario W-2, con el código TT</strong>. En 2025 esto no era obligatorio; ahora sí lo es.</p>
+        <p>Dos aclaraciones importantes:</p>
+        <ul>
+          <li><strong>Reporte el monto completo</strong> que calificó, aunque sepa que su empleado no va a poder deducirlo todo por los límites o por su nivel de ingreso. Ese cálculo le toca al empleado al declarar, no a usted.</li>
+          <li><strong>Si se equivoca, hay que corregir.</strong> Si reporta de menos, el empleado no puede reclamar la diferencia hasta que usted le emita un W-2c corregido. Es un trámite evitable que molesta a cualquiera.</li>
+        </ul>
+        <h3>Ojo: esto no cambia lo que usted retiene</h3>
+        <p>Este es el punto que más confusión genera. Que exista la deducción <strong>no significa que el overtime esté exento de impuestos</strong>. El IRS fue claro: ese pago sigue siendo salario normal para todo efecto. Usted debe seguir reteniendo el impuesto federal sobre la renta, seguir pagando Seguro Social y Medicare, y seguir pagando el impuesto federal de desempleo.</p>
+        <p>Dicho de otra forma: el alivio le llega al empleado <em>cuando declara</em>, no en el cheque de cada semana. Si un empleado quiere ver más dinero en su cheque desde ya, lo que puede hacer es entregarle un Formulario W-4 actualizado para ajustar su retención — pero usted no puede reducirla por su cuenta.</p>
+        <h3>¿Y si trabajo por mi cuenta o pago con 1099?</h3>
+        <p>Esta deducción está diseñada para empleados con W-2 y para las horas extras que exige la ley federal de trabajo. Un contratista independiente que factura por hora no tiene "horas extras" en ese sentido legal, así que no aplica. Y si usted es dueño y trabaja en su propio negocio, tampoco — usted no se paga overtime a sí mismo.</p>
+        <h3>Nuestra recomendación</h3>
+        <p>No espere a enero para descubrir que su sistema de nómina no estaba separando este monto. Revise ahora mismo dos cosas: que su software esté registrando aparte la porción extra de cada hora de overtime, y que las horas trabajadas estén bien documentadas semana por semana. Con eso resuelto, el W-2 de enero sale solo.</p>
+        <p>Si lleva la nómina a mano o en una hoja de cálculo, este es buen momento para ordenarlo. Un W-2 mal hecho significa correcciones, empleados molestos y tiempo perdido justo en la temporada más ocupada del año.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20c%C3%B3mo%20reportar%20las%20horas%20extras%20en%20el%20W-2" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 13 -->
+<div class="modal-overlay" id="modal-13" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-irs" data-i18n="f-irs">Cambios del IRS</span>
+      <p class="modal-date">17 de agosto, 2026</p>
+      <h2 class="modal-title">Su negocio ya puede ver sus deudas y avisos del IRS en línea, sin llamar por teléfono</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Cualquiera que haya intentado llamar al IRS sabe cómo termina: cuarenta minutos en espera, música de ascensor y a veces la llamada se corta sola. Por eso vale la pena saber que el IRS acaba de ampliar su <strong>Business Tax Account</strong> — la cuenta en línea para negocios — y hoy resuelve por internet varias cosas que antes solo se conseguían por teléfono o por correo.</p>
+        <p>Es gratis, y la mayoría de los dueños de negocio ni sabe que existe.</p>
+        <h3>¿Qué se puede hacer ahí?</h3>
+        <ul>
+          <li><strong>Ver cuánto debe.</strong> El saldo pendiente de su negocio, al día, sin adivinar.</li>
+          <li><strong>Pagar directo desde su cuenta bancaria</strong>, y también <strong>programar pagos hasta un año por adelantado</strong>. Muy útil para los pagos estimados trimestrales.</li>
+          <li><strong>Guardar varias cuentas bancarias</strong> en una especie de billetera, para no escribir los números cada vez.</li>
+          <li><strong>Bajar transcripciones</strong> de sus impuestos. Esto es oro cuando un banco o una compañía de leasing le pide comprobantes y los necesita para ayer.</li>
+          <li><strong>Leer los avisos del IRS en formato digital.</strong> Esta parte se acaba de ampliar, y significa que si una carta se le perdió en el correo, igual puede verla.</li>
+          <li><strong>Pedir una verificación de cumplimiento</strong> (compliance check), que a veces exigen para contratos o licencias.</li>
+          <li><strong>Dar acceso a un empleado suyo</strong>, sin entregarle sus claves personales.</li>
+        </ul>
+        <h3>¿Quién puede abrirla hoy?</h3>
+        <ul>
+          <li>Dueños únicos (sole proprietors) que tienen EIN</li>
+          <li>Sociedades / partnerships que presentan el Formulario 1065</li>
+          <li>S-Corporations (Formulario 1120-S) y C-Corporations (Formulario 1120)</li>
+          <li>LLC de un solo miembro <strong>que declara como S-Corp o como partnership</strong></li>
+          <li>Socios y accionistas a título individual, si ya tienen un Schedule K-1 registrado</li>
+          <li>Organizaciones exentas y entidades de gobierno</li>
+        </ul>
+        <h3>El detalle importante: quién todavía NO puede</h3>
+        <p>Aquí hay que ser honestos, porque afecta a muchísimos de nuestros clientes. La cuenta <strong>todavía no está disponible para las LLC que declaran como dueño único con Schedule C</strong> (ni para las LLC de varios miembros en esa misma situación).</p>
+        <p>Si usted abrió su LLC y no eligió tributar como S-Corp, es muy probable que esté justo en ese grupo. El IRS dice que va a ir agregando más tipos de entidades, pero por ahora le va a aparecer que no califica — y no es un error suyo.</p>
+        <h3>Cómo entrar</h3>
+        <p>La cuenta está en el sitio del IRS y <strong>el sitio tiene versión en español</strong>. Para registrarse hay que pasar una verificación de identidad con un proveedor externo, o sea que le van a pedir una identificación con foto y, en algunos casos, una selfie o una videollamada corta para confirmar que usted es usted.</p>
+        <p>Tenga a mano su número de Seguro Social o ITIN, el EIN del negocio y su identificación. El registro toma entre 15 y 30 minutos la primera vez; después entra normal.</p>
+        <h3>Por qué le conviene tenerla</h3>
+        <p>Más allá de la comodidad, hay una razón práctica: <strong>enterarse a tiempo</strong>. La mayoría de los problemas serios con el IRS empiezan con un aviso que nadie leyó — porque llegó a una dirección vieja, porque se perdió, o porque quedó en un montón de correo. Cuando el negocio se da cuenta, ya hay intereses y multas encima.</p>
+        <p>Con la cuenta en línea usted puede revisar en dos minutos si hay algo pendiente, en lugar de esperar a que llegue un sobre.</p>
+        <h3>Nuestra recomendación</h3>
+        <p>Si su negocio califica, ábrala esta semana — no espera nada a cambio y le ahorra llamadas. Y si no califica todavía porque su LLC declara con Schedule C, vale la pena que conversemos: dependiendo de sus números, cambiar la forma en que su LLC tributa puede convenirle por razones de impuestos, y de paso le abre esta herramienta.</p>
+        <p>Y ojo con algo: nadie del IRS le va a llamar ni escribir para pedirle que abra esta cuenta, ni para pedirle sus claves. Si recibe un mensaje así, es una estafa. El único lugar donde se registra es el sitio oficial del IRS.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20quiero%20ayuda%20con%20la%20cuenta%20en%20l%C3%ADnea%20del%20IRS%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 14 -->
+<div class="modal-overlay" id="modal-14" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-llc" data-i18n="f-llc">Negocios y LLC</span>
+      <p class="modal-date">24 de agosto, 2026</p>
+      <h2 class="modal-title">Nunca mezcle la tarjeta personal con la del negocio</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p><em>Primera parte de nuestra serie sobre el manejo saludable de las tarjetas de crédito en su negocio.</em></p>
+        <p>Es la escena más común que vemos: el dueño de un negocio saca su tarjeta y paga con ella los suministros del local, la gasolina, el software de facturación… y también el mercado del sábado y los zapatos de los niños. Todo en la misma tarjeta. Parece práctico y no se siente como un error.</p>
+        <p>Pero mezclar esos gastos le va a costar de tres formas distintas, y una de ellas puede ser muy cara.</p>
+        <h3>1. Su contabilidad se vuelve un rompecabezas</h3>
+        <p>Cuando llega el momento de cerrar el mes o preparar los impuestos, alguien tiene que sentarse a revisar el estado de cuenta línea por línea y decidir qué fue del negocio y qué fue personal. Con doscientas transacciones mezcladas, eso toma horas — y cuesta más, porque su contador le cobra por ese tiempo.</p>
+        <p>Con una tarjeta separada, el estado de cuenta <em>es</em> el reporte de gastos. Se acabó el trabajo de adivinar.</p>
+        <h3>2. Puede perder deducciones que sí le tocaban</h3>
+        <p>Si al final del año no logra reconstruir qué fue del negocio, lo más probable es que termine dejando gastos afuera — y cada gasto que no reclama es dinero que regala.</p>
+        <p>Y si alguna vez el IRS le pide respaldo de una deducción, tener que señalar renglones sueltos dentro de un estado de cuenta lleno de compras personales es una posición débil. Una tarjeta exclusiva del negocio es exactamente el tipo de registro claro que se espera de una empresa.</p>
+        <h3>3. El riesgo serio: su LLC podría dejar de protegerlo</h3>
+        <p>Esta es la parte que casi nadie sabe, y es la más importante.</p>
+        <p>Cuando usted abre una LLC o una corporación, está creando una <strong>persona jurídica separada de usted</strong>. Esa separación es la que hace que, si el negocio es demandado o queda debiendo, sus bienes personales — su casa, su carro, sus ahorros — normalmente no estén en juego.</p>
+        <p>Pero esa protección no es automática ni permanente: depende de que usted la trate de verdad como algo separado. En un pleito legal, la parte contraria puede argumentar que la empresa y usted son la misma cosa, y si logra demostrarlo, un juez puede levantar esa protección. En inglés a esto le llaman <em>"piercing the corporate veil"</em>.</p>
+        <p>¿Y cuál es la prueba más fácil de presentar para demostrarlo? Justamente eso: que las finanzas personales y las del negocio estaban revueltas. Pagar cosas personales con la tarjeta de la empresa es de los ejemplos más citados.</p>
+        <p>Dicho claro: usted pagó para abrir su LLC buscando protección. Mezclar las tarjetas debilita precisamente lo que compró.</p>
+        <h3>Cómo separarlas, en la práctica</h3>
+        <ul>
+          <li><strong>Abra una cuenta bancaria a nombre del negocio</strong>, con el EIN. Este es el primer paso y sin él lo demás no funciona.</li>
+          <li><strong>Saque una tarjeta a nombre del negocio.</strong> Al principio, con una empresa nueva, es normal que le pidan garantía personal — eso no rompe la separación, siempre que la tarjeta esté a nombre de la empresa y se use solo para el negocio.</li>
+          <li><strong>Págueselo todo desde la cuenta del negocio</strong>, no desde la personal.</li>
+          <li><strong>Si necesita dinero para usted</strong>, no lo saque comprando cosas personales con la tarjeta de la empresa. Hágase una transferencia registrada como retiro del dueño o como su pago. Eso sí es correcto y queda documentado.</li>
+          <li><strong>Si ya se equivocó</strong> y pasó un gasto personal por la tarjeta del negocio, no lo esconda: regístrelo como retiro del dueño y devuelva el dinero. Un error registrado y corregido no es un problema; el problema es el desorden sin explicar.</li>
+        </ul>
+        <h3>Empiece hoy, no en enero</h3>
+        <p>No hace falta esperar al año nuevo ni a que el negocio crezca. Mientras más tiempo pase con las cuentas mezcladas, más trabajo cuesta desenredarlas después.</p>
+        <p>Si separa hoy, el próximo cierre de mes le va a tomar la mitad del tiempo — y la protección por la que pagó cuando abrió su empresa sigue en pie.</p>
+        <p><em>En la próxima entrega: cómo construir crédito para su negocio desde cero.</em></p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20quiero%20ayuda%20para%20separar%20las%20finanzas%20de%20mi%20negocio%20de%20las%20personales" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL 15 -->
+<div class="modal-overlay" id="modal-15" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <div class="modal-scroll">
+      <span class="modal-cat band-fechas" data-i18n="f-fechas">Fechas límite</span>
+      <p class="modal-date">3 de septiembre, 2026</p>
+      <h2 class="modal-title">15 de septiembre: la fecha final para las LLC y S-Corps que pidieron extensión</h2>
+      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
+      <div class="modal-body">
+        <p>Si en marzo su empresa pidió una prórroga para presentar la declaración, es probable que haya respirado tranquilo y lo haya dejado para después. Ese "después" es ahora: el <strong>15 de septiembre de 2026</strong> es el plazo final, y esta vez no hay otra extensión.</p>
+        <p>Faltan menos de dos semanas.</p>
+        <h3>¿A quién le aplica esta fecha?</h3>
+        <ul>
+          <li><strong>Sociedades y LLC de varios miembros</strong> que declaran con el Formulario 1065</li>
+          <li><strong>S-Corporations</strong> que declaran con el Formulario 1120-S</li>
+        </ul>
+        <p>En ambos casos, si presentaron el Formulario 7004 en marzo para pedir más tiempo, ese tiempo se les acaba el 15 de septiembre.</p>
+        <p>Ojo con no confundirse: si usted tiene una <strong>LLC de un solo miembro que declara con Schedule C</strong>, o una <strong>C-Corporation</strong>, su fecha extendida no es esta — es el 15 de octubre. Y si lo que le preocupa es el <strong>pago estimado del tercer trimestre</strong>, ese también vence el 15 de septiembre, pero es un tema aparte que ya cubrimos en otro artículo del blog.</p>
+        <h3>Por qué esta multa duele más de lo que la gente cree</h3>
+        <p>Aquí está la parte que sorprende a muchos dueños de negocio. Cuando una persona presenta tarde su declaración personal, la multa se calcula sobre lo que debe — si no debe nada, muchas veces no hay multa.</p>
+        <p>Con las sociedades y las S-Corps <strong>funciona distinto</strong>. La multa por presentar tarde se cobra <strong>por cada mes de retraso y por cada socio o accionista</strong>, y se aplica aunque la empresa no deba un solo dólar de impuestos.</p>
+        <p>Haga la cuenta: una sociedad con tres socios que se atrasa cuatro meses no paga una multa — paga doce. Es de las multas más caras que puede recibir un negocio pequeño, y es totalmente evitable.</p>
+        <h3>El efecto dominó de los K-1</h3>
+        <p>Hay otra razón para no dejarlo pasar. Cuando una sociedad o S-Corp presenta su declaración, genera los <strong>Schedule K-1</strong> — el documento donde cada socio ve la parte de las ganancias o pérdidas que le toca declarar en su propia declaración personal.</p>
+        <p>Si la empresa no presenta a tiempo, los socios se quedan sin su K-1. Y como muchos de ellos también están en extensión hasta el 15 de octubre, se ven obligados a esperar o a presentar con números estimados. Un retraso de la empresa termina complicándole la vida a varias personas.</p>
+        <h3>Qué hacer si va justo de tiempo</h3>
+        <ul>
+          <li><strong>Reúna hoy lo que falta:</strong> estados de cuenta bancarios y de tarjetas del año, registro de ingresos, facturas de gastos, información de nómina y el inventario si aplica.</li>
+          <li><strong>No espere a tenerlo perfecto para avisar.</strong> Si su contador ve los números esta semana, hay margen; si los ve el día 14, no lo hay.</li>
+          <li><strong>Presente aunque no pueda pagar todo.</strong> Esto es clave y mucha gente lo hace al revés: la multa por <em>no presentar</em> suele ser mucho más cara que la de <em>no pagar</em>. Presente a tiempo y después negocie un plan de pagos.</li>
+          <li><strong>Presente electrónicamente.</strong> Y si algo tiene que ir por correo cerca de la fecha, llévelo a la ventanilla del correo y pida comprobante fechado — el propio IRS lo recomienda.</li>
+        </ul>
+        <h3>Si ya se le pasó una fecha anterior</h3>
+        <p>No lo deje crecer. La multa se acumula mes a mes, así que cada semana de espera cuesta más. Y si su empresa tiene buen historial de haber presentado y pagado a tiempo en años anteriores, existen alivios de multa a los que podría calificar — pero hay que pedirlos, no llegan solos.</p>
+        <h3>Nuestra recomendación</h3>
+        <p>Marque el 15 de septiembre hoy mismo. Si su empresa está en este grupo y todavía no tiene los papeles listos, esta semana es el momento de moverse — no la próxima. Presentar a tiempo, aunque sea con números ajustados después, siempre sale más barato que la multa.</p>
+        <div class="modal-cta">
+          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
+          <a href="https://wa.me/16892708845?text=Hola,%20mi%20empresa%20tiene%20extensi%C3%B3n%20y%20necesito%20ayuda%20antes%20del%2015%20de%20septiembre" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SUSCRIPCIÓN
+════════════════════════════════════════════════ -->
+<section class="subscribe-section">
+  <div class="container">
+    <h2 class="subscribe-h2 reveal" data-i18n="sub-h2">No se pierda ningún cambio del IRS</h2>
+    <p class="subscribe-p reveal" data-i18n="sub-p">Cuando haya una fecha límite cerca o un cambio importante que afecte a los pequeños negocios, le avisamos directamente — sin spam, sin correos interminables.</p>
+    <div class="reveal">
+      <a href="https://wa.me/16892708845?text=Hola,%20quiero%20recibir%20avisos%20de%20noticias%20del%20IRS" target="_blank" rel="noopener" class="btn btn-wa btn-subscribe">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-i18n="sub-btn">Recibir avisos por WhatsApp →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     DISCLAIMER
+════════════════════════════════════════════════ -->
+<section class="disclaimer-section">
+  <div class="container">
+    <p class="disclaimer-p" data-i18n="disclaimer">Los artículos de este blog son informativos y no constituyen asesoría fiscal o legal personalizada. Cada situación es única — consulte con un profesional antes de tomar decisiones.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA FINAL
+════════════════════════════════════════════════ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-line"></div>
+    <h2 class="reveal" data-i18n="cta-h2">La primera consulta es completamente gratuita</h2>
+    <p class="reveal" data-i18n="cta-p">Sin compromiso. Sin letra chica. Solo una conversación honesta sobre su negocio y cómo podemos ayudarle.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-white" data-i18n="cta-btn1">Solicitar consulta</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-i18n="cta-btn2">Escribir por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="footer-tagline">Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-nav">Navegación</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
+          <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-serv">Servicios</h4>
+        <ul>
+          <li><a href="servicios.html#bookkeeping" data-i18n="s1-title">Bookkeeping Mensual</a></li>
+          <li><a href="servicios.html#impuestos" data-i18n="s2-title">Declaración de Impuestos</a></li>
+          <li><a href="servicios.html#llc-corp" data-i18n="s3-title">Contabilidad LLC / Corp</a></li>
+          <li><a href="servicios.html#nomina" data-i18n="s4-title">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-contact">Contacto</h4>
+        <ul>
+          <li>📍 Orlando, Florida</li>
+          <li id="footer-gate-btn" style="list-style:none;">
+            <a href="#" onclick="revealFooterContact(event)" style="color:#B87333;font-size:0.85rem;">
+              📲 Ver datos de contacto
+            </a>
+          </li>
+          <li id="footer-email" style="display:none;list-style:none;"><a href="mailto:ypulido87@gmail.com">ypulido87@gmail.com</a></li>
+          <li id="footer-phone" style="display:none;list-style:none;"><a href="https://wa.me/16892708845">(689) 270-8845</a></li>
+          <li style="margin-top:12px;color:rgba(255,255,255,.6);font-size:.82rem;" data-i18n="footer-hours">Lun–Vie: 9am–6pm<br>Sáb y Dom: Cerrado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Pulido Tax &amp; Accounting LLC · Orlando, FL · <span data-i18n="footer-copy">Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.</span></p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.25);" data-i18n="footer-design">Diseño web profesional</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T={
+  es:{
+    /* ── NAV ── */
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-blog':'Blog',
+    'nav-contacto':'Contacto','nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
+    /* ── BREADCRUMB ── */
+    'breadcrumb-home':'Inicio','breadcrumb-blog':'Blog',
+    /* ── PAGE HERO ── */
+    'page-eyebrow':'Manténgase informado',
+    'page-h1':'Noticias y guías del IRS',
+    'page-hero-p':'Las normas cambian constantemente. Aquí se las explicamos en español claro — sin tecnicismos, sin letra chica.',
+    /* ── FILTROS ── */
+    'f-all':'Todos','f-personal':'Impuestos personales','f-llc':'Negocios y LLC',
+    'f-nomina':'Nómina','f-fechas':'Fechas límite','f-irs':'Cambios del IRS',
+    'sort-desc':'Más recientes primero','sort-asc':'Más antiguos primero',
+    /* ── CARDS ── */
+    'read-time':'Tiempo de lectura','read-more':'Leer más →',
+    /* ── MODAL CTA ── */
+    'm-cta':'¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.',
+    'cta-wa':'Consultar por WhatsApp →',
+    /* ── SUSCRIPCIÓN ── */
+    'sub-h2':'No se pierda ningún cambio del IRS',
+    'sub-p':'Cuando haya una fecha límite cerca o un cambio importante que afecte a los pequeños negocios, le avisamos directamente — sin spam, sin correos interminables.',
+    'sub-btn':'Recibir avisos por WhatsApp →',
+    /* ── DISCLAIMER ── */
+    'disclaimer':'Los artículos de este blog son informativos y no constituyen asesoría fiscal o legal personalizada. Cada situación es única — consulte con un profesional antes de tomar decisiones.',
+    /* ── CTA FINAL ── */
+    'cta-h2':'La primera consulta es completamente gratuita',
+    'cta-p':'Sin compromiso. Sin letra chica. Solo una conversación honesta sobre su negocio y cómo podemos ayudarle.',
+    'cta-btn1':'Solicitar consulta','cta-btn2':'Escribir por WhatsApp',
+    /* ── FOOTER ── */
+    'footer-tagline':'Contadora para pequeños negocios latinos en Orlando, Florida. Atendemos en español.',
+    'footer-nav':'Navegación','footer-serv':'Servicios','footer-contact':'Contacto',
+    's1-title':'Bookkeeping Mensual','s2-title':'Declaración de Impuestos',
+    's3-title':'Contabilidad LLC / Corp','s4-title':'Nómina (Payroll)',
+    'footer-hours':'Lun–Vie: 9am–6pm · Sáb y Dom: Cerrado',
+    'footer-copy':'Todos los derechos reservados. Los servicios ofrecidos no constituyen asesoría legal. Consulte a un profesional certificado para su situación específica.',
+    'footer-design':'Diseño web profesional'
+  },
+  en:{
+    /* ── NAV ── */
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-blog':'Blog',
+    'nav-contacto':'Contact','nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
+    /* ── BREADCRUMB ── */
+    'breadcrumb-home':'Home','breadcrumb-blog':'Blog',
+    /* ── PAGE HERO ── */
+    'page-eyebrow':'Stay informed',
+    'page-h1':'IRS news and guides',
+    'page-hero-p':'The rules change constantly. Here we explain them in plain language — no jargon, no fine print. Articles are currently available in Spanish.',
+    /* ── FILTROS ── */
+    'f-all':'All','f-personal':'Personal taxes','f-llc':'Business & LLC',
+    'f-nomina':'Payroll','f-fechas':'Deadlines','f-irs':'IRS changes',
+    'sort-desc':'Newest first','sort-asc':'Oldest first',
+    /* ── CARDS ── */
+    'read-time':'Reading time','read-more':'Read more →',
+    /* ── MODAL CTA ── */
+    'm-cta':'Wondering how this affects your business? The first consultation is free.',
+    'cta-wa':'Contact via WhatsApp →',
+    /* ── SUSCRIPCIÓN ── */
+    'sub-h2':'Never miss an IRS change',
+    'sub-p':'When a deadline is coming up or an important change affects small businesses, we let you know directly — no spam, no endless emails.',
+    'sub-btn':'Get alerts on WhatsApp →',
+    /* ── DISCLAIMER ── */
+    'disclaimer':'The articles on this blog are informational and do not constitute personalized tax or legal advice. Every situation is unique — consult a professional before making decisions.',
+    /* ── CTA FINAL ── */
+    'cta-h2':'The first consultation is completely free',
+    'cta-p':'No commitment. No fine print. Just an honest conversation about your business and how we can help.',
+    'cta-btn1':'Request consultation','cta-btn2':'Message on WhatsApp',
+    /* ── FOOTER ── */
+    'footer-tagline':'Bilingual accountant for small Latino businesses in Orlando, Florida.',
+    'footer-nav':'Navigation','footer-serv':'Services','footer-contact':'Contact',
+    's1-title':'Monthly Bookkeeping','s2-title':'Tax Filing',
+    's3-title':'LLC / Corp Accounting','s4-title':'Payroll',
+    'footer-hours':'Mon–Fri: 9am–6pm · Sat & Sun: Closed',
+    'footer-copy':'All rights reserved. Services offered do not constitute legal advice. Consult a certified professional for your specific situation.',
+    'footer-design':'Professional web design'
+  }
+};
+
+function setLang(l){
+  localStorage.setItem('ptaLang',l);
+  document.documentElement.lang=l;
+  document.body.classList.toggle('en-mode',l==='en');
+  document.querySelectorAll('[data-i18n]').forEach(e=>{
+    const k=e.getAttribute('data-i18n');
+    if(T[l][k])e.textContent=T[l][k];
+  });
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+}
+const sl=localStorage.getItem('ptaLang')||'es';
+if(sl!=='es')setLang(sl);
+
+/* scroll shadow */
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+
+/* burger */
+const brg=document.getElementById('burger'),mm=document.getElementById('mobile-menu');
+brg.addEventListener('click',()=>{const o=brg.classList.toggle('open');brg.setAttribute('aria-expanded',o);mm.classList.toggle('open',o);});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{brg.classList.remove('open');mm.classList.remove('open');brg.setAttribute('aria-expanded','false');}));
+
+/* scroll reveal */
+const ro=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);ro.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(e=>ro.observe(e));
+
+/* footer contact gate */
+function revealFooterContact(e){
+  e.preventDefault();
+  document.getElementById('footer-gate-btn').style.display='none';
+  document.getElementById('footer-email').style.display='list-item';
+  document.getElementById('footer-phone').style.display='list-item';
+}
+
+/* ─── FILTRO POR CATEGORÍA ─── */
+const pills=document.querySelectorAll('#filter-pills .pill');
+const cards=Array.from(document.querySelectorAll('.post-card'));
+pills.forEach(p=>p.addEventListener('click',()=>{
+  pills.forEach(x=>x.classList.remove('active'));
+  p.classList.add('active');
+  const cat=p.dataset.cat;
+  cards.forEach(c=>{
+    const show=(cat==='all'||c.dataset.cat===cat);
+    if(show&&c.classList.contains('hidden-cat')){
+      c.classList.remove('hidden-cat');
+      c.classList.add('fading');
+      requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.remove('fading')));
+    }else if(!show&&!c.classList.contains('hidden-cat')){
+      c.classList.add('fading');
+      setTimeout(()=>{c.classList.add('hidden-cat');c.classList.remove('fading');},250);
+    }
+  });
+}));
+
+/* ─── ORDEN POR FECHA ─── */
+const grid=document.getElementById('blog-grid');
+function sortCards(dir){
+  const sorted=[...grid.querySelectorAll('.post-card')].sort((a,b)=>{
+    return dir==='asc'
+      ? a.dataset.date.localeCompare(b.dataset.date)
+      : b.dataset.date.localeCompare(a.dataset.date);
+  });
+  sorted.forEach(c=>grid.appendChild(c));
+}
+document.getElementById('sort-select').addEventListener('change',function(){sortCards(this.value);});
+sortCards(document.getElementById('sort-select').value);
+
+/* ─── MODALES ─── */
+let currentModal=null;
+function openModal(id){
+  const m=document.getElementById(id);
+  currentModal=m;
+  m.classList.add('open');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>m.classList.add('visible')));
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  if(!currentModal)return;
+  const m=currentModal;
+  m.classList.remove('visible');
+  setTimeout(()=>{m.classList.remove('open');},250);
+  document.body.style.overflow='';
+  currentModal=null;
+}
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{if(e.target===o)closeModal();});
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
+
+
