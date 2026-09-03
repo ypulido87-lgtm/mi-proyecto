@@ -1,0 +1,39 @@
+# robots.txt template
+#
+# Review every line before publishing. Crawler permissions are the site owner's
+# decision: this template does not choose a policy, and the toolkit must not
+# add, remove or change AI-crawler rules without an explicit instruction.
+#
+# Replace https://example.com with the real canonical origin.
+
+# --- Default policy for all crawlers -----------------------------------
+User-agent: *
+Allow: /
+
+# Block only genuinely private or non-content surfaces. Remove any line that
+# does not correspond to a real path on this site.
+# Disallow: /admin/
+# Disallow: /cart/
+# Disallow: /checkout/
+# Disallow: /search
+# Disallow: /*?
+
+# --- AI crawler policy -------------------------------------------------
+# OPTIONAL AND OWNER-DECIDED. Leaving this section out means AI crawlers follow
+# the wildcard group above. Uncomment a group only on the owner's instruction.
+#
+# Training crawlers:      GPTBot, ClaudeBot, Google-Extended,
+#                         Applebot-Extended, CCBot, Meta-ExternalAgent, Bytespider
+# Search crawlers:        OAI-SearchBot, PerplexityBot, Applebot, Amazonbot
+# User-triggered agents:  ChatGPT-User, Claude-User, Perplexity-User
+#
+# Blocking a search crawler removes the site from that assistant's answers.
+# Blocking a user-triggered agent stops a person's own agent from reading a page
+# they asked about. These are different decisions; do not treat them as one.
+#
+# User-agent: GPTBot
+# Disallow: /
+
+# --- Sitemap -----------------------------------------------------------
+# Always absolute. Add one line per sitemap or sitemap index.
+Sitemap: https://example.com/sitemap.xml

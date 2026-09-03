@@ -1,0 +1,43 @@
+# Site Name
+
+> One or two sentences describing what this site is and who it serves. Written
+> for an agent deciding whether this source answers a question.
+
+This file is a curated index of the pages most useful to an AI agent. It is not
+a sitemap and it does not grant any content-usage rights.
+
+## About
+
+- [About](https://example.com/about): What the organisation does and who it serves.
+
+## Documentation
+
+- [Getting started](https://example.com/docs/getting-started): First steps.
+- [Reference](https://example.com/docs/reference): Complete reference material.
+
+## Products and services
+
+- [Products](https://example.com/products): What is offered.
+
+## Resources
+
+- [Blog](https://example.com/blog): Articles and analysis.
+- [FAQ](https://example.com/faq): Common questions with direct answers.
+
+## Policies
+
+- [Privacy](https://example.com/privacy)
+- [Terms](https://example.com/terms)
+
+## Contact
+
+- [Contact](https://example.com/contact): How to reach the organisation.
+
+# Rules for editing this file
+#
+# 1. Every URL must exist and return HTTP 200. Verify before publishing.
+# 2. Descriptions must match what the page actually contains.
+# 3. Exclude admin, login, account, cart, checkout, search results, tag and
+#    author archives, feeds, pagination, assets, and URLs with query parameters.
+# 4. Curate, do not enumerate. This is not a copy of the sitemap.
+# 5. Delete every section that does not apply rather than leaving placeholders.

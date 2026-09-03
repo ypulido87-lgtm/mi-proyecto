@@ -9,6 +9,27 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Contabilidad profesional en español para pequeños negocios en Orlando, FL. Bookkeeping, impuestos, nómina y contabilidad para LLC. Más de 15 años de experiencia internacional. Primera consulta gratuita.">
+<link rel="canonical" href="https://pulidotax.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "@id": "https://pulidotax.com/#organization",
+  "name": "Pulido Tax & Accounting LLC",
+  "url": "https://pulidotax.com/",
+  "description": "Contabilidad profesional en español para pequeños negocios en Orlando, FL. Bookkeeping, impuestos, nómina y contabilidad para LLC.",
+  "image": "https://pulidotax.com/yudit-pulido.png",
+  "areaServed": {
+    "@type": "City",
+    "name": "Orlando",
+    "containedInPlace": { "@type": "State", "name": "Florida" }
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Yudit Pulido Blanco"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -162,7 +183,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 /* ============ FOOTER ============ */
 .footer{background:var(--dark);color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.08);padding:84px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:64px}
-.footer h4{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.footer h3{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
 .footer a{transition:color .3s}
 .footer a:hover{color:#fff}
 .footer li{margin-bottom:12px;font-size:14.5px}
@@ -250,6 +271,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
   </div>
 </header>
 
+<main>
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap hero-grid">
@@ -394,6 +416,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
     </div>
   </div>
 </section>
+</main>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -411,7 +434,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         <p data-i18n="ft_brand">Contabilidad profesional en español para pequeños negocios en Orlando, Florida.</p>
       </div>
       <div>
-        <h4 data-i18n="ft_nav">Navegación</h4>
+        <h3 data-i18n="ft_nav">Navegación</h3>
         <ul>
           <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
           <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
@@ -420,7 +443,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         </ul>
       </div>
       <div>
-        <h4 data-i18n="ft_svcs">Servicios</h4>
+        <h3 data-i18n="ft_svcs">Servicios</h3>
         <ul>
           <li><a href="servicios.html" data-i18n="svc1_t">Bookkeeping mensual</a></li>
           <li><a href="servicios.html" data-i18n="svc2_t">Declaración de impuestos</a></li>
@@ -429,10 +452,10 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         </ul>
       </div>
       <div>
-        <h4 data-i18n="ft_contact">Contacto</h4>
+        <h3 data-i18n="ft_contact">Contacto</h3>
         <button class="gate-btn" id="gateBtn" onclick="revealFooterContact()" data-i18n="ft_gate">Ver datos de contacto</button>
         <ul id="contactData"></ul>
-        <h4 style="margin-top:28px" data-i18n="ft_hours">Horario</h4>
+        <h3 style="margin-top:28px" data-i18n="ft_hours">Horario</h3>
         <div class="footer-hours">
           <div data-i18n="ft_h1">Lun–Vie: 9:00 am – 6:00 pm</div>
           <div data-i18n="ft_h2">Sáb y Dom: Cerrado</div>

@@ -1,0 +1,663 @@
+{
+  "meta": {
+    "domain": "Not provided",
+    "project": "AEO Agent Readiness Toolkit",
+    "project_path": "C:\\Users\\eroja\\OneDrive\\Desktop\\AEO Agent Readiness Toolkit",
+    "stack": {
+      "frameworks": [
+        "Unknown"
+      ],
+      "hosting": [],
+      "dependency_count": 0
+    },
+    "site_type": "Unknown",
+    "capabilities": {
+      "commerce": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "api": {
+        "present": false,
+        "evidence": []
+      },
+      "auth": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "mcp": {
+        "present": false,
+        "evidence": []
+      },
+      "agent_service": {
+        "present": false,
+        "evidence": []
+      }
+    },
+    "date": "2026-08-24T13:50:53+00:00",
+    "evidence_layers": "local only",
+    "toolkit_version": "2.0",
+    "tls_verification": "enabled"
+  },
+  "scores": {
+    "agent_readiness": {
+      "score": null,
+      "applicable_checks": 0,
+      "passed": 0,
+      "warnings": 0,
+      "failed": 0,
+      "not_applicable": 13,
+      "manual_review": 11,
+      "weighted_earned": 0,
+      "weighted_total": 0
+    },
+    "aeo_technical": {
+      "score": null,
+      "applicable_checks": 0,
+      "passed": 0,
+      "warnings": 0,
+      "failed": 0,
+      "not_applicable": 9,
+      "manual_review": 1,
+      "weighted_earned": 0,
+      "weighted_total": 0
+    },
+    "unscored_checks": [],
+    "method": "score = 100 * sum(weight * status_value) / sum(weight) over checks whose status is PASS (1.0), WARNING (0.5) or FAIL (0.0). N/A and MANUAL REVIEW are excluded from both numerator and denominator. The two scores use disjoint check sets. A score of null means no check in that set produced scorable evidence."
+  },
+  "checks": [
+    {
+      "name": "robots.txt",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Sitemap",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "HTTP Link headers",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "Requires a live origin: response headers require a live origin",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "DNS-AID",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "Requires a live origin: DNS records are external to the repository and are never modified by this toolkit",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Markdown negotiation",
+      "section": "Content Accessibility",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "Requires a live origin: content negotiation requires a live origin or a running server",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Server-rendered content",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Semantic HTML",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "AI Bot Rules",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Actual bot access",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P1",
+      "detail": "Requires a live origin: edge and origin behaviour can only be observed against a live origin",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Content Signals",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Web Bot Auth",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "Requires a live origin: signature verification requires live request/response exchange",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "API Catalog",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no API surface detected in this project",
+      "applicability": "no API surface detected in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "OAuth discovery",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "applicability": "no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "OAuth Protected Resource",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "applicability": "no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Auth.md",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no authentication surface detected",
+      "applicability": "no authentication surface detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "MCP Server Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this project does not implement an MCP server",
+      "applicability": "this project does not implement an MCP server",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "A2A Agent Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this project does not expose an agent service",
+      "applicability": "this project does not expose an agent service",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Agent Skills",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no agent-executable capabilities are offered by this site",
+      "applicability": "no agent-executable capabilities are offered by this site",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "WebMCP",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no in-page agent tools are implemented",
+      "applicability": "no in-page agent tools are implemented",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "ARD Manifest",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: ARD is pre-1.0 and no ARD capability was detected",
+      "applicability": "ARD applicability not established; the specification must be verified before any implementation",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "x402",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "HTTP-native payments built on the 402 Payment Required status",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "MPP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Machine payable protocol for agent-initiated purchases",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "UCP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Universal commerce protocol for catalogue and checkout interoperability",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "ACP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Agentic commerce protocol for delegated purchase flows",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "Crawlability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Content availability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Entity clarity",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Structured data",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Answer extraction",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Citation readiness",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Canonicalization",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Content duplication",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no HTML content in this project",
+      "applicability": "no HTML content in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Homepage availability",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "Requires a live origin: no public URL supplied",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "llms.txt",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "check": "Actual bot access",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: edge and origin behaviour can only be observed against a live origin",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "AI Bot Rules",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Content Signals",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Crawlability",
+      "section": "AEO",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "aeo_technical"
+    },
+    {
+      "priority": "P2",
+      "check": "DNS-AID",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: DNS records are external to the repository and are never modified by this toolkit",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "HTTP Link headers",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: response headers require a live origin",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Homepage availability",
+      "section": "Availability",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: no public URL supplied",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Markdown negotiation",
+      "section": "Content Accessibility",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: content negotiation requires a live origin or a running server",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Sitemap",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Web Bot Auth",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "Requires a live origin: signature verification requires live request/response exchange",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "llms.txt",
+      "section": "Availability",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "robots.txt",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "No web content detected in this project. If it is deployed, re-run with --url.",
+      "recommendation": "",
+      "score": "agent_readiness"
+    }
+  ],
+  "files_modified": [],
+  "tests_executed": [
+    "Local repository inspection (6 files scanned)"
+  ]
+}

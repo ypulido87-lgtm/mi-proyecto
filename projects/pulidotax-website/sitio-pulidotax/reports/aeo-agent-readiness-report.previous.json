@@ -1,0 +1,1011 @@
+{
+  "meta": {
+    "domain": "https://pulidotax.com/",
+    "project": "sitio-pulidotax",
+    "project_path": "C:\\Claude\\projects\\pulidotax-website\\sitio-pulidotax",
+    "stack": {
+      "frameworks": [
+        "Static HTML"
+      ],
+      "hosting": [],
+      "dependency_count": 0
+    },
+    "site_type": "Content Site",
+    "capabilities": {
+      "commerce": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "api": {
+        "present": false,
+        "evidence": []
+      },
+      "auth": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "mcp": {
+        "present": false,
+        "evidence": []
+      },
+      "agent_service": {
+        "present": false,
+        "evidence": []
+      }
+    },
+    "date": "2026-09-03T18:08:49+00:00",
+    "evidence_layers": "local+live",
+    "toolkit_version": "2.0",
+    "tls_verification": "enabled"
+  },
+  "scores": {
+    "agent_readiness": {
+      "score": 91,
+      "applicable_checks": 9,
+      "passed": 6,
+      "warnings": 3,
+      "failed": 0,
+      "not_applicable": 13,
+      "manual_review": 2,
+      "weighted_earned": 14.5,
+      "weighted_total": 16.0
+    },
+    "aeo_technical": {
+      "score": 90,
+      "applicable_checks": 10,
+      "passed": 8,
+      "warnings": 2,
+      "failed": 0,
+      "not_applicable": 0,
+      "manual_review": 0,
+      "weighted_earned": 20.25,
+      "weighted_total": 22.5
+    },
+    "unscored_checks": [],
+    "method": "score = 100 * sum(weight * status_value) / sum(weight) over checks whose status is PASS (1.0), WARNING (0.5) or FAIL (0.0). N/A and MANUAL REVIEW are excluded from both numerator and denominator. The two scores use disjoint check sets. A score of null means no check in that set produced scorable evidence."
+  },
+  "checks": [
+    {
+      "name": "robots.txt",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served robots.txt is valid and references 1 sitemap(s)",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "files": [
+          "robots.txt"
+        ],
+        "groups": 9,
+        "sitemaps": [
+          "https://pulidotax.com/wp-sitemap.xml"
+        ],
+        "syntax_errors": [],
+        "conflicts": [],
+        "blocking_groups": []
+      },
+      "live_evidence": {
+        "status": 200,
+        "content_type": "text/plain",
+        "groups": 9,
+        "sitemaps": [
+          "https://pulidotax.com/wp-sitemap.xml"
+        ],
+        "syntax_errors": [],
+        "conflicts": [],
+        "blocking_groups": []
+      },
+      "data": {
+        "ai_policy": {
+          "Amazonbot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Applebot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Applebot-Extended": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Bingbot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Bytespider": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "CCBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "ChatGPT-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Claude-SearchBot": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Claude-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "ClaudeBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "GPTBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Google-Extended": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Googlebot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "Meta-ExternalAgent": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "No rule matched; default allow"
+          },
+          "OAI-SearchBot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Perplexity-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "PerplexityBot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": true,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sitemap",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Sitemap valid, referenced from robots.txt, 4 URLs, sample all 2xx",
+      "applicability": "",
+      "recommendation": "Generate a sitemap covering canonical, indexable URLs",
+      "local_evidence": null,
+      "live_evidence": {
+        "url": "https://pulidotax.com/wp-sitemap.xml",
+        "kind": "sitemapindex",
+        "url_count": 4,
+        "errors": [],
+        "warnings": [],
+        "referenced_in_robots": true,
+        "sampled": 0,
+        "broken_urls": [],
+        "redirecting_urls": []
+      },
+      "data": {}
+    },
+    {
+      "name": "HTTP Link headers",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "WARNING",
+      "priority": "P2",
+      "detail": "No Link header. Only add relations that point at resources which actually exist",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "link_headers": [],
+        "count": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "DNS-AID",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P3",
+      "detail": "DNS-AID requires a DNS record this toolkit never creates. Verify the current specification, then hand the record name, value and verification procedure to the DNS owner",
+      "applicability": "",
+      "recommendation": "Diagnostics only. See references/dns-aid.md for the reporting template",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Markdown negotiation",
+      "section": "Content Accessibility",
+      "score": "agent_readiness",
+      "status": "WARNING",
+      "priority": "P2",
+      "detail": "Identical body for both Accept headers; no negotiation",
+      "applicability": "",
+      "recommendation": "Optional efficiency feature. Implement only if the stack supports negotiation without breaking HTML",
+      "local_evidence": null,
+      "live_evidence": {
+        "status_code": 200,
+        "content_type": "text/html",
+        "identical_bodies": true,
+        "byte_reduction_percent": 0,
+        "vary_includes_accept": true,
+        "structural_markdown": false
+      },
+      "data": {}
+    },
+    {
+      "name": "Server-rendered content",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Homepage delivers 3698 characters of text without JavaScript",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents": 5,
+        "javascript_dependent": []
+      },
+      "live_evidence": {
+        "served_text_chars": 3698,
+        "executable_scripts": 3,
+        "javascript_dependent": false
+      },
+      "data": {}
+    },
+    {
+      "name": "Semantic HTML",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served homepage uses landmarks and a coherent heading structure",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents": 5,
+        "without_main": [],
+        "without_h1": [],
+        "issue_count": 1,
+        "sample_issues": [
+          "3 form inputs without an associated label"
+        ]
+      },
+      "live_evidence": {
+        "landmarks": {
+          "main": 1,
+          "article": 4,
+          "section": 8,
+          "nav": 1,
+          "header": 1,
+          "footer": 1,
+          "aside": 0
+        },
+        "h1_count": 1,
+        "issues": [],
+        "text_to_markup_ratio": 0.084
+      },
+      "data": {}
+    },
+    {
+      "name": "AI Bot Rules",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served policy declares rules for: ChatGPT-User, Claude-User, ClaudeBot, GPTBot, Google-Extended, OAI-SearchBot, Perplexity-User, PerplexityBot",
+      "applicability": "",
+      "recommendation": "Policy is the owner's decision; this audit reports it and never changes it",
+      "local_evidence": {
+        "explicit_rules_for": [
+          "ChatGPT-User",
+          "Claude-User",
+          "ClaudeBot",
+          "GPTBot",
+          "Google-Extended",
+          "OAI-SearchBot",
+          "Perplexity-User",
+          "PerplexityBot"
+        ],
+        "blocked_on_homepage": []
+      },
+      "live_evidence": {
+        "explicit_rules_for": [
+          "ChatGPT-User",
+          "Claude-User",
+          "ClaudeBot",
+          "GPTBot",
+          "Google-Extended",
+          "OAI-SearchBot",
+          "Perplexity-User",
+          "PerplexityBot"
+        ],
+        "blocked_on_homepage": []
+      },
+      "data": {}
+    },
+    {
+      "name": "Actual bot access",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Declared and actual access agree. Content served to: GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "browser_baseline": {
+          "status": 200,
+          "bytes": 45432,
+          "error": null
+        },
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "ClaudeBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "PerplexityBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "Googlebot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "Bingbot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          }
+        ]
+      },
+      "data": {}
+    },
+    {
+      "name": "Content Signals",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Content signals served: search=yes, ai-input=yes, ai-train=no",
+      "applicability": "",
+      "recommendation": "Absent policy is reported, not assumed. Present the owner with valid options for search, ai-input and ai-train and let them choose.",
+      "local_evidence": {
+        "declared": [
+          "search=yes, ai-input=yes, ai-train=no"
+        ],
+        "parsed": [
+          {
+            "signal": "search",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-input",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-train",
+            "value": "no"
+          }
+        ],
+        "unknown_signals": [],
+        "present": true,
+        "note": "No policy is inferred. If absent, present the owner with the technically valid options and let them decide; never set search, ai-input or ai-train automatically."
+      },
+      "live_evidence": {
+        "declared": [
+          "search=yes, ai-input=yes, ai-train=no"
+        ],
+        "parsed": [
+          {
+            "signal": "search",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-input",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-train",
+            "value": "no"
+          }
+        ],
+        "unknown_signals": [],
+        "present": true,
+        "note": "No policy is inferred. If absent, present the owner with the technically valid options and let them decide; never set search, ai-input or ai-train automatically."
+      },
+      "data": {}
+    },
+    {
+      "name": "Web Bot Auth",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P3",
+      "detail": "No verified signature exchange observed. Web Bot Auth is a property of the requesting agent and the origin's verification policy; never fabricate cryptographic material",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "signature_headers": []
+      },
+      "data": {}
+    },
+    {
+      "name": "API Catalog",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no API surface detected",
+      "applicability": "no API surface detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "OAuth discovery",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "applicability": "no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "OAuth Protected Resource",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth-protected resource detected",
+      "applicability": "no OAuth-protected resource detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Auth.md",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no authentication surface detected",
+      "applicability": "no authentication surface detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "MCP Server Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this site does not expose an MCP server",
+      "applicability": "this site does not expose an MCP server",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "A2A Agent Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this site does not expose an agent service",
+      "applicability": "this site does not expose an agent service",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Agent Skills",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no agent-executable capabilities are offered by this site",
+      "applicability": "no agent-executable capabilities are offered by this site",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "WebMCP",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no in-page agent tools detected",
+      "applicability": "no in-page agent tools detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "ARD Manifest",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: ARD is pre-1.0 and no ARD capability was detected",
+      "applicability": "ARD is pre-1.0 and no ARD capability was detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "x402",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "HTTP-native payments built on the 402 Payment Required status",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "MPP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Machine payable protocol for agent-initiated purchases",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "UCP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Universal commerce protocol for catalogue and checkout interoperability",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "ACP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: No payment provider, cart, checkout or transaction code detected",
+      "applicability": "No payment provider, cart, checkout or transaction code detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Agentic commerce protocol for delegated purchase flows",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "Crawlability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Homepage crawlable by general crawlers",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "homepage_allowed": true
+      },
+      "data": {}
+    },
+    {
+      "name": "Content availability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served homepage carries 607 words of extractable text",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents": 5,
+        "thin_documents": []
+      },
+      "live_evidence": {
+        "word_count": 607
+      },
+      "data": {}
+    },
+    {
+      "name": "Entity clarity",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "WARNING",
+      "priority": "P1",
+      "detail": "1 entities lack a stable @id for cross-page linking",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "entity_types": {
+          "AccountingService": 1,
+          "City": 1,
+          "State": 1,
+          "Person": 1
+        },
+        "entities_without_id": 1
+      },
+      "live_evidence": {
+        "entity_types": {
+          "AccountingService": 1,
+          "City": 1,
+          "State": 1,
+          "Person": 1
+        },
+        "entities_without_id": 1
+      },
+      "data": {}
+    },
+    {
+      "name": "Structured data",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "WARNING",
+      "priority": "P1",
+      "detail": "3 structured-data issues on the served homepage",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents_with_jsonld": 1,
+        "documents": 5,
+        "parse_errors": [],
+        "issue_count": 3,
+        "unsupported_claims": []
+      },
+      "live_evidence": {
+        "jsonld_blocks": 1,
+        "parse_errors": 0,
+        "issues": [
+          "Type not in the toolkit's known list; verify against schema.org before trusting it",
+          "Type not in the toolkit's known list; verify against schema.org before trusting it",
+          "Type not in the toolkit's known list; verify against schema.org before trusting it"
+        ]
+      },
+      "data": {
+        "note": "JSON validity is not Schema.org correctness; semantic review is still required"
+      }
+    },
+    {
+      "name": "Answer extraction",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Homepage exposes a summary and a coherent heading outline",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents_without_meta_description": [],
+        "documents_with_faq": 0,
+        "documents_with_outline_problems": []
+      },
+      "live_evidence": {
+        "has_meta_description": true,
+        "heading_count": 20,
+        "skipped_levels": 0,
+        "faq_entities": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "Citation readiness",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Homepage carries the signals needed to attribute it",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "citable_documents": 5,
+        "documents": 5
+      },
+      "live_evidence": {
+        "canonical": "https://pulidotax.com/",
+        "title": "Pulido Tax & Accounting LLC \u2014 Contabilidad e Impuestos en Espa\u00f1ol \u00b7 Orlando, FL",
+        "meta_description": "Contabilidad profesional en espa\u00f1ol para peque\u00f1os negocios en Orlando, FL. Bookkeeping, impuestos, n\u00f3mina y contabilidad para LLC. M\u00e1s de 15 a\u00f1os de experiencia internacional. Primera consulta gratuita.",
+        "author": null,
+        "date_published": null,
+        "date_modified": null,
+        "publisher": null,
+        "og_url": null,
+        "is_dated_content": false,
+        "ready": true
+      },
+      "data": {}
+    },
+    {
+      "name": "Canonicalization",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Canonical declared: https://pulidotax.com/",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "documents": 5,
+        "without_canonical": []
+      },
+      "live_evidence": {
+        "canonical": "https://pulidotax.com/",
+        "final_url": "https://pulidotax.com/",
+        "redirects": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "Content duplication",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "No competing duplicate titles detected in the inspected documents",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": {
+        "duplicate_titles": {}
+      },
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Homepage availability",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P0",
+      "detail": "HTTP 200 after 0 redirect(s)",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "status": 200,
+        "redirects": [],
+        "final_url": "https://pulidotax.com/",
+        "error": null
+      },
+      "data": {}
+    },
+    {
+      "name": "llms.txt",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "WARNING",
+      "priority": "P2",
+      "detail": "No llms.txt served. This is optional; absence is not a defect",
+      "applicability": "",
+      "recommendation": "Consider a curated llms.txt if the site has documentation or authoritative resources",
+      "local_evidence": null,
+      "live_evidence": {
+        "status": 404
+      },
+      "data": {}
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "check": "Entity clarity",
+      "section": "AEO",
+      "status": "WARNING",
+      "detail": "1 entities lack a stable @id for cross-page linking",
+      "recommendation": "",
+      "score": "aeo_technical"
+    },
+    {
+      "priority": "P1",
+      "check": "Structured data",
+      "section": "AEO",
+      "status": "WARNING",
+      "detail": "3 structured-data issues on the served homepage",
+      "recommendation": "",
+      "score": "aeo_technical"
+    },
+    {
+      "priority": "P2",
+      "check": "HTTP Link headers",
+      "section": "Discoverability",
+      "status": "WARNING",
+      "detail": "No Link header. Only add relations that point at resources which actually exist",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Markdown negotiation",
+      "section": "Content Accessibility",
+      "status": "WARNING",
+      "detail": "Identical body for both Accept headers; no negotiation",
+      "recommendation": "Optional efficiency feature. Implement only if the stack supports negotiation without breaking HTML",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "llms.txt",
+      "section": "Availability",
+      "status": "WARNING",
+      "detail": "No llms.txt served. This is optional; absence is not a defect",
+      "recommendation": "Consider a curated llms.txt if the site has documentation or authoritative resources",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P3",
+      "check": "DNS-AID",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "DNS-AID requires a DNS record this toolkit never creates. Verify the current specification, then hand the record name, value and verification procedure to the DNS owner",
+      "recommendation": "Diagnostics only. See references/dns-aid.md for the reporting template",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P3",
+      "check": "Web Bot Auth",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "No verified signature exchange observed. Web Bot Auth is a property of the requesting agent and the origin's verification policy; never fabricate cryptographic material",
+      "recommendation": "",
+      "score": "agent_readiness"
+    }
+  ],
+  "files_modified": [],
+  "tests_executed": [
+    "Local repository inspection (14 files scanned)",
+    "Live origin inspection of https://pulidotax.com/"
+  ]
+}

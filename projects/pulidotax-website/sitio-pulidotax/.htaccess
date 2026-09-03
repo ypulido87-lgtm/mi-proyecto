@@ -1,0 +1,63 @@
+DirectoryIndex index.html index.php
+# Block the include-only files.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+<Files wp-config.php>
+<IfModule !mod_authz_core.c>
+order allow,deny
+deny from all
+</IfModule>
+<IfModule mod_authz_core.c>
+require all denied
+</IfModule>
+</Files>
+
+RewriteRule ^landing\.html$ - [L]
+
+# ===== Markdown for AI agents + Link header (added 2026-09-03) =====
+<IfModule mod_mime.c>
+AddType text/markdown .md
+AddCharset utf-8 .md
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteCond %{DOCUMENT_ROOT}/index.md -f
+RewriteRule ^$ - [E=MDFILE:index.md]
+
+RewriteCond %{DOCUMENT_ROOT}/$1.md -f
+RewriteRule ^([a-z-]+)\.html$ - [E=MDFILE:$1.md]
+
+RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+RewriteCond %{DOCUMENT_ROOT}/index.md -f
+RewriteRule ^$ index.md [L]
+
+RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.md -f
+RewriteRule ^([a-z-]+)\.html$ $1.md [L]
+</IfModule>
+<IfModule mod_headers.c>
+Header set Link "<https://pulidotax.com/%{MDFILE}e>; rel=\"alternate\"; type=\"text/markdown\", <https://pulidotax.com/wp-sitemap.xml>; rel=\"sitemap\"" env=MDFILE
+</IfModule>
+# ===== End Markdown for AI agents =====
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

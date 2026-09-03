@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.tmp/
+
+# Reports are deliverables and are intentionally tracked.
+# The superseded copy kept for before/after comparison is not.
+reports/*.previous.json

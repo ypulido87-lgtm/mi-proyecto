@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "domain": "https://acdamerica.net/",
+    "project": "acdamerica.net",
+    "project_path": "C:\\Users\\eroja\\OneDrive\\Desktop\\AEO Agent Readiness Toolkit\\audits\\acdamerica.net",
+    "stack": {
+      "frameworks": [
+        "Unknown"
+      ],
+      "hosting": [],
+      "dependency_count": 0
+    },
+    "site_type": "Unknown",
+    "capabilities": {
+      "commerce": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "api": {
+        "present": false,
+        "evidence": []
+      },
+      "auth": {
+        "present": false,
+        "evidence": [],
+        "code_confirmed": false
+      },
+      "mcp": {
+        "present": false,
+        "evidence": []
+      },
+      "agent_service": {
+        "present": false,
+        "evidence": []
+      }
+    },
+    "date": "2026-08-24T15:36:23+00:00",
+    "evidence_layers": "local+live",
+    "toolkit_version": "2.0",
+    "tls_verification": "disabled (diagnostics only)"
+  },
+  "scores": {
+    "agent_readiness": {
+      "score": 91,
+      "applicable_checks": 10,
+      "passed": 8,
+      "warnings": 2,
+      "failed": 0,
+      "not_applicable": 12,
+      "manual_review": 2,
+      "weighted_earned": 15.5,
+      "weighted_total": 17.0
+    },
+    "aeo_technical": {
+      "score": 95,
+      "applicable_checks": 9,
+      "passed": 8,
+      "warnings": 1,
+      "failed": 0,
+      "not_applicable": 0,
+      "manual_review": 1,
+      "weighted_earned": 20.5,
+      "weighted_total": 21.5
+    },
+    "unscored_checks": [],
+    "method": "score = 100 * sum(weight * status_value) / sum(weight) over checks whose status is PASS (1.0), WARNING (0.5) or FAIL (0.0). N/A and MANUAL REVIEW are excluded from both numerator and denominator. The two scores use disjoint check sets. A score of null means no check in that set produced scorable evidence."
+  },
+  "checks": [
+    {
+      "name": "robots.txt",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served robots.txt is valid and references 1 sitemap(s)",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "status": 200,
+        "content_type": "text/plain; charset=utf-8",
+        "groups": 1,
+        "sitemaps": [
+          "https://acdamerica.net/sitemap.xml"
+        ],
+        "syntax_errors": [],
+        "conflicts": [],
+        "blocking_groups": []
+      },
+      "data": {
+        "ai_policy": {
+          "Amazonbot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Applebot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Applebot-Extended": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Bingbot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Bytespider": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "CCBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "ChatGPT-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Claude-SearchBot": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Claude-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "ClaudeBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "GPTBot": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Google-Extended": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Googlebot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Meta-ExternalAgent": {
+            "purpose": [
+              "training"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "OAI-SearchBot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "Perplexity-User": {
+            "purpose": [
+              "user_action"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          },
+          "PerplexityBot": {
+            "purpose": [
+              "search"
+            ],
+            "explicit_rule": false,
+            "homepage_allowed": true,
+            "reason": "Longest match: allow: /"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sitemap",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Sitemap valid, referenced from robots.txt, 328 URLs, sample all 2xx",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "url": "https://acdamerica.net/sitemap.xml",
+        "kind": "urlset",
+        "url_count": 328,
+        "errors": [],
+        "warnings": [],
+        "referenced_in_robots": true,
+        "sampled": 10,
+        "broken_urls": [],
+        "redirecting_urls": []
+      },
+      "data": {}
+    },
+    {
+      "name": "HTTP Link headers",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Link header advertises: describedby",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "link_headers": [
+          {
+            "target": "/llms.txt",
+            "params": {
+              "rel": "describedby",
+              "type": "text/plain"
+            },
+            "rel": "describedby"
+          }
+        ],
+        "count": 1
+      },
+      "data": {}
+    },
+    {
+      "name": "DNS-AID",
+      "section": "Discoverability",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P3",
+      "detail": "DNS-AID requires a DNS record this toolkit never creates. Verify the current specification, then hand the record name, value and verification procedure to the DNS owner",
+      "applicability": "",
+      "recommendation": "Diagnostics only. See references/dns-aid.md for the reporting template",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Markdown negotiation",
+      "section": "Content Accessibility",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Served text/markdown with Markdown structure",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "status_code": 200,
+        "content_type": "text/markdown; charset=utf-8",
+        "identical_bodies": false,
+        "byte_reduction_percent": 96,
+        "vary_includes_accept": true,
+        "structural_markdown": true
+      },
+      "data": {}
+    },
+    {
+      "name": "Server-rendered content",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Homepage delivers 11972 characters of text without JavaScript",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "served_text_chars": 11972,
+        "executable_scripts": 14,
+        "javascript_dependent": false
+      },
+      "data": {}
+    },
+    {
+      "name": "Semantic HTML",
+      "section": "Content Accessibility",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served homepage uses landmarks and a coherent heading structure",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "landmarks": {
+          "main": 1,
+          "article": 0,
+          "section": 12,
+          "nav": 2,
+          "header": 3,
+          "footer": 1,
+          "aside": 1
+        },
+        "h1_count": 1,
+        "issues": [],
+        "text_to_markup_ratio": 0.05
+      },
+      "data": {}
+    },
+    {
+      "name": "AI Bot Rules",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "WARNING",
+      "priority": "P2",
+      "detail": "No AI-crawler-specific rules are served; the wildcard group applies",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "explicit_rules_for": [],
+        "blocked_on_homepage": []
+      },
+      "data": {}
+    },
+    {
+      "name": "Actual bot access",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Declared and actual access agree. Content served to: GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "browser_baseline": {
+          "status": 200,
+          "bytes": 241316,
+          "error": null
+        },
+        "agents": [
+          {
+            "agent": "GPTBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "ClaudeBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "PerplexityBot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "Googlebot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          },
+          {
+            "agent": "Bingbot",
+            "status": 200,
+            "verdict": "CONSISTENT_ALLOW",
+            "challenge_marker": null
+          }
+        ]
+      },
+      "data": {}
+    },
+    {
+      "name": "Content Signals",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Content signals served: search=yes, ai-input=yes, ai-train=no",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "declared": [
+          "search=yes, ai-input=yes, ai-train=no"
+        ],
+        "parsed": [
+          {
+            "signal": "search",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-input",
+            "value": "yes"
+          },
+          {
+            "signal": "ai-train",
+            "value": "no"
+          }
+        ],
+        "unknown_signals": [],
+        "present": true,
+        "note": "No policy is inferred. If absent, present the owner with the technically valid options and let them decide; never set search, ai-input or ai-train automatically."
+      },
+      "data": {}
+    },
+    {
+      "name": "Web Bot Auth",
+      "section": "Bot Access",
+      "score": "agent_readiness",
+      "status": "MANUAL REVIEW",
+      "priority": "P3",
+      "detail": "No verified signature exchange observed. Web Bot Auth is a property of the requesting agent and the origin's verification policy; never fabricate cryptographic material",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "signature_headers": []
+      },
+      "data": {}
+    },
+    {
+      "name": "API Catalog",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "WARNING",
+      "priority": "P2",
+      "detail": "Capability exists but nothing is published at /.well-known/api-catalog, /openapi.json",
+      "applicability": "no API surface detected in this project",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "probed": [
+          "/.well-known/api-catalog",
+          "/openapi.json"
+        ],
+        "present": false
+      },
+      "data": {}
+    },
+    {
+      "name": "OAuth discovery",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "applicability": "no OAuth implementation detected; publishing discovery metadata would be a false signal",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "OAuth Protected Resource",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no OAuth-protected resource detected",
+      "applicability": "no OAuth-protected resource detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Auth.md",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no authentication surface detected",
+      "applicability": "no authentication surface detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "MCP Server Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this site does not expose an MCP server",
+      "applicability": "this site does not expose an MCP server",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "A2A Agent Card",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: this site does not expose an agent service",
+      "applicability": "this site does not expose an agent service",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Agent Skills",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no agent-executable capabilities are offered by this site",
+      "applicability": "no agent-executable capabilities are offered by this site",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "WebMCP",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no in-page agent tools detected",
+      "applicability": "no in-page agent tools detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "ARD Manifest",
+      "section": "Protocol Discovery",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: ARD is pre-1.0 and no ARD capability was detected",
+      "applicability": "ARD is pre-1.0 and no ARD capability was detected",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "x402",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no local source supplied and no commerce capability observed live",
+      "applicability": "no local source; live evidence only",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "HTTP-native payments built on the 402 Payment Required status",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "MPP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no local source supplied and no commerce capability observed live",
+      "applicability": "no local source; live evidence only",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Machine payable protocol for agent-initiated purchases",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "UCP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no local source supplied and no commerce capability observed live",
+      "applicability": "no local source; live evidence only",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Universal commerce protocol for catalogue and checkout interoperability",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "ACP",
+      "section": "Commerce",
+      "score": "agent_readiness",
+      "status": "N/A",
+      "priority": "P3",
+      "detail": "Not applicable: no local source supplied and no commerce capability observed live",
+      "applicability": "no local source; live evidence only",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {
+        "purpose": "Agentic commerce protocol for delegated purchase flows",
+        "commerce_evidence": {
+          "applicable": false,
+          "payment_dependencies": [],
+          "code_confirmed": false,
+          "path_hints": [],
+          "reason": "No payment provider, cart, checkout or transaction code detected"
+        }
+      }
+    },
+    {
+      "name": "Crawlability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "Homepage crawlable by general crawlers",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "homepage_allowed": true
+      },
+      "data": {}
+    },
+    {
+      "name": "Content availability",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served homepage carries 1804 words of extractable text",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "word_count": 1804
+      },
+      "data": {}
+    },
+    {
+      "name": "Entity clarity",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "WARNING",
+      "priority": "P1",
+      "detail": "Multiple Organization entities are declared, so the publishing entity is ambiguous",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "entity_types": {
+          "Organization": 2,
+          "PostalAddress": 1,
+          "WebSite": 1
+        },
+        "entities_without_id": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "Structured data",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Served JSON-LD parses and matches visible content",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "jsonld_blocks": 2,
+        "parse_errors": 0,
+        "issues": []
+      },
+      "data": {}
+    },
+    {
+      "name": "Answer extraction",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Homepage exposes a summary and a coherent heading outline",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "has_meta_description": true,
+        "heading_count": 40,
+        "skipped_levels": 0,
+        "faq_entities": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "Citation readiness",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Homepage carries the signals needed to attribute it",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "canonical": "https://acdamerica.net/",
+        "title": "Genuine Fisher\u2122 Spare Parts & Process Valves | ACD America",
+        "meta_description": "Genuine OEM Fisher\u2122 control-valve spare parts and multi-brand process valves \u2014 1,000+ in stock, fast quotes, shipped from Orlando, FL. Independent supplier.",
+        "author": null,
+        "date_published": null,
+        "date_modified": null,
+        "publisher": "https://acdamerica.net/#organization",
+        "og_url": "https://acdamerica.net/",
+        "is_dated_content": false,
+        "ready": true
+      },
+      "data": {}
+    },
+    {
+      "name": "Canonicalization",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "PASS",
+      "priority": "P1",
+      "detail": "Canonical declared: https://acdamerica.net/",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "canonical": "https://acdamerica.net/",
+        "final_url": "https://acdamerica.net/",
+        "redirects": 0
+      },
+      "data": {}
+    },
+    {
+      "name": "Content duplication",
+      "section": "AEO",
+      "score": "aeo_technical",
+      "status": "MANUAL REVIEW",
+      "priority": "P2",
+      "detail": "No local source supplied; judged from the live origin only",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": null,
+      "data": {}
+    },
+    {
+      "name": "Homepage availability",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P0",
+      "detail": "HTTP 200 after 0 redirect(s)",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "status": 200,
+        "redirects": [],
+        "final_url": "https://acdamerica.net/",
+        "error": null
+      },
+      "data": {}
+    },
+    {
+      "name": "llms.txt",
+      "section": "Availability",
+      "score": "agent_readiness",
+      "status": "PASS",
+      "priority": "P2",
+      "detail": "llms.txt served as text/plain",
+      "applicability": "",
+      "recommendation": "",
+      "local_evidence": null,
+      "live_evidence": {
+        "status": 200,
+        "content_type": "text/plain",
+        "bytes": 6491
+      },
+      "data": {}
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "check": "Entity clarity",
+      "section": "AEO",
+      "status": "WARNING",
+      "detail": "Multiple Organization entities are declared, so the publishing entity is ambiguous",
+      "recommendation": "",
+      "score": "aeo_technical"
+    },
+    {
+      "priority": "P2",
+      "check": "AI Bot Rules",
+      "section": "Bot Access",
+      "status": "WARNING",
+      "detail": "No AI-crawler-specific rules are served; the wildcard group applies",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "API Catalog",
+      "section": "Protocol Discovery",
+      "status": "WARNING",
+      "detail": "Capability exists but nothing is published at /.well-known/api-catalog, /openapi.json",
+      "recommendation": "",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P2",
+      "check": "Content duplication",
+      "section": "AEO",
+      "status": "MANUAL REVIEW",
+      "detail": "No local source supplied; judged from the live origin only",
+      "recommendation": "",
+      "score": "aeo_technical"
+    },
+    {
+      "priority": "P3",
+      "check": "DNS-AID",
+      "section": "Discoverability",
+      "status": "MANUAL REVIEW",
+      "detail": "DNS-AID requires a DNS record this toolkit never creates. Verify the current specification, then hand the record name, value and verification procedure to the DNS owner",
+      "recommendation": "Diagnostics only. See references/dns-aid.md for the reporting template",
+      "score": "agent_readiness"
+    },
+    {
+      "priority": "P3",
+      "check": "Web Bot Auth",
+      "section": "Bot Access",
+      "status": "MANUAL REVIEW",
+      "detail": "No verified signature exchange observed. Web Bot Auth is a property of the requesting agent and the origin's verification policy; never fabricate cryptographic material",
+      "recommendation": "",
+      "score": "agent_readiness"
+    }
+  ],
+  "files_modified": [],
+  "tests_executed": [
+    "Local repository inspection (3 files scanned)",
+    "Live origin inspection of https://acdamerica.net/ (TLS verification DISABLED)"
+  ]
+}
