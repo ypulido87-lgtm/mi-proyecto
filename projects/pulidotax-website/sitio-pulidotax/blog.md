@@ -12,11 +12,13 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
-1. **[Negocios y LLC] 7 de septiembre, 2026 — Cómo construir crédito para su negocio desde cero.** Separar sus tarjetas fue el primer paso. Ahora toca construir un historial de crédito que sea de su negocio, no suyo — le explicamos por dónde empezar de verdad. Segunda entrega de la serie sobre tarjetas de crédito del negocio.
+1. **[Negocios y LLC] 15 de septiembre, 2026 — El costo real de pagar solo el mínimo en la tarjeta de su negocio.** Pagar el mínimo cada mes se siente manejable — hasta que hace la cuenta de cuánto termina pagando de más. Tercera entrega de la serie sobre tarjetas de crédito del negocio.
 
-2. **[Fechas límite] 3 de septiembre, 2026 — 15 de septiembre: la fecha final para las LLC y S-Corps que pidieron extensión.** Si su empresa pidió prórroga en marzo, este es el último plazo — y la multa por presentar tarde se multiplica por cada socio.
+2. **[Negocios y LLC] 7 de septiembre, 2026 — Cómo construir crédito para su negocio desde cero.** Separar sus tarjetas fue el primer paso. Ahora toca construir un historial de crédito que sea de su negocio, no suyo — le explicamos por dónde empezar de verdad. Segunda entrega de la serie sobre tarjetas de crédito del negocio.
 
-3. **[Negocios y LLC] 24 de agosto, 2026 — Nunca mezcle la tarjeta personal con la del negocio.** Pagar el mercado y los suministros del negocio con la misma tarjeta parece práctico — hasta que llega la temporada de impuestos o un problema legal. Primera parte de la serie sobre tarjetas de crédito.
+3. **[Fechas límite] 3 de septiembre, 2026 — 15 de septiembre: la fecha final para las LLC y S-Corps que pidieron extensión.** Si su empresa pidió prórroga en marzo, este es el último plazo — y la multa por presentar tarde se multiplica por cada socio.
+
+4. **[Negocios y LLC] 24 de agosto, 2026 — Nunca mezcle la tarjeta personal con la del negocio.** Pagar el mercado y los suministros del negocio con la misma tarjeta parece práctico — hasta que llega la temporada de impuestos o un problema legal. Primera parte de la serie sobre tarjetas de crédito.
 
 4. **[Cambios del IRS] 17 de agosto, 2026 — Su negocio ya puede ver sus deudas y avisos del IRS en línea, sin llamar por teléfono.** El IRS amplió su cuenta en línea para negocios: consultar saldos, pagar, bajar transcripciones y leer avisos sin esperas telefónicas.
 
