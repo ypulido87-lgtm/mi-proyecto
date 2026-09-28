@@ -12,7 +12,9 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
-1. **[Cambios del IRS] 23 de septiembre, 2026 — Alerta del IRS: cuidado con el falso "Crédito Tributario Tribal".** El IRS advirtió sobre promotores que venden un supuesto crédito que no existe bajo la ley federal.
+1. **[Nómina] 28 de septiembre, 2026 — El salario mínimo de Florida llega a $15 el 30 de septiembre: lo que debe cambiar en su nómina.** El salario mínimo estatal sube de $14 a $15/hora — último paso de la Enmienda 2 de 2020 — y qué deben actualizar los negocios en su nómina.
+
+2. **[Cambios del IRS] 23 de septiembre, 2026 — Alerta del IRS: cuidado con el falso "Crédito Tributario Tribal".** El IRS advirtió sobre promotores que venden un supuesto crédito que no existe bajo la ley federal.
 
 2. **[Negocios y LLC] 15 de septiembre, 2026 — El costo real de pagar solo el mínimo en la tarjeta de su negocio.** Pagar el mínimo cada mes se siente manejable — hasta que hace la cuenta de cuánto termina pagando de más. Tercera entrega de la serie sobre tarjetas de crédito del negocio.
 
