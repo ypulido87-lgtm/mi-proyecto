@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-09-28
+**Title ES:** El salario mínimo de Florida llega a $15 el 30 de septiembre: lo que debe cambiar en su nómina
+**Title EN:** Florida's Minimum Wage Hits $15 on September 30: What to Update in Your Payroll
+**Category:** Payroll
+**Primary topic:** Florida minimum wage reaches $15.00/hour (final step of Amendment 2, 2020) effective Sept 30, 2026; federal minimum wage stays $7.25; tipped cash wage rises to $11.98
+**Primary keyword:** salario mínimo Florida 2026 / Florida minimum wage 2026
+**Main official source:** FloridaJobs.org (Florida Department of Commerce)
+**Reason selected:** Timely, dated, actionable payroll change; clear state-vs-federal distinction; not previously covered
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-09-23
 **Title ES:** Alerta del IRS: cuidado con el falso "Crédito Tributario Tribal"
 **Title EN:**
