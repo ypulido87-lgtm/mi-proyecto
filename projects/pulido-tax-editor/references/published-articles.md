@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-06 (serie tarjetas #4)
+**Title ES:** Qué gastos de la tarjeta de su negocio sí puede deducir (y cuáles no)
+**Title EN:**
+**Category:** Small Business
+**Primary topic:** Deductible vs non-deductible business credit card expenses; business interest deductible (may be limited) vs personal card interest not deductible; meals 50%
+**Primary keyword:** gastos deducibles tarjeta de crédito del negocio
+**Main official source:** IRS Topic 505 (Interest Expense); IRS Publication 334 (2025)
+**Reason selected:** Serie tarjetas de crédito del negocio, entrega #4 de 6
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-10-06
 **Title ES:** 15 de octubre: el plazo final si pidió extensión para su declaración personal o de su negocio
 **Title EN:**
