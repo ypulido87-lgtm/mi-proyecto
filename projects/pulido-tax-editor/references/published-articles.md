@@ -8,6 +8,28 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-06 (serie tarjetas #6, última)
+**Title ES:** Si ya tiene deuda en tarjetas: cómo salir de ella de forma ordenada
+**Title EN:**
+**Category:** Small Business
+**Primary topic:** Paying down business card debt in an orderly way; do not skip tax payments; file on time even if unable to pay
+**Primary keyword:** salir de deuda de tarjetas de crédito del negocio
+**Main official source:** IRS Payment Plans / Installment Agreements page
+**Reason selected:** Serie tarjetas de crédito del negocio, entrega #6 de 6 (cierre)
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
+### 2026-10-06 (serie tarjetas #5)
+**Title ES:** Cómo organizar los recibos para que la contabilidad no sea un caos
+**Title EN:**
+**Category:** Accounting & Bookkeeping
+**Primary topic:** Receipt organization system; IRS support documents; record retention periods (3/6/7 years, 4 years employment tax)
+**Primary keyword:** cómo organizar recibos del negocio
+**Main official source:** IRS Topic 305 (Recordkeeping)
+**Reason selected:** Serie tarjetas de crédito del negocio, entrega #5 de 6
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-10-06 (serie tarjetas #4)
 **Title ES:** Qué gastos de la tarjeta de su negocio sí puede deducir (y cuáles no)
 **Title EN:**
