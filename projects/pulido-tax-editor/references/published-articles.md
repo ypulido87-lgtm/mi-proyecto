@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-06
+**Title ES:** 15 de octubre: el plazo final si pidió extensión para su declaración personal o de su negocio
+**Title EN:**
+**Category:** Taxes
+**Primary topic:** Oct 15, 2026 extended deadline for Form 1040 filers who filed Form 4868 (tax year 2025), incl. self-employed and single-member LLC (Schedule C); extension to file is not an extension to pay
+**Primary keyword:** plazo extendido 15 de octubre 2026 / Form 4868
+**Main official source:** IRS Publication 509 (2026), Tax Calendars
+**Reason selected:** Deadline 9 days out; large share of audience; not previously covered as its own article (only mentioned in passing 2026-09-03)
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-09-28
 **Title ES:** El salario mínimo de Florida llega a $15 el 30 de septiembre: lo que debe cambiar en su nómina
 **Title EN:** Florida's Minimum Wage Hits $15 on September 30: What to Update in Your Payroll
