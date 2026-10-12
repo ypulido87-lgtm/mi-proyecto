@@ -19,5 +19,5 @@ Creados el 11 oct 2026. 3 versiones × 2 formatos, solo español, contacto por *
 ## Reglas de contenido aplicadas
 Sin teléfono/email impresos · sin "bilingüe" · sin testimonios · sin precios ni promesas de reembolso · sin llamarse CPA · textos tomados de los servicios del sitio · disclaimer informativo al pie de la versión carta.
 
-## Pendiente de Yudit antes de imprimir
-Escanear el QR con el celular desde la pantalla/impresión de prueba y confirmar que abre su WhatsApp.
+## Verificación
+QR probado por Yudit el 11 oct 2026: abre su WhatsApp y el mensaje le llega. Listo para imprimir.
