@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-13
+**Title ES:** 1099-NEC: el umbral sube de $600 a $2,000 — lo que debe saber antes de pagar a contratistas en 2026
+**Title EN:** Form 1099-NEC Threshold Rises from $600 to $2,000: What to Know Before Paying Contractors in 2026
+**Category:** Payroll
+**Primary topic:** 1099-NEC reporting threshold $2,000 for tax years beginning after 2025 (forms filed Jan 2027); possible inflation adjustment from 2027; due Jan 31 (Feb 1, 2027 because Jan 31 is a Sunday); backup withholding reported regardless of amount
+**Primary keyword:** umbral 1099-NEC 2026 / 1099-NEC threshold 2026
+**Main official source:** IRS Instructions for Forms 1099-MISC and 1099-NEC (2026 revision); IRS Pub. 15 (2026)
+**Reason selected:** Concrete threshold change affecting small-business contractor payments, timely for year-end planning; not previously covered (Apr 2026 article was about employee vs contractor classification)
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-10-06 (serie tarjetas #6, última)
 **Title ES:** Si ya tiene deuda en tarjetas: cómo salir de ella de forma ordenada
 **Title EN:**
