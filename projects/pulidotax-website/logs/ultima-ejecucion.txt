@@ -1,0 +1,7 @@
+Fecha y hora: 2026-10-13 09:37
+Tarea: articulo-semanal-blog-pulidotax
+Resultado: YA HABÍA ARTÍCULO esta semana
+Título del artículo: ninguno nuevo (el más reciente en blog.html tiene data-date="2026-10-13": artículo #24, umbral del 1099-NEC sube a $2,000)
+Pasos completados: PASO 0 (lunes de la semana = 2026-10-12; fecha más reciente en blog.html = 2026-10-13, igual o posterior) y PASO 9 (registro).
+Pasos omitidos: PASOS 1-8 (para evitar duplicados).
+Errores: ninguno.
