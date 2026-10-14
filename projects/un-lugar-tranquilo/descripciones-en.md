@@ -11,15 +11,18 @@
 | Audience | Toddlers and young children (0–6) — Made for Kids |
 
 ## Short description (channel)
-Calm instrumental piano, gentle drawing time and soft bedtime stories for little ones. Nature, quiet and calm.
+Calm piano, draw-along moments and gentle stories for classrooms, daycares, ABA centers and home. Predictable, sensory-friendly, ad-light.
 
 ## Long description (channel)
-A quiet place for the quiet moments of the day — while little ones play, draw, rest or listen to a story.
-Every video follows the same gentle rhythm: soft piano music, a calm drawing moment, and a short story, all in watercolor-style scenes. No loud sounds, no flashing colors, no rush. Just piano, nature and calm.
+A quiet place for the quiet moments of the day — made for classrooms, daycares, ABA and therapy centers, and families.
+
+Every video follows the same predictable rhythm: soft piano music, a slow draw-along moment, and a short story, in watercolor-style scenes. No loud sounds, no flashing lights, no sudden changes, no rush. Educators can use it for transitions, calm-down time, centers, nap time and story time.
+
+Original music and original illustrations. Free to play in your classroom or center.
 
 New videos every week.
 
-Keywords: calm music for kids, piano for children, relaxing music for toddlers, bedtime stories, quiet time music, drawing for kids, instrumental kids music
+Keywords: calm music for classroom, quiet time for daycare, ABA center calm video, sensory friendly videos for kids, transition music for preschool, nap time music, draw along for kids, social stories, calm down corner
 
 ---
 
