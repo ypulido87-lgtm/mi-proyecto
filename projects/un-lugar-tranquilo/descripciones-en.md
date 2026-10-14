@@ -149,3 +149,13 @@ A calm, predictable routine for little ones: soft piano, a slow draw-along, and 
 🎹 Original piano and soft strings. 🎨 Original watercolor illustrations. Made for kids.
 
 #calmmusicforkids #quiettime #daycare #preschool #valuesforkids #drawalong #storytime
+
+## Story values map (first 6 videos)
+| # | Story | Value |
+|---|---|---|
+| 1 | The Little Duck and the Quiet Morning | Waiting your turn (the ducklings wait to cross the lake) |
+| 2 | The Bunny Who Counted Stars | Sharing (shares the best spot to see the stars) |
+| 3 | The Leaf That Floated Home | Helping others (the river animals help the leaf) |
+| 4 | The Butterfly and the Little Bear | Respect (the bear gently lets the butterfly rest) |
+| 5 | Music for Rest Time | (music only) |
+| 6 | The Little Seed | Waiting (a seed takes time to grow) + helping (rain, sun, garden) |
