@@ -95,7 +95,7 @@ Subscribe for a new calm video every week.
 1. **Predictability is the product.** Same order, same length, same voice, same music style in every video. Kids (especially those who rely on routine) know what comes next.
 2. **Modular library, not only long videos.** Each segment is also published alone so staff can pick what fits the moment.
 3. **Visual cues on screen.** A small, quiet progress bar or "first / then" strip (Music → Draw → Story) at the corner, plus a slow countdown for transitions.
-4. **Teacher / therapist support.** Each video gets a printable one-page guide (free download, link in description).
+4. **Teacher / caregiver support.** Each video gets a printable one-page guide (free download, link in description).
 5. **Not therapy, not a treatment.** It is calm music, drawing and stories with values. Never say it treats, cures or helps a condition. Say "calm", "gentle", "predictable".
 
 ## Library by use (playlists)
