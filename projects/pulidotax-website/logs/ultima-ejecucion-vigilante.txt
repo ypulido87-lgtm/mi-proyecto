@@ -1,4 +1,4 @@
-Fecha y hora: 2026-10-13 (corrida automática, ~15:07)
+Fecha y hora: 2026-10-15 (corrida automática, ~10:09)
 Resultado: TODO EN ORDEN
 Artículo más reciente en vivo: 2026-10-13 (lunes de la semana: 2026-10-12)
 Conexión a GoDaddy/cPanel (solo lectura): 1 = subida automática posible
