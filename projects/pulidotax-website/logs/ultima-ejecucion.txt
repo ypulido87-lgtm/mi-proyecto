@@ -1,7 +1,9 @@
-Fecha y hora: 2026-10-13 09:37
-Tarea: articulo-semanal-blog-pulidotax
-Resultado: YA HABÍA ARTÍCULO esta semana
-Título del artículo: ninguno nuevo (el más reciente en blog.html tiene data-date="2026-10-13": artículo #24, umbral del 1099-NEC sube a $2,000)
-Pasos completados: PASO 0 (lunes de la semana = 2026-10-12; fecha más reciente en blog.html = 2026-10-13, igual o posterior) y PASO 9 (registro).
-Pasos omitidos: PASOS 1-8 (para evitar duplicados).
-Errores: ninguno.
+Fecha y hora: 2026-10-19 11:02 (la tarea arrancó a las 11:02 AM al abrir la app; la hora programada era 9:13 AM)
+Tarea: articulo-semanal-blog-pulidotax — PRIMER LUNES REAL con los permisos nuevos
+Resultado: PUBLICADO (completado con ayuda manual en el último tramo)
+Artículo: "15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo)" (#25, Fechas límite)
+
+Lo que la tarea hizo SOLA, sin colgarse: calcular la semana, invocar el skill, revisar el registro, consultar las páginas del IRS, insertar el artículo en blog.html (25/25), verificar conteos y actualizar blog.md.
+Dónde se detuvo: tras escribir blog.md se quedó esperando una respuesta en un paso de lectura/edición del registro (>5 min sin actividad); no llegó a la subida a GoDaddy ni a la bitácora. Las ediciones del registro del skill tampoco quedaron.
+Lo que se completó a mano (Claude, en conversación): verificación del texto contra el Formulario 1040-ES (2026); se quitó la frase no respaldada "el IRS no envía recordatorios"; subida de blog.html y blog.md a GoDaddy (status 1, verificado en vivo); entrada del registro en ambas copias; esta bitácora.
+Pendiente: identificar qué paso exacto quedó esperando permiso (ver memoria) y cubrirlo con una regla.

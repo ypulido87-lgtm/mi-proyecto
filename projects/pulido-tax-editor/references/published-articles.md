@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-19
+**Title ES:** 15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo)
+**Title EN:**
+**Category:** Taxes
+**Primary topic:** 4th estimated tax payment for tax year 2026 due Jan 15, 2027; no need to make it if the 2026 return is filed by Feb 1, 2027 with the full balance paid; safe harbors (<$1,000 owed, 90% current year / 100% prior year); payment methods; mailed-payment postmark rule
+**Primary keyword:** pago estimado 15 de enero 2027
+**Main official source:** IRS Form 1040-ES (2026) instructions; IRS Estimated Taxes page; IRS Topic 306
+**Reason selected:** Chosen by the scheduled task (first real unattended Monday run, 19 Oct 2026) from a draft prepared earlier. Claude re-verified it: skip-date (Feb 1, 2027), safe harbors, payment methods and postmark rule confirmed in the IRS sources; the unsupported claim that the IRS sends no reminders was removed before the final upload. Related but distinct from the 2026-07-27 Q3 (Sept 15) article.
+**URL:** https://pulidotax.com/blog.html
+**Status:** Published
+
 ### 2026-10-13
 **Title ES:** 1099-NEC: el umbral sube de $600 a $2,000 — lo que debe saber antes de pagar a contratistas en 2026
 **Title EN:** Form 1099-NEC Threshold Rises from $600 to $2,000: What to Know Before Paying Contractors in 2026
