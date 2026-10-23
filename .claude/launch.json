@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pulidotax-estatico",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "projects/pulidotax-website/sitio-pulidotax"],
+      "port": 8765
+    }
+  ]
+}
