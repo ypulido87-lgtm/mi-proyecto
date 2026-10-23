@@ -21,6 +21,17 @@ require all denied
 
 RewriteRule ^landing\.html$ - [L]
 
+# ===== Paginas de ejemplo de WordPress (2026-10-23) =====
+# WordPress sigue instalado y dejo vivas "Sample Page" y "Hello world!", con el
+# titulo "My blog". Estaban ademas en el sitemap que se le declaraba a Google.
+# Se redirigen al inicio con 301 para que Google las deje de indexar y nadie
+# aterrice en ellas. NO deben bloquearse en robots.txt: si se bloquean, el
+# rastreador no llega a ver la redireccion y las deja indexadas.
+RewriteRule ^sample-page/?$ / [R=301,L]
+RewriteRule ^uncategorized/hello-world/?$ / [R=301,L]
+RewriteRule ^uncategorized/?$ / [R=301,L]
+# ===== Fin paginas de ejemplo =====
+
 # ===== Markdown for AI agents + Link header (added 2026-09-03) =====
 <IfModule mod_mime.c>
 AddType text/markdown .md

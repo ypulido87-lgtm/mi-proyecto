@@ -27,4 +27,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://pulidotax.com/wp-sitemap.xml
+Sitemap: https://pulidotax.com/sitemap.xml
