@@ -12,6 +12,27 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 - **`borrador-antiguo-home.html`** — un borrador temprano ya superado (18 jun 2026), solo referencia histórica.
 - **`articulo-de-la-semana.md`** — red de seguridad de la tarea automática: aparece aquí cuando hay un artículo escrito pero aún no insertado en `blog.html`.
 
+## Calculadora de impuestos (nueva, 22 oct 2026)
+`calculadora.html` — estimador del impuesto federal 2026 para trabajadores independientes y dueños de pequeños negocio (el perfil de sus clientes: contratistas, limpieza, landscaping, talleres). Herramienta de captación: **sin gate, sin pedir correo**, porque el objetivo que pidió Yudit es que la gente vuelva y la conozca, no capturar leads.
+
+**Qué calcula:** ganancia neta → self-employment tax (15.3% sobre el 92.35%, con tope de Seguro Social) → deducción de la mitad del SE tax → deducción QBI → deducción estándar → impuesto por tramos → Medicare adicional 0.9% → total, pago trimestral y tasa efectiva. Opcionalmente resta lo ya retenido/pagado y muestra saldo o reembolso.
+
+**Cifras del año fiscal 2026 — verificadas contra la fuente oficial, no de memoria:**
+- Deducción estándar: $16,100 soltero · $32,200 conjunto · $24,150 jefe de familia
+- Tramos: los tres juegos completos (soltero, conjunto, jefe de familia)
+- Umbrales QBI: $403,500 conjunto · $201,750 resto · mínimo de $400 con al menos $1,000 de QBI
+- Base salarial del Seguro Social: $184,500 (tope de SE tax verificado en $22,878.00)
+- Fuentes: **IRS Rev. Proc. 2025-32** (PDF, extraído y leído directamente) e **IRS Pub. 926**.
+- ⚠️ Estas cifras cambian cada año. En enero de 2027 hay que actualizar el objeto `TY2026` en el `<script>` y los textos del `.md`. Al hacerlo, verificar contra la Rev. Proc. nueva — en la búsqueda web aparecieron umbrales QBI equivocados, solo el PDF oficial dio los correctos.
+
+**Probada** con 8 escenarios (contratista típico, negocio mediano, side hustle, mixto W-2, ingreso alto con tope de SS y Medicare adicional, pérdida, jefe de familia, ceros) — réplica en Python y luego el código real en el navegador, con resultados idénticos. Entradas con basura (`abc$$12xyz345`) se sanean solas.
+
+**Diferencia con el resto del sitio:** aquí `setLang` envuelve `localStorage` en try/catch (`rememberLang`/`recallLang`). Las otras 5 páginas no lo hacen y el toggle ES|EN se rompe a medias si el almacenamiento está bloqueado (incógnito, cookies desactivadas) — pendiente de arreglar ahí si Yudit quiere.
+
+También se agregó `calculadora.md` (el `.htaccess` ya lo sirve solo: la regla `^([a-z-]+)\.html$` cubre la página nueva sin tocar nada) y el enlace «Calculadora» en el menú, el menú móvil y el pie de las 5 páginas existentes, más la línea de páginas relacionadas de los 5 `.md`.
+
+**Bug viejo detectado de paso, no corregido:** `index.html` tiene un enlace suelto a Blog pegado al botón «Conocer mi historia →» en la sección Sobre mí (resto de una inserción automática vieja).
+
 ## Automatización del blog
 Dos tareas programadas (Claude Code scheduled tasks) mantienen el blog al día — **ya actualizadas para apuntar a esta carpeta** en vez de Downloads:
 - `articulo-semanal-blog-pulidotax` — lunes 9 AM, escribe el artículo de la semana.
