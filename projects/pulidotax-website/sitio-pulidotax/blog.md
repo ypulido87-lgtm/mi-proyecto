@@ -72,4 +72,4 @@ La primera consulta es completamente gratuita.
 - Escribir por WhatsApp: https://wa.me/16892708845
 
 ---
-Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Contacto](/contacto.html)
+Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Calculadora](/calculadora.html) · [Contacto](/contacto.html)
