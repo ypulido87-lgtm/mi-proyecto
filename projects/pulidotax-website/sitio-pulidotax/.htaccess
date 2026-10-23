@@ -42,7 +42,7 @@ RewriteCond %{DOCUMENT_ROOT}/index.md -f
 RewriteRule ^$ - [E=MDFILE:index.md]
 
 RewriteCond %{DOCUMENT_ROOT}/$1.md -f
-RewriteRule ^([a-z-]+)\.html$ - [E=MDFILE:$1.md]
+RewriteRule ^([a-z0-9-]+)\.html$ - [E=MDFILE:$1.md]
 
 RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
 RewriteCond %{DOCUMENT_ROOT}/index.md -f
@@ -50,7 +50,7 @@ RewriteRule ^$ index.md [L]
 
 RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
 RewriteCond %{DOCUMENT_ROOT}/$1.md -f
-RewriteRule ^([a-z-]+)\.html$ $1.md [L]
+RewriteRule ^([a-z0-9-]+)\.html$ $1.md [L]
 </IfModule>
 <IfModule mod_headers.c>
 Header set Link "<https://pulidotax.com/%{MDFILE}e>; rel=\"alternate\"; type=\"text/markdown\", <https://pulidotax.com/sitemap.xml>; rel=\"sitemap\"" env=MDFILE
