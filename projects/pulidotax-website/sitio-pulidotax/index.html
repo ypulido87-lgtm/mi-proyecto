@@ -653,7 +653,7 @@ function setLang(lang){
     if(t[key] !== undefined) el.textContent = t[key];
   });
 }
-const saved = localStorage.getItem('ptax-lang');
+const saved = recallLang();
 if(saved && saved !== 'es') setLang(saved);
 </script>
 </body>
