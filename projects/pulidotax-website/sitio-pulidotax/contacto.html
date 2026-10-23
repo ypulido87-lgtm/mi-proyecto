@@ -187,6 +187,13 @@
     .reveal.visible{opacity:1;transform:translateY(0);}
 
     /* ─── RESPONSIVE ─────────────────────────────────────── */
+    /* El menu tiene 7 enlaces: por debajo de ~1120px no caben en una sola fila
+       y se partian en dos. Pasamos al menu desplegable antes de que eso pase. */
+    @media(max-width:1120px){
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+    }
     @media(max-width:900px){
       .contact-grid{grid-template-columns:1fr;gap:32px;}
       .steps-grid{grid-template-columns:1fr;gap:20px;}
@@ -240,7 +247,7 @@
       <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
       <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
       <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
-      <li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li>
+      <li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a></li>
       <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
       <li><a href="contacto.html" class="active" data-i18n="nav-contacto">Contacto</a></li>
     </ul>
@@ -262,6 +269,7 @@
   <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
   <a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a>
   <a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a>
+  <a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a>
   <a href="blog.html" data-i18n="nav-blog">Blog</a>
   <a href="contacto.html" class="active" data-i18n="nav-contacto">Contacto</a>
   <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
@@ -479,7 +487,7 @@
           <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
           <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
           <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li>
-          <li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li>
+          <li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a></li>
           <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
           <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
         </ul>
@@ -519,7 +527,7 @@
 const T={
   es:{
     /* ── NAV ── */
-    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-calculadora':'Calculadora','nav-blog':'Blog',
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-calculadora':'Calculadora','nav-salestax':'Sales Tax','nav-blog':'Blog',
     'nav-contacto':'Contacto','nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
     /* ── BREADCRUMB / HERO ── */
     'breadcrumb-home':'Inicio','breadcrumb-contacto':'Contacto',
@@ -576,7 +584,7 @@ const T={
   },
   en:{
     /* ── NAV ── */
-    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-calculadora':'Calculator','nav-blog':'Blog',
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-calculadora':'Calculator','nav-salestax':'Sales Tax','nav-blog':'Blog',
     'nav-contacto':'Contact','nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
     /* ── BREADCRUMB / HERO ── */
     'breadcrumb-home':'Home','breadcrumb-contacto':'Contact',

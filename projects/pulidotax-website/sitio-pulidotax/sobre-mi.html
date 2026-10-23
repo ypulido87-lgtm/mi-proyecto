@@ -159,6 +159,13 @@
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
     /* ── RESPONSIVE ── */
+    /* El menu tiene 7 enlaces: por debajo de ~1120px no caben en una sola fila
+       y se partian en dos. Pasamos al menu desplegable antes de que eso pase. */
+    @media(max-width:1120px){
+      .nav-links{display:none;}
+      .btn-nav-cta{display:none;}
+      .burger{display:flex;}
+    }
     @media(max-width:900px){
       .intro-inner{grid-template-columns:1fr;gap:56px;}
       .photo-frame{max-width:360px;}
@@ -211,7 +218,7 @@
     <ul class="nav-links">
       <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
       <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
-      <li><a href="sobre-mi.html" class="active" style="font-weight:600;color:var(--gold);border-bottom-color:var(--gold);" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+      <li><a href="sobre-mi.html" class="active" style="font-weight:600;color:var(--gold);border-bottom-color:var(--gold);" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a></li><li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
       <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
     </ul>
     <div class="nav-actions">
@@ -232,6 +239,7 @@
   <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
   <a href="sobre-mi.html" style="font-weight:600;color:var(--gold);" data-i18n="nav-sobre">Sobre mí</a>
   <a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a>
+  <a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a>
   <a href="blog.html" data-i18n="nav-blog">Blog</a>
   <a href="contacto.html" data-i18n="nav-contacto">Contacto</a>
   <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="mob-wa-btn">
@@ -477,7 +485,7 @@
         <ul>
           <li><a href="index.html" data-i18n="nav-inicio">Inicio</a></li>
           <li><a href="servicios.html" data-i18n="nav-servicios">Servicios</a></li>
-          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav-sobre">Sobre mí</a></li><li><a href="calculadora.html" data-i18n="nav-calculadora">Calculadora</a></li><li><a href="sales-tax.html" data-i18n="nav-salestax">Sales Tax</a></li><li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
           <li><a href="contacto.html" data-i18n="nav-contacto">Contacto</a></li>
         </ul>
       </div>
@@ -513,7 +521,7 @@
 <script>
 const T={
   es:{
-    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-calculadora':'Calculadora','nav-blog':'Blog','nav-contacto':'Contacto',
+    'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-sobre':'Sobre mí','nav-calculadora':'Calculadora','nav-salestax':'Sales Tax','nav-blog':'Blog','nav-contacto':'Contacto',
     'nav-cta':'Consulta gratis','nav-wa-full':'Escribir por WhatsApp',
     'ph-eyebrow':'Mi historia','ph-sub':'Licenciada en Economía · +15 años de experiencia · 3 países',
     'photo-caption':'Fundadora · Pulido Tax & Accounting LLC',
@@ -557,7 +565,7 @@ const T={
     's1-title':'Bookkeeping Mensual','s2-title':'Declaración de Impuestos','s3-title':'Contabilidad LLC / Corp','s4-title':'Nómina (Payroll)'
   },
   en:{
-    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-calculadora':'Calculator','nav-blog':'Blog','nav-contacto':'Contact',
+    'nav-inicio':'Home','nav-servicios':'Services','nav-sobre':'About','nav-calculadora':'Calculator','nav-salestax':'Sales Tax','nav-blog':'Blog','nav-contacto':'Contact',
     'nav-cta':'Free Consultation','nav-wa-full':'Message on WhatsApp',
     'ph-eyebrow':'My story','ph-sub':'Economics Degree · 15+ years of experience · 3 countries',
     'photo-caption':'Founder · Pulido Tax & Accounting LLC',
