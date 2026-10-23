@@ -81,4 +81,4 @@ Escribir por WhatsApp: https://wa.me/16892708845
 Formulario de contacto: https://pulidotax.com/contacto.html
 
 ---
-Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Blog](/blog.html) · [Contacto](/contacto.html)
+Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Sales Tax](/sales-tax.html) · [Blog](/blog.html) · [Contacto](/contacto.html)

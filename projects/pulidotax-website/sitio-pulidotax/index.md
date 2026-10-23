@@ -70,4 +70,4 @@ La primera consulta es completamente gratuita. Cuénteme sobre su negocio y le d
 - Escribir por WhatsApp: https://wa.me/16892708845
 
 ---
-Páginas relacionadas: [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Calculadora](/calculadora.html) · [Blog](/blog.html) · [Contacto](/contacto.html)
+Páginas relacionadas: [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Calculadora](/calculadora.html) · [Sales Tax](/sales-tax.html) · [Blog](/blog.html) · [Contacto](/contacto.html)

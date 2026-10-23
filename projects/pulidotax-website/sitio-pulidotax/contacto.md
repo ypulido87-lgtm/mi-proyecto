@@ -47,4 +47,4 @@ Atendemos en español. El sitio web está disponible en español e inglés.
 Sí, atendemos clientes en toda Florida de forma remota.
 
 ---
-Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Calculadora](/calculadora.html) · [Blog](/blog.html)
+Páginas relacionadas: [Inicio](/index.html) · [Servicios](/servicios.html) · [Sobre mí](/sobre-mi.html) · [Calculadora](/calculadora.html) · [Sales Tax](/sales-tax.html) · [Blog](/blog.html)
