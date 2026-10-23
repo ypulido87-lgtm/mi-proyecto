@@ -58,7 +58,8 @@
       "PowerShell(Write-Output \"Hoy: $\\(Get-Date -Format 'dddd, dd MMMM yyyy HH:mm'\\)\")",
       "Bash(python -I \"/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/extract.py\" \"/c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf\")",
       "Bash(python -I \"/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/extract2.py\" \"/c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf\")",
-      "Bash(python -I \"/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/extract3.py\" \"/c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf\")"
+      "Bash(python -I \"/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/extract3.py\" \"/c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf\")",
+      "Bash(python -I \"/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/extract4.py\" \"/c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf\")"
     ]
   }
 }
