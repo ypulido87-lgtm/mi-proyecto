@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Sales Tax de Florida 2026 · Por condado · Pulido Tax</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Calculadora gratuita de Sales Tax de Florida 2026. Calcule cuánto cobrar a su cliente y cuánto remitir al estado, con las tasas oficiales de los 67 condados, el tope de $5,000 y el descuento por presentar a tiempo. En español, sin registro.">
+<link rel="canonical" href="https://pulidotax.com/sales-tax.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Sales Tax de Florida 2026",
+  "url": "https://pulidotax.com/sales-tax.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": ["es", "en"],
+  "description": "Calculadora gratuita del Sales Tax de Florida: cuánto cobrar al cliente y cuánto remitir al Departamento de Hacienda, con las tasas oficiales de surtax de los 67 condados para 2026.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@id": "https://pulidotax.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el Sales Tax de Florida en 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La tasa estatal de Florida es 6%. Encima de eso, cada condado puede cobrar un recargo llamado discretionary sales surtax, que en 2026 va de 0% a 2%. Por ejemplo, el condado de Orange (Orlando) cobra 0.5%, así que el total es 6.5%; Osceola cobra 1.5%, así que el total es 7.5%. Citrus y Collier no cobran recargo, así que ahí el total es 6%." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tasa de surtax debo cobrar si entrego en otro condado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Según las instrucciones del Formulario DR-15, el surtax se cobra a la tasa del condado donde se hace la entrega, no donde está su negocio. Si entrega en un condado sin recargo, no se cobra surtax. La misma regla aplica a vendedores de fuera de Florida que entregan dentro del estado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el tope de $5,000 del surtax de Florida?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El recargo del condado solo se cobra sobre los primeros $5,000 de cada venta individual de un artículo de propiedad personal tangible. El impuesto estatal del 6% sí se cobra sobre el precio completo. Por ejemplo, si vende un artículo de $7,000, los $2,000 que pasan de $5,000 quedan exentos del recargo del condado. El tope es por artículo, no por factura, y no aplica a rentas de alojamiento temporal." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo vence el Sales Tax en Florida?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La declaración y el pago vencen el día 1 del mes siguiente al período y se consideran tardíos después del día 20. Si presenta y paga por internet y a tiempo, tiene derecho a un descuento del 2.5% sobre los primeros $1,200 del impuesto, con un máximo de $30. Hay que presentar declaración en cada período aunque no haya impuesto que pagar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Todavía se paga Sales Tax por la renta de un local comercial en Florida?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El Sales Tax sobre la renta de propiedad comercial quedó derogado a partir del 1 de octubre de 2025. Sí siguen gravadas la renta de equipos, las tarifas por estacionar o guardar vehículos, barcos y aviones, y las rentas de alojamiento de seis meses o menos." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0D2B45; --blue-mid:#1A4A72; --blue-deep:#0A2038; --blue-pale:#E6EEF5;
+  --gold:#B87333; --gold-pale:#FDF0E4; --gold-mid:#9A5E24;
+  --surface:#FDF6EE; --wa:#25D366; --wa-dark:#1DA851;
+  --ink:#2B3A47; --dark:#060F18;
+  --font-d:'Cormorant Garamond',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+  --radius:14px;
+  --shadow-sm:0 2px 10px rgba(13,43,69,.06);
+  --shadow-md:0 10px 34px rgba(13,43,69,.10);
+  --shadow-lg:0 24px 60px rgba(13,43,69,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--ink);background:#fff;line-height:1.7;font-size:16.5px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--font-b);font-size:12.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height:1.12}
+.section{padding:120px 0}
+.h2{font-size:clamp(32px,4.2vw,48px);margin:18px 0 20px}
+.lead{font-size:18px;color:#4B5A68;max-width:640px;line-height:1.7}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}.rv.d4{transition-delay:.46s}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 0;transition:all .45s var(--ease);background:transparent}
+.nav.scrolled{background:rgba(253,246,238,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0;box-shadow:0 1px 0 rgba(13,43,69,.07),var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo svg{display:block}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--blue);position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--gold-mid)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang-toggle{display:flex;border:1px solid rgba(13,43,69,.18);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600;letter-spacing:.06em}
+.lang-toggle button{border:0;background:transparent;padding:6px 13px;cursor:pointer;font:inherit;color:var(--blue);transition:all .3s}
+.lang-toggle button.on{background:var(--blue);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-b);font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;cursor:pointer;border:0;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 24px rgba(184,115,51,.32)}
+.btn-gold:hover{background:var(--gold-mid);transform:translateY(-3px);box-shadow:0 14px 34px rgba(184,115,51,.42)}
+.btn-ghost{background:transparent;color:var(--blue);border:1.5px solid rgba(13,43,69,.24)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-mid);transform:translateY(-3px)}
+.btn-white{background:#fff;color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.32)}
+.btn-wa:hover{background:var(--wa-dark);transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.42)}
+.nav .btn{padding:11px 24px;font-size:14px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:210}
+.burger span{width:24px;height:2px;background:var(--blue);transition:all .35s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ PAGE HERO ============ */
+.phero{background:linear-gradient(175deg,var(--surface) 0%,#FBF1E4 55%,var(--gold-pale) 100%);padding:168px 0 72px;position:relative;overflow:hidden;text-align:center}
+.phero::before{content:"";position:absolute;top:-220px;right:-220px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.10),transparent 65%)}
+.phero-in{position:relative;max-width:800px;margin:0 auto}
+.phero .eyebrow{justify-content:center}
+.phero h1{font-size:clamp(34px,4.8vw,56px);margin:20px 0 10px;letter-spacing:-.01em}
+.phero .h1-accent{display:block;font-family:var(--font-d);font-style:italic;font-weight:500;color:var(--gold);font-size:clamp(25px,3.4vw,40px);margin:2px 0 24px;line-height:1.2}
+.phero p.lead{margin:0 auto}
+.phero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.ptag{background:rgba(255,255,255,.72);border:1px solid rgba(184,115,51,.3);border-radius:999px;padding:7px 18px;font-size:13.5px;font-weight:600;color:var(--blue-mid);display:inline-flex;align-items:center;gap:8px}
+.ptag svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ CALCULATOR ============ */
+.calcwrap{background:#fff;padding:0 0 110px;margin-top:-34px;position:relative;z-index:5}
+.calc{display:grid;grid-template-columns:.94fr 1.06fr;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff;border:1px solid rgba(13,43,69,.07)}
+.calc-form{padding:46px 44px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:30px;background:var(--surface);padding:6px;border-radius:12px}
+.modes button{border:0;background:transparent;border-radius:9px;padding:13px 10px;font:600 14px var(--font-b);color:var(--blue);cursor:pointer;transition:all .28s var(--ease);line-height:1.35}
+.modes button.on{background:#fff;color:var(--gold-mid);box-shadow:var(--shadow-sm)}
+.calc-form h2{font-size:25px;margin-bottom:6px}
+.calc-form .sub{font-size:14.5px;color:#6B7A88;margin-bottom:30px}
+.fgroup{margin-bottom:24px}
+.flabel{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}
+.fhint{font-size:13px;color:#7B8893;font-weight:400;text-transform:none;letter-spacing:0;display:block;margin-top:3px}
+.money{position:relative;display:flex;align-items:center}
+.money span.cur{position:absolute;left:16px;font-size:17px;font-weight:600;color:var(--gold);pointer-events:none}
+.money input{width:100%;border:1.5px solid rgba(13,43,69,.16);border-radius:10px;padding:14px 16px 14px 34px;font:500 17px var(--font-b);color:var(--blue);background:#fff;transition:border-color .28s,box-shadow .28s;outline:none}
+.money input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.14)}
+.money input::placeholder{color:#B6C0C9;font-weight:400}
+select.county{width:100%;border:1.5px solid rgba(13,43,69,.16);border-radius:10px;padding:14px 16px;font:500 16px var(--font-b);color:var(--blue);background:#fff;cursor:pointer;outline:none;transition:border-color .28s,box-shadow .28s}
+select.county:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.14)}
+.chk{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid rgba(184,115,51,.22);border-radius:10px;padding:15px 17px;cursor:pointer}
+.chk input{width:19px;height:19px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;margin-top:2px}
+.chk .ct{font-size:14px;color:var(--blue);font-weight:600;line-height:1.45}
+.chk .cs{font-size:12.5px;color:#7B8893;font-weight:400;display:block;margin-top:3px;line-height:1.5}
+.calc-reset{background:none;border:0;color:#7B8893;font:600 13.5px var(--font-b);cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px;transition:color .25s}
+.calc-reset:hover{color:var(--gold-mid)}
+
+.calc-out{background:linear-gradient(165deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;padding:46px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.calc-out::before{content:"";position:absolute;bottom:-220px;right:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.2),transparent 65%);pointer-events:none}
+.calc-out>*{position:relative}
+.out-eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.bigcard{background:rgba(184,115,51,.13);border:1px solid rgba(184,115,51,.5);border-radius:var(--radius);padding:28px 30px;margin-bottom:14px}
+.bigfig{font-family:var(--font-d);font-size:clamp(44px,5.6vw,62px);font-weight:600;line-height:1;color:#fff;letter-spacing:-.01em}
+.bigfig-lbl{font-size:14.5px;color:rgba(255,255,255,.72);margin-top:10px}
+.ratepill{display:inline-flex;align-items:baseline;gap:8px;background:rgba(255,255,255,.1);border-radius:999px;padding:7px 16px;margin-top:16px;font-size:13.5px;color:rgba(255,255,255,.82)}
+.ratepill b{font-family:var(--font-d);font-size:19px;color:var(--gold)}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.qcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:19px 21px}
+.qcard .v{font-family:var(--font-d);font-size:28px;font-weight:600;color:var(--gold);line-height:1.1}
+.qcard .l{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:6px;line-height:1.45}
+.bd{border-top:1px solid rgba(255,255,255,.14);padding-top:22px}
+.bd h4{font-family:var(--font-b);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:15px}
+.bdrow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.07)}
+.bdrow:last-child{border-bottom:0}
+.bdrow .k{color:rgba(255,255,255,.72)}
+.bdrow .k em{font-style:normal;display:block;font-size:12px;color:rgba(255,255,255,.42);margin-top:1px}
+.bdrow .v{font-weight:600;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bdrow.minus .v{color:#8FD6A8}
+.bdrow.tot{border-top:1px solid rgba(255,255,255,.2);border-bottom:0;margin-top:8px;padding-top:15px;font-size:16.5px}
+.bdrow.tot .k{color:#fff;font-weight:600}
+.bdrow.tot .v{color:var(--gold);font-size:19px;font-family:var(--font-d)}
+.note{display:flex;gap:11px;align-items:flex-start;border-radius:10px;padding:13px 16px;font-size:13.5px;margin-top:16px;line-height:1.55}
+.note svg{width:17px;height:17px;fill:none;stroke-width:2.2;flex-shrink:0;margin-top:2px;stroke-linecap:round;stroke-linejoin:round}
+.note.ok{background:rgba(143,214,168,.1);border:1px solid rgba(143,214,168,.3);color:rgba(255,255,255,.85)}
+.note.ok svg{stroke:#8FD6A8}
+.note.warn{background:rgba(255,196,120,.12);border:1px solid rgba(255,196,120,.34);color:rgba(255,255,255,.88)}
+.note.warn svg{stroke:#FFC478}
+.note.hidden{display:none}
+.calc-cta{margin-top:auto;padding-top:26px}
+.calc-cta .btn{width:100%}
+.calc-cta p{font-size:13px;color:rgba(255,255,255,.52);text-align:center;margin-top:13px;line-height:1.6}
+.empty{text-align:center;padding:40px 0;color:rgba(255,255,255,.45);font-size:15px}
+
+.disc{max-width:880px;margin:36px auto 0;background:var(--surface);border:1px solid rgba(184,115,51,.26);border-left:3px solid var(--gold);border-radius:12px;padding:24px 28px}
+.disc h4{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:10px}
+.disc p{font-size:14.5px;color:#4B5A68;line-height:1.72}
+
+/* ============ RULES ============ */
+.how{background:var(--surface)}
+.how-head{text-align:center;max-width:740px;margin:0 auto 60px}
+.how-head .eyebrow{justify-content:center}
+.how-head .lead{margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.how-card{background:#fff;border-radius:var(--radius);padding:38px 34px;border:1px solid rgba(13,43,69,.06);box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.how-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.how-icon{width:54px;height:54px;border-radius:13px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.how-icon svg{width:25px;height:25px;stroke:var(--gold-mid);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.how-card h3{font-size:23px;margin-bottom:10px}
+.how-card p{font-size:15px;color:#4B5A68}
+
+/* ============ TABLE ============ */
+.rates{background:#fff}
+.rates-head{text-align:center;max-width:700px;margin:0 auto 44px}
+.rates-head .eyebrow{justify-content:center}
+.rates-search{max-width:420px;margin:0 auto 28px}
+.rates-search input{width:100%;border:1.5px solid rgba(13,43,69,.16);border-radius:999px;padding:13px 22px;font:500 15px var(--font-b);color:var(--blue);outline:none;transition:border-color .28s,box-shadow .28s}
+.rates-search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.14)}
+.rates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;max-width:980px;margin:0 auto}
+.rc{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:var(--surface);border:1px solid rgba(13,43,69,.07);border-radius:10px;padding:12px 16px;font-size:14.5px;transition:border-color .25s,background .25s}
+.rc:hover{border-color:rgba(184,115,51,.45);background:var(--gold-pale)}
+.rc .n{color:var(--ink);font-weight:500}
+.rc .t{font-weight:700;color:var(--blue);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rc.zero .t{color:#4F8C62}
+.rc.hide{display:none}
+.rates-none{text-align:center;color:#7B8893;font-size:15px;padding:24px 0;display:none}
+.rates-note{text-align:center;font-size:13.5px;color:#7B8893;margin-top:28px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ============ FAQ ============ */
+.faq{background:var(--surface)}
+.faq-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.faq-head .eyebrow{justify-content:center}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(13,43,69,.1)}
+.faq-q{width:100%;background:none;border:0;text-align:left;padding:26px 44px 26px 0;font:600 18px var(--font-b);color:var(--blue);cursor:pointer;position:relative;line-height:1.5}
+.faq-q::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300;color:var(--gold);transition:transform .35s var(--ease)}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.faq-a p{font-size:15.5px;color:#4B5A68;padding:0 20px 26px 0;line-height:1.75}
+
+/* ============ CTA ============ */
+.cta{background:var(--dark);color:#fff;text-align:center;padding:130px 0}
+.cta-line{width:64px;height:2px;background:var(--gold);margin:0 auto 34px}
+.cta h2{color:#fff;font-size:clamp(34px,4.6vw,52px);max-width:760px;margin:0 auto 18px}
+.cta p{color:rgba(255,255,255,.68);max-width:560px;margin:0 auto 44px;font-size:17.5px}
+.cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--dark);color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.08);padding:84px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:64px}
+.footer h3{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.footer a{transition:color .3s}
+.footer a:hover{color:#fff}
+.footer li{margin-bottom:12px;font-size:14.5px}
+.footer-brand p{font-size:14.5px;margin-top:22px;max-width:300px;line-height:1.75}
+.footer-social{display:flex;gap:14px;margin-top:18px}
+.footer-social a{color:rgba(255,255,255,.55);display:inline-flex;transition:color .2s}
+.gate-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);border-radius:999px;padding:10px 22px;font:600 13.5px var(--font-b);cursor:pointer;transition:all .3s}
+.gate-btn:hover{border-color:var(--gold);color:var(--gold)}
+#contactData{display:none;margin-top:16px}
+#contactData li{display:flex;gap:10px;align-items:center}
+.footer-hours{font-size:14.5px;line-height:2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:13px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.wa-float{position:fixed;right:26px;bottom:26px;z-index:150;width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .35s var(--ease),background .3s}
+.wa-float:hover{transform:scale(1.1);background:var(--wa-dark)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);animation:waPulse 2.4s ease-out infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.65);opacity:0}}
+
+@media(max-width:980px){
+  .calc{grid-template-columns:1fr}
+  .calc-out{border-radius:0}
+}
+@media(max-width:900px){
+  .section{padding:88px 0}
+  .phero{padding:140px 0 64px}
+  .how-grid{grid-template-columns:1fr;gap:22px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:0;background:rgba(253,246,238,.98);backdrop-filter:blur(16px);flex-direction:column;justify-content:center;gap:28px;transform:translateX(100%);transition:transform .45s var(--ease);overflow-y:auto;padding:80px 20px}
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:21px;font-family:var(--font-d)}
+  .burger{display:flex}
+  .nav-right .btn{display:none}
+}
+@media(max-width:600px){
+  .wrap{padding:0 22px}
+  .section{padding:72px 0}
+  .phero{padding:124px 0 56px}
+  .calcwrap{padding-bottom:80px}
+  .calc-form,.calc-out{padding:34px 22px}
+  .qrow{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta{padding:96px 0}
+  .btn{padding:14px 26px;font-size:14.5px}
+  .wa-float{width:54px;height:54px;right:18px;bottom:18px}
+  .faq-q{font-size:16.5px;padding-right:38px}
+  .rates-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="196" height="49">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav_services">Servicios</a>
+      <a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a>
+      <a href="calculadora.html" data-i18n="nav_calc">Calculadora</a>
+      <a href="sales-tax.html" class="active" data-i18n="nav_st">Sales Tax</a>
+      <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="contacto.html" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button id="langEs" class="on" onclick="setLang('es')">ES</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="contacto.html" class="btn btn-gold" data-i18n="nav_cta">Consulta gratis</a>
+      <button class="burger" id="burger" aria-label="Menú" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="phero">
+  <div class="wrap phero-in">
+    <span class="eyebrow rv" data-i18n="ph_eyebrow">Herramienta gratuita · Tasas oficiales 2026</span>
+    <h1 class="rv d1">
+      <span data-i18n="ph_h1">Sales Tax de Florida</span>
+      <span class="h1-accent" data-i18n="ph_h1b">sin dolores de cabeza</span>
+    </h1>
+    <p class="lead rv d2" data-i18n="ph_lead">Calcule cuánto cobrarle a su cliente y cuánto remitirle al estado, con la tasa exacta de su condado. Incluye el tope de $5,000 y el descuento por presentar a tiempo.</p>
+    <div class="phero-tags rv d3">
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t1">Los 67 condados de Florida</span></span>
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t2">Tabla oficial DR-15DSS 2026</span></span>
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t3">Gratis y sin registro</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="calcwrap">
+  <div class="wrap">
+    <div class="calc rv">
+
+      <div class="calc-form">
+        <div class="modes" id="modes" role="group">
+          <button type="button" data-m="charge" class="on" data-i18n="md_charge">¿Cuánto le cobro al cliente?</button>
+          <button type="button" data-m="remit" data-i18n="md_remit">¿Cuánto le debo al estado?</button>
+        </div>
+
+        <h2 id="formTitle" data-i18n="cf_h2a">El precio de su venta</h2>
+        <p class="sub" id="formSub" data-i18n="cf_suba">Escriba el precio antes de impuesto y elija dónde entrega.</p>
+
+        <div class="fgroup">
+          <label class="flabel" for="inAmount">
+            <span id="lblAmount" data-i18n="cf_amount_a">Precio antes de impuesto</span>
+            <span class="fhint" id="hintAmount" data-i18n="cf_amount_ah">Lo que le cobra al cliente por el producto o servicio.</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inAmount" type="text" inputmode="numeric" autocomplete="off" placeholder="1,500"></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="inCounty">
+            <span data-i18n="cf_county">Condado donde entrega</span>
+            <span class="fhint" data-i18n="cf_county_h">El recargo se cobra según el condado de la entrega, no donde está su negocio.</span>
+          </label>
+          <select id="inCounty" class="county"></select>
+        </div>
+
+        <div class="fgroup" id="grpSingle">
+          <label class="chk">
+            <input type="checkbox" id="inSingle">
+            <span>
+              <span class="ct" data-i18n="cf_single">Es un solo artículo, no un servicio</span>
+              <span class="cs" data-i18n="cf_single_h">Importa solo si pasa de $5,000: el recargo del condado se cobra únicamente sobre los primeros $5,000 de cada artículo.</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="fgroup" id="grpExempt" style="display:none">
+          <label class="flabel" for="inExempt">
+            <span data-i18n="cf_exempt">Monto exento del recargo (opcional)</span>
+            <span class="fhint" data-i18n="cf_exempt_h">Lo que pasa de $5,000 en cada artículo vendido. Va en la línea 15(a) del DR-15.</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inExempt" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
+        </div>
+
+        <div class="fgroup" id="grpOnTime" style="display:none">
+          <label class="chk">
+            <input type="checkbox" id="inOnTime" checked>
+            <span>
+              <span class="ct" data-i18n="cf_ontime">Presento y pago por internet, a tiempo</span>
+              <span class="cs" data-i18n="cf_ontime_h">Le da derecho a un descuento del 2.5% sobre los primeros $1,200, hasta $30.</span>
+            </span>
+          </label>
+        </div>
+
+        <button type="button" class="calc-reset" onclick="resetCalc()" data-i18n="cf_reset">Empezar de nuevo</button>
+      </div>
+
+      <div class="calc-out">
+        <div class="out-eyebrow" id="outEyebrow" data-i18n="co_eye_a">Lo que debe cobrar</div>
+
+        <div id="outEmpty" class="empty" data-i18n="co_empty">Escriba un monto para ver el cálculo.</div>
+
+        <div id="outBody" style="display:none">
+          <div class="bigcard">
+            <div class="bigfig" id="oBig">$0</div>
+            <div class="bigfig-lbl" id="oBigLbl" data-i18n="co_big_a">Total a cobrarle al cliente</div>
+            <div class="ratepill"><span data-i18n="co_rate">Tasa combinada</span> <b id="oRate">6%</b> <span id="oCountyName"></span></div>
+          </div>
+
+          <div class="qrow">
+            <div class="qcard"><div class="v" id="oState">$0</div><div class="l" data-i18n="co_q_state">Impuesto estatal · 6%</div></div>
+            <div class="qcard"><div class="v" id="oSur">$0</div><div class="l" id="oSurLbl" data-i18n="co_q_sur">Recargo del condado</div></div>
+          </div>
+
+          <div class="bd">
+            <h4 data-i18n="co_bd">Cómo sale ese número</h4>
+            <div class="bdrow"><span class="k" id="kBase" data-i18n="co_b1_a">Precio antes de impuesto</span><span class="v" id="oBase">$0</span></div>
+            <div class="bdrow"><span class="k" data-i18n="co_b2">Impuesto estatal <em data-i18n="co_b2e">6% sobre el monto completo</em></span><span class="v" id="oState2">$0</span></div>
+            <div class="bdrow" id="rowSurBase" style="display:none"><span class="k" data-i18n="co_b3">Monto sujeto al recargo <em data-i18n="co_b3e">tope de $5,000 por artículo</em></span><span class="v" id="oSurBase">$0</span></div>
+            <div class="bdrow"><span class="k" id="kSur" data-i18n="co_b4">Recargo del condado</span><span class="v" id="oSur2">$0</span></div>
+            <div class="bdrow tot"><span class="k" id="kTot" data-i18n="co_b5_a">Total a cobrar</span><span class="v" id="oTot">$0</span></div>
+            <div class="bdrow minus" id="rowAllow" style="display:none"><span class="k" data-i18n="co_b6">Descuento por presentar a tiempo <em data-i18n="co_b6e">2.5% de los primeros $1,200, máx. $30</em></span><span class="v" id="oAllow">$0</span></div>
+            <div class="bdrow tot" id="rowFinal" style="display:none"><span class="k" data-i18n="co_b7">A remitir al estado</span><span class="v" id="oFinal">$0</span></div>
+          </div>
+
+          <div class="note ok" id="noteCap">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="noteCapTxt"></span>
+          </div>
+
+          <div class="note ok hidden" id="noteZero">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="noteZeroTxt"></span>
+          </div>
+
+          <div class="note warn hidden" id="noteDue">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 7 12 12.5 15.5 14.5"/></svg>
+            <span data-i18n="co_due">Vence el día 1 del mes siguiente y se considera tardío después del día 20. Hay que presentar declaración aunque no haya nada que pagar.</span>
+          </div>
+        </div>
+
+        <div class="calc-cta">
+          <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20us%C3%A9%20la%20calculadora%20de%20Sales%20Tax%20y%20quisiera%20ayuda%20con%20mis%20declaraciones" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="co_cta">Que Yudit lo revise</a>
+          <p data-i18n="co_cta_p">Primera consulta gratuita. Reviso si está cobrando la tasa correcta y me encargo de presentar sus declaraciones a tiempo.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disc rv">
+      <h4 data-i18n="dc_h">Léalo antes de tomar decisiones</h4>
+      <p data-i18n="dc_p">Esta calculadora usa las tasas oficiales del año calendario 2026 y da un estimado para la venta general de productos y servicios gravables. No decide qué es gravable y qué no — eso depende de su actividad. No cubre las tasas especiales (casas móviles nuevas 3%, máquinas de entretenimiento 4%, electricidad 6.95%), las rentas de alojamiento temporal, las máquinas expendedoras, ni los impuestos turísticos de su condado. Tampoco reemplaza su declaración DR-15. Úsela para orientarse, no para presentar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section how">
+  <div class="wrap">
+    <div class="how-head">
+      <span class="eyebrow rv" data-i18n="hw_eyebrow">Las reglas que más se confunden</span>
+      <h2 class="h2 rv d1" data-i18n="hw_h2">Tres cosas que le pueden costar una multa</h2>
+      <p class="lead rv d2" data-i18n="hw_lead">El Sales Tax parece simple hasta que entrega en otro condado o vende algo caro. Esto es lo que dice el Departamento de Hacienda de Florida.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card rv">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 data-i18n="hw1_t">Manda el condado de entrega</h3>
+        <p data-i18n="hw1_p">El recargo no se cobra según dónde está su negocio, sino según dónde entrega la mercancía. Si su taller está en Orange (0.5%) y entrega en Osceola (1.5%), cobra 1.5%. Y si entrega en Citrus o Collier, que no tienen recargo, no cobra recargo.</p>
+      </div>
+      <div class="how-card rv d1">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><path d="M12 5v14"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3 data-i18n="hw2_t">El tope de $5,000</h3>
+        <p data-i18n="hw2_p">El recargo del condado solo se cobra sobre los primeros $5,000 de cada artículo. El 6% estatal sí va sobre el precio completo. Si vende un carro de $20,000, cobra 6% de los $20,000 pero el recargo solo de $5,000. El tope es por artículo, no por factura.</p>
+      </div>
+      <div class="how-card rv d2">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3 data-i18n="hw3_t">El día 20 es la frontera</h3>
+        <p data-i18n="hw3_p">La declaración vence el día 1 del mes siguiente y se vuelve tardía después del día 20. Si presenta y paga por internet a tiempo, se queda con el 2.5% de los primeros $1,200, hasta $30. Y hay que presentar aunque no haya vendido nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section rates">
+  <div class="wrap">
+    <div class="rates-head">
+      <span class="eyebrow rv" data-i18n="rt_eyebrow">Tabla 2026</span>
+      <h2 class="h2 rv d1" data-i18n="rt_h2">Tasa total por condado</h2>
+      <p class="lead rv d2" data-i18n="rt_lead">El 6% estatal más el recargo de cada condado, según la tabla oficial DR-15DSS para el año calendario 2026.</p>
+    </div>
+    <div class="rates-search rv d2">
+      <input id="rateSearch" type="search" autocomplete="off" placeholder="Buscar condado…" data-i18n-ph="rt_search" aria-label="Buscar condado">
+    </div>
+    <div class="rates-grid rv d2" id="ratesGrid"></div>
+    <p class="rates-none" id="ratesNone" data-i18n="rt_none">No encontramos ese condado.</p>
+    <p class="rates-note rv" data-i18n="rt_note">Las tasas cambian, casi siempre el 1 de enero. En 2026 hubo cambios en Jackson, Martin y Palm Beach, y varios recargos vencen el 31 de diciembre de 2026 (Brevard, Charlotte, Liberty y Santa Rosa, entre otros). Verifique siempre contra la tabla DR-15DSS vigente antes de cobrar.</p>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow rv" data-i18n="fq_eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2 rv d1" data-i18n="fq_h2">Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq-list rv d2">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq1_q">¿Mi negocio tiene que cobrar Sales Tax?</button>
+        <div class="faq-a"><p data-i18n="fq1_a">Si vende productos al consumidor final en Florida, casi seguro que sí, y antes de la primera venta debe registrarse con el Departamento de Hacienda. Algunos servicios también están gravados, y otros no. Ahí es donde más errores vemos: negocios de limpieza, talleres y contratistas que no saben si su trabajo entra o no. Si no está seguro, pregunte antes de cobrar — o antes de dejar de cobrar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq2_q">¿Y si cobré de menos a mis clientes?</button>
+        <div class="faq-a"><p data-i18n="fq2_a">El estado le va a cobrar el impuesto igual, lo haya recaudado o no. Esa es la parte que duele: si cobró 6.5% donde debía cobrar 7.5%, la diferencia sale de su bolsillo, más multa e intereses. Por eso vale la pena revisar la tasa de cada condado donde entrega antes de que se acumulen meses.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq3_q">¿Cada cuánto tengo que presentar?</button>
+        <div class="faq-a"><p data-i18n="fq3_a">Depende de cuánto recauda al año: más de $1,000 es mensual; entre $501 y $1,000, trimestral; entre $101 y $500, semestral; y $100 o menos, anual. El estado le asigna la frecuencia. Lo importante es que aunque un mes no venda nada, igual tiene que presentar la declaración en cero.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq4_q">¿Todavía pago impuesto por la renta de mi local?</button>
+        <div class="faq-a"><p data-i18n="fq4_a">No. El Sales Tax sobre la renta de propiedad comercial quedó derogado desde el 1 de octubre de 2025, así que oficinas, locales, bodegas y mini-almacenes ya no lo pagan. Ojo: sí siguen gravadas la renta de equipos, las tarifas por estacionar o guardar vehículos, barcos y aviones, y las rentas de alojamiento de seis meses o menos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq5_q">¿El tope de $5,000 es por factura?</button>
+        <div class="faq-a"><p data-i18n="fq5_a">No, es por artículo. Si en una misma factura vende tres artículos de $6,000 cada uno, el tope se aplica a cada uno por separado: cobra el recargo sobre $5,000 de cada uno, no sobre $5,000 del total. Esto es clave para talleres, dealers y cualquiera que venda equipo caro.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq6_q">¿Guardan lo que escribo aquí?</button>
+        <div class="faq-a"><p data-i18n="fq6_a">No. Todo el cálculo ocurre dentro de su navegador, en su propio teléfono o computadora. Nada se envía a ningún servidor, nada se guarda y no le pedimos correo ni nombre.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-line"></div>
+    <h2 data-i18n="ct_h2">El Sales Tax no perdona olvidos.</h2>
+    <p data-i18n="ct_p">Yo me encargo de que sus declaraciones salgan a tiempo, con la tasa correcta y sin multas. Usted dedíquese a vender.</p>
+    <div class="cta-btns">
+      <a href="contacto.html" class="btn btn-white" data-i18n="ct_b1">Agendar consulta gratuita</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="ct_b2">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="ft_brand">Contabilidad profesional en español para pequeños negocios en Orlando, Florida.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/yuditpulidotax" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.94v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/pulidotax.accounting" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 data-i18n="ft_nav">Navegación</h3>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a></li>
+          <li><a href="calculadora.html" data-i18n="nav_calc">Calculadora</a></li>
+          <li><a href="sales-tax.html" data-i18n="nav_st">Sales Tax</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="ft_svcs">Servicios</h3>
+        <ul>
+          <li><a href="servicios.html" data-i18n="svc1_t">Bookkeeping mensual</a></li>
+          <li><a href="servicios.html" data-i18n="svc2_t">Declaración de impuestos</a></li>
+          <li><a href="servicios.html" data-i18n="svc3_t">Contabilidad para LLC y Corp</a></li>
+          <li><a href="servicios.html" data-i18n="svc4_t">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="ft_contact">Contacto</h3>
+        <button class="gate-btn" id="gateBtn" onclick="revealFooterContact()" data-i18n="ft_gate">Ver datos de contacto</button>
+        <ul id="contactData"></ul>
+        <h3 style="margin-top:28px" data-i18n="ft_hours">Horario</h3>
+        <div class="footer-hours">
+          <div data-i18n="ft_h1">Lun–Vie: 9:00 am – 6:00 pm</div>
+          <div data-i18n="ft_h2">Sáb y Dom: Cerrado</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft_copy">© 2026 Pulido Tax &amp; Accounting LLC · Orlando, Florida</span>
+      <span data-i18n="ft_disc">Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/16892708845" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<script>
+/* ---------- Nav ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+}));
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+function toggleFaq(btn){
+  const item = btn.parentElement, ans = item.querySelector('.faq-a');
+  const open = item.classList.contains('open');
+  item.parentElement.querySelectorAll('.faq-item.open').forEach(o => {
+    o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null;
+  });
+  if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+}
+
+/* ============================================================
+   SALES TAX DE FLORIDA — año calendario 2026
+   Tasa estatal 6% (Departamento de Hacienda de Florida).
+   Recargos por condado: tabla oficial DR-15DSS R. 11/25.
+   Reglas de cálculo: instrucciones del DR-15 (DR-15N R. 10/25) —
+   el recargo se cobra según el condado de entrega; solo aplica a
+   los primeros $5,000 de cada venta individual de propiedad
+   personal tangible; descuento de 2.5% sobre los primeros $1,200
+   del impuesto (máx. $30) al presentar y pagar en línea a tiempo.
+   ============================================================ */
+const STATE_RATE = 0.06;
+const SURTAX_CAP = 5000;
+const ALLOW_RATE = 0.025, ALLOW_BASE = 1200, ALLOW_MAX = 30;
+
+/* [condado, recargo %] — los 67 condados, DR-15DSS 2026 */
+const COUNTIES = [
+  ["Alachua",1.5],["Baker",1],["Bay",1],["Bradford",1],["Brevard",1],["Broward",1],
+  ["Calhoun",1.5],["Charlotte",1],["Citrus",0],["Clay",1.5],["Collier",0],["Columbia",1.5],
+  ["DeSoto",1.5],["Dixie",1],["Duval",1.5],["Escambia",1.5],["Flagler",1],["Franklin",1.5],
+  ["Gadsden",1.5],["Gilchrist",1],["Glades",1],["Gulf",1],["Hamilton",2],["Hardee",1],
+  ["Hendry",1.5],["Hernando",0.5],["Highlands",1.5],["Hillsborough",1.5],["Holmes",1.5],
+  ["Indian River",1],["Jackson",1.5],["Jefferson",1],["Lafayette",1],["Lake",1],["Lee",0.5],
+  ["Leon",1.5],["Levy",1],["Liberty",1.5],["Madison",1.5],["Manatee",1],["Marion",1.5],
+  ["Martin",0.5],["Miami-Dade",1],["Monroe",1.5],["Nassau",1],["Okaloosa",1],["Okeechobee",1],
+  ["Orange",0.5],["Osceola",1.5],["Palm Beach",0.5],["Pasco",1],["Pinellas",1],["Polk",1],
+  ["Putnam",1],["St. Johns",0.5],["St. Lucie",1],["Santa Rosa",1],["Sarasota",1],["Seminole",1],
+  ["Sumter",1],["Suwannee",1],["Taylor",1],["Union",1],["Volusia",0.5],["Wakulla",1.5],
+  ["Walton",1],["Washington",1.5]
+];
+
+let mode = 'charge';
+const fmt  = n => '$' + (Math.round(n*100)/100).toLocaleString('en-US',{minimumFractionDigits:2, maximumFractionDigits:2});
+const fmt0 = n => '$' + Math.round(n).toLocaleString('en-US');
+const parseMoney = s => { const n = parseFloat(String(s).replace(/[^0-9.]/g,'')); return isNaN(n) ? 0 : n; };
+const pct = r => (Math.round(r*1000)/1000).toString().replace(/\.0+$/,'') + '%';
+
+/* ---------- poblar el selector de condados ---------- */
+const sel = document.getElementById('inCounty');
+COUNTIES.forEach(([n, s]) => {
+  const o = document.createElement('option');
+  o.value = n; o.dataset.sur = s;
+  o.textContent = n + ' — ' + pct(6 + s);
+  if(n === 'Orange') o.selected = true;
+  sel.appendChild(o);
+});
+
+/* ---------- tabla de tasas ---------- */
+const grid = document.getElementById('ratesGrid');
+COUNTIES.forEach(([n, s]) => {
+  const d = document.createElement('div');
+  d.className = 'rc' + (s === 0 ? ' zero' : '');
+  d.dataset.name = n.toLowerCase();
+  d.innerHTML = '<span class="n">' + n + '</span><span class="t">' + pct(6 + s) + '</span>';
+  grid.appendChild(d);
+});
+document.getElementById('rateSearch').addEventListener('input', function(){
+  const q = this.value.trim().toLowerCase().replace(/\./g,'');
+  let shown = 0;
+  grid.querySelectorAll('.rc').forEach(c => {
+    const hit = c.dataset.name.replace(/\./g,'').indexOf(q) !== -1;
+    c.classList.toggle('hide', !hit);
+    if(hit) shown++;
+  });
+  document.getElementById('ratesNone').style.display = shown ? 'none' : 'block';
+});
+
+/* ---------- cálculo ---------- */
+function compute(){
+  const t = translations[document.documentElement.lang] || translations.es;
+  const amount = parseMoney(document.getElementById('inAmount').value);
+  const opt    = sel.options[sel.selectedIndex];
+  const county = opt ? opt.value : 'Orange';
+  const surPct = opt ? parseFloat(opt.dataset.sur) : 0;
+  const surRate = surPct / 100;
+
+  const has = amount > 0;
+  document.getElementById('outEmpty').style.display = has ? 'none' : 'block';
+  document.getElementById('outBody').style.display  = has ? 'block' : 'none';
+  if(!has) return;
+
+  const stateTax = amount * STATE_RATE;
+
+  /* base del recargo */
+  let surBase = amount, capped = false;
+  if(mode === 'charge'){
+    if(document.getElementById('inSingle').checked && amount > SURTAX_CAP){
+      surBase = SURTAX_CAP; capped = true;
+    }
+  } else {
+    const exempt = parseMoney(document.getElementById('inExempt').value);
+    surBase = Math.max(0, amount - exempt);
+    capped = exempt > 0;
+  }
+  const surTax = surBase * surRate;
+  const totalTax = stateTax + surTax;
+
+  const S = (id, v) => document.getElementById(id).textContent = v;
+  S('oState', fmt(stateTax));  S('oState2', fmt(stateTax));
+  S('oSur', fmt(surTax));      S('oSur2', fmt(surTax));
+  S('oBase', fmt(amount));
+  S('oCountyName', '· ' + county);
+  S('oRate', pct(6 + surPct));
+  S('oSurLbl', t.co_q_sur + ' · ' + pct(surPct));
+  S('kSur', t.co_b4 + ' (' + pct(surPct) + ')');
+
+  const rowSurBase = document.getElementById('rowSurBase');
+  rowSurBase.style.display = (surBase !== amount) ? 'flex' : 'none';
+  if(surBase !== amount) S('oSurBase', fmt(surBase));
+
+  const rowAllow = document.getElementById('rowAllow'), rowFinal = document.getElementById('rowFinal');
+
+  if(mode === 'charge'){
+    S('oBig', fmt(amount + totalTax));
+    S('oTot', fmt(amount + totalTax));
+    rowAllow.style.display = 'none'; rowFinal.style.display = 'none';
+  } else {
+    let allow = 0;
+    if(document.getElementById('inOnTime').checked){
+      allow = Math.min(Math.min(totalTax, ALLOW_BASE) * ALLOW_RATE, ALLOW_MAX);
+    }
+    S('oBig', fmt(totalTax - allow));
+    S('oTot', fmt(totalTax));
+    if(allow > 0){
+      rowAllow.style.display = 'flex'; rowFinal.style.display = 'flex';
+      S('oAllow', '− ' + fmt(allow));
+      S('oFinal', fmt(totalTax - allow));
+    } else {
+      rowAllow.style.display = 'none'; rowFinal.style.display = 'none';
+    }
+  }
+
+  /* avisos */
+  const nCap = document.getElementById('noteCap'), nZero = document.getElementById('noteZero'), nDue = document.getElementById('noteDue');
+  nCap.classList.toggle('hidden', !capped);
+  if(capped && mode === 'charge'){
+    document.getElementById('noteCapTxt').textContent =
+      t.note_cap.replace('{x}', fmt0(amount - SURTAX_CAP)).replace('{c}', county);
+  } else if(capped){
+    document.getElementById('noteCapTxt').textContent = t.note_cap_r;
+  }
+  nZero.classList.toggle('hidden', surPct !== 0);
+  if(surPct === 0) document.getElementById('noteZeroTxt').textContent = t.note_zero.replace('{c}', county);
+  nDue.classList.toggle('hidden', mode !== 'remit');
+}
+
+/* ---------- modos ---------- */
+function applyMode(){
+  const t = translations[document.documentElement.lang] || translations.es;
+  const charge = mode === 'charge';
+  document.getElementById('grpSingle').style.display = charge ? 'block' : 'none';
+  document.getElementById('grpExempt').style.display = charge ? 'none' : 'block';
+  document.getElementById('grpOnTime').style.display = charge ? 'none' : 'block';
+  document.getElementById('formTitle').textContent   = charge ? t.cf_h2a   : t.cf_h2b;
+  document.getElementById('formSub').textContent     = charge ? t.cf_suba  : t.cf_subb;
+  document.getElementById('lblAmount').textContent   = charge ? t.cf_amount_a  : t.cf_amount_b;
+  document.getElementById('hintAmount').textContent  = charge ? t.cf_amount_ah : t.cf_amount_bh;
+  document.getElementById('outEyebrow').textContent  = charge ? t.co_eye_a : t.co_eye_b;
+  document.getElementById('oBigLbl').textContent     = charge ? t.co_big_a : t.co_big_b;
+  document.getElementById('kBase').textContent       = charge ? t.co_b1_a  : t.co_b1_b;
+  document.getElementById('kTot').textContent        = charge ? t.co_b5_a  : t.co_b5_b;
+  compute();
+}
+document.querySelectorAll('#modes button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#modes button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on'); mode = b.dataset.m; applyMode();
+  });
+});
+
+/* ---------- entradas ---------- */
+function formatInput(el){
+  const raw = el.value.replace(/[^0-9]/g,'');
+  el.value = raw ? (+raw).toLocaleString('en-US') : '';
+}
+['inAmount','inExempt'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => { formatInput(el); compute(); });
+});
+['inSingle','inOnTime'].forEach(id => document.getElementById(id).addEventListener('change', compute));
+sel.addEventListener('change', compute);
+function resetCalc(){
+  ['inAmount','inExempt'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('inSingle').checked = false;
+  document.getElementById('inOnTime').checked = true;
+  compute();
+}
+
+/* ---------- Footer contact gate ---------- */
+function revealFooterContact(){
+  const u = 'yudit', d = 'pulidotax.com';
+  const ph = ['(689)','270','8845'];
+  const ul = document.getElementById('contactData');
+  ul.innerHTML = '<li><a href="mailto:'+u+'@'+d+'">'+u+'@'+d+'</a></li>' +
+    '<li><a href="https://wa.me/16892708845" target="_blank" rel="noopener">'+ph[0]+' '+ph[1]+'-'+ph[2]+'</a></li>' +
+    '<li>Orlando, Florida</li>';
+  ul.style.display = 'block';
+  document.getElementById('gateBtn').style.display = 'none';
+}
+
+/* ---------- i18n ---------- */
+const translations = {
+  es: {
+    nav_home:'Inicio', nav_services:'Servicios', nav_about:'Sobre mí', nav_calc:'Calculadora', nav_st:'Sales Tax', nav_blog:'Blog', nav_contact:'Contacto', nav_cta:'Consulta gratis',
+
+    ph_eyebrow:'Herramienta gratuita · Tasas oficiales 2026',
+    ph_h1:'Sales Tax de Florida', ph_h1b:'sin dolores de cabeza',
+    ph_lead:'Calcule cuánto cobrarle a su cliente y cuánto remitirle al estado, con la tasa exacta de su condado. Incluye el tope de $5,000 y el descuento por presentar a tiempo.',
+    ph_t1:'Los 67 condados de Florida', ph_t2:'Tabla oficial DR-15DSS 2026', ph_t3:'Gratis y sin registro',
+
+    md_charge:'¿Cuánto le cobro al cliente?', md_remit:'¿Cuánto le debo al estado?',
+    cf_h2a:'El precio de su venta', cf_suba:'Escriba el precio antes de impuesto y elija dónde entrega.',
+    cf_h2b:'Sus ventas del período', cf_subb:'Escriba el total gravable del mes o trimestre que va a declarar.',
+    cf_amount_a:'Precio antes de impuesto', cf_amount_ah:'Lo que le cobra al cliente por el producto o servicio.',
+    cf_amount_b:'Ventas gravables del período', cf_amount_bh:'El total de ventas sujetas a impuesto, sin incluir el impuesto cobrado.',
+    cf_county:'Condado donde entrega', cf_county_h:'El recargo se cobra según el condado de la entrega, no donde está su negocio.',
+    cf_single:'Es un solo artículo, no un servicio',
+    cf_single_h:'Importa solo si pasa de $5,000: el recargo del condado se cobra únicamente sobre los primeros $5,000 de cada artículo.',
+    cf_exempt:'Monto exento del recargo (opcional)',
+    cf_exempt_h:'Lo que pasa de $5,000 en cada artículo vendido. Va en la línea 15(a) del DR-15.',
+    cf_ontime:'Presento y pago por internet, a tiempo',
+    cf_ontime_h:'Le da derecho a un descuento del 2.5% sobre los primeros $1,200, hasta $30.',
+    cf_reset:'Empezar de nuevo',
+
+    co_eye_a:'Lo que debe cobrar', co_eye_b:'Lo que debe remitir',
+    co_empty:'Escriba un monto para ver el cálculo.',
+    co_big_a:'Total a cobrarle al cliente', co_big_b:'A remitir al Departamento de Hacienda',
+    co_rate:'Tasa combinada',
+    co_q_state:'Impuesto estatal · 6%', co_q_sur:'Recargo del condado',
+    co_bd:'Cómo sale ese número',
+    co_b1_a:'Precio antes de impuesto', co_b1_b:'Ventas gravables del período',
+    co_b2:'Impuesto estatal', co_b2e:'6% sobre el monto completo',
+    co_b3:'Monto sujeto al recargo', co_b3e:'tope de $5,000 por artículo',
+    co_b4:'Recargo del condado',
+    co_b5_a:'Total a cobrar', co_b5_b:'Impuesto total del período',
+    co_b6:'Descuento por presentar a tiempo', co_b6e:'2.5% de los primeros $1,200, máx. $30',
+    co_b7:'A remitir al estado',
+    co_due:'Vence el día 1 del mes siguiente y se considera tardío después del día 20. Hay que presentar declaración aunque no haya nada que pagar.',
+    note_cap:'Como es un solo artículo de más de $5,000, los {x} que sobran quedan exentos del recargo de {c}. El 6% estatal sí va sobre el precio completo.',
+    note_cap_r:'El monto que marcó como exento se restó antes de calcular el recargo del condado, igual que en la línea 15(a) del DR-15.',
+    note_zero:'{c} no cobra recargo del condado, así que aquí solo aplica el 6% estatal.',
+    co_cta:'Que Yudit lo revise',
+    co_cta_p:'Primera consulta gratuita. Reviso si está cobrando la tasa correcta y me encargo de presentar sus declaraciones a tiempo.',
+
+    dc_h:'Léalo antes de tomar decisiones',
+    dc_p:'Esta calculadora usa las tasas oficiales del año calendario 2026 y da un estimado para la venta general de productos y servicios gravables. No decide qué es gravable y qué no — eso depende de su actividad. No cubre las tasas especiales (casas móviles nuevas 3%, máquinas de entretenimiento 4%, electricidad 6.95%), las rentas de alojamiento temporal, las máquinas expendedoras, ni los impuestos turísticos de su condado. Tampoco reemplaza su declaración DR-15. Úsela para orientarse, no para presentar.',
+
+    hw_eyebrow:'Las reglas que más se confunden',
+    hw_h2:'Tres cosas que le pueden costar una multa',
+    hw_lead:'El Sales Tax parece simple hasta que entrega en otro condado o vende algo caro. Esto es lo que dice el Departamento de Hacienda de Florida.',
+    hw1_t:'Manda el condado de entrega',
+    hw1_p:'El recargo no se cobra según dónde está su negocio, sino según dónde entrega la mercancía. Si su taller está en Orange (0.5%) y entrega en Osceola (1.5%), cobra 1.5%. Y si entrega en Citrus o Collier, que no tienen recargo, no cobra recargo.',
+    hw2_t:'El tope de $5,000',
+    hw2_p:'El recargo del condado solo se cobra sobre los primeros $5,000 de cada artículo. El 6% estatal sí va sobre el precio completo. Si vende un carro de $20,000, cobra 6% de los $20,000 pero el recargo solo de $5,000. El tope es por artículo, no por factura.',
+    hw3_t:'El día 20 es la frontera',
+    hw3_p:'La declaración vence el día 1 del mes siguiente y se vuelve tardía después del día 20. Si presenta y paga por internet a tiempo, se queda con el 2.5% de los primeros $1,200, hasta $30. Y hay que presentar aunque no haya vendido nada.',
+
+    rt_eyebrow:'Tabla 2026', rt_h2:'Tasa total por condado',
+    rt_lead:'El 6% estatal más el recargo de cada condado, según la tabla oficial DR-15DSS para el año calendario 2026.',
+    rt_search:'Buscar condado…', rt_none:'No encontramos ese condado.',
+    rt_note:'Las tasas cambian, casi siempre el 1 de enero. En 2026 hubo cambios en Jackson, Martin y Palm Beach, y varios recargos vencen el 31 de diciembre de 2026 (Brevard, Charlotte, Liberty y Santa Rosa, entre otros). Verifique siempre contra la tabla DR-15DSS vigente antes de cobrar.',
+
+    fq_eyebrow:'Preguntas frecuentes', fq_h2:'Lo que más nos preguntan',
+    fq1_q:'¿Mi negocio tiene que cobrar Sales Tax?',
+    fq1_a:'Si vende productos al consumidor final en Florida, casi seguro que sí, y antes de la primera venta debe registrarse con el Departamento de Hacienda. Algunos servicios también están gravados, y otros no. Ahí es donde más errores vemos: negocios de limpieza, talleres y contratistas que no saben si su trabajo entra o no. Si no está seguro, pregunte antes de cobrar — o antes de dejar de cobrar.',
+    fq2_q:'¿Y si cobré de menos a mis clientes?',
+    fq2_a:'El estado le va a cobrar el impuesto igual, lo haya recaudado o no. Esa es la parte que duele: si cobró 6.5% donde debía cobrar 7.5%, la diferencia sale de su bolsillo, más multa e intereses. Por eso vale la pena revisar la tasa de cada condado donde entrega antes de que se acumulen meses.',
+    fq3_q:'¿Cada cuánto tengo que presentar?',
+    fq3_a:'Depende de cuánto recauda al año: más de $1,000 es mensual; entre $501 y $1,000, trimestral; entre $101 y $500, semestral; y $100 o menos, anual. El estado le asigna la frecuencia. Lo importante es que aunque un mes no venda nada, igual tiene que presentar la declaración en cero.',
+    fq4_q:'¿Todavía pago impuesto por la renta de mi local?',
+    fq4_a:'No. El Sales Tax sobre la renta de propiedad comercial quedó derogado desde el 1 de octubre de 2025, así que oficinas, locales, bodegas y mini-almacenes ya no lo pagan. Ojo: sí siguen gravadas la renta de equipos, las tarifas por estacionar o guardar vehículos, barcos y aviones, y las rentas de alojamiento de seis meses o menos.',
+    fq5_q:'¿El tope de $5,000 es por factura?',
+    fq5_a:'No, es por artículo. Si en una misma factura vende tres artículos de $6,000 cada uno, el tope se aplica a cada uno por separado: cobra el recargo sobre $5,000 de cada uno, no sobre $5,000 del total. Esto es clave para talleres, dealers y cualquiera que venda equipo caro.',
+    fq6_q:'¿Guardan lo que escribo aquí?',
+    fq6_a:'No. Todo el cálculo ocurre dentro de su navegador, en su propio teléfono o computadora. Nada se envía a ningún servidor, nada se guarda y no le pedimos correo ni nombre.',
+
+    ct_h2:'El Sales Tax no perdona olvidos.',
+    ct_p:'Yo me encargo de que sus declaraciones salgan a tiempo, con la tasa correcta y sin multas. Usted dedíquese a vender.',
+    ct_b1:'Agendar consulta gratuita', ct_b2:'Escribir por WhatsApp',
+
+    svc1_t:'Bookkeeping mensual', svc2_t:'Declaración de impuestos', svc3_t:'Contabilidad para LLC y Corp', svc4_t:'Nómina (Payroll)',
+    ft_brand:'Contabilidad profesional en español para pequeños negocios en Orlando, Florida.',
+    ft_nav:'Navegación', ft_svcs:'Servicios', ft_contact:'Contacto', ft_gate:'Ver datos de contacto',
+    ft_hours:'Horario', ft_h1:'Lun–Vie: 9:00 am – 6:00 pm', ft_h2:'Sáb y Dom: Cerrado',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.'
+  },
+  en: {
+    nav_home:'Home', nav_services:'Services', nav_about:'About', nav_calc:'Calculator', nav_st:'Sales Tax', nav_blog:'Blog', nav_contact:'Contact', nav_cta:'Free consultation',
+
+    ph_eyebrow:'Free tool · Official 2026 rates',
+    ph_h1:'Florida Sales Tax', ph_h1b:'without the headache',
+    ph_lead:'Work out how much to charge your customer and how much to send the state, at your county’s exact rate. Includes the $5,000 cap and the on-time filing allowance.',
+    ph_t1:'All 67 Florida counties', ph_t2:'Official DR-15DSS 2026 table', ph_t3:'Free, no sign-up',
+
+    md_charge:'What do I charge my customer?', md_remit:'What do I owe the state?',
+    cf_h2a:'Your sale price', cf_suba:'Enter the price before tax and choose where you deliver.',
+    cf_h2b:'Your sales for the period', cf_subb:'Enter the taxable total for the month or quarter you are filing.',
+    cf_amount_a:'Price before tax', cf_amount_ah:'What you charge the customer for the product or service.',
+    cf_amount_b:'Taxable sales for the period', cf_amount_bh:'Total sales subject to tax, not including tax collected.',
+    cf_county:'County where you deliver', cf_county_h:'Surtax is charged at the rate of the delivery county, not where your business sits.',
+    cf_single:'It is a single item, not a service',
+    cf_single_h:'Only matters above $5,000: county surtax applies only to the first $5,000 of each item.',
+    cf_exempt:'Amount exempt from surtax (optional)',
+    cf_exempt_h:'The portion above $5,000 on each item sold. This goes on line 15(a) of the DR-15.',
+    cf_ontime:'I file and pay online, on time',
+    cf_ontime_h:'Entitles you to a 2.5% allowance on the first $1,200, up to $30.',
+    cf_reset:'Start over',
+
+    co_eye_a:'What to charge', co_eye_b:'What to remit',
+    co_empty:'Enter an amount to see the calculation.',
+    co_big_a:'Total to charge the customer', co_big_b:'To remit to the Department of Revenue',
+    co_rate:'Combined rate',
+    co_q_state:'State tax · 6%', co_q_sur:'County surtax',
+    co_bd:'How that number adds up',
+    co_b1_a:'Price before tax', co_b1_b:'Taxable sales for the period',
+    co_b2:'State tax', co_b2e:'6% on the full amount',
+    co_b3:'Amount subject to surtax', co_b3e:'$5,000 cap per item',
+    co_b4:'County surtax',
+    co_b5_a:'Total to charge', co_b5_b:'Total tax for the period',
+    co_b6:'On-time filing allowance', co_b6e:'2.5% of the first $1,200, max $30',
+    co_b7:'To remit to the state',
+    co_due:'Due on the 1st of the following month and late after the 20th. A return must be filed even when no tax is due.',
+    note_cap:'Since this is a single item over $5,000, the remaining {x} is exempt from the {c} surtax. The 6% state tax still applies to the full price.',
+    note_cap_r:'The amount you marked as exempt was subtracted before calculating the county surtax, just as on line 15(a) of the DR-15.',
+    note_zero:'{c} charges no county surtax, so only the 6% state rate applies here.',
+    co_cta:'Have Yudit review it',
+    co_cta_p:'First consultation is free. I check whether you are charging the right rate and take care of filing your returns on time.',
+
+    dc_h:'Read this before making decisions',
+    dc_p:'This calculator uses the official calendar year 2026 rates and gives an estimate for general sales of taxable goods and services. It does not decide what is taxable — that depends on your activity. It does not cover special rates (new mobile homes 3%, amusement machines 4%, electricity 6.95%), transient rentals, vending machines, or your county’s tourist development taxes. It also does not replace your DR-15 return. Use it to orient yourself, not to file.',
+
+    hw_eyebrow:'The rules people get wrong',
+    hw_h2:'Three things that can cost you a penalty',
+    hw_lead:'Sales tax looks simple until you deliver into another county or sell something expensive. Here is what the Florida Department of Revenue says.',
+    hw1_t:'The delivery county rules',
+    hw1_p:'Surtax is not charged based on where your business sits, but on where you deliver the goods. If your shop is in Orange (0.5%) and you deliver into Osceola (1.5%), you charge 1.5%. And if you deliver into Citrus or Collier, which have no surtax, you charge none.',
+    hw2_t:'The $5,000 cap',
+    hw2_p:'County surtax applies only to the first $5,000 of each item. The 6% state tax applies to the full price. If you sell a $20,000 car, you charge 6% on the whole $20,000 but surtax on only $5,000. The cap is per item, not per invoice.',
+    hw3_t:'The 20th is the line',
+    hw3_p:'The return is due on the 1st of the following month and becomes late after the 20th. File and pay online on time and you keep 2.5% of the first $1,200, up to $30. And you must file even if you sold nothing.',
+
+    rt_eyebrow:'2026 table', rt_h2:'Total rate by county',
+    rt_lead:'The 6% state rate plus each county’s surtax, per the official DR-15DSS table for calendar year 2026.',
+    rt_search:'Search county…', rt_none:'We could not find that county.',
+    rt_note:'Rates change, almost always on January 1. For 2026 there were changes in Jackson, Martin and Palm Beach, and several surtaxes expire on December 31, 2026 (Brevard, Charlotte, Liberty and Santa Rosa, among others). Always check against the current DR-15DSS table before charging.',
+
+    fq_eyebrow:'Frequently asked', fq_h2:'What people ask us most',
+    fq1_q:'Does my business have to charge sales tax?',
+    fq1_a:'If you sell goods to end consumers in Florida, almost certainly yes, and you must register with the Department of Revenue before your first sale. Some services are taxable and others are not. That is where we see the most mistakes: cleaning businesses, repair shops and contractors who do not know whether their work counts. If you are not sure, ask before you charge — or before you stop charging.',
+    fq2_q:'What if I undercharged my customers?',
+    fq2_a:'The state will collect the tax from you whether you collected it or not. That is the painful part: if you charged 6.5% where 7.5% was due, the difference comes out of your pocket, plus penalty and interest. Which is why it pays to check the rate for every county you deliver into before months pile up.',
+    fq3_q:'How often do I have to file?',
+    fq3_a:'It depends on how much you collect per year: more than $1,000 is monthly; $501 to $1,000 is quarterly; $101 to $500 is semiannual; and $100 or less is annual. The state assigns your frequency. The key point is that even in a month with no sales, you still have to file a zero return.',
+    fq4_q:'Do I still pay tax on my commercial rent?',
+    fq4_a:'No. Sales tax on commercial real property rent was repealed effective October 1, 2025, so offices, storefronts, warehouses and self-storage no longer pay it. Careful though: equipment rentals, fees to park or store vehicles, boats and aircraft, and accommodation rentals of six months or less are all still taxable.',
+    fq5_q:'Is the $5,000 cap per invoice?',
+    fq5_a:'No, it is per item. If one invoice includes three items at $6,000 each, the cap applies to each separately: you charge surtax on $5,000 of each one, not on $5,000 of the total. This matters a lot for repair shops, dealers and anyone selling expensive equipment.',
+    fq6_q:'Do you store what I type here?',
+    fq6_a:'No. The whole calculation happens inside your browser, on your own phone or computer. Nothing is sent to a server, nothing is stored, and we do not ask for your email or name.',
+
+    ct_h2:'Sales tax does not forgive forgetfulness.',
+    ct_p:'I make sure your returns go out on time, at the right rate and without penalties. You focus on selling.',
+    ct_b1:'Book a free consultation', ct_b2:'Message on WhatsApp',
+
+    svc1_t:'Monthly bookkeeping', svc2_t:'Tax preparation', svc3_t:'LLC and Corp accounting', svc4_t:'Payroll',
+    ft_brand:'Professional Spanish-language accounting for small businesses in Orlando, Florida.',
+    ft_nav:'Navigation', ft_svcs:'Services', ft_contact:'Contact', ft_gate:'Show contact details',
+    ft_hours:'Hours', ft_h1:'Mon–Fri: 9:00 am – 6:00 pm', ft_h2:'Sat & Sun: Closed',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'This site does not constitute legal or tax advice. Every situation is evaluated individually.'
+  }
+};
+
+/* El almacenamiento puede estar bloqueado (incógnito, cookies desactivadas): si falla,
+   el idioma igual cambia, solo no se recuerda. Se escriben las dos claves históricas
+   para que todas las páginas compartan la misma preferencia. */
+function rememberLang(l){ try{ localStorage.setItem('ptax-lang',l); localStorage.setItem('ptaLang',l); }catch(e){} }
+function recallLang(){ try{ return localStorage.getItem('ptax-lang') || localStorage.getItem('ptaLang'); }catch(e){ return null; } }
+
+function setLang(lang){
+  document.documentElement.lang = lang;
+  rememberLang(lang);
+  document.getElementById('langEs').classList.toggle('on', lang === 'es');
+  document.getElementById('langEn').classList.toggle('on', lang === 'en');
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if(t[key] !== undefined) el.placeholder = t[key];
+  });
+  document.querySelectorAll('.faq-item.open').forEach(o => {
+    const a = o.querySelector('.faq-a'); a.style.maxHeight = a.scrollHeight + 'px';
+  });
+  applyMode();
+}
+const saved = recallLang();
+if(saved && saved !== 'es') setLang(saved); else applyMode();
+</script>
+</body>
+</html>
