@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Paginas principales -->
   <url>
     <loc>https://pulidotax.com/</loc>
     <lastmod>2026-10-23</lastmod>
@@ -27,5 +28,106 @@
   <url>
     <loc>https://pulidotax.com/contacto.html</loc>
     <lastmod>2026-10-23</lastmod>
+  </url>
+  <!-- Articulos del blog, del mas reciente al mas antiguo -->
+  <url>
+    <loc>https://pulidotax.com/ultimo-pago-estimado-15-de-enero-2027.html</loc>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/1099-nec-umbral-2000.html</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/extension-declaracion-15-de-octubre.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/gastos-de-tarjeta-que-si-puede-deducir.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/como-organizar-los-recibos.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/como-salir-de-deuda-de-tarjetas.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/salario-minimo-florida-15-dolares.html</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/alerta-credito-tributario-tribal-falso.html</loc>
+    <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/costo-de-pagar-solo-el-minimo.html</loc>
+    <lastmod>2026-09-15</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/como-construir-credito-para-su-negocio.html</loc>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/extension-llc-s-corp-15-de-septiembre.html</loc>
+    <lastmod>2026-09-03</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/no-mezclar-tarjeta-personal-y-del-negocio.html</loc>
+    <lastmod>2026-08-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/cuenta-en-linea-del-irs-para-negocios.html</loc>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/horas-extras-w2-codigo-tt.html</loc>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/credito-por-licencia-familiar-pagada.html</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/pago-estimado-15-de-septiembre.html</loc>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/alerta-correos-falsos-del-irs.html</loc>
+    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/perdon-automatico-de-multas-del-irs.html</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/formulario-941-segundo-trimestre.html</loc>
+    <lastmod>2026-07-06</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/cambios-del-irs-2026.html</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/deducciones-que-los-negocios-olvidan.html</loc>
+    <lastmod>2026-05-18</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/empleado-o-contratista-1099.html</loc>
+    <lastmod>2026-04-20</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/itin-vs-ssn.html</loc>
+    <lastmod>2026-03-16</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/boi-report-llc.html</loc>
+    <lastmod>2026-02-09</lastmod>
+  </url>
+  <url>
+    <loc>https://pulidotax.com/fechas-limite-impuestos-2026.html</loc>
+    <lastmod>2026-01-12</lastmod>
   </url>
 </urlset>
