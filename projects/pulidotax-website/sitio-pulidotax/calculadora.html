@@ -955,7 +955,7 @@ const translations = {
   }
 };
 /* El almacenamiento puede estar bloqueado (modo incógnito, cookies desactivadas).
-   Si falla, el idioma igual cambia: solo no se recuerda para la próxima visita. */
+   Si falla, el idioma igual cambia: solo no se recuerda para la próxima visita.
    Se escriben las dos claves históricas para que las 6 páginas compartan la preferencia. */
 function rememberLang(l){ try{ localStorage.setItem('ptax-lang',l); localStorage.setItem('ptaLang',l); }catch(e){} }
 function recallLang(){ try{ return localStorage.getItem('ptax-lang') || localStorage.getItem('ptaLang'); }catch(e){ return null; } }
