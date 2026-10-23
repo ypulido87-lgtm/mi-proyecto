@@ -113,9 +113,7 @@
     .post-excerpt{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
     .post-meta{font-size:.76rem;color:var(--hint);margin-bottom:16px;}
     .post-more{margin-top:auto;font-size:.88rem;font-weight:600;color:var(--gold);cursor:pointer;background:none;border:none;font-family:var(--font-b);text-align:left;padding:0;transition:color .2s;}
-    .post-more:hover{color:var(--gold-mid);}
-
-    /* ─── MODAL ──────────────────────────────────────────── */
+    .post-more:hover{color:var(--gold-mid);}
 
     /* ─── SUBSCRIBE ──────────────────────────────────────── */
     .subscribe-section{background:var(--blue);padding:80px 0;text-align:center;}
@@ -601,45 +599,6 @@
 
 
 
-<div class="modal-overlay" id="modal-7" role="dialog" aria-modal="true">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
-    <div class="modal-scroll">
-      <span class="modal-cat band-nomina" data-i18n="f-nomina">Nómina</span>
-      <p class="modal-date">6 de julio, 2026</p>
-      <h2 class="modal-title">31 de julio: vence el Formulario 941 del segundo trimestre</h2>
-      <p class="modal-note">This article is available in Spanish only. Contact us on WhatsApp for a summary in English.</p>
-      <div class="modal-body">
-        <p>Si su negocio tiene empleados, hay una fecha este mes que no puede dejar pasar: el <strong>31 de julio de 2026</strong> vence el plazo para presentar el Formulario 941 correspondiente al segundo trimestre del año (abril, mayo y junio).</p>
-        <h3>¿Qué es el Formulario 941?</h3>
-        <p>Es el reporte trimestral de nómina que todo empleador presenta al IRS. En él se informa cuánto pagó a sus empleados, cuánto les retuvo de impuesto federal sobre el ingreso, y las contribuciones de Seguro Social y Medicare — tanto la parte del empleado como la suya como empleador.</p>
-        <h3>¿Quién debe presentarlo?</h3>
-        <ul>
-          <li>Todo negocio con al menos un empleado en nómina (W-2), sin importar el tamaño.</li>
-          <li>Aplica también si su empleado es familiar o trabaja medio tiempo.</li>
-          <li>Si solo trabaja con contratistas independientes (1099), no presenta el 941 — pero cuidado: clasificar mal a un empleado como contratista es un error costoso.</li>
-        </ul>
-        <h3>¿Qué pasa si no lo presenta a tiempo?</h3>
-        <p>El IRS cobra una multa por presentar tarde que crece cada mes de retraso, más intereses. Y si además no depositó los impuestos retenidos, hay una penalidad adicional por depósito tardío. Es dinero que se va directo de su bolsillo por algo totalmente evitable.</p>
-        <h3>Un detalle que muchos no saben</h3>
-        <p>Presentar el formulario y depositar los impuestos son dos obligaciones distintas. La mayoría de los negocios pequeños deben depositar los impuestos de nómina mensualmente — el 941 solo resume lo que ya debió haberse depositado. Si ha estado reteniendo impuestos a sus empleados sin depositarlos, es importante ponerse al día cuanto antes.</p>
-        <h3>Recomendación práctica</h3>
-        <p>No espere al 31 de julio. Presente electrónicamente con anticipación y, si envía algo por correo cerca de la fecha límite, hágalo en la ventanilla del correo con comprobante de envío fechado — el IRS mismo lo recomienda. Y si este trimestre tuvo cambios en su equipo (contrataciones, salidas, bonos), revise que todo esté reflejado correctamente antes de enviar.</p>
-        <div class="modal-cta">
-          <p data-i18n="m-cta">¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.</p>
-          <a href="https://wa.me/16892708845?text=Hola,%20tengo%20dudas%20sobre%20el%20Formulario%20941" target="_blank" rel="noopener" class="btn btn-wa"><span data-i18n="cta-wa">Consultar por WhatsApp →</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
 
 
 
@@ -781,7 +740,6 @@ const T={
     'sort-desc':'Más recientes primero','sort-asc':'Más antiguos primero',
     /* ── CARDS ── */
     'read-time':'Tiempo de lectura','read-more':'Leer más →',
-    /* ── MODAL CTA ── */
     'm-cta':'¿Tiene dudas sobre cómo esto afecta su negocio? La primera consulta es gratuita.',
     'cta-wa':'Consultar por WhatsApp →',
     /* ── SUSCRIPCIÓN ── */
@@ -819,7 +777,6 @@ const T={
     'sort-desc':'Newest first','sort-asc':'Oldest first',
     /* ── CARDS ── */
     'read-time':'Reading time','read-more':'Read more →',
-    /* ── MODAL CTA ── */
     'm-cta':'Wondering how this affects your business? The first consultation is free.',
     'cta-wa':'Contact via WhatsApp →',
     /* ── SUSCRIPCIÓN ── */
@@ -920,11 +877,6 @@ function sortCards(dir){
 }
 document.getElementById('sort-select').addEventListener('change',function(){sortCards(this.value);});
 sortCards(document.getElementById('sort-select').value);
-
-/* ─── MODALES ─── */
-let currentModal=null;
-document.querySelectorAll('.modal-overlay').forEach(o=>{
-  o.addEventListener('click',e=>{if(e.target===o)closeModal();});
 });
 </script>
 </body>
