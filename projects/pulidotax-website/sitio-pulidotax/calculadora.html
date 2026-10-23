@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Impuestos 2026 para Trabajadores Independientes y Negocios · Pulido Tax</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Calculadora gratuita de impuestos 2026 para trabajadores independientes, contratistas y dueños de negocio en Florida. Estime su self-employment tax, deducción QBI y pago trimestral. En español, sin registro.">
+<link rel="canonical" href="https://pulidotax.com/calculadora.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de impuestos para trabajadores independientes 2026",
+  "url": "https://pulidotax.com/calculadora.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": ["es", "en"],
+  "description": "Estimador gratuito del impuesto federal para trabajadores independientes y dueños de pequeños negocios: self-employment tax, deducción QBI y pago estimado trimestral, con las cifras oficiales del año fiscal 2026.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@id": "https://pulidotax.com/#organization" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto paga de impuestos un trabajador independiente en 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un trabajador independiente paga dos impuestos federales: el self-employment tax, que es 15.3% sobre el 92.35% de su ganancia neta y cubre Seguro Social y Medicare, más el impuesto federal sobre la renta según los tramos de 2026. La deducción QBI del 20% y la deducción estándar reducen la parte del impuesto sobre la renta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se paga impuesto estatal sobre la renta en Florida?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Florida no cobra impuesto estatal sobre la renta personal, así que un residente de Florida solo paga el impuesto federal. Esto es distinto del Sales Tax, que sí aplica a muchos negocios de Florida." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo debo hacer pagos estimados trimestrales al IRS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si espera deber $1,000 o más al declarar, el IRS espera pagos trimestrales. Las fechas son el 15 de abril, el 15 de junio y el 15 de septiembre del mismo año, y el 15 de enero del año siguiente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la deducción QBI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La deducción QBI (Qualified Business Income, Sección 199A) permite a muchos dueños de negocios de traspaso deducir hasta el 20% de su ingreso de negocio. Es permanente desde la ley de 2025 y en 2026 tiene una deducción mínima de $400 para quienes tengan al menos $1,000 de ingreso calificado." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0D2B45; --blue-mid:#1A4A72; --blue-deep:#0A2038; --blue-pale:#E6EEF5;
+  --gold:#B87333; --gold-pale:#FDF0E4; --gold-mid:#9A5E24;
+  --surface:#FDF6EE; --wa:#25D366; --wa-dark:#1DA851;
+  --ink:#2B3A47; --dark:#060F18;
+  --font-d:'Cormorant Garamond',Georgia,serif; --font-b:'DM Sans',system-ui,sans-serif;
+  --radius:14px;
+  --shadow-sm:0 2px 10px rgba(13,43,69,.06);
+  --shadow-md:0 10px 34px rgba(13,43,69,.10);
+  --shadow-lg:0 24px 60px rgba(13,43,69,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--ink);background:#fff;line-height:1.7;font-size:16.5px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--font-b);font-size:12.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height:1.12}
+.section{padding:120px 0}
+.h2{font-size:clamp(32px,4.2vw,48px);margin:18px 0 20px}
+.lead{font-size:18px;color:#4B5A68;max-width:640px}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}.rv.d4{transition-delay:.46s}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 0;transition:all .45s var(--ease);background:transparent}
+.nav.scrolled{background:rgba(253,246,238,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:12px 0;box-shadow:0 1px 0 rgba(13,43,69,.07),var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo svg{display:block}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--blue);position:relative;padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--gold-mid)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang-toggle{display:flex;border:1px solid rgba(13,43,69,.18);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600;letter-spacing:.06em}
+.lang-toggle button{border:0;background:transparent;padding:6px 13px;cursor:pointer;font:inherit;color:var(--blue);transition:all .3s}
+.lang-toggle button.on{background:var(--blue);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-b);font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;cursor:pointer;border:0;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s;will-change:transform}
+.btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 24px rgba(184,115,51,.32)}
+.btn-gold:hover{background:var(--gold-mid);transform:translateY(-3px);box-shadow:0 14px 34px rgba(184,115,51,.42)}
+.btn-ghost{background:transparent;color:var(--blue);border:1.5px solid rgba(13,43,69,.24)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-mid);transform:translateY(-3px)}
+.btn-white{background:#fff;color:var(--blue);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.32)}
+.btn-wa:hover{background:var(--wa-dark);transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.42)}
+.nav .btn{padding:11px 24px;font-size:14px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:210}
+.burger span{width:24px;height:2px;background:var(--blue);transition:all .35s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ PAGE HERO ============ */
+.phero{background:linear-gradient(175deg,var(--surface) 0%,#FBF1E4 55%,var(--gold-pale) 100%);padding:168px 0 72px;position:relative;overflow:hidden;text-align:center}
+.phero::before{content:"";position:absolute;top:-220px;right:-220px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.10),transparent 65%)}
+.phero-in{position:relative;max-width:780px;margin:0 auto}
+.phero .eyebrow{justify-content:center}
+.phero h1{font-size:clamp(36px,5vw,58px);margin:20px 0 10px;letter-spacing:-.01em}
+.phero .h1-accent{display:block;font-family:var(--font-d);font-style:italic;font-weight:500;color:var(--gold);font-size:clamp(26px,3.6vw,42px);margin:2px 0 24px;line-height:1.2}
+.phero p.lead{margin:0 auto}
+.phero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.ptag{background:rgba(255,255,255,.72);border:1px solid rgba(184,115,51,.3);border-radius:999px;padding:7px 18px;font-size:13.5px;font-weight:600;color:var(--blue-mid);display:inline-flex;align-items:center;gap:8px}
+.ptag svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ CALCULATOR ============ */
+.calcwrap{background:#fff;padding:0 0 110px;margin-top:-34px;position:relative;z-index:5}
+.calc{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff;border:1px solid rgba(13,43,69,.07)}
+
+/* ---- form side ---- */
+.calc-form{padding:50px 46px}
+.calc-form h2{font-size:28px;margin-bottom:6px}
+.calc-form .sub{font-size:14.5px;color:#6B7A88;margin-bottom:34px}
+.fgroup{margin-bottom:26px}
+.flabel{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}
+.fhint{font-size:13px;color:#7B8893;font-weight:400;text-transform:none;letter-spacing:0;display:block;margin-top:3px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg button{border:1.5px solid rgba(13,43,69,.16);background:#fff;border-radius:10px;padding:13px 8px;font:600 13.5px var(--font-b);color:var(--blue);cursor:pointer;transition:all .28s var(--ease);line-height:1.3}
+.seg button:hover{border-color:rgba(184,115,51,.6)}
+.seg button.on{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(13,43,69,.22)}
+.money{position:relative;display:flex;align-items:center}
+.money span.cur{position:absolute;left:16px;font-size:17px;font-weight:600;color:var(--gold);pointer-events:none}
+.money input{width:100%;border:1.5px solid rgba(13,43,69,.16);border-radius:10px;padding:14px 16px 14px 34px;font:500 17px var(--font-b);color:var(--blue);background:#fff;transition:border-color .28s,box-shadow .28s;outline:none}
+.money input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.14)}
+.money input::placeholder{color:#B6C0C9;font-weight:400}
+.calc-reset{background:none;border:0;color:#7B8893;font:600 13.5px var(--font-b);cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px;transition:color .25s}
+.calc-reset:hover{color:var(--gold-mid)}
+
+/* ---- results side ---- */
+.calc-out{background:linear-gradient(165deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;padding:50px 46px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.calc-out::before{content:"";position:absolute;bottom:-220px;right:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.2),transparent 65%);pointer-events:none}
+.calc-out>*{position:relative}
+.out-eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.bigfig{font-family:var(--font-d);font-size:clamp(46px,6vw,66px);font-weight:600;line-height:1;color:#fff;letter-spacing:-.01em}
+.bigfig-lbl{font-size:14.5px;color:rgba(255,255,255,.72);margin-top:10px}
+.bigcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:28px 30px;margin-bottom:12px}
+.bigcard.accent{border-color:rgba(184,115,51,.5);background:rgba(184,115,51,.13)}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.qcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:20px 22px}
+.qcard .v{font-family:var(--font-d);font-size:30px;font-weight:600;color:var(--gold);line-height:1.1}
+.qcard .l{font-size:12.5px;color:rgba(255,255,255,.65);margin-top:6px;line-height:1.45}
+
+.bd{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;margin-top:4px}
+.bd h4{font-family:var(--font-b);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.bdrow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:9px 0;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.07)}
+.bdrow:last-child{border-bottom:0}
+.bdrow .k{color:rgba(255,255,255,.72)}
+.bdrow .k em{font-style:normal;display:block;font-size:12px;color:rgba(255,255,255,.42);margin-top:1px}
+.bdrow .v{font-weight:600;color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bdrow.minus .v{color:#8FD6A8}
+.bdrow.tot{border-top:1px solid rgba(255,255,255,.2);border-bottom:0;margin-top:8px;padding-top:15px;font-size:16.5px}
+.bdrow.tot .k{color:#fff;font-weight:600}
+.bdrow.tot .v{color:var(--gold);font-size:19px;font-family:var(--font-d)}
+
+.bar{display:flex;height:9px;border-radius:999px;overflow:hidden;margin:20px 0 12px;background:rgba(255,255,255,.1)}
+.bar i{display:block;height:100%;transition:width .6s var(--ease)}
+.bar .b1{background:var(--gold)}
+.bar .b2{background:#6FA8D4}
+.bar .b3{background:rgba(255,255,255,.3)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12.5px;color:rgba(255,255,255,.7)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+.flnote{display:flex;gap:11px;align-items:flex-start;background:rgba(143,214,168,.1);border:1px solid rgba(143,214,168,.3);border-radius:10px;padding:13px 16px;font-size:13.5px;color:rgba(255,255,255,.85);margin-top:18px;line-height:1.55}
+.flnote svg{width:17px;height:17px;stroke:#8FD6A8;fill:none;stroke-width:2.2;flex-shrink:0;margin-top:2px;stroke-linecap:round;stroke-linejoin:round}
+.warn{display:none;gap:11px;align-items:flex-start;background:rgba(255,196,120,.12);border:1px solid rgba(255,196,120,.34);border-radius:10px;padding:13px 16px;font-size:13.5px;color:rgba(255,255,255,.88);margin-top:12px;line-height:1.55}
+.warn.show{display:flex}
+.warn svg{width:17px;height:17px;stroke:#FFC478;fill:none;stroke-width:2.2;flex-shrink:0;margin-top:2px;stroke-linecap:round;stroke-linejoin:round}
+.calc-cta{margin-top:auto;padding-top:28px}
+.calc-cta .btn{width:100%}
+.calc-cta p{font-size:13px;color:rgba(255,255,255,.52);text-align:center;margin-top:13px;line-height:1.6}
+
+.empty{text-align:center;padding:40px 0;color:rgba(255,255,255,.45);font-size:15px}
+
+/* ---- disclaimer ---- */
+.disc{max-width:860px;margin:36px auto 0;background:var(--surface);border:1px solid rgba(184,115,51,.26);border-left:3px solid var(--gold);border-radius:12px;padding:24px 28px}
+.disc h4{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:10px}
+.disc p{font-size:14.5px;color:#4B5A68;line-height:1.72}
+
+/* ============ HOW IT WORKS ============ */
+.how{background:var(--surface)}
+.how-head{text-align:center;max-width:720px;margin:0 auto 60px}
+.how-head .eyebrow{justify-content:center}
+.how-head .lead{margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.how-card{background:#fff;border-radius:var(--radius);padding:38px 34px;border:1px solid rgba(13,43,69,.06);box-shadow:var(--shadow-sm);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.how-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.how-icon{width:54px;height:54px;border-radius:13px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.how-icon svg{width:25px;height:25px;stroke:var(--gold-mid);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.how-card h3{font-size:23px;margin-bottom:10px}
+.how-card p{font-size:15px;color:#4B5A68}
+
+/* ============ FAQ ============ */
+.faq{background:#fff}
+.faq-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.faq-head .eyebrow{justify-content:center}
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(13,43,69,.1)}
+.faq-q{width:100%;background:none;border:0;text-align:left;padding:26px 44px 26px 0;font:600 18px var(--font-b);color:var(--blue);cursor:pointer;position:relative;line-height:1.5}
+.faq-q::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300;color:var(--gold);transition:transform .35s var(--ease)}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+.faq-a p{font-size:15.5px;color:#4B5A68;padding:0 20px 26px 0;line-height:1.75}
+
+/* ============ CTA FINAL ============ */
+.cta{background:var(--dark);color:#fff;text-align:center;padding:130px 0}
+.cta-line{width:64px;height:2px;background:var(--gold);margin:0 auto 34px}
+.cta h2{color:#fff;font-size:clamp(34px,4.6vw,52px);max-width:760px;margin:0 auto 18px}
+.cta p{color:rgba(255,255,255,.68);max-width:560px;margin:0 auto 44px;font-size:17.5px}
+.cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--dark);color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.08);padding:84px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:64px}
+.footer h3{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.footer a{transition:color .3s}
+.footer a:hover{color:#fff}
+.footer li{margin-bottom:12px;font-size:14.5px}
+.footer-brand p{font-size:14.5px;margin-top:22px;max-width:300px;line-height:1.75}
+.footer-social{display:flex;gap:14px;margin-top:18px}
+.footer-social a{color:rgba(255,255,255,.55);display:inline-flex;transition:color .2s}
+.gate-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);border-radius:999px;padding:10px 22px;font:600 13.5px var(--font-b);cursor:pointer;transition:all .3s}
+.gate-btn:hover{border-color:var(--gold);color:var(--gold)}
+#contactData{display:none;margin-top:16px}
+#contactData li{display:flex;gap:10px;align-items:center}
+.footer-hours{font-size:14.5px;line-height:2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:13px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ============ WHATSAPP FLOAT ============ */
+.wa-float{position:fixed;right:26px;bottom:26px;z-index:150;width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .35s var(--ease),background .3s}
+.wa-float:hover{transform:scale(1.1);background:var(--wa-dark)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);animation:waPulse 2.4s ease-out infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.65);opacity:0}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .calc{grid-template-columns:1fr}
+  .calc-out{border-radius:0}
+}
+@media(max-width:900px){
+  .section{padding:88px 0}
+  .phero{padding:140px 0 64px}
+  .how-grid{grid-template-columns:1fr;gap:22px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:0;background:rgba(253,246,238,.98);backdrop-filter:blur(16px);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .45s var(--ease)}
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:22px;font-family:var(--font-d)}
+  .burger{display:flex}
+  .nav-right .btn{display:none}
+}
+@media(max-width:600px){
+  .wrap{padding:0 22px}
+  .section{padding:72px 0}
+  .phero{padding:124px 0 56px}
+  .calcwrap{padding-bottom:80px}
+  .calc-form,.calc-out{padding:36px 24px}
+  .qrow{grid-template-columns:1fr}
+  .seg{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .cta{padding:96px 0}
+  .btn{padding:14px 26px;font-size:14.5px}
+  .wa-float{width:54px;height:54px;right:18px;bottom:18px}
+  .faq-q{font-size:16.5px;padding-right:38px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Pulido Tax &amp; Accounting">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="196" height="49">
+        <polygon points="60,4 112,60 60,116 8,60" fill="#0D2B45"/>
+        <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+        <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+        <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#0D2B45" letter-spacing="5">PULIDO</text>
+        <line x1="136" y1="68" x2="472" y2="68" stroke="#B87333" stroke-width="1"/>
+        <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+      </svg>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-i18n="nav_home">Inicio</a>
+      <a href="servicios.html" data-i18n="nav_services">Servicios</a>
+      <a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a>
+      <a href="calculadora.html" class="active" data-i18n="nav_calc">Calculadora</a>
+      <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="contacto.html" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Idioma">
+        <button id="langEs" class="on" onclick="setLang('es')">ES</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="contacto.html" class="btn btn-gold" data-i18n="nav_cta">Consulta gratis</a>
+      <button class="burger" id="burger" aria-label="Menú" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="phero">
+  <div class="wrap phero-in">
+    <span class="eyebrow rv" data-i18n="ph_eyebrow">Herramienta gratuita · Año fiscal 2026</span>
+    <h1 class="rv d1">
+      <span data-i18n="ph_h1">¿Cuánto voy a pagar</span>
+      <span class="h1-accent" data-i18n="ph_h1b">de impuestos este año?</span>
+    </h1>
+    <p class="lead rv d2" data-i18n="ph_lead">Calcule en un minuto su impuesto federal estimado como trabajador independiente o dueño de negocio en Florida. Sin registro, sin dar su correo, sin compromiso.</p>
+    <div class="phero-tags rv d3">
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t1">Cifras oficiales del IRS 2026</span></span>
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t2">Incluye self-employment tax y QBI</span></span>
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t3">100% gratis y privado</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALCULADORA ================= -->
+<section class="calcwrap">
+  <div class="wrap">
+    <div class="calc rv">
+
+      <!-- ---------- FORM ---------- -->
+      <div class="calc-form">
+        <h2 data-i18n="cf_h2">Sus números</h2>
+        <p class="sub" data-i18n="cf_sub">Aproximados está bien. Nada de esto se guarda ni se envía a ningún lado.</p>
+
+        <div class="fgroup">
+          <label class="flabel" data-i18n="cf_status">Estado civil para declarar</label>
+          <div class="seg" id="segStatus" role="group">
+            <button type="button" data-v="single" class="on" data-i18n="cf_single">Soltero/a</button>
+            <button type="button" data-v="mfj" data-i18n="cf_mfj">Casado/a en conjunto</button>
+            <button type="button" data-v="hoh" data-i18n="cf_hoh">Jefe de familia</button>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="inIncome">
+            <span data-i18n="cf_income">Ingresos del negocio al año</span>
+            <span class="fhint" data-i18n="cf_income_h">Todo lo que facturó o cobró, antes de gastos.</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inIncome" type="text" inputmode="numeric" autocomplete="off" placeholder="60,000"></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="inExp">
+            <span data-i18n="cf_exp">Gastos del negocio al año</span>
+            <span class="fhint" data-i18n="cf_exp_h">Materiales, gasolina, herramientas, seguro, publicidad…</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inExp" type="text" inputmode="numeric" autocomplete="off" placeholder="15,000"></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="inW2">
+            <span data-i18n="cf_w2">Salario W-2 al año (opcional)</span>
+            <span class="fhint" data-i18n="cf_w2_h">Si usted o su cónyuge también tienen un trabajo con W-2.</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inW2" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
+        </div>
+
+        <div class="fgroup">
+          <label class="flabel" for="inPaid">
+            <span data-i18n="cf_paid">Impuesto ya pagado o retenido (opcional)</span>
+            <span class="fhint" data-i18n="cf_paid_h">Retenciones del W-2 y pagos trimestrales que ya hizo.</span>
+          </label>
+          <div class="money"><span class="cur">$</span><input id="inPaid" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
+        </div>
+
+        <button type="button" class="calc-reset" onclick="resetCalc()" data-i18n="cf_reset">Empezar de nuevo</button>
+      </div>
+
+      <!-- ---------- OUTPUT ---------- -->
+      <div class="calc-out">
+        <div class="out-eyebrow" data-i18n="co_eyebrow">Su estimado federal 2026</div>
+
+        <div id="outEmpty" class="empty" data-i18n="co_empty">Escriba los ingresos de su negocio para ver su estimado.</div>
+
+        <div id="outBody" style="display:none">
+          <div class="bigcard accent">
+            <div class="bigfig" id="oTotal">$0</div>
+            <div class="bigfig-lbl" data-i18n="co_total_l">Impuesto federal total estimado del año</div>
+            <div class="bar">
+              <i class="b1" id="barSE" style="width:0"></i><i class="b2" id="barInc" style="width:0"></i><i class="b3" id="barNet" style="width:0"></i>
+            </div>
+            <div class="legend">
+              <span><i style="background:#B87333"></i><span data-i18n="co_lg1">Self-employment tax</span></span>
+              <span><i style="background:#6FA8D4"></i><span data-i18n="co_lg2">Impuesto sobre la renta</span></span>
+              <span><i style="background:rgba(255,255,255,.3)"></i><span data-i18n="co_lg3">Le queda a usted</span></span>
+            </div>
+          </div>
+
+          <div class="qrow">
+            <div class="qcard">
+              <div class="v" id="oQuarter">$0</div>
+              <div class="l" data-i18n="co_q_l">Pago estimado por trimestre</div>
+            </div>
+            <div class="qcard">
+              <div class="v" id="oRate">0%</div>
+              <div class="l" data-i18n="co_r_l">Tasa efectiva sobre su ingreso total</div>
+            </div>
+          </div>
+
+          <div class="bd">
+            <h4 data-i18n="co_bd">Cómo sale ese número</h4>
+            <div class="bdrow"><span class="k" data-i18n="co_b1">Ganancia neta del negocio</span><span class="v" id="oNet">$0</span></div>
+            <div class="bdrow"><span class="k" data-i18n="co_b2">Self-employment tax <em data-i18n="co_b2e">Seguro Social y Medicare · 15.3%</em></span><span class="v" id="oSE">$0</span></div>
+            <div class="bdrow minus"><span class="k" data-i18n="co_b3">Deducción de la mitad del SE tax</span><span class="v" id="oHalfSE">$0</span></div>
+            <div class="bdrow minus"><span class="k" data-i18n="co_b4">Deducción QBI <em data-i18n="co_b4e">Hasta 20% del ingreso de negocio</em></span><span class="v" id="oQBI">$0</span></div>
+            <div class="bdrow minus"><span class="k" data-i18n="co_b5">Deducción estándar</span><span class="v" id="oStd">$0</span></div>
+            <div class="bdrow"><span class="k" data-i18n="co_b6">Ingreso gravable</span><span class="v" id="oTaxable">$0</span></div>
+            <div class="bdrow"><span class="k" data-i18n="co_b7">Impuesto sobre la renta</span><span class="v" id="oIncTax">$0</span></div>
+            <div class="bdrow" id="rowAddl" style="display:none"><span class="k" data-i18n="co_b8">Medicare adicional <em data-i18n="co_b8e">0.9% sobre ingresos altos</em></span><span class="v" id="oAddl">$0</span></div>
+            <div class="bdrow tot"><span class="k" data-i18n="co_b9">Total estimado</span><span class="v" id="oTotal2">$0</span></div>
+            <div class="bdrow" id="rowPaid" style="display:none"><span class="k" data-i18n="co_b10">Ya pagado o retenido</span><span class="v" id="oPaid">$0</span></div>
+            <div class="bdrow tot" id="rowBal" style="display:none"><span class="k" id="lblBal" data-i18n="co_b11">Le faltaría por pagar</span><span class="v" id="oBal">$0</span></div>
+          </div>
+
+          <div class="flnote">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="co_fl">Florida no cobra impuesto estatal sobre la renta, así que este estimado es todo lo federal que le correspondería.</span>
+          </div>
+
+          <div class="warn" id="warnQBI">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12" y2="16.6"/></svg>
+            <span data-i18n="co_wq">Su ingreso supera el límite donde la deducción QBI empieza a tener restricciones. El estimado podría ser más bajo de lo real — conviene revisarlo caso por caso.</span>
+          </div>
+        </div>
+
+        <div class="calc-cta">
+          <a href="https://wa.me/16892708845?text=Hola%20Yudit%2C%20us%C3%A9%20la%20calculadora%20de%20la%20p%C3%A1gina%20y%20quisiera%20revisar%20mi%20situaci%C3%B3n" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="co_cta">Revisar mi caso con Yudit</a>
+          <p data-i18n="co_cta_p">Primera consulta gratuita. Le digo si este número cuadra con su situación real y qué deducciones podría estar dejando sobre la mesa.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disc rv">
+      <h4 data-i18n="dc_h">Léalo antes de tomar decisiones</h4>
+      <p data-i18n="dc_p">Esta calculadora da un <strong>estimado general</strong> con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. No incluye créditos (como el crédito por hijos), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section class="section how">
+  <div class="wrap">
+    <div class="how-head">
+      <span class="eyebrow rv" data-i18n="hw_eyebrow">Para entenderlo</span>
+      <h2 class="h2 rv d1" data-i18n="hw_h2">Los tres impuestos que confunden a todo el mundo</h2>
+      <p class="lead rv d2" data-i18n="hw_lead">Cuando usted trabaja por su cuenta, no hay un patrón que le descuente nada. Esto es lo que el IRS espera de usted, explicado sin tecnicismos.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card rv">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3 data-i18n="hw1_t">Self-employment tax</h3>
+        <p data-i18n="hw1_p">Es el 15.3% que cubre su Seguro Social y Medicare. Un empleado lo paga a medias con su patrón; usted, al ser su propio patrón, paga las dos mitades. Se calcula sobre el 92.35% de su ganancia neta, no sobre todo lo que facturó.</p>
+      </div>
+      <div class="how-card rv d1">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+        <h3 data-i18n="hw2_t">Impuesto sobre la renta</h3>
+        <p data-i18n="hw2_p">Es el impuesto federal normal, por tramos: los primeros dólares pagan 10%, los siguientes 12%, y así. Aquí es donde entran la deducción estándar y la deducción QBI del 20%, que bajan bastante la cuenta.</p>
+      </div>
+      <div class="how-card rv d2">
+        <div class="how-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3 data-i18n="hw3_t">Pagos trimestrales</h3>
+        <p data-i18n="hw3_p">El IRS no quiere esperar hasta abril. Si espera deber $1,000 o más, hay que abonar cuatro veces al año: 15 de abril, 15 de junio, 15 de septiembre y 15 de enero. Saltárselos cuesta multa e intereses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow rv" data-i18n="fq_eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2 rv d1" data-i18n="fq_h2">Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq-list rv d2">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq1_q">¿Por qué me sale más alto de lo que esperaba?</button>
+        <div class="faq-a"><p data-i18n="fq1_a">Casi siempre es por el self-employment tax. Mucha gente calcula solo el impuesto sobre la renta y se olvida de ese 15.3% de Seguro Social y Medicare, que en ingresos medianos suele ser el pedazo más grande de la cuenta. No es un error de la calculadora — es la parte que un empleado nunca ve porque su patrón se la descuenta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq2_q">¿Qué gastos puedo poner en la casilla de gastos?</button>
+        <div class="faq-a"><p data-i18n="fq2_a">Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, gasolina y millaje del vehículo de trabajo, seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq3_q">¿Esto sirve si tengo una LLC?</button>
+        <div class="faq-a"><p data-i18n="fq3_a">Sí, si su LLC es de un solo miembro y declara con Schedule C, que es el caso más común. Si su LLC eligió tributar como S-Corp, el cálculo es distinto: usted se paga un sueldo razonable por W-2 y el resto sale como distribución, lo que cambia el self-employment tax por completo. Esa comparación vale la pena hacerla con números en mano.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq4_q">¿Guardan mis datos?</button>
+        <div class="faq-a"><p data-i18n="fq4_a">No. Todo el cálculo ocurre dentro de su navegador, en su propio teléfono o computadora. Nada se envía a ningún servidor, nada se guarda y no le pedimos correo ni nombre. Puede cerrar la página y no queda rastro.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq5_q">¿Y el impuesto de Florida?</button>
+        <div class="faq-a"><p data-i18n="fq5_a">Florida no cobra impuesto estatal sobre la renta personal, así que de eso se libra. Pero ojo: eso no es lo mismo que el Sales Tax. Si su negocio vende productos o ciertos servicios, probablemente deba cobrar y reportar Sales Tax al estado, y esa es una obligación aparte que esta calculadora no cubre.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq6_q">¿Qué hago con este número?</button>
+        <div class="faq-a"><p data-i18n="fq6_a">Úselo para apartar dinero. Si divide el total entre cuatro, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-line"></div>
+    <h2 data-i18n="ct_h2">Un estimado está bien. Un plan es mejor.</h2>
+    <p data-i18n="ct_p">La calculadora le da el número. Yo le ayudo a bajarlo, a cumplir con el IRS y a dormir tranquilo el resto del año.</p>
+    <div class="cta-btns">
+      <a href="contacto.html" class="btn btn-white" data-i18n="ct_b1">Agendar consulta gratuita</a>
+      <a href="https://wa.me/16892708845" target="_blank" rel="noopener" class="btn btn-wa" data-i18n="ct_b2">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="200" height="50">
+          <polygon points="60,4 112,60 60,116 8,60" fill="#1A4A72"/>
+          <polygon points="60,18 98,60 60,102 22,60" fill="none" stroke="#B87333" stroke-width="1.6"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600" fill="#FFFFFF" letter-spacing="1">P</text>
+          <text x="136" y="58" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="600" fill="#FFFFFF" letter-spacing="5">PULIDO</text>
+          <line x1="136" y1="68" x2="472" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <text x="136" y="88" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="300" fill="#B87333" letter-spacing="4">TAX &amp; ACCOUNTING · LLC</text>
+        </svg>
+        <p data-i18n="ft_brand">Contabilidad profesional en español para pequeños negocios en Orlando, Florida.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/yuditpulidotax" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.94v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/pulidotax.accounting" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 data-i18n="ft_nav">Navegación</h3>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="sobre-mi.html" data-i18n="nav_about">Sobre mí</a></li>
+          <li><a href="calculadora.html" data-i18n="nav_calc">Calculadora</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="ft_svcs">Servicios</h3>
+        <ul>
+          <li><a href="servicios.html" data-i18n="svc1_t">Bookkeeping mensual</a></li>
+          <li><a href="servicios.html" data-i18n="svc2_t">Declaración de impuestos</a></li>
+          <li><a href="servicios.html" data-i18n="svc3_t">Contabilidad para LLC y Corp</a></li>
+          <li><a href="servicios.html" data-i18n="svc4_t">Nómina (Payroll)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="ft_contact">Contacto</h3>
+        <button class="gate-btn" id="gateBtn" onclick="revealFooterContact()" data-i18n="ft_gate">Ver datos de contacto</button>
+        <ul id="contactData"></ul>
+        <h3 style="margin-top:28px" data-i18n="ft_hours">Horario</h3>
+        <div class="footer-hours">
+          <div data-i18n="ft_h1">Lun–Vie: 9:00 am – 6:00 pm</div>
+          <div data-i18n="ft_h2">Sáb y Dom: Cerrado</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft_copy">© 2026 Pulido Tax &amp; Accounting LLC · Orlando, Florida</span>
+      <span data-i18n="ft_disc">Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/16892708845" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.522 5.836L0 24l6.335-1.506A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.817 9.817 0 0 1-5.002-1.368l-.359-.213-3.76.894.952-3.657-.234-.375A9.817 9.817 0 0 1 2.182 12c0-5.424 4.394-9.818 9.818-9.818 5.424 0 9.818 4.394 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+</a>
+
+<script>
+/* ---------- Nav scroll blur ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ---------- Burger ---------- */
+function toggleMenu(){
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- FAQ ---------- */
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  const ans = item.querySelector('.faq-a');
+  const open = item.classList.contains('open');
+  item.parentElement.querySelectorAll('.faq-item.open').forEach(o => {
+    o.classList.remove('open');
+    o.querySelector('.faq-a').style.maxHeight = null;
+  });
+  if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+}
+
+/* ============================================================
+   CALCULADORA — cifras oficiales del año fiscal 2026
+   Fuente: IRS Rev. Proc. 2025-32 (tramos, deducción estándar,
+   umbrales QBI) y IRS Pub. 926 (base salarial del Seguro Social).
+   ============================================================ */
+const TY2026 = {
+  std: { single:16100, mfj:32200, hoh:24150 },
+  brackets: {
+    single: [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]],
+    mfj:    [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]],
+    hoh:    [[17700,.10],[67450,.12],[105700,.22],[201750,.24],[256200,.32],[640600,.35],[Infinity,.37]]
+  },
+  seAdj:.9235, ssRate:.124, medRate:.029, ssWageBase:184500,
+  addlMedRate:.009, addlMedThr:{ single:200000, mfj:250000, hoh:200000 },
+  qbiRate:.20, qbiMinDed:400, qbiMinIncome:1000,
+  qbiThr:{ single:201750, mfj:403500, hoh:201750 }
+};
+
+let status = 'single';
+
+const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+const parseMoney = s => { const n = parseFloat(String(s).replace(/[^0-9.]/g,'')); return isNaN(n) ? 0 : n; };
+
+function bracketTax(taxable, st){
+  const br = TY2026.brackets[st];
+  let tax = 0, prev = 0;
+  for(const [cap, rate] of br){
+    if(taxable <= prev) break;
+    tax += (Math.min(taxable, cap) - prev) * rate;
+    prev = cap;
+  }
+  return tax;
+}
+
+function compute(){
+  const income = parseMoney(document.getElementById('inIncome').value);
+  const exp    = parseMoney(document.getElementById('inExp').value);
+  const w2     = parseMoney(document.getElementById('inW2').value);
+  const paid   = parseMoney(document.getElementById('inPaid').value);
+
+  const hasInput = income > 0 || w2 > 0;
+  document.getElementById('outEmpty').style.display = hasInput ? 'none' : 'block';
+  document.getElementById('outBody').style.display  = hasInput ? 'block' : 'none';
+  if(!hasInput) return;
+
+  const net    = Math.max(0, income - exp);
+  const seBase = net * TY2026.seAdj;
+
+  // Seguro Social: el salario W-2 ocupa primero la base anual
+  const ssRoom = Math.max(0, TY2026.ssWageBase - w2);
+  const ssTax  = Math.min(seBase, ssRoom) * TY2026.ssRate;
+  const medTax = seBase * TY2026.medRate;
+  const seTax  = seBase > 0 ? ssTax + medTax : 0;
+  const halfSE = seTax / 2;
+
+  // Medicare adicional 0.9%
+  const addlThr = TY2026.addlMedThr[status];
+  const addlMed = Math.max(0, (seBase + w2) - addlThr) * TY2026.addlMedRate;
+
+  const agi = Math.max(0, net + w2 - halfSE);
+  const std = TY2026.std[status];
+  const taxableBeforeQBI = Math.max(0, agi - std);
+
+  // QBI (Sección 199A), versión simplificada
+  let qbi = 0;
+  if(net > 0 && taxableBeforeQBI > 0){
+    qbi = Math.min(net * TY2026.qbiRate, taxableBeforeQBI * TY2026.qbiRate);
+    if(net >= TY2026.qbiMinIncome) qbi = Math.max(qbi, Math.min(TY2026.qbiMinDed, taxableBeforeQBI));
+  }
+  const overQbiThr = net > 0 && agi > TY2026.qbiThr[status];
+
+  const taxable = Math.max(0, agi - std - qbi);
+  const incTax  = bracketTax(taxable, status);
+  const total   = incTax + seTax + addlMed;
+  const totalIncome = net + w2;
+  const rate    = totalIncome > 0 ? (total / totalIncome) * 100 : 0;
+  const balance = total - paid;
+
+  // ---- pintar ----
+  const S = (id, v) => document.getElementById(id).textContent = v;
+  S('oTotal', fmt(total));  S('oTotal2', fmt(total));
+  S('oQuarter', fmt(total / 4));
+  S('oRate', rate.toFixed(1).replace('.0','') + '%');
+  S('oNet', fmt(net));
+  S('oSE', fmt(seTax));
+  S('oHalfSE', '− ' + fmt(halfSE));
+  S('oQBI', '− ' + fmt(qbi));
+  S('oStd', '− ' + fmt(std));
+  S('oTaxable', fmt(taxable));
+  S('oIncTax', fmt(incTax));
+
+  const rowAddl = document.getElementById('rowAddl');
+  rowAddl.style.display = addlMed > 0 ? 'flex' : 'none';
+  if(addlMed > 0) S('oAddl', fmt(addlMed));
+
+  const rowPaid = document.getElementById('rowPaid'), rowBal = document.getElementById('rowBal');
+  if(paid > 0){
+    rowPaid.style.display = 'flex'; rowBal.style.display = 'flex';
+    S('oPaid', '− ' + fmt(paid));
+    S('oBal', fmt(Math.abs(balance)));
+    const t = translations[document.documentElement.lang] || translations.es;
+    document.getElementById('lblBal').textContent = balance >= 0 ? t.co_b11 : t.co_b11b;
+  } else {
+    rowPaid.style.display = 'none'; rowBal.style.display = 'none';
+  }
+
+  // barra proporcional sobre el ingreso total
+  const base = Math.max(totalIncome, 1);
+  document.getElementById('barSE').style.width  = Math.min(100, (seTax / base) * 100) + '%';
+  document.getElementById('barInc').style.width = Math.min(100, ((incTax + addlMed) / base) * 100) + '%';
+  document.getElementById('barNet').style.width = Math.max(0, 100 - ((total / base) * 100)) + '%';
+
+  document.getElementById('warnQBI').classList.toggle('show', overQbiThr);
+}
+
+/* ---------- inputs ---------- */
+function formatInput(el){
+  const raw = el.value.replace(/[^0-9]/g,'');
+  el.value = raw ? (+raw).toLocaleString('en-US') : '';
+}
+['inIncome','inExp','inW2','inPaid'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => { formatInput(el); compute(); });
+});
+document.querySelectorAll('#segStatus button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#segStatus button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    status = b.dataset.v;
+    compute();
+  });
+});
+function resetCalc(){
+  ['inIncome','inExp','inW2','inPaid'].forEach(id => document.getElementById(id).value = '');
+  compute();
+}
+
+/* ---------- Footer contact gate ---------- */
+function revealFooterContact(){
+  const u = 'yudit', d = 'pulidotax.com';
+  const ph = ['(689)','270','8845'];
+  const ul = document.getElementById('contactData');
+  ul.innerHTML = '<li><a href="mailto:'+u+'@'+d+'">'+u+'@'+d+'</a></li>' +
+    '<li><a href="https://wa.me/16892708845" target="_blank" rel="noopener">'+ph[0]+' '+ph[1]+'-'+ph[2]+'</a></li>' +
+    '<li>Orlando, Florida</li>';
+  ul.style.display = 'block';
+  document.getElementById('gateBtn').style.display = 'none';
+}
+
+/* ---------- i18n ---------- */
+const translations = {
+  es: {
+    nav_home:'Inicio', nav_services:'Servicios', nav_about:'Sobre mí', nav_calc:'Calculadora', nav_blog:'Blog', nav_contact:'Contacto', nav_cta:'Consulta gratis',
+
+    ph_eyebrow:'Herramienta gratuita · Año fiscal 2026',
+    ph_h1:'¿Cuánto voy a pagar',
+    ph_h1b:'de impuestos este año?',
+    ph_lead:'Calcule en un minuto su impuesto federal estimado como trabajador independiente o dueño de negocio en Florida. Sin registro, sin dar su correo, sin compromiso.',
+    ph_t1:'Cifras oficiales del IRS 2026', ph_t2:'Incluye self-employment tax y QBI', ph_t3:'100% gratis y privado',
+
+    cf_h2:'Sus números', cf_sub:'Aproximados está bien. Nada de esto se guarda ni se envía a ningún lado.',
+    cf_status:'Estado civil para declarar',
+    cf_single:'Soltero/a', cf_mfj:'Casado/a en conjunto', cf_hoh:'Jefe de familia',
+    cf_income:'Ingresos del negocio al año', cf_income_h:'Todo lo que facturó o cobró, antes de gastos.',
+    cf_exp:'Gastos del negocio al año', cf_exp_h:'Materiales, gasolina, herramientas, seguro, publicidad…',
+    cf_w2:'Salario W-2 al año (opcional)', cf_w2_h:'Si usted o su cónyuge también tienen un trabajo con W-2.',
+    cf_paid:'Impuesto ya pagado o retenido (opcional)', cf_paid_h:'Retenciones del W-2 y pagos trimestrales que ya hizo.',
+    cf_reset:'Empezar de nuevo',
+
+    co_eyebrow:'Su estimado federal 2026',
+    co_empty:'Escriba los ingresos de su negocio para ver su estimado.',
+    co_total_l:'Impuesto federal total estimado del año',
+    co_lg1:'Self-employment tax', co_lg2:'Impuesto sobre la renta', co_lg3:'Le queda a usted',
+    co_q_l:'Pago estimado por trimestre', co_r_l:'Tasa efectiva sobre su ingreso total',
+    co_bd:'Cómo sale ese número',
+    co_b1:'Ganancia neta del negocio',
+    co_b2:'Self-employment tax', co_b2e:'Seguro Social y Medicare · 15.3%',
+    co_b3:'Deducción de la mitad del SE tax',
+    co_b4:'Deducción QBI', co_b4e:'Hasta 20% del ingreso de negocio',
+    co_b5:'Deducción estándar',
+    co_b6:'Ingreso gravable', co_b7:'Impuesto sobre la renta',
+    co_b8:'Medicare adicional', co_b8e:'0.9% sobre ingresos altos',
+    co_b9:'Total estimado', co_b10:'Ya pagado o retenido',
+    co_b11:'Le faltaría por pagar', co_b11b:'Le saldría a favor',
+    co_fl:'Florida no cobra impuesto estatal sobre la renta, así que este estimado es todo lo federal que le correspondería.',
+    co_wq:'Su ingreso supera el límite donde la deducción QBI empieza a tener restricciones. El estimado podría ser más bajo de lo real — conviene revisarlo caso por caso.',
+    co_cta:'Revisar mi caso con Yudit',
+    co_cta_p:'Primera consulta gratuita. Le digo si este número cuadra con su situación real y qué deducciones podría estar dejando sobre la mesa.',
+
+    dc_h:'Léalo antes de tomar decisiones',
+    dc_p:'Esta calculadora da un estimado general con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. No incluye créditos (como el crédito por hijos), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.',
+
+    hw_eyebrow:'Para entenderlo',
+    hw_h2:'Los tres impuestos que confunden a todo el mundo',
+    hw_lead:'Cuando usted trabaja por su cuenta, no hay un patrón que le descuente nada. Esto es lo que el IRS espera de usted, explicado sin tecnicismos.',
+    hw1_t:'Self-employment tax',
+    hw1_p:'Es el 15.3% que cubre su Seguro Social y Medicare. Un empleado lo paga a medias con su patrón; usted, al ser su propio patrón, paga las dos mitades. Se calcula sobre el 92.35% de su ganancia neta, no sobre todo lo que facturó.',
+    hw2_t:'Impuesto sobre la renta',
+    hw2_p:'Es el impuesto federal normal, por tramos: los primeros dólares pagan 10%, los siguientes 12%, y así. Aquí es donde entran la deducción estándar y la deducción QBI del 20%, que bajan bastante la cuenta.',
+    hw3_t:'Pagos trimestrales',
+    hw3_p:'El IRS no quiere esperar hasta abril. Si espera deber $1,000 o más, hay que abonar cuatro veces al año: 15 de abril, 15 de junio, 15 de septiembre y 15 de enero. Saltárselos cuesta multa e intereses.',
+
+    fq_eyebrow:'Preguntas frecuentes', fq_h2:'Lo que más nos preguntan',
+    fq1_q:'¿Por qué me sale más alto de lo que esperaba?',
+    fq1_a:'Casi siempre es por el self-employment tax. Mucha gente calcula solo el impuesto sobre la renta y se olvida de ese 15.3% de Seguro Social y Medicare, que en ingresos medianos suele ser el pedazo más grande de la cuenta. No es un error de la calculadora — es la parte que un empleado nunca ve porque su patrón se la descuenta.',
+    fq2_q:'¿Qué gastos puedo poner en la casilla de gastos?',
+    fq2_a:'Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, gasolina y millaje del vehículo de trabajo, seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.',
+    fq3_q:'¿Esto sirve si tengo una LLC?',
+    fq3_a:'Sí, si su LLC es de un solo miembro y declara con Schedule C, que es el caso más común. Si su LLC eligió tributar como S-Corp, el cálculo es distinto: usted se paga un sueldo razonable por W-2 y el resto sale como distribución, lo que cambia el self-employment tax por completo. Esa comparación vale la pena hacerla con números en mano.',
+    fq4_q:'¿Guardan mis datos?',
+    fq4_a:'No. Todo el cálculo ocurre dentro de su navegador, en su propio teléfono o computadora. Nada se envía a ningún servidor, nada se guarda y no le pedimos correo ni nombre. Puede cerrar la página y no queda rastro.',
+    fq5_q:'¿Y el impuesto de Florida?',
+    fq5_a:'Florida no cobra impuesto estatal sobre la renta personal, así que de eso se libra. Pero ojo: eso no es lo mismo que el Sales Tax. Si su negocio vende productos o ciertos servicios, probablemente deba cobrar y reportar Sales Tax al estado, y esa es una obligación aparte que esta calculadora no cubre.',
+    fq6_q:'¿Qué hago con este número?',
+    fq6_a:'Úselo para apartar dinero. Si divide el total entre cuatro, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.',
+
+    ct_h2:'Un estimado está bien. Un plan es mejor.',
+    ct_p:'La calculadora le da el número. Yo le ayudo a bajarlo, a cumplir con el IRS y a dormir tranquilo el resto del año.',
+    ct_b1:'Agendar consulta gratuita', ct_b2:'Escribir por WhatsApp',
+
+    svc1_t:'Bookkeeping mensual', svc2_t:'Declaración de impuestos', svc3_t:'Contabilidad para LLC y Corp', svc4_t:'Nómina (Payroll)',
+    ft_brand:'Contabilidad profesional en español para pequeños negocios en Orlando, Florida.',
+    ft_nav:'Navegación', ft_svcs:'Servicios', ft_contact:'Contacto', ft_gate:'Ver datos de contacto',
+    ft_hours:'Horario', ft_h1:'Lun–Vie: 9:00 am – 6:00 pm', ft_h2:'Sáb y Dom: Cerrado',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'Este sitio no constituye asesoría legal ni fiscal. Cada situación se evalúa de forma individual.'
+  },
+  en: {
+    nav_home:'Home', nav_services:'Services', nav_about:'About', nav_calc:'Calculator', nav_blog:'Blog', nav_contact:'Contact', nav_cta:'Free consultation',
+
+    ph_eyebrow:'Free tool · Tax year 2026',
+    ph_h1:'How much will I owe',
+    ph_h1b:'in taxes this year?',
+    ph_lead:'Estimate your federal taxes in one minute as a self-employed worker or business owner in Florida. No sign-up, no email, no strings attached.',
+    ph_t1:'Official IRS 2026 figures', ph_t2:'Includes self-employment tax and QBI', ph_t3:'100% free and private',
+
+    cf_h2:'Your numbers', cf_sub:'Rough figures are fine. Nothing here is saved or sent anywhere.',
+    cf_status:'Filing status',
+    cf_single:'Single', cf_mfj:'Married filing jointly', cf_hoh:'Head of household',
+    cf_income:'Annual business income', cf_income_h:'Everything you billed or collected, before expenses.',
+    cf_exp:'Annual business expenses', cf_exp_h:'Materials, gas, tools, insurance, advertising…',
+    cf_w2:'Annual W-2 wages (optional)', cf_w2_h:'If you or your spouse also hold a W-2 job.',
+    cf_paid:'Tax already paid or withheld (optional)', cf_paid_h:'W-2 withholding and quarterly payments already made.',
+    cf_reset:'Start over',
+
+    co_eyebrow:'Your 2026 federal estimate',
+    co_empty:'Enter your business income to see your estimate.',
+    co_total_l:'Total estimated federal tax for the year',
+    co_lg1:'Self-employment tax', co_lg2:'Income tax', co_lg3:'You keep',
+    co_q_l:'Estimated quarterly payment', co_r_l:'Effective rate on your total income',
+    co_bd:'How that number adds up',
+    co_b1:'Net business profit',
+    co_b2:'Self-employment tax', co_b2e:'Social Security and Medicare · 15.3%',
+    co_b3:'Deduction for half of SE tax',
+    co_b4:'QBI deduction', co_b4e:'Up to 20% of business income',
+    co_b5:'Standard deduction',
+    co_b6:'Taxable income', co_b7:'Income tax',
+    co_b8:'Additional Medicare', co_b8e:'0.9% on higher earnings',
+    co_b9:'Estimated total', co_b10:'Already paid or withheld',
+    co_b11:'Balance you would still owe', co_b11b:'Estimated refund',
+    co_fl:'Florida has no state income tax, so this estimate covers everything you would owe federally.',
+    co_wq:'Your income is above the point where the QBI deduction starts to be limited. The real figure could be higher than this estimate — it is worth reviewing case by case.',
+    co_cta:'Review my case with Yudit',
+    co_cta_p:'First consultation is free. I will tell you whether this number matches your real situation and which deductions you might be leaving on the table.',
+
+    dc_h:'Read this before making decisions',
+    dc_p:'This calculator gives a general estimate using the official tax year 2026 figures. It does not replace a tax return or professional advice. It does not include credits (such as the child tax credit), itemized deductions, other types of income, S-Corp situations, county taxes or Florida Sales Tax. Your real number may differ. Use it to plan, not to file.',
+
+    hw_eyebrow:'Making sense of it',
+    hw_h2:'The three taxes that confuse everyone',
+    hw_lead:'When you work for yourself, there is no employer withholding anything. Here is what the IRS expects from you, in plain language.',
+    hw1_t:'Self-employment tax',
+    hw1_p:'This is the 15.3% that covers your Social Security and Medicare. An employee splits it with their employer; you, being your own employer, pay both halves. It is calculated on 92.35% of your net profit, not on everything you billed.',
+    hw2_t:'Income tax',
+    hw2_p:'This is the regular federal tax, in brackets: the first dollars pay 10%, the next ones 12%, and so on. This is where the standard deduction and the 20% QBI deduction come in and bring the bill down considerably.',
+    hw3_t:'Quarterly payments',
+    hw3_p:'The IRS does not want to wait until April. If you expect to owe $1,000 or more, you pay four times a year: April 15, June 15, September 15 and January 15. Skipping them costs penalties and interest.',
+
+    fq_eyebrow:'Frequently asked', fq_h2:'What people ask us most',
+    fq1_q:'Why is it higher than I expected?',
+    fq1_a:'It is almost always the self-employment tax. Many people calculate only the income tax and forget that 15.3% for Social Security and Medicare, which at middle incomes is usually the biggest piece of the bill. It is not a calculator error — it is the part an employee never sees because their employer withholds it.',
+    fq2_q:'What can I count as business expenses?',
+    fq2_a:'Anything ordinary and necessary for your business: materials, tools, gas and mileage for your work vehicle, business insurance, advertising, the share of your phone and internet you use for work, the home office, licenses, and what you pay your accountant. The better documented your expenses, the less tax you pay — which is why tidy bookkeeping pays for itself.',
+    fq3_q:'Does this work if I have an LLC?',
+    fq3_a:'Yes, if your LLC has a single member and files with Schedule C, which is the most common case. If your LLC elected to be taxed as an S-Corp, the math is different: you pay yourself a reasonable W-2 salary and the rest comes out as a distribution, which changes the self-employment tax entirely. That comparison is worth running with real numbers.',
+    fq4_q:'Do you store my data?',
+    fq4_a:'No. The whole calculation happens inside your browser, on your own phone or computer. Nothing is sent to a server, nothing is stored, and we do not ask for your email or name. You can close the page and no trace is left.',
+    fq5_q:'What about Florida tax?',
+    fq5_a:'Florida has no personal state income tax, so you are spared that one. But careful: that is not the same as Sales Tax. If your business sells products or certain services, you probably need to collect and report Sales Tax to the state, and that is a separate obligation this calculator does not cover.',
+    fq6_q:'What do I do with this number?',
+    fq6_a:'Use it to set money aside. Divide the total by four and that is roughly your quarterly payment. Many of our clients open a separate savings account and move that percentage every time they get paid — so April arrives without surprises. And if the number looks high, let us talk: there are almost always deductions going unclaimed.',
+
+    ct_h2:'An estimate is good. A plan is better.',
+    ct_p:'The calculator gives you the number. I help you bring it down, stay right with the IRS and sleep easy the rest of the year.',
+    ct_b1:'Book a free consultation', ct_b2:'Message on WhatsApp',
+
+    svc1_t:'Monthly bookkeeping', svc2_t:'Tax preparation', svc3_t:'LLC and Corp accounting', svc4_t:'Payroll',
+    ft_brand:'Professional Spanish-language accounting for small businesses in Orlando, Florida.',
+    ft_nav:'Navigation', ft_svcs:'Services', ft_contact:'Contact', ft_gate:'Show contact details',
+    ft_hours:'Hours', ft_h1:'Mon–Fri: 9:00 am – 6:00 pm', ft_h2:'Sat & Sun: Closed',
+    ft_copy:'© 2026 Pulido Tax & Accounting LLC · Orlando, Florida',
+    ft_disc:'This site does not constitute legal or tax advice. Every situation is evaluated individually.'
+  }
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  localStorage.setItem('ptax-lang', lang);
+  document.getElementById('langEs').classList.toggle('on', lang === 'es');
+  document.getElementById('langEn').classList.toggle('on', lang === 'en');
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('.faq-item.open').forEach(o => {
+    const a = o.querySelector('.faq-a');
+    a.style.maxHeight = a.scrollHeight + 'px';
+  });
+  compute();
+}
+const saved = localStorage.getItem('ptax-lang');
+if(saved && saved !== 'es') setLang(saved);
+</script>
+</body>
+</html>
