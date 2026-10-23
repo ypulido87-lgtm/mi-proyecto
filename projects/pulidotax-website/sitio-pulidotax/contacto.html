@@ -633,8 +633,14 @@ const T={
   }
 };
 
+/* El almacenamiento puede estar bloqueado (incógnito, cookies desactivadas): si falla,
+   el idioma igual cambia, solo no se recuerda. Se escriben las dos claves históricas
+   para que las 6 páginas compartan la misma preferencia. */
+function rememberLang(l){ try{ localStorage.setItem('ptax-lang',l); localStorage.setItem('ptaLang',l); }catch(e){} }
+function recallLang(){ try{ return localStorage.getItem('ptax-lang') || localStorage.getItem('ptaLang'); }catch(e){ return null; } }
+
 function setLang(l){
-  localStorage.setItem('ptaLang',l);
+  rememberLang(l);
   document.documentElement.lang=l;
   document.body.classList.toggle('en-mode',l==='en');
   document.querySelectorAll('[data-i18n]').forEach(e=>{
