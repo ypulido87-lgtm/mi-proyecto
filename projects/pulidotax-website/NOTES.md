@@ -29,6 +29,31 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 
 **Bloque en la página de inicio (22 oct 2026):** sección `.toolband` entre Servicios y Cómo trabajamos — banda azul marino con la tarjeta de ejemplo (contratista soltero: $60,000 − $15,000 → SE tax $6,358, renta $2,221, **$2,145 por trimestre**). Esos números salen del cálculo real verificado; si se cambian las cifras fiscales hay que actualizarlos también aquí y en `index.md`. La página de inicio tiene ahora 3 enlaces a la calculadora (menú, botón de la banda, pie).
 
+## Calculadora de Sales Tax de Florida (23 oct 2026)
+`sales-tax.html` + `sales-tax.md` — séptima página. Complementa a `calculadora.html` (que en sus FAQ ya decía que el Sales Tax es una obligación aparte). Sin gate, igual que la otra.
+
+**Dos modos** (pestañas arriba del formulario):
+1. *¿Cuánto le cobro al cliente?* — precio + condado (+ casilla «es un solo artículo») → estatal, recargo, total a cobrar.
+2. *¿Cuánto le debo al estado?* — ventas gravables del período + condado (+ monto exento + casilla «a tiempo») → impuesto total, descuento, a remitir.
+
+**Reglas y cifras — todas de fuente oficial, nunca de búsquedas web:**
+- Tasa estatal 6%; recargos de condado 0%–2% (combinado 6%–8%).
+- **Los 67 condados** cargados desde el **Formulario DR-15DSS R. 11/25** (año calendario 2026), extraído del PDF con pypdf. Sin recargo: Citrus y Collier. El más alto: Hamilton 2%.
+- El recargo se cobra **según el condado de ENTREGA**, no donde está el negocio (instrucciones DR-15N R. 10/25).
+- **Tope de $5,000:** el recargo solo aplica a los primeros $5,000 de *cada venta individual de propiedad personal tangible*; el 6% estatal va sobre el precio completo. Es **por artículo, no por factura**. No aplica a transient rentals. (Ejemplo oficial: artículo de $7,000 → $2,000 en la línea 15(a).)
+- **Descuento por presentar a tiempo:** 2.5% de los primeros $1,200 del impuesto, máx. $30, solo si presenta Y paga en línea Y a tiempo.
+- Vence el día 1 del mes siguiente, tardío después del día 20. Frecuencia: >$1,000/año mensual; $501–1,000 trimestral; $101–500 semestral; ≤$100 anual.
+- **Renta comercial: derogada desde el 1 oct 2025** (TIP 25A01-04) — por eso NO se construyó esa función; ya no existe. Sí siguen gravados equipos, estacionamiento/almacenaje de vehículos y alojamiento ≤6 meses.
+- Fuera de alcance a propósito (y dicho en el aviso): casas móviles nuevas 3%, máquinas de entretenimiento 4%, electricidad 6.95%, transient rentals, vending, impuestos turísticos de condado.
+
+**IMPORTANTE — las búsquedas web daban tasas CONTRADICTORIAS entre sí** (rangos 0.5–1.5% vs 0.5–2%, condados con datos vencidos, una fuente aplicaba el tope por transacción en vez de por artículo). Solo el PDF oficial sirvió. Se escribió un verificador (`scratchpad/verify_counties.py`, efímero) que compara **los 67 condados de la página contra el PDF uno por uno**: 0 diferencias.
+
+**Mantenimiento:** las tasas cambian casi siempre el 1 de enero. En 2026 cambiaron Jackson, Martin y Palm Beach. **Varios recargos vencen el 31 dic 2026: Brevard, Charlotte, Liberty (.5%) y Santa Rosa (.5%)** — hay que actualizar el array `COUNTIES` del `<script>`, la nota `rt_note` y los textos del `.md` con la DR-15DSS de 2027.
+
+**Probada** con 11 escenarios (servicio normal, carro de $20,000 con y sin la casilla de artículo, condado sin recargo, Hamilton al 8%, justo en el tope de $5,000, ventas del mes a tiempo y tarde, ventas pequeñas donde el descuento no llega a $30, exenciones, mes sin ventas) — réplica en Python y luego el código real en el navegador, resultados idénticos. También el buscador de condados (encuentra «st john» sin punto) y el toggle ES|EN.
+
+**Arreglo de nav que salió de paso (aplicado a las 7 páginas):** con el séptimo enlace el menú **se partía en dos filas entre ~900px y ~1120px** (laptops). No era culpa del enlace: el menú ya estaba al límite. Se añadió un `@media(max-width:1120px)` con SOLO las reglas de nav, que pasa al menú desplegable antes de que se parta; las reglas de nav se sacaron del bloque de 900px en las 3 páginas de la familia nueva. Medido: a 1086px se partía, a 1125px cabe en una fila.
+
 ## Arreglo del selector de idioma en las 6 páginas (22 oct 2026)
 Al probar la calculadora salieron **dos fallos reales del sitio**, ya corregidos en las 6 páginas:
 
