@@ -41,7 +41,7 @@ Al probar la calculadora salieron **dos fallos reales del sitio**, ya corregidos
 
 También se agregó `calculadora.md` (el `.htaccess` ya lo sirve solo: la regla `^([a-z-]+)\.html$` cubre la página nueva sin tocar nada) y el enlace «Calculadora» en el menú, el menú móvil y el pie de las 5 páginas existentes, más la línea de páginas relacionadas de los 5 `.md`.
 
-**Bug viejo detectado de paso, no corregido:** `index.html` tiene un enlace suelto a Blog pegado al botón «Conocer mi historia →» en la sección Sobre mí (resto de una inserción automática vieja).
+**Bug viejo CORREGIDO (22 oct):** `index.html` tenía un enlace suelto a Blog pegado al botón «Conocer mi historia →» en la sección Sobre mí (resto de una inserción automática vieja). Yudit lo vio navegando el sitio en vivo y pidió quitarlo. La página de inicio quedó con 2 enlaces a `blog.html` (menú y pie).
 
 ## Automatización del blog
 Dos tareas programadas (Claude Code scheduled tasks) mantienen el blog al día — **ya actualizadas para apuntar a esta carpeta** en vez de Downloads:
