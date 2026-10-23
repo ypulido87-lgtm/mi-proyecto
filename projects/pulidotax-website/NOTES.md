@@ -72,6 +72,24 @@ También se agregó `calculadora.md` (el `.htaccess` ya lo sirve solo: la regla 
 
 **Bug viejo CORREGIDO (22 oct):** `index.html` tenía un enlace suelto a Blog pegado al botón «Conocer mi historia →» en la sección Sobre mí (resto de una inserción automática vieja). Yudit lo vio navegando el sitio en vivo y pidió quitarlo. La página de inicio quedó con 2 enlaces a `blog.html` (menú y pie).
 
+## Artículos con página propia (23 oct 2026) — CAMBIO DE ARQUITECTURA
+Antes los 25 artículos vivían en ventanas emergentes dentro de `blog.html`: **sin URL propia**, imposibles de compartir desde Instagram e imposibles de indexar por separado en Google. Ahora cada uno tiene su página.
+
+- **25 páginas nuevas**, una por artículo, con slug en español **elegido a mano y permanente** (ver `SLUGS` en el generador y el mapa en `blog.md`). Cada una con title y meta description propios, canonical, Open Graph, JSON-LD de `Article` + `BreadcrumbList`, migas de pan y enlaces anterior/siguiente.
+- **`articulo.css`** — hoja compartida por todas. Las páginas quedan en ~19 KB, el navegador la cachea una vez y un cambio de diseño se hace en un solo sitio. ⚠️ La ruta debe ser **relativa** (`articulo.css`), no `/articulo.css`: el sitio es plano y así además se puede previsualizar en local.
+- **`blog.html` es ahora solo el índice**: tarjetas y títulos enlazan a las páginas; fuera los 25 modales, su JS y su CSS. De 172 KB a 65 KB (−62%). Filtros, orden e idioma siguen funcionando.
+- **`sitemap.xml`**: 32 URLs (7 páginas + 25 artículos con su fecha real de publicación).
+- **`blog.md`**: cada entrada lleva ahora `Leer: https://pulidotax.com/<slug>.html`.
+- **`plantilla-articulo.html`** (en la raíz del proyecto, NO se sube al sitio): plantilla con 14 marcadores `{{...}}` que usa la tarea semanal para crear cada artículo nuevo. Probada rellenándola con datos de ensayo.
+
+**Cómo se verificó:** comparación párrafo a párrafo (mismo número de `<p>`, `<h3>` y `<li>` que el original) en las 25; un solo `<h1>`, canonical propio y 2 bloques JSON-LD en cada una; cero enlaces rotos en las 32 páginas; y prueba en navegador contra un servidor local.
+
+**Dos tropiezos que costaron tiempo, anotados para no repetirlos:**
+1. `blog.html` usa finales de línea **CRLF**. Los patrones con `\n` no coinciden — hay que usar `\r?\n`. (El `cat -A` me lo ocultó porque sustituí el símbolo de fin de línea.)
+2. Al borrar las funciones de los modales con regex quedó un `});` suelto que rompía todo el JavaScript de la página. **Después de tocar JS con script, hay que cargar la página en un navegador y mirar la consola** — el error no se ve de otra forma. Ojo: la consola del panel conserva errores de cargas anteriores; para descartar falsos positivos, abrir pestaña nueva.
+
+**Previsualización local:** `.claude/launch.json` define el servidor `pulidotax-estatico` (python http.server en el puerto 8765 sobre `sitio-pulidotax`). Hace falta porque el panel renderiza los archivos locales como instantánea y las rutas relativas (el CSS externo) no resuelven.
+
 ## Automatización del blog
 Dos tareas programadas (Claude Code scheduled tasks) mantienen el blog al día — **ya actualizadas para apuntar a esta carpeta** en vez de Downloads:
 - `articulo-semanal-blog-pulidotax` — lunes 9 AM, escribe el artículo de la semana.
