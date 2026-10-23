@@ -53,7 +53,7 @@ RewriteCond %{DOCUMENT_ROOT}/$1.md -f
 RewriteRule ^([a-z-]+)\.html$ $1.md [L]
 </IfModule>
 <IfModule mod_headers.c>
-Header set Link "<https://pulidotax.com/%{MDFILE}e>; rel=\"alternate\"; type=\"text/markdown\", <https://pulidotax.com/wp-sitemap.xml>; rel=\"sitemap\"" env=MDFILE
+Header set Link "<https://pulidotax.com/%{MDFILE}e>; rel=\"alternate\"; type=\"text/markdown\", <https://pulidotax.com/sitemap.xml>; rel=\"sitemap\"" env=MDFILE
 </IfModule>
 # ===== End Markdown for AI agents =====
 
