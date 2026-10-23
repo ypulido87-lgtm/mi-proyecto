@@ -636,9 +636,15 @@ const translations = {
     ft_disc:'This site does not constitute legal or tax advice. Every situation is evaluated individually.'
   }
 };
+/* El almacenamiento puede estar bloqueado (incógnito, cookies desactivadas): si falla,
+   el idioma igual cambia, solo no se recuerda. Se escriben las dos claves históricas
+   para que las 6 páginas compartan la misma preferencia. */
+function rememberLang(l){ try{ localStorage.setItem('ptax-lang',l); localStorage.setItem('ptaLang',l); }catch(e){} }
+function recallLang(){ try{ return localStorage.getItem('ptax-lang') || localStorage.getItem('ptaLang'); }catch(e){ return null; } }
+
 function setLang(lang){
   document.documentElement.lang = lang;
-  localStorage.setItem('ptax-lang', lang);
+  rememberLang(lang);
   document.getElementById('langEs').classList.toggle('on', lang === 'es');
   document.getElementById('langEn').classList.toggle('on', lang === 'en');
   const t = translations[lang];
