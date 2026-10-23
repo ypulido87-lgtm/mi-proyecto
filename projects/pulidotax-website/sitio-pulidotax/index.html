@@ -394,30 +394,55 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 
 <!-- ================= CALCULADORA ================= -->
 <section class="toolband">
-  <div class="wrap toolband-grid">
-    <div>
-      <span class="eyebrow rv" data-i18n="tb_eyebrow">Herramienta gratuita</span>
-      <h2 class="rv d1" data-i18n="tb_h2">Calcule sus impuestos hoy, sin tener que escribirme</h2>
-      <p class="rv d2" data-i18n="tb_p">Si trabaja por su cuenta o tiene un negocio pequeño, sé cuál es la pregunta que le quita el sueño: cuánto va a deber. Hice esta calculadora para que lo sepa ahora mismo, con las cifras oficiales del IRS para 2026.</p>
-      <div class="toolband-list rv d2">
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l1">Incluye el self-employment tax y la deducción QBI</span></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l2">Le dice cuánto apartar cada trimestre</span></span>
-        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l3">Sin registro y sin pedirle su correo</span></span>
-      </div>
-      <a href="calculadora.html" class="btn btn-gold rv d3" data-i18n="tb_btn">Calcular mis impuestos →</a>
+  <div class="wrap">
+    <div class="toolband-head">
+      <span class="eyebrow rv" data-i18n="tb_eyebrow">Herramientas gratuitas</span>
+      <h2 class="rv d1" data-i18n="tb_h2">Saque sus cuentas hoy, sin tener que escribirme</h2>
+      <p class="rv d2" data-i18n="tb_p">Hice dos calculadoras con las cifras oficiales de 2026 para las dos preguntas que más me hacen. Son gratis, no piden su correo y el cálculo ocurre en su propio teléfono.</p>
     </div>
 
-    <div class="toolcard rv d2">
-      <div class="tc-lbl" data-i18n="tb_ex">Ejemplo · contratista en Orlando</div>
-      <div class="tc-row"><span data-i18n="tb_r1">Facturado en el año</span><span>$60,000</span></div>
-      <div class="tc-row"><span data-i18n="tb_r2">Gastos del negocio</span><span>− $15,000</span></div>
-      <div class="tc-row"><span data-i18n="tb_r3">Self-employment tax</span><span>$6,358</span></div>
-      <div class="tc-row"><span data-i18n="tb_r4">Impuesto sobre la renta</span><span>$2,221</span></div>
-      <div class="tc-big">
-        <div class="v">$2,145</div>
-        <div class="l" data-i18n="tb_r5">a pagar cada trimestre</div>
+    <div class="toolcards">
+
+      <div class="toolcard rv d2">
+        <div class="tc-lbl" data-i18n="tb1_lbl">Impuesto federal</div>
+        <h3 data-i18n="tb1_t">¿Cuánto voy a deber este año?</h3>
+        <p class="tc-p" data-i18n="tb1_p">Para trabajadores independientes y dueños de negocio. Incluye el self-employment tax, la deducción QBI y le dice cuánto apartar cada trimestre.</p>
+        <div class="tc-rows">
+          <div class="tc-row"><span data-i18n="tb1_r1">Facturado en el año</span><span>$60,000</span></div>
+          <div class="tc-row"><span data-i18n="tb1_r2">Gastos del negocio</span><span>− $15,000</span></div>
+          <div class="tc-row"><span data-i18n="tb1_r3">Self-employment tax</span><span>$6,358</span></div>
+          <div class="tc-row"><span data-i18n="tb1_r4">Impuesto sobre la renta</span><span>$2,221</span></div>
+          <div class="tc-big">
+            <div class="v">$2,145</div>
+            <div class="l" data-i18n="tb1_r5">a pagar cada trimestre</div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <p class="tc-note" data-i18n="tb1_note">Ejemplo de un contratista soltero en Orlando. Su número depende de sus ingresos, gastos y estado civil.</p>
+          <a href="calculadora.html" class="btn btn-gold" data-i18n="tb1_btn">Calcular mis impuestos →</a>
+        </div>
       </div>
-      <p class="tc-note" data-i18n="tb_note">Ejemplo de una persona soltera. Su número depende de sus propios ingresos, gastos y estado civil.</p>
+
+      <div class="toolcard rv d3">
+        <div class="tc-lbl" data-i18n="tb2_lbl">Sales Tax de Florida</div>
+        <h3 data-i18n="tb2_t">¿Cuánto cobro y cuánto remito?</h3>
+        <p class="tc-p" data-i18n="tb2_p">La tasa exacta de los 67 condados, con el tope de $5,000 por artículo y el descuento por presentar a tiempo. Aquí es donde más dinero se pierde.</p>
+        <div class="tc-rows">
+          <div class="tc-row"><span data-i18n="tb2_r1">Carro vendido en Osceola</span><span>$20,000</span></div>
+          <div class="tc-row"><span data-i18n="tb2_r2">Impuesto estatal · 6%</span><span>$1,200</span></div>
+          <div class="tc-row"><span data-i18n="tb2_r3">Recargo del condado · 1.5%</span><span>$75</span></div>
+          <div class="tc-row"><span data-i18n="tb2_r4">Sin el tope habría sido</span><span>$300</span></div>
+          <div class="tc-big">
+            <div class="v">$21,275</div>
+            <div class="l" data-i18n="tb2_r5">total a cobrarle al cliente</div>
+          </div>
+        </div>
+        <div class="tc-foot">
+          <p class="tc-note" data-i18n="tb2_note">El recargo solo va sobre los primeros $5,000 de cada artículo. Pasarlo por alto cuesta $225 en una sola venta.</p>
+          <a href="sales-tax.html" class="btn btn-gold" data-i18n="tb2_btn">Calcular el Sales Tax →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
