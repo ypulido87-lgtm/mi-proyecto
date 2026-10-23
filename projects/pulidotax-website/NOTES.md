@@ -95,7 +95,9 @@ Dos tareas programadas (Claude Code scheduled tasks) mantienen el blog al día �
 - `articulo-semanal-blog-pulidotax` — lunes 9 AM, escribe el artículo de la semana.
 - `verificar-blog-pulidotax` — martes y jueves 10 AM, vigilante que rellena si falta.
 
-Editan `sitio-pulidotax\blog.html` directamente y copian el resultado a `borradores-trabajo\blog.html`. Yudit sigue subiendo el archivo a GoDaddy manualmente (File Manager → Upload → sobre `sitio-pulidotax\blog.html` → "Overwrite existing files" marcada).
+**Ambas tareas reescritas el 23 oct 2026** para la arquitectura nueva. El flujo semanal pasó de 9 a 13 pasos y ahora: elige el slug (permanente, con reglas), **crea la página del artículo rellenando `plantilla-articulo.html`**, **enlaza el artículo anterior con el nuevo** (sustituye su `<div class="ph"></div>` por el enlace "siguiente"), añade la tarjeta al índice, actualiza `blog.md` y `sitemap.xml`, y **sube CINCO archivos** por cPanel (página nueva, página anterior modificada, blog.html, blog.md, sitemap.xml). El vigilante ahora comprueba dos cosas más: que la página del artículo responda 200 y que esté en el sitemap.
+
+Verificado que todas las rutas que mencionan las tareas existen y que los puntos de inserción (el `ph` del último artículo, el comentario del sitemap, el final del grid) están tal como las tareas los esperan.
 
 ## Auditoría AEO / Agent Readiness (3 sep 2026) — COMPLETADA, meta cumplida
 Corrida con el [[project-aeo-toolkit]] sobre pulidotax.com en vivo:
