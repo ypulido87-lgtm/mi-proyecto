@@ -28,17 +28,23 @@ Pagos a empleados puntuales y correctos, con retenciones, formularios y reportes
 
 Ver todos los servicios: https://pulidotax.com/servicios.html
 
-## Herramienta gratuita: calculadora de impuestos 2026
+## Herramientas gratuitas: dos calculadoras con las cifras oficiales de 2026
 
-Calcule su impuesto federal estimado hoy, sin tener que contactarnos. Pensada para trabajadores independientes y dueños de pequeños negocios en Florida.
+Ambas son gratis, no piden correo ni registro, y el cálculo ocurre en el navegador del visitante.
 
-- Incluye el self-employment tax y la deducción QBI
-- Le dice cuánto apartar cada trimestre
-- Sin registro y sin pedir su correo; el cálculo ocurre en su propio navegador
+### Calculadora de impuestos (federal)
+Para trabajadores independientes y dueños de pequeños negocios. Incluye el self-employment tax y la deducción QBI, y dice cuánto apartar cada trimestre.
 
 Ejemplo (contratista soltero en Orlando): $60,000 facturados menos $15,000 de gastos dan un self-employment tax de $6,358 y un impuesto sobre la renta de $2,221 — unos $2,145 a pagar cada trimestre.
 
 Usar la calculadora: https://pulidotax.com/calculadora.html
+
+### Calculadora de Sales Tax de Florida
+Dice cuánto cobrarle al cliente y cuánto remitirle al estado, con la tasa exacta de los 67 condados, el tope de $5,000 por artículo y el descuento por presentar a tiempo.
+
+Ejemplo (carro de $20,000 vendido en Osceola, 7.5%): el impuesto estatal del 6% son $1,200 y el recargo del condado solo $75, porque se limita a los primeros $5,000 del artículo — sin ese tope habrían sido $300. Total a cobrar: $21,275.
+
+Usar la calculadora: https://pulidotax.com/sales-tax.html
 
 ## Cómo trabajamos
 
