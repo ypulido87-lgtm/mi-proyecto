@@ -68,7 +68,8 @@
       "Bash(cat)",
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/dss.py /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/fldor/dr15dss_26.pdf)",
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/find.py /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/fldor/dr15n.pdf 5,000 'collection allowance')",
-      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/find.py /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/fldor/dr15n.pdf 'Line 15\\\\\\(a\\\\\\)' 'surtax is \\(not \\)?due|How to Calculate.{0,30}Surtax')"
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/find.py /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/fldor/dr15n.pdf 'Line 15\\\\\\(a\\\\\\)' 'surtax is \\(not \\)?due|How to Calculate.{0,30}Surtax')",
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/sec.py /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/fldor/dr15n.pdf)"
     ]
   }
 }
