@@ -28,6 +28,18 @@ Pagos a empleados puntuales y correctos, con retenciones, formularios y reportes
 
 Ver todos los servicios: https://pulidotax.com/servicios.html
 
+## Herramienta gratuita: calculadora de impuestos 2026
+
+Calcule su impuesto federal estimado hoy, sin tener que contactarnos. Pensada para trabajadores independientes y dueños de pequeños negocios en Florida.
+
+- Incluye el self-employment tax y la deducción QBI
+- Le dice cuánto apartar cada trimestre
+- Sin registro y sin pedir su correo; el cálculo ocurre en su propio navegador
+
+Ejemplo (contratista soltero en Orlando): $60,000 facturados menos $15,000 de gastos dan un self-employment tax de $6,358 y un impuesto sobre la renta de $2,221 — unos $2,145 a pagar cada trimestre.
+
+Usar la calculadora: https://pulidotax.com/calculadora.html
+
 ## Cómo trabajamos
 
 1. **Conversamos** — Una consulta gratuita para conocer su negocio, sus números y sus preocupaciones. Sin compromiso y sin tecnicismos.
