@@ -651,7 +651,7 @@ function setLang(l){
   document.getElementById('btn-es').classList.toggle('active',l==='es');
   document.getElementById('btn-en').classList.toggle('active',l==='en');
 }
-const sl=localStorage.getItem('ptaLang')||'es';
+const sl=recallLang()||'es';
 if(sl!=='es')setLang(sl);
 
 /* scroll shadow */
