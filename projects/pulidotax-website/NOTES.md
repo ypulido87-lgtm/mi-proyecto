@@ -27,7 +27,11 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 
 **Probada** con 8 escenarios (contratista típico, negocio mediano, side hustle, mixto W-2, ingreso alto con tope de SS y Medicare adicional, pérdida, jefe de familia, ceros) — réplica en Python y luego el código real en el navegador, con resultados idénticos. Entradas con basura (`abc$$12xyz345`) se sanean solas.
 
-**Bloque en la página de inicio (22 oct 2026):** sección `.toolband` entre Servicios y Cómo trabajamos — banda azul marino con la tarjeta de ejemplo (contratista soltero: $60,000 − $15,000 → SE tax $6,358, renta $2,221, **$2,145 por trimestre**). Esos números salen del cálculo real verificado; si se cambian las cifras fiscales hay que actualizarlos también aquí y en `index.md`. La página de inicio tiene ahora 3 enlaces a la calculadora (menú, botón de la banda, pie).
+**Bloque en la página de inicio — AHORA CON LAS DOS CALCULADORAS (reestructurado el 23 oct 2026):** sección `.toolband` entre Servicios y Cómo trabajamos. Se decidió NO poner dos bandas azules seguidas: la banda pasó de «texto + tarjeta» a «encabezado centrado + dos tarjetas» (`.toolband-head` + `.toolcards`, grid de 2 columnas que colapsa a 1 en móvil). Las tarjetas usan `display:flex;flex-direction:column` con `.tc-foot{margin-top:auto}` para que queden exactamente de la misma altura (verificado: 661px ambas).
+- **Tarjeta 1 (impuesto federal):** contratista soltero, $60,000 − $15,000 → SE tax $6,358, renta $2,221, **$2,145 por trimestre**.
+- **Tarjeta 2 (Sales Tax):** carro de $20,000 en Osceola → estatal $1,200, recargo **$75** (sin el tope habrían sido $300), total **$21,275**. Se eligió este ejemplo porque el ahorro de $225 en una sola venta es lo que mejor demuestra que vale la pena saber la regla.
+- Los números salen del cálculo real verificado. **Si se cambian las cifras fiscales hay que actualizarlos en tres sitios: la calculadora, la tarjeta del inicio y el `index.md`.**
+- La página de inicio tiene ahora 3 enlaces a cada calculadora (menú, botón de la tarjeta, pie).
 
 ## Calculadora de Sales Tax de Florida (23 oct 2026)
 `sales-tax.html` + `sales-tax.md` — séptima página. Complementa a `calculadora.html` (que en sus FAQ ya decía que el Sales Tax es una obligación aparte). Sin gate, igual que la otra.
