@@ -27,7 +27,17 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 
 **Probada** con 8 escenarios (contratista típico, negocio mediano, side hustle, mixto W-2, ingreso alto con tope de SS y Medicare adicional, pérdida, jefe de familia, ceros) — réplica en Python y luego el código real en el navegador, con resultados idénticos. Entradas con basura (`abc$$12xyz345`) se sanean solas.
 
-**Diferencia con el resto del sitio:** aquí `setLang` envuelve `localStorage` en try/catch (`rememberLang`/`recallLang`). Las otras 5 páginas no lo hacen y el toggle ES|EN se rompe a medias si el almacenamiento está bloqueado (incógnito, cookies desactivadas) — pendiente de arreglar ahí si Yudit quiere.
+**Bloque en la página de inicio (22 oct 2026):** sección `.toolband` entre Servicios y Cómo trabajamos — banda azul marino con la tarjeta de ejemplo (contratista soltero: $60,000 − $15,000 → SE tax $6,358, renta $2,221, **$2,145 por trimestre**). Esos números salen del cálculo real verificado; si se cambian las cifras fiscales hay que actualizarlos también aquí y en `index.md`. La página de inicio tiene ahora 3 enlaces a la calculadora (menú, botón de la banda, pie).
+
+## Arreglo del selector de idioma en las 6 páginas (22 oct 2026)
+Al probar la calculadora salieron **dos fallos reales del sitio**, ya corregidos en las 6 páginas:
+
+1. **Dos claves de almacenamiento distintas.** `index.html` y `calculadora.html` guardaban en `ptax-lang`; `servicios/sobre-mi/blog/contacto` en `ptaLang`. Consecuencia: quien ponía el sitio en inglés en el inicio y pasaba a Servicios **volvía a español**. Afectaba a todo visitante de habla inglesa que navegara el sitio.
+2. **`localStorage` sin protección.** En las 4 páginas del grupo `ptaLang`, `localStorage.setItem` era la PRIMERA línea de `setLang`, así que con el almacenamiento bloqueado (incógnito, cookies desactivadas) la función lanzaba excepción y **el botón EN no hacía absolutamente nada**. En `index.html` fallaba a medias (cambiaba `lang` pero no los textos).
+
+**Arreglo:** helpers `rememberLang` / `recallLang` con try/catch en las 6 páginas; se **escriben las dos claves y se lee cualquiera**, así nadie pierde la preferencia que ya tenía guardada y todas las páginas se ponen de acuerdo. Verificado en vivo: las 6 tienen ambos helpers y la doble clave; probado en navegador que el toggle va y vuelve en las 6 sin errores de consola.
+
+⚠️ **Aviso para ediciones masivas:** el intento de aplicar esto con `perl -0pi -e` falló a medias — la sustitución multilínea no coincidió pero la de una línea sí, dejando las 4 páginas llamando a `recallLang()` sin que la función existiera (habría roto el JS en producción). Se detectó al verificar. **Para cambios multilínea usar la herramienta Edit, no perl/sed.** Lo mismo pasó con un comentario `/* */` que quedó con doble cierre y habría roto el script de la calculadora.
 
 También se agregó `calculadora.md` (el `.htaccess` ya lo sirve solo: la regla `^([a-z-]+)\.html$` cubre la página nueva sin tocar nada) y el enlace «Calculadora» en el menú, el menú móvil y el pie de las 5 páginas existentes, más la línea de páginas relacionadas de los 5 `.md`.
 
