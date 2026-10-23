@@ -234,6 +234,8 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
   .stat:nth-child(3)::before{display:none}
   .svc-grid{grid-template-columns:1fr}
   .steps,.why-grid{grid-template-columns:1fr;gap:40px}
+  .toolband{padding:76px 0}
+  .toolband-grid{grid-template-columns:1fr;gap:44px}
   .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{position:fixed;inset:0;background:rgba(253,246,238,.98);backdrop-filter:blur(16px);flex-direction:column;justify-content:center;gap:34px;transform:translateX(100%);transition:transform .45s var(--ease)}
   .nav-links.open{transform:none}
@@ -375,6 +377,36 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         <p data-i18n="svc4_p">Pagos a empleados puntuales y correctos, con retenciones, formularios y reportes federales y estatales bajo control.</p>
         <a class="svc-more" href="servicios.html" data-i18n="svc_more">Saber más →</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALCULADORA ================= -->
+<section class="toolband">
+  <div class="wrap toolband-grid">
+    <div>
+      <span class="eyebrow rv" data-i18n="tb_eyebrow">Herramienta gratuita</span>
+      <h2 class="rv d1" data-i18n="tb_h2">Calcule sus impuestos hoy, sin tener que escribirme</h2>
+      <p class="rv d2" data-i18n="tb_p">Si trabaja por su cuenta o tiene un negocio pequeño, sé cuál es la pregunta que le quita el sueño: cuánto va a deber. Hice esta calculadora para que lo sepa ahora mismo, con las cifras oficiales del IRS para 2026.</p>
+      <div class="toolband-list rv d2">
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l1">Incluye el self-employment tax y la deducción QBI</span></span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l2">Le dice cuánto apartar cada trimestre</span></span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="tb_l3">Sin registro y sin pedirle su correo</span></span>
+      </div>
+      <a href="calculadora.html" class="btn btn-gold rv d3" data-i18n="tb_btn">Calcular mis impuestos →</a>
+    </div>
+
+    <div class="toolcard rv d2">
+      <div class="tc-lbl" data-i18n="tb_ex">Ejemplo · contratista en Orlando</div>
+      <div class="tc-row"><span data-i18n="tb_r1">Facturado en el año</span><span>$60,000</span></div>
+      <div class="tc-row"><span data-i18n="tb_r2">Gastos del negocio</span><span>− $15,000</span></div>
+      <div class="tc-row"><span data-i18n="tb_r3">Self-employment tax</span><span>$6,358</span></div>
+      <div class="tc-row"><span data-i18n="tb_r4">Impuesto sobre la renta</span><span>$2,221</span></div>
+      <div class="tc-big">
+        <div class="v">$2,145</div>
+        <div class="l" data-i18n="tb_r5">a pagar cada trimestre</div>
+      </div>
+      <p class="tc-note" data-i18n="tb_note">Ejemplo de una persona soltera. Su número depende de sus propios ingresos, gastos y estado civil.</p>
     </div>
   </div>
 </section>
