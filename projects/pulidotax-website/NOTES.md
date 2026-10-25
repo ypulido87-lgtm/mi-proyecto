@@ -33,6 +33,28 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 - Los números salen del cálculo real verificado. **Si se cambian las cifras fiscales hay que actualizarlos en tres sitios: la calculadora, la tarjeta del inicio y el `index.md`.**
 - La página de inicio tiene ahora 3 enlaces a cada calculadora (menú, botón de la tarjeta, pie).
 
+## Calculadora de impuestos: ahora para W-2 + Uber, con hijos y millas (24 oct 2026)
+Motivo: un amigo de Yudit (persona natural, W-2, dependientes, hace Uber) entró y no supo usarla. Probada con su perfil, **la calculadora daba una respuesta equivocada**: no tenía campo para dependientes, y para una familia así el error es de miles de dólares (con 2 hijos, de unos $750 a favor a ~$5,100 a favor).
+
+**Tres cambios en `calculadora.html`:**
+1. **Hijos menores de 17** (stepper 0–10). Crédito de hasta $2,200 por hijo; la parte reembolsable es el menor de lo que sobra del crédito, $1,700 por hijo y 15% del ingreso del trabajo sobre $2,500. Se reduce $50 por cada $1,000 (o fracción) sobre $200,000 ($400,000 en conjunto). **Solo baja el impuesto sobre la renta, no el self-employment tax.** El reembolsable entra como crédito en el saldo, no en el "total estimado".
+2. **Aviso arriba + botón «Ver un ejemplo: W-2, Uber y 2 hijos»** que rellena el formulario (`loadExample()`). Además 3 preguntas nuevas en las FAQ (HTML + JSON-LD), título/meta orientados a Uber, y el texto de la tarjeta de la página de inicio.
+3. **Cuadro de millas** (`<details>`, 2 casillas por periodo): 72.5¢ ene–jun y 76¢ jul–dic de 2026, sumadas a los gastos.
+
+**Cambio de comportamiento NO pedido, pero necesario para este perfil:** el «pago por trimestre» antes era siempre total/4, sin descontar lo retenido en el W-2 — a una persona con reembolso le decía «$937 por trimestre». Ahora es (total − retenido − crédito reembolsable)/4, y **si queda menos de $1,000 por deber muestra «Sin pagos trimestrales»** (regla de $1,000 del IRS). Para independientes puros sin retención no cambia, salvo cuando el total es < $1,000.
+
+**Cifras verificadas en fuente oficial (nunca búsquedas web):**
+- Crédito $2,200 y reembolsable $1,700 (2026): **Rev. Proc. 2025-32**, leída del PDF.
+- Fórmula del 15% sobre $2,500, umbrales $200k/$400k, redondeo a múltiplos de $1,000 y ×5% (= $50 por $1,000), y la regla especial de 3+ hijos: **PDF del Schedule 8812 (formulario e instrucciones, año 2025)** — `irs.gov/pub/irs-pdf/f1040s8.pdf` y `i1040s8.pdf`. Ojo: son de 2025; los umbrales son de ley y no se indexan, los montos de 2026 sí salen de la Rev. Proc.
+- Millas: **página de tarifas del IRS** (72.5¢ ene–jun, IR-2025-128; 76¢ jul–dic, IR-2026-29). **La búsqueda web daba 72.5¢ para todo el año y luego 76¢ sin aclarar el periodo** — solo la página oficial lo desambiguó.
+- Peajes y estacionamiento aparte, y millas **o** gastos reales: **Pub. 463, tabla 1-1**. SE tax desde $400 de ganancia neta: **IRS Tema 554**.
+
+**Fuera de alcance a propósito (y dicho en la página):** crédito por ingreso del trabajo (EITC) — con este perfil probablemente aplicaría y haría el reembolso aún mayor —, crédito de $500 por otros dependientes, cuidado de niños. Con 3+ hijos solo se usa la fórmula del 15% y la página lo advierte.
+
+**Probada** con 9 escenarios contra una **referencia independiente en Python escrita desde las reglas** (no copiada del JS): regresión del caso base (alimenta la tarjeta de inicio, $2,145), el amigo ($5,094 a favor), solo W-2 con hijos, 3 hijos en conjunto, ingreso alto con recorte del crédito, ingreso del trabajo < $2,500, ganancia chica sin pagos trimestrales, solo millas, W-2 + Uber sin hijos. **Los 9 coinciden**, primero en local y luego en la página publicada.
+
+**Bug mío de la semana pasada, encontrado y arreglado en las DOS calculadoras:** las filas del desglose tenían `<span class="k" data-i18n="x">Texto <em data-i18n="xe">subtítulo</em></span>`. `setLang()` reemplaza el `textContent` de la etiqueta madre y **borraba el `<em>` para siempre** al cambiar de idioma (se perdían los subtítulos tipo «Seguro Social y Medicare · 15.3%»). Ahora la madre no lleva `data-i18n` y cada pieza tiene el suyo. **Regla: nunca poner `data-i18n` en un elemento que contenga otro elemento traducible.**
+
 ## Calculadora de Sales Tax de Florida (23 oct 2026)
 `sales-tax.html` + `sales-tax.md` — séptima página. Complementa a `calculadora.html` (que en sus FAQ ya decía que el Sales Tax es una obligación aparte). Sin gate, igual que la otra.
 
