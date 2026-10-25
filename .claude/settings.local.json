@@ -105,7 +105,8 @@
       "Bash(cp /c/Claude/projects/pulidotax-website/sitio-pulidotax/calculadora.html /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/calculadora-antes-qbi.html)",
       "Bash(cp /c/Claude/projects/pulidotax-website/sitio-pulidotax/calculadora.md /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/calculadora-antes-qbi.md)",
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/patch_calc2.py)",
-      "Bash(S=/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad *)"
+      "Bash(S=/c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad *)",
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/ref_calc2.py)"
     ]
   }
 }
