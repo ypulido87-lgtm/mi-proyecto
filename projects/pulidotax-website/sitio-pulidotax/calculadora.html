@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Impuestos 2026 para Trabajadores Independientes y Negocios · Pulido Tax</title>
+<title>Calculadora de Impuestos 2026: Trabajo Independiente, Uber y Negocios · Pulido Tax</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Calculadora gratuita de impuestos 2026 para trabajadores independientes, contratistas y dueños de negocio en Florida. Estime su self-employment tax, deducción QBI y pago trimestral. En español, sin registro.">
+<meta name="description" content="Calculadora gratuita de impuestos 2026 para trabajadores independientes, quienes manejan Uber o hacen entregas además de su empleo, y dueños de negocio en Florida. Millas, QBI y crédito por hijos. En español, sin registro.">
 <link rel="canonical" href="https://pulidotax.com/calculadora.html">
 <script type="application/ld+json">
 {
@@ -19,7 +19,7 @@
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
   "inLanguage": ["es", "en"],
-  "description": "Estimador gratuito del impuesto federal para trabajadores independientes y dueños de pequeños negocios: self-employment tax, deducción QBI y pago estimado trimestral, con las cifras oficiales del año fiscal 2026.",
+  "description": "Estimador gratuito del impuesto federal para trabajadores independientes y dueños de pequeños negocios: self-employment tax, deducción QBI, millas de manejo, crédito por hijos y pago estimado trimestral, con las cifras oficiales del año fiscal 2026.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "provider": { "@id": "https://pulidotax.com/#organization" }
 }
@@ -48,6 +48,21 @@
       "@type": "Question",
       "name": "¿Qué es la deducción QBI?",
       "acceptedAnswer": { "@type": "Answer", "text": "La deducción QBI (Qualified Business Income, Sección 199A) permite a muchos dueños de negocios de traspaso deducir hasta el 20% de su ingreso de negocio. Es permanente desde la ley de 2025 y en 2026 tiene una deducción mínima de $400 para quienes tengan al menos $1,000 de ingreso calificado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto federal sobre la renta. En la calculadora ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hay dos métodos y se escoge uno: la tarifa por milla o los gastos reales del vehículo. Para 2026 el IRS fija 72.5 centavos por milla de enero a junio y 76 centavos de julio a diciembre. Los peajes y el estacionamiento del trabajo se deducen aparte con cualquiera de los dos métodos. Conviene llevar un registro de las millas de trabajo, porque el IRS exige poder comprobar los gastos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La calculadora cuenta el crédito por hijos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, de forma simplificada. Para 2026 el crédito es de hasta $2,200 por cada hijo menor de 17 años, y una parte de hasta $1,700 por hijo se puede devolver según el ingreso del trabajo. Usted (y su cónyuge si declaran juntos) y cada hijo necesitan un número de Seguro Social válido para trabajar. El crédito se reduce cuando el ingreso pasa de $200,000 ($400,000 si declara en conjunto). No incluye el crédito por ingreso del trabajo ni el de $500 por otros dependientes." }
     }
   ]
 }
@@ -198,6 +213,31 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 
 .empty{text-align:center;padding:40px 0;color:rgba(255,255,255,.45);font-size:15px}
 
+/* ---- persona W-2 + Uber, hijos y millas ---- */
+.persona{background:var(--gold-pale);border:1px solid rgba(184,115,51,.3);border-radius:12px;padding:20px 22px;margin-bottom:30px}
+.persona-t{font-family:var(--font-d);font-size:20px;font-weight:600;color:var(--blue);line-height:1.3;margin-bottom:6px}
+.persona p{font-size:14px;color:#4B5A68;line-height:1.6;margin-bottom:14px}
+.persona-btn{background:var(--blue);color:#fff;border:0;border-radius:999px;padding:10px 20px;font:600 13.5px var(--font-b);cursor:pointer;transition:background .25s,transform .25s var(--ease)}
+.persona-btn:hover{background:var(--blue-mid);transform:translateY(-2px)}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid rgba(13,43,69,.16);border-radius:10px;overflow:hidden;background:#fff}
+.stepper button{width:48px;height:46px;border:0;background:var(--surface);font-size:22px;color:var(--blue);cursor:pointer;transition:background .2s}
+.stepper button:hover{background:var(--gold-pale)}
+.stepper span{min-width:56px;text-align:center;font:600 18px var(--font-b);color:var(--blue)}
+.miles{border:1.5px dashed rgba(13,43,69,.22);border-radius:10px;margin-bottom:24px;background:#fff}
+.miles summary{cursor:pointer;padding:14px 16px;font-size:14px;font-weight:600;color:var(--blue);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;line-height:1.4}
+.miles summary::-webkit-details-marker{display:none}
+.miles summary::after{content:"+";font-size:22px;font-weight:300;color:var(--gold);flex-shrink:0}
+.miles[open] summary::after{content:"\2212"}
+.miles-body{padding:0 16px 16px}
+.miles-note{font-size:13px;color:#7B8893;line-height:1.55;margin-bottom:14px}
+.mi-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mi-lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;line-height:1.35}
+.mi-lbl em{font-style:normal;display:block;font-weight:400;text-transform:none;letter-spacing:0;color:#7B8893;font-size:12px;margin-top:2px}
+.mi-in{width:100%;border:1.5px solid rgba(13,43,69,.16);border-radius:10px;padding:12px 14px;font:500 16px var(--font-b);color:var(--blue);background:#fff;outline:none;transition:border-color .28s,box-shadow .28s}
+.mi-in:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,115,51,.14)}
+.mi-res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(13,43,69,.1);font-size:13.5px;color:var(--blue)}
+.mi-res b{font-family:var(--font-d);font-size:21px;color:var(--gold-mid);white-space:nowrap}
+
 /* ---- disclaimer ---- */
 .disc{max-width:860px;margin:36px auto 0;background:var(--surface);border:1px solid rgba(184,115,51,.26);border-left:3px solid var(--gold);border-radius:12px;padding:24px 28px}
 .disc h4{font-family:var(--font-b);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:10px}
@@ -340,10 +380,10 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
       <span data-i18n="ph_h1">¿Cuánto voy a pagar</span>
       <span class="h1-accent" data-i18n="ph_h1b">de impuestos este año?</span>
     </h1>
-    <p class="lead rv d2" data-i18n="ph_lead">Calcule en un minuto su impuesto federal estimado como trabajador independiente o dueño de negocio en Florida. Sin registro, sin dar su correo, sin compromiso.</p>
+    <p class="lead rv d2" data-i18n="ph_lead">Calcule en un minuto su impuesto federal estimado si trabaja por su cuenta, tiene un negocio, o maneja Uber o hace entregas además de su empleo. Sin registro, sin dar su correo, sin compromiso.</p>
     <div class="phero-tags rv d3">
       <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t1">Cifras oficiales del IRS 2026</span></span>
-      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t2">Incluye self-employment tax y QBI</span></span>
+      <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t2">Self-employment tax, QBI y crédito por hijos</span></span>
       <span class="ptag"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="ph_t3">100% gratis y privado</span></span>
     </div>
   </div>
@@ -356,6 +396,12 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 
       <!-- ---------- FORM ---------- -->
       <div class="calc-form">
+        <div class="persona">
+          <div class="persona-t" data-i18n="pe_t">¿Tiene un trabajo con W-2 y además maneja Uber, DoorDash o hace trabajo extra?</div>
+          <p data-i18n="pe_p">Entonces esta calculadora es para usted: lo que gana manejando cuenta como trabajo independiente aunque tenga un empleo.</p>
+          <button type="button" class="persona-btn" onclick="loadExample()" data-i18n="pe_btn">Ver un ejemplo: W-2, Uber y 2 hijos</button>
+        </div>
+
         <h2 data-i18n="cf_h2">Sus números</h2>
         <p class="sub" data-i18n="cf_sub">Aproximados está bien. Nada de esto se guarda ni se envía a ningún lado.</p>
 
@@ -369,9 +415,17 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         </div>
 
         <div class="fgroup">
+          <label class="flabel">
+            <span data-i18n="cf_kids">Hijos menores de 17 años (opcional)</span>
+            <span class="fhint" data-i18n="cf_kids_h">Con número de Seguro Social. Cada uno da un crédito de hasta $2,200.</span>
+          </label>
+          <div class="stepper"><button type="button" id="kidsMinus" aria-label="Menos">&minus;</button><span id="kidsVal">0</span><button type="button" id="kidsPlus" aria-label="Más">+</button></div>
+        </div>
+
+        <div class="fgroup">
           <label class="flabel" for="inIncome">
             <span data-i18n="cf_income">Ingresos del negocio al año</span>
-            <span class="fhint" data-i18n="cf_income_h">Todo lo que facturó o cobró, antes de gastos.</span>
+            <span class="fhint" data-i18n="cf_income_h">Todo lo que cobró, propinas incluidas, antes de gastos.</span>
           </label>
           <div class="money"><span class="cur">$</span><input id="inIncome" type="text" inputmode="numeric" autocomplete="off" placeholder="60,000"></div>
         </div>
@@ -379,15 +433,33 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         <div class="fgroup">
           <label class="flabel" for="inExp">
             <span data-i18n="cf_exp">Gastos del negocio al año</span>
-            <span class="fhint" data-i18n="cf_exp_h">Materiales, gasolina, herramientas, seguro, publicidad…</span>
+            <span class="fhint" data-i18n="cf_exp_h">Materiales, gasolina, herramientas, seguro, peajes… (si usa el cuadro de millas, no ponga aquí la gasolina)</span>
           </label>
           <div class="money"><span class="cur">$</span><input id="inExp" type="text" inputmode="numeric" autocomplete="off" placeholder="15,000"></div>
         </div>
 
+        <details class="miles" id="milesBox">
+          <summary data-i18n="mi_sum">¿Maneja para Uber, DoorDash, Lyft o similar? Calcule sus millas</summary>
+          <div class="miles-body">
+            <p class="miles-note" data-i18n="mi_note">Use millas o los gastos reales del vehículo (gasolina, mantenimiento), no los dos. Los peajes y el estacionamiento sí se suman aparte, en la casilla de gastos.</p>
+            <div class="mi-row">
+              <div>
+                <label class="mi-lbl" for="inMi1"><span data-i18n="mi_l1">Millas de trabajo, enero–junio</span><em data-i18n="mi_h1">72.5 centavos por milla</em></label>
+                <input class="mi-in" id="inMi1" type="text" inputmode="numeric" autocomplete="off" placeholder="0">
+              </div>
+              <div>
+                <label class="mi-lbl" for="inMi2"><span data-i18n="mi_l2">Millas de trabajo, julio–diciembre</span><em data-i18n="mi_h2">76 centavos por milla</em></label>
+                <input class="mi-in" id="inMi2" type="text" inputmode="numeric" autocomplete="off" placeholder="0">
+              </div>
+            </div>
+            <div class="mi-res"><span data-i18n="mi_res">Deducción por millas (se suma a sus gastos)</span><b id="oMiles">$0</b></div>
+          </div>
+        </details>
+
         <div class="fgroup">
           <label class="flabel" for="inW2">
             <span data-i18n="cf_w2">Salario W-2 al año (opcional)</span>
-            <span class="fhint" data-i18n="cf_w2_h">Si usted o su cónyuge también tienen un trabajo con W-2.</span>
+            <span class="fhint" data-i18n="cf_w2_h">Si usted o su cónyuge tienen un trabajo con W-2: la casilla 1 de su W-2.</span>
           </label>
           <div class="money"><span class="cur">$</span><input id="inW2" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
         </div>
@@ -395,7 +467,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         <div class="fgroup">
           <label class="flabel" for="inPaid">
             <span data-i18n="cf_paid">Impuesto ya pagado o retenido (opcional)</span>
-            <span class="fhint" data-i18n="cf_paid_h">Retenciones del W-2 y pagos trimestrales que ya hizo.</span>
+            <span class="fhint" data-i18n="cf_paid_h">Lo retenido en su W-2 (casilla 2) y los pagos trimestrales que ya hizo.</span>
           </label>
           <div class="money"><span class="cur">$</span><input id="inPaid" type="text" inputmode="numeric" autocomplete="off" placeholder="0"></div>
         </div>
@@ -426,7 +498,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
           <div class="qrow">
             <div class="qcard">
               <div class="v" id="oQuarter">$0</div>
-              <div class="l" data-i18n="co_q_l">Pago estimado por trimestre</div>
+              <div class="l" id="lblQ" data-i18n="co_q_l">Pago estimado por trimestre</div>
             </div>
             <div class="qcard">
               <div class="v" id="oRate">0%</div>
@@ -437,21 +509,28 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
           <div class="bd">
             <h4 data-i18n="co_bd">Cómo sale ese número</h4>
             <div class="bdrow"><span class="k" data-i18n="co_b1">Ganancia neta del negocio</span><span class="v" id="oNet">$0</span></div>
-            <div class="bdrow"><span class="k" data-i18n="co_b2">Self-employment tax <em data-i18n="co_b2e">Seguro Social y Medicare · 15.3%</em></span><span class="v" id="oSE">$0</span></div>
+            <div class="bdrow"><span class="k"><span data-i18n="co_b2">Self-employment tax</span><em data-i18n="co_b2e">Seguro Social y Medicare · 15.3%</em></span><span class="v" id="oSE">$0</span></div>
             <div class="bdrow minus"><span class="k" data-i18n="co_b3">Deducción de la mitad del SE tax</span><span class="v" id="oHalfSE">$0</span></div>
-            <div class="bdrow minus"><span class="k" data-i18n="co_b4">Deducción QBI <em data-i18n="co_b4e">Hasta 20% del ingreso de negocio</em></span><span class="v" id="oQBI">$0</span></div>
+            <div class="bdrow minus"><span class="k"><span data-i18n="co_b4">Deducción QBI</span><em data-i18n="co_b4e">Hasta 20% del ingreso de negocio</em></span><span class="v" id="oQBI">$0</span></div>
             <div class="bdrow minus"><span class="k" data-i18n="co_b5">Deducción estándar</span><span class="v" id="oStd">$0</span></div>
             <div class="bdrow"><span class="k" data-i18n="co_b6">Ingreso gravable</span><span class="v" id="oTaxable">$0</span></div>
             <div class="bdrow"><span class="k" data-i18n="co_b7">Impuesto sobre la renta</span><span class="v" id="oIncTax">$0</span></div>
-            <div class="bdrow" id="rowAddl" style="display:none"><span class="k" data-i18n="co_b8">Medicare adicional <em data-i18n="co_b8e">0.9% sobre ingresos altos</em></span><span class="v" id="oAddl">$0</span></div>
+            <div class="bdrow minus" id="rowCTC" style="display:none"><span class="k"><span data-i18n="co_b_ctc">Crédito por hijos</span><em data-i18n="co_b_ctce">Reduce su impuesto sobre la renta</em></span><span class="v" id="oCTC">$0</span></div>
+            <div class="bdrow" id="rowAddl" style="display:none"><span class="k"><span data-i18n="co_b8">Medicare adicional</span><em data-i18n="co_b8e">0.9% sobre ingresos altos</em></span><span class="v" id="oAddl">$0</span></div>
             <div class="bdrow tot"><span class="k" data-i18n="co_b9">Total estimado</span><span class="v" id="oTotal2">$0</span></div>
             <div class="bdrow" id="rowPaid" style="display:none"><span class="k" data-i18n="co_b10">Ya pagado o retenido</span><span class="v" id="oPaid">$0</span></div>
+            <div class="bdrow minus" id="rowACTC" style="display:none"><span class="k"><span data-i18n="co_b_actc">Crédito reembolsable por hijos</span><em data-i18n="co_b_actce">Se le devuelve aunque pase de su impuesto</em></span><span class="v" id="oACTC">$0</span></div>
             <div class="bdrow tot" id="rowBal" style="display:none"><span class="k" id="lblBal" data-i18n="co_b11">Le faltaría por pagar</span><span class="v" id="oBal">$0</span></div>
           </div>
 
           <div class="flnote">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             <span data-i18n="co_fl">Florida no cobra impuesto estatal sobre la renta, así que este estimado es todo lo federal que le correspondería.</span>
+          </div>
+
+          <div class="flnote" id="noteKids" style="display:none">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span id="noteKidsTxt"></span>
           </div>
 
           <div class="warn" id="warnQBI">
@@ -470,7 +549,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 
     <div class="disc rv">
       <h4 data-i18n="dc_h">Léalo antes de tomar decisiones</h4>
-      <p data-i18n="dc_p">Esta calculadora da un <strong>estimado general</strong> con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. No incluye créditos (como el crédito por hijos), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.</p>
+      <p data-i18n="dc_p">Esta calculadora da un <strong>estimado general</strong> con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. Incluye el crédito por hijos de forma simplificada, pero no el crédito por ingreso del trabajo ni otros créditos (como el de $500 por otros dependientes), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.</p>
     </div>
   </div>
 </section>
@@ -517,7 +596,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq2_q">¿Qué gastos puedo poner en la casilla de gastos?</button>
-        <div class="faq-a"><p data-i18n="fq2_a">Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, gasolina y millaje del vehículo de trabajo, seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.</p></div>
+        <div class="faq-a"><p data-i18n="fq2_a">Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, el vehículo de trabajo (millas o gastos reales, no los dos; peajes y estacionamiento aparte), seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq3_q">¿Esto sirve si tengo una LLC?</button>
@@ -533,7 +612,19 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq6_q">¿Qué hago con este número?</button>
-        <div class="faq-a"><p data-i18n="fq6_a">Úselo para apartar dinero. Si divide el total entre cuatro, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.</p></div>
+        <div class="faq-a"><p data-i18n="fq6_a">Úselo para apartar dinero. Si divide entre cuatro lo que todavía le falta por pagar, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq7_q">¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?</button>
+        <div class="faq-a"><p data-i18n="fq7_a">Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq8_q">¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?</button>
+        <div class="faq-a"><p data-i18n="fq8_a">Hay dos métodos y se escoge uno: la tarifa por milla o los gastos reales del vehículo (gasolina, mantenimiento, seguro). Para 2026 el IRS fija 72.5 centavos por milla de enero a junio y 76 centavos de julio a diciembre. Los peajes y el estacionamiento del trabajo se pueden deducir aparte con cualquiera de los dos métodos. Lleve un registro de sus millas de trabajo, porque el IRS exige poder comprobar los gastos.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq9_q">¿La calculadora cuenta el crédito por hijos?</button>
+        <div class="faq-a"><p data-i18n="fq9_a">Sí, de forma simplificada. Para 2026 el crédito es de hasta $2,200 por cada hijo menor de 17 años. Si el crédito es mayor que su impuesto sobre la renta, una parte se le puede devolver: hasta $1,700 por hijo, según su ingreso del trabajo. Usted (y su cónyuge si declaran juntos) y cada hijo necesitan un número de Seguro Social válido para trabajar. El crédito se reduce cuando el ingreso pasa de $200,000 ($400,000 si declara en conjunto). No incluye el crédito por ingreso del trabajo ni el de $500 por otros dependientes.</p></div>
       </div>
     </div>
   </div>
@@ -660,6 +751,12 @@ function toggleFaq(btn){
    CALCULADORA — cifras oficiales del año fiscal 2026
    Fuente: IRS Rev. Proc. 2025-32 (tramos, deducción estándar,
    umbrales QBI) y IRS Pub. 926 (base salarial del Seguro Social).
+   Credito por hijos: Rev. Proc. 2025-32 ($2,200 por hijo, $1,700
+   reembolsable) e instrucciones del Schedule 8812 (reembolsable = 15%
+   del ingreso del trabajo sobre $2,500; se reduce $50 por cada $1,000
+   sobre $200,000, o $400,000 si declara en conjunto).
+   Millas: IRS IR-2025-128 (72.5 centavos, ene-jun 2026) e IR-2026-29
+   (76 centavos, jul-dic 2026).
    ============================================================ */
 const TY2026 = {
   std: { single:16100, mfj:32200, hoh:24150 },
@@ -671,10 +768,15 @@ const TY2026 = {
   seAdj:.9235, ssRate:.124, medRate:.029, ssWageBase:184500,
   addlMedRate:.009, addlMedThr:{ single:200000, mfj:250000, hoh:200000 },
   qbiRate:.20, qbiMinDed:400, qbiMinIncome:1000,
-  qbiThr:{ single:201750, mfj:403500, hoh:201750 }
+  qbiThr:{ single:201750, mfj:403500, hoh:201750 },
+  ctc:{ perChild:2200, refundPerChild:1700, earnedFloor:2500, earnedRate:.15,
+        thr:{ single:200000, mfj:400000, hoh:200000 }, cutPer1000:50 },
+  miles:{ h1:.725, h2:.76 },
+  estThreshold:1000
 };
 
 let status = 'single';
+let kids = 0;
 
 const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
 const parseMoney = s => { const n = parseFloat(String(s).replace(/[^0-9.]/g,'')); return isNaN(n) ? 0 : n; };
@@ -695,13 +797,20 @@ function compute(){
   const exp    = parseMoney(document.getElementById('inExp').value);
   const w2     = parseMoney(document.getElementById('inW2').value);
   const paid   = parseMoney(document.getElementById('inPaid').value);
+  const mi1    = parseMoney(document.getElementById('inMi1').value);
+  const mi2    = parseMoney(document.getElementById('inMi2').value);
+  const t      = translations[document.documentElement.lang] || translations.es;
+
+  // Deduccion por millas: la tarifa depende del periodo en que se manejo
+  const milesDed = mi1 * TY2026.miles.h1 + mi2 * TY2026.miles.h2;
+  document.getElementById('oMiles').textContent = fmt(milesDed);
 
   const hasInput = income > 0 || w2 > 0;
   document.getElementById('outEmpty').style.display = hasInput ? 'none' : 'block';
   document.getElementById('outBody').style.display  = hasInput ? 'block' : 'none';
   if(!hasInput) return;
 
-  const net    = Math.max(0, income - exp);
+  const net    = Math.max(0, income - exp - milesDed);
   const seBase = net * TY2026.seAdj;
 
   // Seguro Social: el salario W-2 ocupa primero la base anual
@@ -719,7 +828,7 @@ function compute(){
   const std = TY2026.std[status];
   const taxableBeforeQBI = Math.max(0, agi - std);
 
-  // QBI (Sección 199A), versión simplificada
+  // QBI (Seccion 199A), version simplificada
   let qbi = 0;
   if(net > 0 && taxableBeforeQBI > 0){
     qbi = Math.min(net * TY2026.qbiRate, taxableBeforeQBI * TY2026.qbiRate);
@@ -729,15 +838,37 @@ function compute(){
 
   const taxable = Math.max(0, agi - std - qbi);
   const incTax  = bracketTax(taxable, status);
-  const total   = incTax + seTax + addlMed;
+
+  // Credito por hijos menores de 17 (version simplificada).
+  // Se reduce $50 por cada $1,000 (o fraccion) sobre el umbral de ingresos;
+  // la parte no reembolsable solo puede bajar el impuesto sobre la renta
+  // (no el self-employment tax); la parte reembolsable es el menor de:
+  // lo que sobra del credito, $1,700 por hijo y 15% del ingreso del trabajo sobre $2,500.
+  const C       = TY2026.ctc;
+  const ctcCut  = Math.ceil(Math.max(0, agi - C.thr[status]) / 1000) * C.cutPer1000;
+  const ctc     = Math.max(0, kids * C.perChild - ctcCut);
+  const ctcUsed = Math.min(ctc, incTax);
+  const earned  = w2 + Math.max(0, net - halfSE);
+  const actc    = earned >= C.earnedFloor
+                ? Math.min(ctc - ctcUsed, kids * C.refundPerChild, C.earnedRate * (earned - C.earnedFloor))
+                : 0;
+  const incTaxNet = incTax - ctcUsed;
+
+  const total       = incTaxNet + seTax + addlMed;
   const totalIncome = net + w2;
-  const rate    = totalIncome > 0 ? (total / totalIncome) * 100 : 0;
-  const balance = total - paid;
+  const rate        = totalIncome > 0 ? (total / totalIncome) * 100 : 0;
+  const balance     = total - paid - actc;
+
+  // Pagos trimestrales: solo si, despues de lo retenido y de los creditos,
+  // se espera deber $1,000 o mas
+  const owed   = total - paid - actc;
+  const needsQ = owed >= TY2026.estThreshold;
 
   // ---- pintar ----
   const S = (id, v) => document.getElementById(id).textContent = v;
   S('oTotal', fmt(total));  S('oTotal2', fmt(total));
-  S('oQuarter', fmt(total / 4));
+  S('oQuarter', fmt(needsQ ? owed / 4 : 0));
+  S('lblQ', needsQ ? t.co_q_l : t.co_q_none);
   S('oRate', rate.toFixed(1).replace('.0','') + '%');
   S('oNet', fmt(net));
   S('oSE', fmt(seTax));
@@ -747,25 +878,35 @@ function compute(){
   S('oTaxable', fmt(taxable));
   S('oIncTax', fmt(incTax));
 
+  const rowCTC = document.getElementById('rowCTC');
+  rowCTC.style.display = ctcUsed > 0 ? 'flex' : 'none';
+  if(ctcUsed > 0) S('oCTC', '− ' + fmt(ctcUsed));
+
   const rowAddl = document.getElementById('rowAddl');
   rowAddl.style.display = addlMed > 0 ? 'flex' : 'none';
   if(addlMed > 0) S('oAddl', fmt(addlMed));
 
-  const rowPaid = document.getElementById('rowPaid'), rowBal = document.getElementById('rowBal');
-  if(paid > 0){
-    rowPaid.style.display = 'flex'; rowBal.style.display = 'flex';
-    S('oPaid', '− ' + fmt(paid));
+  const rowPaid = document.getElementById('rowPaid'), rowACTC = document.getElementById('rowACTC'), rowBal = document.getElementById('rowBal');
+  rowPaid.style.display = paid > 0 ? 'flex' : 'none';
+  if(paid > 0) S('oPaid', '− ' + fmt(paid));
+  rowACTC.style.display = actc > 0 ? 'flex' : 'none';
+  if(actc > 0) S('oACTC', '− ' + fmt(actc));
+  const showBal = paid > 0 || actc > 0;
+  rowBal.style.display = showBal ? 'flex' : 'none';
+  if(showBal){
     S('oBal', fmt(Math.abs(balance)));
-    const t = translations[document.documentElement.lang] || translations.es;
-    document.getElementById('lblBal').textContent = balance >= 0 ? t.co_b11 : t.co_b11b;
-  } else {
-    rowPaid.style.display = 'none'; rowBal.style.display = 'none';
+    S('lblBal', balance >= 0 ? t.co_b11 : t.co_b11b);
   }
+
+  // aviso del credito por hijos
+  const nk = document.getElementById('noteKids');
+  nk.style.display = kids > 0 ? 'flex' : 'none';
+  if(kids > 0) S('noteKidsTxt', t.co_kids_note + (kids >= 3 ? t.co_kids3 : ''));
 
   // barra proporcional sobre el ingreso total
   const base = Math.max(totalIncome, 1);
   document.getElementById('barSE').style.width  = Math.min(100, (seTax / base) * 100) + '%';
-  document.getElementById('barInc').style.width = Math.min(100, ((incTax + addlMed) / base) * 100) + '%';
+  document.getElementById('barInc').style.width = Math.min(100, ((incTaxNet + addlMed) / base) * 100) + '%';
   document.getElementById('barNet').style.width = Math.max(0, 100 - ((total / base) * 100)) + '%';
 
   document.getElementById('warnQBI').classList.toggle('show', overQbiThr);
@@ -776,7 +917,7 @@ function formatInput(el){
   const raw = el.value.replace(/[^0-9]/g,'');
   el.value = raw ? (+raw).toLocaleString('en-US') : '';
 }
-['inIncome','inExp','inW2','inPaid'].forEach(id => {
+['inIncome','inExp','inW2','inPaid','inMi1','inMi2'].forEach(id => {
   const el = document.getElementById(id);
   el.addEventListener('input', () => { formatInput(el); compute(); });
 });
@@ -788,9 +929,27 @@ document.querySelectorAll('#segStatus button').forEach(b => {
     compute();
   });
 });
+function syncKids(){ document.getElementById('kidsVal').textContent = kids; }
+document.getElementById('kidsMinus').addEventListener('click', () => { kids = Math.max(0, kids - 1);  syncKids(); compute(); });
+document.getElementById('kidsPlus').addEventListener('click',  () => { kids = Math.min(10, kids + 1); syncKids(); compute(); });
 function resetCalc(){
-  ['inIncome','inExp','inW2','inPaid'].forEach(id => document.getElementById(id).value = '');
+  ['inIncome','inExp','inW2','inPaid','inMi1','inMi2'].forEach(id => document.getElementById(id).value = '');
+  kids = 0; syncKids();
   compute();
+}
+/* Ejemplo: empleado con W-2 que ademas maneja Uber, jefe de familia con 2 hijos */
+function loadExample(){
+  status = 'hoh';
+  document.querySelectorAll('#segStatus button').forEach(b => b.classList.toggle('on', b.dataset.v === 'hoh'));
+  const set = (id, v) => { const el = document.getElementById(id); el.value = v; formatInput(el); };
+  set('inIncome','12000'); set('inExp','300'); set('inW2','45000'); set('inPaid','4500');
+  set('inMi1','3000'); set('inMi2','3000');
+  kids = 2; syncKids();
+  document.getElementById('milesBox').open = true;
+  compute();
+  if(window.matchMedia('(max-width:980px)').matches){
+    document.querySelector('.calc-out').scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
 
 /* ---------- Footer contact gate ---------- */
@@ -813,17 +972,26 @@ const translations = {
     ph_eyebrow:'Herramienta gratuita · Año fiscal 2026',
     ph_h1:'¿Cuánto voy a pagar',
     ph_h1b:'de impuestos este año?',
-    ph_lead:'Calcule en un minuto su impuesto federal estimado como trabajador independiente o dueño de negocio en Florida. Sin registro, sin dar su correo, sin compromiso.',
-    ph_t1:'Cifras oficiales del IRS 2026', ph_t2:'Incluye self-employment tax y QBI', ph_t3:'100% gratis y privado',
+    ph_lead:'Calcule en un minuto su impuesto federal estimado si trabaja por su cuenta, tiene un negocio, o maneja Uber o hace entregas además de su empleo. Sin registro, sin dar su correo, sin compromiso.',
+    ph_t1:'Cifras oficiales del IRS 2026', ph_t2:'Self-employment tax, QBI y crédito por hijos', ph_t3:'100% gratis y privado',
 
     cf_h2:'Sus números', cf_sub:'Aproximados está bien. Nada de esto se guarda ni se envía a ningún lado.',
     cf_status:'Estado civil para declarar',
     cf_single:'Soltero/a', cf_mfj:'Casado/a en conjunto', cf_hoh:'Jefe de familia',
-    cf_income:'Ingresos del negocio al año', cf_income_h:'Todo lo que facturó o cobró, antes de gastos.',
-    cf_exp:'Gastos del negocio al año', cf_exp_h:'Materiales, gasolina, herramientas, seguro, publicidad…',
-    cf_w2:'Salario W-2 al año (opcional)', cf_w2_h:'Si usted o su cónyuge también tienen un trabajo con W-2.',
-    cf_paid:'Impuesto ya pagado o retenido (opcional)', cf_paid_h:'Retenciones del W-2 y pagos trimestrales que ya hizo.',
+    cf_income:'Ingresos del negocio al año', cf_income_h:'Todo lo que cobró, propinas incluidas, antes de gastos.',
+    cf_exp:'Gastos del negocio al año', cf_exp_h:'Materiales, gasolina, herramientas, seguro, peajes… (si usa el cuadro de millas, no ponga aquí la gasolina)',
+    cf_w2:'Salario W-2 al año (opcional)', cf_w2_h:'Si usted o su cónyuge tienen un trabajo con W-2: la casilla 1 de su W-2.',
+    cf_paid:'Impuesto ya pagado o retenido (opcional)', cf_paid_h:'Lo retenido en su W-2 (casilla 2) y los pagos trimestrales que ya hizo.',
     cf_reset:'Empezar de nuevo',
+    pe_t:'¿Tiene un trabajo con W-2 y además maneja Uber, DoorDash o hace trabajo extra?',
+    pe_p:'Entonces esta calculadora es para usted: lo que gana manejando cuenta como trabajo independiente aunque tenga un empleo.',
+    pe_btn:'Ver un ejemplo: W-2, Uber y 2 hijos',
+    cf_kids:'Hijos menores de 17 años (opcional)', cf_kids_h:'Con número de Seguro Social. Cada uno da un crédito de hasta $2,200.',
+    mi_sum:'¿Maneja para Uber, DoorDash, Lyft o similar? Calcule sus millas',
+    mi_note:'Use millas o los gastos reales del vehículo (gasolina, mantenimiento), no los dos. Los peajes y el estacionamiento sí se suman aparte, en la casilla de gastos.',
+    mi_l1:'Millas de trabajo, enero–junio', mi_h1:'72.5 centavos por milla',
+    mi_l2:'Millas de trabajo, julio–diciembre', mi_h2:'76 centavos por milla',
+    mi_res:'Deducción por millas (se suma a sus gastos)',
 
     co_eyebrow:'Su estimado federal 2026',
     co_empty:'Escriba los ingresos de su negocio para ver su estimado.',
@@ -840,13 +1008,18 @@ const translations = {
     co_b8:'Medicare adicional', co_b8e:'0.9% sobre ingresos altos',
     co_b9:'Total estimado', co_b10:'Ya pagado o retenido',
     co_b11:'Le faltaría por pagar', co_b11b:'Le saldría a favor',
+    co_b_ctc:'Crédito por hijos', co_b_ctce:'Reduce su impuesto sobre la renta',
+    co_b_actc:'Crédito reembolsable por hijos', co_b_actce:'Se le devuelve aunque pase de su impuesto',
+    co_q_none:'Sin pagos trimestrales: le quedaría menos de $1,000 por pagar',
+    co_kids_note:'Para el crédito por hijos, usted (y su cónyuge si declara en conjunto) y cada hijo necesitan un número de Seguro Social válido para trabajar.',
+    co_kids3:' Con 3 o más hijos, la parte reembolsable puede ser mayor que la que se muestra aquí.',
     co_fl:'Florida no cobra impuesto estatal sobre la renta, así que este estimado es todo lo federal que le correspondería.',
     co_wq:'Su ingreso supera el límite donde la deducción QBI empieza a tener restricciones. El estimado podría ser más bajo de lo real — conviene revisarlo caso por caso.',
     co_cta:'Revisar mi caso con Yudit',
     co_cta_p:'Primera consulta gratuita. Le digo si este número cuadra con su situación real y qué deducciones podría estar dejando sobre la mesa.',
 
     dc_h:'Léalo antes de tomar decisiones',
-    dc_p:'Esta calculadora da un estimado general con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. No incluye créditos (como el crédito por hijos), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.',
+    dc_p:'Esta calculadora da un estimado general con las cifras oficiales del año fiscal 2026. No reemplaza una declaración ni una asesoría. Incluye el crédito por hijos de forma simplificada, pero no el crédito por ingreso del trabajo ni otros créditos (como el de $500 por otros dependientes), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, ni los impuestos de su condado o el Sales Tax de Florida. Su número real puede ser distinto. Úselo para planificar, no para presentar.',
 
     hw_eyebrow:'Para entenderlo',
     hw_h2:'Los tres impuestos que confunden a todo el mundo',
@@ -862,7 +1035,7 @@ const translations = {
     fq1_q:'¿Por qué me sale más alto de lo que esperaba?',
     fq1_a:'Casi siempre es por el self-employment tax. Mucha gente calcula solo el impuesto sobre la renta y se olvida de ese 15.3% de Seguro Social y Medicare, que en ingresos medianos suele ser el pedazo más grande de la cuenta. No es un error de la calculadora — es la parte que un empleado nunca ve porque su patrón se la descuenta.',
     fq2_q:'¿Qué gastos puedo poner en la casilla de gastos?',
-    fq2_a:'Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, gasolina y millaje del vehículo de trabajo, seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.',
+    fq2_a:'Todo lo que sea ordinario y necesario para su negocio: materiales, herramientas, el vehículo de trabajo (millas o gastos reales, no los dos; peajes y estacionamiento aparte), seguro comercial, publicidad, el porcentaje de su teléfono e internet que usa para trabajar, la oficina en casa, licencias, y lo que le paga a su contadora. Mientras mejor documentados estén sus gastos, menos impuesto paga — por eso el bookkeeping ordenado se paga solo.',
     fq3_q:'¿Esto sirve si tengo una LLC?',
     fq3_a:'Sí, si su LLC es de un solo miembro y declara con Schedule C, que es el caso más común. Si su LLC eligió tributar como S-Corp, el cálculo es distinto: usted se paga un sueldo razonable por W-2 y el resto sale como distribución, lo que cambia el self-employment tax por completo. Esa comparación vale la pena hacerla con números en mano.',
     fq4_q:'¿Guardan mis datos?',
@@ -870,7 +1043,14 @@ const translations = {
     fq5_q:'¿Y el impuesto de Florida?',
     fq5_a:'Florida no cobra impuesto estatal sobre la renta personal, así que de eso se libra. Pero ojo: eso no es lo mismo que el Sales Tax. Si su negocio vende productos o ciertos servicios, probablemente deba cobrar y reportar Sales Tax al estado, y esa es una obligación aparte que esta calculadora no cubre.',
     fq6_q:'¿Qué hago con este número?',
-    fq6_a:'Úselo para apartar dinero. Si divide el total entre cuatro, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.',
+    fq6_a:'Úselo para apartar dinero. Si divide entre cuatro lo que todavía le falta por pagar, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.',
+
+    fq7_q:'¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?',
+    fq7_a:'Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.',
+    fq8_q:'¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?',
+    fq8_a:'Hay dos métodos y se escoge uno: la tarifa por milla o los gastos reales del vehículo (gasolina, mantenimiento, seguro). Para 2026 el IRS fija 72.5 centavos por milla de enero a junio y 76 centavos de julio a diciembre. Los peajes y el estacionamiento del trabajo se pueden deducir aparte con cualquiera de los dos métodos. Lleve un registro de sus millas de trabajo, porque el IRS exige poder comprobar los gastos.',
+    fq9_q:'¿La calculadora cuenta el crédito por hijos?',
+    fq9_a:'Sí, de forma simplificada. Para 2026 el crédito es de hasta $2,200 por cada hijo menor de 17 años. Si el crédito es mayor que su impuesto sobre la renta, una parte se le puede devolver: hasta $1,700 por hijo, según su ingreso del trabajo. Usted (y su cónyuge si declaran juntos) y cada hijo necesitan un número de Seguro Social válido para trabajar. El crédito se reduce cuando el ingreso pasa de $200,000 ($400,000 si declara en conjunto). No incluye el crédito por ingreso del trabajo ni el de $500 por otros dependientes.',
 
     ct_h2:'Un estimado está bien. Un plan es mejor.',
     ct_p:'La calculadora le da el número. Yo le ayudo a bajarlo, a cumplir con el IRS y a dormir tranquilo el resto del año.',
@@ -889,17 +1069,26 @@ const translations = {
     ph_eyebrow:'Free tool · Tax year 2026',
     ph_h1:'How much will I owe',
     ph_h1b:'in taxes this year?',
-    ph_lead:'Estimate your federal taxes in one minute as a self-employed worker or business owner in Florida. No sign-up, no email, no strings attached.',
-    ph_t1:'Official IRS 2026 figures', ph_t2:'Includes self-employment tax and QBI', ph_t3:'100% free and private',
+    ph_lead:'Estimate your federal taxes in one minute if you work for yourself, run a business, or drive for Uber or deliver on top of a job. No sign-up, no email, no strings attached.',
+    ph_t1:'Official IRS 2026 figures', ph_t2:'Self-employment tax, QBI and child credit', ph_t3:'100% free and private',
 
     cf_h2:'Your numbers', cf_sub:'Rough figures are fine. Nothing here is saved or sent anywhere.',
     cf_status:'Filing status',
     cf_single:'Single', cf_mfj:'Married filing jointly', cf_hoh:'Head of household',
-    cf_income:'Annual business income', cf_income_h:'Everything you billed or collected, before expenses.',
-    cf_exp:'Annual business expenses', cf_exp_h:'Materials, gas, tools, insurance, advertising…',
-    cf_w2:'Annual W-2 wages (optional)', cf_w2_h:'If you or your spouse also hold a W-2 job.',
-    cf_paid:'Tax already paid or withheld (optional)', cf_paid_h:'W-2 withholding and quarterly payments already made.',
+    cf_income:'Annual business income', cf_income_h:'Everything you collected, tips included, before expenses.',
+    cf_exp:'Annual business expenses', cf_exp_h:'Materials, gas, tools, insurance, tolls… (if you use the miles box, do not put gas here)',
+    cf_w2:'Annual W-2 wages (optional)', cf_w2_h:'If you or your spouse hold a W-2 job: box 1 of your W-2.',
+    cf_paid:'Tax already paid or withheld (optional)', cf_paid_h:'Withholding on your W-2 (box 2) and any quarterly payments you already made.',
     cf_reset:'Start over',
+    pe_t:'Do you have a W-2 job and also drive for Uber, DoorDash or do side work?',
+    pe_p:'Then this calculator is for you: what you earn driving counts as self-employment income even if you have a job.',
+    pe_btn:'See an example: W-2, Uber and 2 kids',
+    cf_kids:'Children under 17 (optional)', cf_kids_h:'With a Social Security number. Each one gives a credit of up to $2,200.',
+    mi_sum:'Do you drive for Uber, DoorDash, Lyft or similar? Work out your miles',
+    mi_note:'Use miles or the actual vehicle costs (gas, maintenance), not both. Tolls and parking do get added separately, in the expenses box.',
+    mi_l1:'Work miles, January–June', mi_h1:'72.5 cents per mile',
+    mi_l2:'Work miles, July–December', mi_h2:'76 cents per mile',
+    mi_res:'Mileage deduction (added to your expenses)',
 
     co_eyebrow:'Your 2026 federal estimate',
     co_empty:'Enter your business income to see your estimate.',
@@ -916,13 +1105,18 @@ const translations = {
     co_b8:'Additional Medicare', co_b8e:'0.9% on higher earnings',
     co_b9:'Estimated total', co_b10:'Already paid or withheld',
     co_b11:'Balance you would still owe', co_b11b:'Estimated refund',
+    co_b_ctc:'Child tax credit', co_b_ctce:'Reduces your income tax',
+    co_b_actc:'Refundable child tax credit', co_b_actce:'Paid to you even if it exceeds your tax',
+    co_q_none:'No quarterly payments: you would owe less than $1,000',
+    co_kids_note:'For the child tax credit, you (and your spouse if filing jointly) and each child need a Social Security number valid for work.',
+    co_kids3:' With 3 or more children, the refundable part can be larger than what is shown here.',
     co_fl:'Florida has no state income tax, so this estimate covers everything you would owe federally.',
     co_wq:'Your income is above the point where the QBI deduction starts to be limited. The real figure could be higher than this estimate — it is worth reviewing case by case.',
     co_cta:'Review my case with Yudit',
     co_cta_p:'First consultation is free. I will tell you whether this number matches your real situation and which deductions you might be leaving on the table.',
 
     dc_h:'Read this before making decisions',
-    dc_p:'This calculator gives a general estimate using the official tax year 2026 figures. It does not replace a tax return or professional advice. It does not include credits (such as the child tax credit), itemized deductions, other types of income, S-Corp situations, county taxes or Florida Sales Tax. Your real number may differ. Use it to plan, not to file.',
+    dc_p:'This calculator gives a general estimate using the official tax year 2026 figures. It does not replace a tax return or professional advice. It includes the child tax credit in simplified form, but not the earned income credit or other credits (such as the $500 credit for other dependents), itemized deductions, other types of income, S-Corp situations, county taxes or Florida Sales Tax. Your real number may differ. Use it to plan, not to file.',
 
     hw_eyebrow:'Making sense of it',
     hw_h2:'The three taxes that confuse everyone',
@@ -938,7 +1132,7 @@ const translations = {
     fq1_q:'Why is it higher than I expected?',
     fq1_a:'It is almost always the self-employment tax. Many people calculate only the income tax and forget that 15.3% for Social Security and Medicare, which at middle incomes is usually the biggest piece of the bill. It is not a calculator error — it is the part an employee never sees because their employer withholds it.',
     fq2_q:'What can I count as business expenses?',
-    fq2_a:'Anything ordinary and necessary for your business: materials, tools, gas and mileage for your work vehicle, business insurance, advertising, the share of your phone and internet you use for work, the home office, licenses, and what you pay your accountant. The better documented your expenses, the less tax you pay — which is why tidy bookkeeping pays for itself.',
+    fq2_a:'Anything ordinary and necessary for your business: materials, tools, your work vehicle (mileage or actual costs, not both; tolls and parking on top), business insurance, advertising, the share of your phone and internet you use for work, the home office, licenses, and what you pay your accountant. The better documented your expenses, the less tax you pay — which is why tidy bookkeeping pays for itself.',
     fq3_q:'Does this work if I have an LLC?',
     fq3_a:'Yes, if your LLC has a single member and files with Schedule C, which is the most common case. If your LLC elected to be taxed as an S-Corp, the math is different: you pay yourself a reasonable W-2 salary and the rest comes out as a distribution, which changes the self-employment tax entirely. That comparison is worth running with real numbers.',
     fq4_q:'Do you store my data?',
@@ -946,7 +1140,14 @@ const translations = {
     fq5_q:'What about Florida tax?',
     fq5_a:'Florida has no personal state income tax, so you are spared that one. But careful: that is not the same as Sales Tax. If your business sells products or certain services, you probably need to collect and report Sales Tax to the state, and that is a separate obligation this calculator does not cover.',
     fq6_q:'What do I do with this number?',
-    fq6_a:'Use it to set money aside. Divide the total by four and that is roughly your quarterly payment. Many of our clients open a separate savings account and move that percentage every time they get paid — so April arrives without surprises. And if the number looks high, let us talk: there are almost always deductions going unclaimed.',
+    fq6_a:'Use it to set money aside. Divide what you still owe by four and that is roughly your quarterly payment. Many of our clients open a separate savings account and move that percentage every time they get paid — so April arrives without surprises. And if the number looks high, let us talk: there are almost always deductions going unclaimed.',
+
+    fq7_q:'What if I have a W-2 job and also drive for Uber or do deliveries?',
+    fq7_a:'This calculator is for you. What you earn driving counts as self-employment income even if you also have a job. You generally pay self-employment tax (15.3%) when your net self-employment earnings are $400 or more, on top of income tax. Enter what you earned driving as income, your expenses or miles, your W-2 wages, and what your employer withheld in the tax already paid field. Since your W-2 already withholds tax, you often do not need quarterly payments, but it depends on how much you would still owe.',
+    fq8_q:'How do I deduct miles if I drive for Uber, DoorDash or Lyft?',
+    fq8_a:'There are two methods and you pick one: the per-mile rate or the actual vehicle costs (gas, maintenance, insurance). For 2026 the IRS sets 72.5 cents per mile from January to June and 76 cents from July to December. Work tolls and parking can be deducted separately with either method. Keep a record of your work miles, because the IRS requires you to be able to substantiate your expenses.',
+    fq9_q:'Does the calculator count the child tax credit?',
+    fq9_a:'Yes, in simplified form. For 2026 the credit is up to $2,200 per child under 17. If the credit is larger than your income tax, part of it can be refunded: up to $1,700 per child, depending on your earned income. You (and your spouse if filing jointly) and each child need a Social Security number valid for work. The credit is reduced when income goes above $200,000 ($400,000 if filing jointly). It does not include the earned income credit or the $500 credit for other dependents.',
 
     ct_h2:'An estimate is good. A plan is better.',
     ct_p:'The calculator gives you the number. I help you bring it down, stay right with the IRS and sleep easy the rest of the year.',
