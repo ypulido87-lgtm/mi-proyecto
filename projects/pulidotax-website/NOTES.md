@@ -33,6 +33,14 @@ Antes vivía en `C:\Users\yudit\Downloads\`. Ahora todo el proyecto está aquí:
 - Los números salen del cálculo real verificado. **Si se cambian las cifras fiscales hay que actualizarlos en tres sitios: la calculadora, la tarjeta del inicio y el `index.md`.**
 - La página de inicio tiene ahora 3 enlaces a cada calculadora (menú, botón de la tarjeta, pie).
 
+## Hero de la página de inicio: las herramientas ya no están ocultas (24 oct 2026)
+Yudit vio que las calculadoras estaban "un poco ocultas": solo estaban en el menú y en una banda más abajo. **Cambios en `index.html`:**
+- **Franja `.hero-tools` bajo los botones principales:** etiqueta «Gratis · sin registro», dos tarjetas-botón en lenguaje de acción («Calcule sus impuestos» / «Calcule su Sales Tax», con subtítulo «Independientes, W-2 y Uber» y «Los 67 condados de Florida») y un enlace «…o lea nuestras guías del IRS en español →» al blog. Traducida a EN. 3 enlaces nuevos al blog en la página de inicio (menú, hero, pie).
+- **Compactación para que quepa sin bajar:** margen superior del hero 190→142 px, `h1` de 64→58 px (acento 46→42), márgenes menores. Medido: a 1280×720 y 1366×768 los botones y las dos tarjetas quedan dentro de la pantalla; a 901–1180 px las tarjetas se apilan.
+- **Móvil (≤900 px):** se quitó `.hero-figure{order:-1}` → **el texto va antes que la foto** (antes la primera pantalla del teléfono era solo la foto). Márgenes del hero reducidos y, a ≤600 px, los dos botones principales van lado a lado (`flex:1`, `nowrap`). Medido a 375×812: título, mensaje, ambos botones, las dos calculadoras y el enlace al blog caben en la primera pantalla.
+- **Probado y descartado:** una fila de chips con los 4 servicios en el hero. Ocupaba ~86 px y empujaba las calculadoras fuera de la pantalla; los servicios siguen en «Ver servicios» y en el menú. Las tarjetas de la primera versión salían de 118 px por el texto largo — se acortaron los textos (ahora 60 px).
+- **Si se agrega más al hero, volver a medir** que la franja siga entrando en ~700 px de alto.
+
 ## Calculadora de impuestos: ahora para W-2 + Uber, con hijos y millas (24 oct 2026)
 Motivo: un amigo de Yudit (persona natural, W-2, dependientes, hace Uber) entró y no supo usarla. Probada con su perfil, **la calculadora daba una respuesta equivocada**: no tenía campo para dependientes, y para una familia así el error es de miles de dólares (con 2 hijos, de unos $750 a favor a ~$5,100 a favor).
 
