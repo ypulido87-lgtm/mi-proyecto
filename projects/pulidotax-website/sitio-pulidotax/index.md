@@ -33,7 +33,7 @@ Ver todos los servicios: https://pulidotax.com/servicios.html
 Ambas son gratis, no piden correo ni registro, y el cálculo ocurre en el navegador del visitante.
 
 ### Calculadora de impuestos (federal)
-Para trabajadores independientes y dueños de pequeños negocios. Incluye el self-employment tax y la deducción QBI, y dice cuánto apartar cada trimestre.
+Para trabajadores independientes, dueños de pequeños negocios y quien maneja Uber o hace entregas además de su empleo. Incluye el self-employment tax, la deducción QBI, la deducción por millas y el crédito por hijos.
 
 Ejemplo (contratista soltero en Orlando): $60,000 facturados menos $15,000 de gastos dan un self-employment tax de $6,358 y un impuesto sobre la renta de $2,221 — unos $2,145 a pagar cada trimestre.
 
