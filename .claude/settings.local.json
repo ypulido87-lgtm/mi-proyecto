@@ -101,7 +101,10 @@
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/dry_run.py)",
       "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('  status:',d['status'],'| errores:',d['errors'],'| ruta:',d['data']['path']\\)\")",
       "Bash(python -I /c/Claude/projects/pulidotax-website/herramientas/prueba-en-seco-semanal.py)",
-      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/save_tool.py)"
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/save_tool.py)",
+      "Bash(cp /c/Claude/projects/pulidotax-website/sitio-pulidotax/calculadora.html /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/calculadora-antes-qbi.html)",
+      "Bash(cp /c/Claude/projects/pulidotax-website/sitio-pulidotax/calculadora.md /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/calculadora-antes-qbi.md)",
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/patch_calc2.py)"
     ]
   }
 }
