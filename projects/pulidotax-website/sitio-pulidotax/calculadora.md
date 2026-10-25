@@ -105,12 +105,21 @@ Sí, si la LLC es de un solo miembro y declara con Schedule C, que es el caso m�
 **¿Se paga impuesto estatal sobre la renta en Florida?**
 No. Florida no cobra impuesto estatal sobre la renta personal, así que un residente de Florida solo paga el impuesto federal. Esto es distinto del Sales Tax, que sí aplica a muchos negocios de Florida y es una obligación aparte.
 
+**¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?**
+La calculadora es para esa situación. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo, y por lo general paga el self-employment tax cuando la ganancia neta es de $400 o más, además del impuesto sobre la renta.
+
+**¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?**
+Se escoge un método: la tarifa por milla (72.5 centavos de enero a junio y 76 centavos de julio a diciembre de 2026) o los gastos reales del vehículo. Peajes y estacionamiento se deducen aparte con cualquiera. Conviene llevar un registro de las millas de trabajo.
+
+**¿La calculadora cuenta el crédito por hijos?**
+Sí, de forma simplificada: hasta $2,200 por hijo menor de 17, con una parte reembolsable de hasta $1,700 por hijo. Se necesita un número de Seguro Social válido para trabajar del contribuyente y de cada hijo. No incluye el crédito por ingreso del trabajo.
+
 **¿Guardan los datos que se escriben?**
 No. El cálculo ocurre dentro del navegador del visitante. Nada se envía a un servidor, nada se almacena y no se pide correo ni nombre.
 
 ## Aviso importante
 
-Esta calculadora da un estimado general con las cifras oficiales del año fiscal 2026. No reemplaza una declaración de impuestos ni una asesoría profesional. No incluye créditos (como el crédito por hijos), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, impuestos de condado ni el Sales Tax de Florida. El número real puede ser distinto. Sirve para planificar, no para presentar.
+Esta calculadora da un estimado general con las cifras oficiales del año fiscal 2026. No reemplaza una declaración de impuestos ni una asesoría profesional. Incluye el crédito por hijos de forma simplificada, pero no el crédito por ingreso del trabajo ni otros créditos (como el de $500 por otros dependientes), deducciones detalladas, otros tipos de ingreso, situaciones de S-Corp, impuestos de condado ni el Sales Tax de Florida. El número real puede ser distinto. Sirve para planificar, no para presentar.
 
 ## Revisar su caso
 
