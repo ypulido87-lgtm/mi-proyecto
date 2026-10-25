@@ -85,7 +85,8 @@
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/blog/blogmd.py blog.md /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/blog/articulos.json /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/blog/out/_slugs.json)",
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/blog/mkplantilla.py /c/Claude/projects/pulidotax-website/sitio-pulidotax/ultimo-pago-estimado-15-de-enero-2027.html /c/Claude/projects/pulidotax-website/plantilla-articulo.html)",
       "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/blog/probar_plantilla.py /c/Claude/projects/pulidotax-website/plantilla-articulo.html /c/Claude/projects/pulidotax-website/sitio-pulidotax/articulo-de-prueba.html)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(python -I /c/Users/yudit/AppData/Local/Temp/claude/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/scratchpad/ctc.py /c/Users/yudit/.claude/projects/C--Claude/6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce/tool-results/webfetch-1792716990477-qh0vcl.pdf)"
     ]
   }
 }
