@@ -109,8 +109,26 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
 .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center;position:relative}
 .hero h1{font-size:clamp(40px,5.4vw,64px);margin:22px 0 8px;letter-spacing:-.01em}
 .hero .h1-accent{display:block;font-family:var(--font-d);font-style:italic;font-weight:500;color:var(--gold);font-size:clamp(30px,4vw,46px);margin:4px 0 26px;line-height:1.2}
-.hero p.lead{margin-bottom:38px}
+.hero p.lead{margin-bottom:22px}
 .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 36px;list-style:none}
+.hero-chips a{display:inline-block;padding:7px 15px;border:1px solid rgba(13,43,69,.16);border-radius:999px;font-size:13.5px;font-weight:600;color:var(--blue-mid);background:rgba(255,255,255,.62);transition:border-color .3s,color .3s,transform .3s var(--ease)}
+.hero-chips a:hover{border-color:var(--gold);color:var(--gold-mid);transform:translateY(-2px)}
+.hero-tools{margin-top:34px;padding-top:26px;border-top:1px solid rgba(13,43,69,.12)}
+.ht-lbl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-mid);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.ht-lbl::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(184,115,51,.4),transparent)}
+.ht-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ht-card{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid rgba(13,43,69,.1);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),border-color .3s,box-shadow .3s}
+.ht-card:hover{transform:translateY(-4px);border-color:rgba(184,115,51,.5);box-shadow:var(--shadow-md)}
+.ht-ic{width:42px;height:42px;border-radius:10px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ht-ic svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ht-tx{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.ht-tx strong{font-size:14.5px;color:var(--blue);font-weight:700}
+.ht-tx em{font-style:normal;font-size:12.5px;color:#6B7A88;margin-top:2px}
+.ht-ar{margin-left:auto;color:var(--gold);font-weight:700;font-size:17px;transition:transform .3s var(--ease)}
+.ht-card:hover .ht-ar{transform:translateX(4px)}
+@media(min-width:901px) and (max-width:1180px){.ht-row{grid-template-columns:1fr}}
+@media(max-width:600px){.ht-row{grid-template-columns:1fr}.hero-chips{margin-bottom:30px}}
 .hero-figure{position:relative;justify-self:center}
 .hero-frame{position:relative;border-radius:var(--radius);padding:0}
 .hero-frame::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border:1.5px solid rgba(184,115,51,.55);border-radius:var(--radius);pointer-events:none}
@@ -325,9 +343,30 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
         <span class="h1-accent" data-i18n="hero_h1b">Su negocio listo para crecer.</span>
       </h1>
       <p class="lead rv d2" data-i18n="hero_lead">Con más de 15 años de experiencia contable en tres países, le ayudo a ordenar sus finanzas, cumplir con el IRS y tomar decisiones con confianza. Todo en español.</p>
+      <ul class="hero-chips rv d2">
+        <li><a href="servicios.html" data-i18n="svc1_t">Bookkeeping mensual</a></li>
+        <li><a href="servicios.html" data-i18n="svc2_t">Declaración de impuestos</a></li>
+        <li><a href="servicios.html" data-i18n="svc3_t">Contabilidad para LLC y Corp</a></li>
+        <li><a href="servicios.html" data-i18n="svc4_t">Nómina (Payroll)</a></li>
+      </ul>
       <div class="hero-cta rv d3">
         <a href="contacto.html" class="btn btn-gold" data-i18n="hero_btn1">Consulta gratuita</a>
         <a href="servicios.html" class="btn btn-ghost" data-i18n="hero_btn2">Ver servicios</a>
+      </div>
+      <div class="hero-tools rv d4">
+        <div class="ht-lbl" data-i18n="ht_lbl">Herramientas gratis · sin registro</div>
+        <div class="ht-row">
+          <a href="calculadora.html" class="ht-card">
+            <span class="ht-ic"><svg viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><line x1="8.5" y1="7" x2="15.5" y2="7"/><line x1="8.5" y1="12" x2="8.5" y2="12.01"/><line x1="12" y1="12" x2="12" y2="12.01"/><line x1="15.5" y1="12" x2="15.5" y2="12.01"/><line x1="8.5" y1="16" x2="8.5" y2="16.01"/><line x1="12" y1="16" x2="12" y2="16.01"/><line x1="15.5" y1="16" x2="15.5" y2="16.01"/></svg></span>
+            <span class="ht-tx"><strong data-i18n="ht1_t">Calculadora de impuestos</strong><em data-i18n="ht1_s">¿Cuánto voy a deber? Independientes, W-2 y Uber</em></span>
+            <span class="ht-ar" aria-hidden="true">→</span>
+          </a>
+          <a href="sales-tax.html" class="ht-card">
+            <span class="ht-ic"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
+            <span class="ht-tx"><strong data-i18n="ht2_t">Calculadora de Sales Tax</strong><em data-i18n="ht2_s">¿Cuánto cobro? Los 67 condados de Florida</em></span>
+            <span class="ht-ar" aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="hero-figure rv d2">
@@ -644,6 +683,9 @@ const translations = {
     hero_h1b:'Su negocio listo para crecer.',
     hero_lead:'Con más de 15 años de experiencia contable en tres países, le ayudo a ordenar sus finanzas, cumplir con el IRS y tomar decisiones con confianza. Todo en español.',
     hero_btn1:'Consulta gratuita', hero_btn2:'Ver servicios',
+    ht_lbl:'Herramientas gratis · sin registro',
+    ht1_t:'Calculadora de impuestos', ht1_s:'¿Cuánto voy a deber? Independientes, W-2 y Uber',
+    ht2_t:'Calculadora de Sales Tax', ht2_s:'¿Cuánto cobro? Los 67 condados de Florida',
     hero_card:'Fundadora · +15 años de experiencia',
     stat1:'Años de experiencia', stat2:'Países', stat3:'Sistemas contables dominados', stat4:'Atención en español',
     cred1:'Licenciada en Economía', cred4:'IRS Income Tax Course', cred5:'LLC registrada en Florida',
@@ -708,6 +750,9 @@ const translations = {
     hero_h1b:'Your business ready to grow.',
     hero_lead:'With over 15 years of accounting experience across three countries, I help you organize your finances, stay compliant with the IRS, and make decisions with confidence. Fully bilingual service.',
     hero_btn1:'Free consultation', hero_btn2:'View services',
+    ht_lbl:'Free tools · no sign-up',
+    ht1_t:'Tax calculator', ht1_s:'How much will I owe? Self-employed, W-2 and Uber',
+    ht2_t:'Sales Tax calculator', ht2_s:'What do I charge? All 67 Florida counties',
     hero_card:'Founder · 15+ years of experience',
     stat1:'Years of experience', stat2:'Countries', stat3:'Accounting systems mastered', stat4:'Spanish-language service',
     cred1:'Bachelor’s in Economics', cred4:'IRS Income Tax Course', cred5:'Florida-registered LLC',
