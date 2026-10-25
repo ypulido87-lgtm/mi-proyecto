@@ -97,7 +97,7 @@ Paga dos impuestos federales: el self-employment tax, que es 15.3% sobre el 92.3
 Casi siempre es por el self-employment tax. Mucha gente calcula solo el impuesto sobre la renta y olvida ese 15.3% de Seguro Social y Medicare, que en ingresos medianos suele ser el componente más grande.
 
 **¿Qué gastos cuentan como gastos del negocio?**
-Todo lo ordinario y necesario para el negocio: materiales, herramientas, gasolina y millaje del vehículo de trabajo, seguro comercial, publicidad, el porcentaje del teléfono e internet usado para trabajar, la oficina en casa, licencias y los honorarios del contador.
+Todo lo ordinario y necesario para el negocio: materiales, herramientas, el vehículo de trabajo (millas o gastos reales, no los dos; peajes y estacionamiento aparte), seguro comercial, publicidad, el porcentaje del teléfono e internet usado para trabajar, la oficina en casa, licencias y los honorarios del contador.
 
 **¿Sirve si tengo una LLC?**
 Sí, si la LLC es de un solo miembro y declara con Schedule C, que es el caso más común. Si la LLC eligió tributar como S-Corp el cálculo es distinto: el dueño se paga un sueldo razonable por W-2 y el resto sale como distribución, lo que cambia el self-employment tax por completo.
