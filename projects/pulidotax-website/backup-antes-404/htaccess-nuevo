@@ -65,6 +65,9 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule ^index\.php$ / [R=301,L]
+# WordPress desactivado: sus paginas de acceso y archivos responden 404 (se reactiva quitando estas 2 lineas)
+RewriteRule ^(wp-admin|wp-json|wp-content/(plugins|themes|uploads)/.*\.php)(/|$) - [R=404,L]
+RewriteRule ^(wp-[a-z-]+|xmlrpc|readme|license)\.(php|html|txt)$ - [R=404,L]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([a-z0-9-]+)$ $1.html [L]
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
