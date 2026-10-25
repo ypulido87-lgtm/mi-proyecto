@@ -18,7 +18,7 @@ Usted indica sus ingresos del negocio o de manejar, sus gastos o millas de traba
 
 ## Si tiene un trabajo con W-2 y además maneja Uber, DoorDash o Lyft
 
-Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto federal sobre la renta.
+Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando las ganancias netas del trabajo independiente (el 92.35% de la ganancia) son de $400 o más, además del impuesto federal sobre la renta.
 
 Cómo llenar la calculadora:
 
@@ -71,9 +71,11 @@ Fuente: IRS Rev. Proc. 2025-32 (tramos, deducción estándar y umbrales de la Se
 - Base salarial del Seguro Social 2026: $184,500 (la porción de Medicare no tiene tope)
 - Medicare adicional: 0.9% sobre ingresos de más de $200,000 (soltero/a y jefe/a de familia) o $250,000 (casado/a en conjunto)
 - La mitad del self-employment tax es deducible al calcular el ingreso ajustado
+- Solo aplica si las ganancias netas de trabajo independiente (el 92.35% de la ganancia neta) llegan a $400 o más; por debajo de eso es $0
 
 ### Deducción QBI (Sección 199A)
 - Hasta 20% del ingreso calificado de negocio, permanente desde la ley de 2025
+- El ingreso calificado es la ganancia neta menos la mitad del self-employment tax; la deducción es el menor entre el 20% de ese monto y el 20% del ingreso gravable antes del QBI
 - Deducción mínima de $400 para quienes tengan al menos $1,000 de ingreso calificado (nuevo en 2026)
 - Umbral donde empiezan las restricciones: $403,500 (casado/a en conjunto) y $201,750 (resto de declarantes)
 
@@ -106,7 +108,7 @@ Sí, si la LLC es de un solo miembro y declara con Schedule C, que es el caso m�
 No. Florida no cobra impuesto estatal sobre la renta personal, así que un residente de Florida solo paga el impuesto federal. Esto es distinto del Sales Tax, que sí aplica a muchos negocios de Florida y es una obligación aparte.
 
 **¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?**
-La calculadora es para esa situación. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo, y por lo general paga el self-employment tax cuando la ganancia neta es de $400 o más, además del impuesto sobre la renta.
+La calculadora es para esa situación. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo, y por lo general paga el self-employment tax cuando las ganancias netas (el 92.35% de la ganancia) son de $400 o más, además del impuesto sobre la renta.
 
 **¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?**
 Se escoge un método: la tarifa por milla (72.5 centavos de enero a junio y 76 centavos de julio a diciembre de 2026) o los gastos reales del vehículo. Peajes y estacionamiento se deducen aparte con cualquiera. Conviene llevar un registro de las millas de trabajo.

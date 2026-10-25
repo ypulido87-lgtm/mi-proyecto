@@ -52,7 +52,7 @@
     {
       "@type": "Question",
       "name": "¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto federal sobre la renta. En la calculadora ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando las ganancias netas del trabajo independiente (el 92.35% de la ganancia) son de $400 o más, además del impuesto federal sobre la renta. En la calculadora ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado." }
     },
     {
       "@type": "Question",
@@ -511,7 +511,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
             <div class="bdrow"><span class="k" data-i18n="co_b1">Ganancia neta del negocio</span><span class="v" id="oNet">$0</span></div>
             <div class="bdrow"><span class="k"><span data-i18n="co_b2">Self-employment tax</span><em data-i18n="co_b2e">Seguro Social y Medicare · 15.3%</em></span><span class="v" id="oSE">$0</span></div>
             <div class="bdrow minus"><span class="k" data-i18n="co_b3">Deducción de la mitad del SE tax</span><span class="v" id="oHalfSE">$0</span></div>
-            <div class="bdrow minus"><span class="k"><span data-i18n="co_b4">Deducción QBI</span><em data-i18n="co_b4e">Hasta 20% del ingreso de negocio</em></span><span class="v" id="oQBI">$0</span></div>
+            <div class="bdrow minus"><span class="k"><span data-i18n="co_b4">Deducción QBI</span><em data-i18n="co_b4e">Hasta 20% de la ganancia, tras la mitad del SE tax</em></span><span class="v" id="oQBI">$0</span></div>
             <div class="bdrow minus"><span class="k" data-i18n="co_b5">Deducción estándar</span><span class="v" id="oStd">$0</span></div>
             <div class="bdrow"><span class="k" data-i18n="co_b6">Ingreso gravable</span><span class="v" id="oTaxable">$0</span></div>
             <div class="bdrow"><span class="k" data-i18n="co_b7">Impuesto sobre la renta</span><span class="v" id="oIncTax">$0</span></div>
@@ -616,7 +616,7 @@ h1,h2,h3{font-family:var(--font-d);color:var(--blue);font-weight:600;line-height
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq7_q">¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?</button>
-        <div class="faq-a"><p data-i18n="fq7_a">Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.</p></div>
+        <div class="faq-a"><p data-i18n="fq7_a">Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando las ganancias netas del trabajo independiente (el 92.35% de la ganancia) son de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" data-i18n="fq8_q">¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?</button>
@@ -765,7 +765,7 @@ const TY2026 = {
     mfj:    [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]],
     hoh:    [[17700,.10],[67450,.12],[105700,.22],[201750,.24],[256200,.32],[640600,.35],[Infinity,.37]]
   },
-  seAdj:.9235, ssRate:.124, medRate:.029, ssWageBase:184500,
+  seAdj:.9235, seMin:400, ssRate:.124, medRate:.029, ssWageBase:184500,
   addlMedRate:.009, addlMedThr:{ single:200000, mfj:250000, hoh:200000 },
   qbiRate:.20, qbiMinDed:400, qbiMinIncome:1000,
   qbiThr:{ single:201750, mfj:403500, hoh:201750 },
@@ -813,28 +813,35 @@ function compute(){
   const net    = Math.max(0, income - exp - milesDed);
   const seBase = net * TY2026.seAdj;
 
+  // El self-employment tax solo existe si las ganancias netas de trabajo independiente
+  // (92.35% de la ganancia neta) llegan a $400 o mas; por debajo de eso es $0
+  const seEarn = seBase >= TY2026.seMin ? seBase : 0;
+
   // Seguro Social: el salario W-2 ocupa primero la base anual
   const ssRoom = Math.max(0, TY2026.ssWageBase - w2);
-  const ssTax  = Math.min(seBase, ssRoom) * TY2026.ssRate;
-  const medTax = seBase * TY2026.medRate;
-  const seTax  = seBase > 0 ? ssTax + medTax : 0;
+  const ssTax  = Math.min(seEarn, ssRoom) * TY2026.ssRate;
+  const medTax = seEarn * TY2026.medRate;
+  const seTax  = seEarn > 0 ? ssTax + medTax : 0;
   const halfSE = seTax / 2;
 
   // Medicare adicional 0.9%
   const addlThr = TY2026.addlMedThr[status];
-  const addlMed = Math.max(0, (seBase + w2) - addlThr) * TY2026.addlMedRate;
+  const addlMed = Math.max(0, (seEarn + w2) - addlThr) * TY2026.addlMedRate;
 
   const agi = Math.max(0, net + w2 - halfSE);
   const std = TY2026.std[status];
   const taxableBeforeQBI = Math.max(0, agi - std);
 
   // QBI (Seccion 199A), version simplificada
+  // Base del QBI: ganancia neta menos la deduccion de la mitad del self-employment tax.
+  // La deduccion es el menor entre 20% de esa base y 20% del ingreso gravable antes de QBI.
+  const qbiBase = Math.max(0, net - halfSE);
   let qbi = 0;
-  if(net > 0 && taxableBeforeQBI > 0){
-    qbi = Math.min(net * TY2026.qbiRate, taxableBeforeQBI * TY2026.qbiRate);
-    if(net >= TY2026.qbiMinIncome) qbi = Math.max(qbi, Math.min(TY2026.qbiMinDed, taxableBeforeQBI));
+  if(qbiBase > 0 && taxableBeforeQBI > 0){
+    qbi = Math.min(qbiBase * TY2026.qbiRate, taxableBeforeQBI * TY2026.qbiRate);
+    if(qbiBase >= TY2026.qbiMinIncome) qbi = Math.max(qbi, Math.min(TY2026.qbiMinDed, taxableBeforeQBI));
   }
-  const overQbiThr = net > 0 && agi > TY2026.qbiThr[status];
+  const overQbiThr = qbiBase > 0 && agi > TY2026.qbiThr[status];
 
   const taxable = Math.max(0, agi - std - qbi);
   const incTax  = bracketTax(taxable, status);
@@ -1002,7 +1009,7 @@ const translations = {
     co_b1:'Ganancia neta del negocio',
     co_b2:'Self-employment tax', co_b2e:'Seguro Social y Medicare · 15.3%',
     co_b3:'Deducción de la mitad del SE tax',
-    co_b4:'Deducción QBI', co_b4e:'Hasta 20% del ingreso de negocio',
+    co_b4:'Deducción QBI', co_b4e:'Hasta 20% de la ganancia, tras la mitad del SE tax',
     co_b5:'Deducción estándar',
     co_b6:'Ingreso gravable', co_b7:'Impuesto sobre la renta',
     co_b8:'Medicare adicional', co_b8e:'0.9% sobre ingresos altos',
@@ -1046,7 +1053,7 @@ const translations = {
     fq6_a:'Úselo para apartar dinero. Si divide entre cuatro lo que todavía le falta por pagar, ese es aproximadamente su pago trimestral. Muchos de nuestros clientes abren una cuenta de ahorro aparte y mueven ese porcentaje cada vez que cobran — así llega abril sin sustos. Y si el número le parece alto, conversemos: casi siempre hay deducciones que se están quedando sin reclamar.',
 
     fq7_q:'¿Qué pasa si tengo un trabajo con W-2 y además manejo Uber o hago entregas?',
-    fq7_a:'Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando la ganancia neta del trabajo independiente es de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.',
+    fq7_a:'Esta calculadora es para usted. Lo que gana manejando cuenta como trabajo independiente aunque también tenga un empleo. Por lo general se paga el self-employment tax (15.3%) cuando las ganancias netas del trabajo independiente (el 92.35% de la ganancia) son de $400 o más, además del impuesto sobre la renta. Ponga lo que ganó manejando en ingresos, sus gastos o millas, su salario W-2 y lo que su empleador le retuvo en el campo de impuesto ya pagado. Como el W-2 ya retiene impuesto, muchas veces no hacen falta pagos trimestrales, pero depende de cuánto le quede por pagar.',
     fq8_q:'¿Cómo deduzco las millas si manejo para Uber, DoorDash o Lyft?',
     fq8_a:'Hay dos métodos y se escoge uno: la tarifa por milla o los gastos reales del vehículo (gasolina, mantenimiento, seguro). Para 2026 el IRS fija 72.5 centavos por milla de enero a junio y 76 centavos de julio a diciembre. Los peajes y el estacionamiento del trabajo se pueden deducir aparte con cualquiera de los dos métodos. Lleve un registro de sus millas de trabajo, porque el IRS exige poder comprobar los gastos.',
     fq9_q:'¿La calculadora cuenta el crédito por hijos?',
@@ -1099,7 +1106,7 @@ const translations = {
     co_b1:'Net business profit',
     co_b2:'Self-employment tax', co_b2e:'Social Security and Medicare · 15.3%',
     co_b3:'Deduction for half of SE tax',
-    co_b4:'QBI deduction', co_b4e:'Up to 20% of business income',
+    co_b4:'QBI deduction', co_b4e:'Up to 20% of profit, after half of the SE tax',
     co_b5:'Standard deduction',
     co_b6:'Taxable income', co_b7:'Income tax',
     co_b8:'Additional Medicare', co_b8e:'0.9% on higher earnings',
@@ -1143,7 +1150,7 @@ const translations = {
     fq6_a:'Use it to set money aside. Divide what you still owe by four and that is roughly your quarterly payment. Many of our clients open a separate savings account and move that percentage every time they get paid — so April arrives without surprises. And if the number looks high, let us talk: there are almost always deductions going unclaimed.',
 
     fq7_q:'What if I have a W-2 job and also drive for Uber or do deliveries?',
-    fq7_a:'This calculator is for you. What you earn driving counts as self-employment income even if you also have a job. You generally pay self-employment tax (15.3%) when your net self-employment earnings are $400 or more, on top of income tax. Enter what you earned driving as income, your expenses or miles, your W-2 wages, and what your employer withheld in the tax already paid field. Since your W-2 already withholds tax, you often do not need quarterly payments, but it depends on how much you would still owe.',
+    fq7_a:'This calculator is for you. What you earn driving counts as self-employment income even if you also have a job. You generally pay self-employment tax (15.3%) when your net self-employment earnings (92.35% of your profit) are $400 or more, on top of income tax. Enter what you earned driving as income, your expenses or miles, your W-2 wages, and what your employer withheld in the tax already paid field. Since your W-2 already withholds tax, you often do not need quarterly payments, but it depends on how much you would still owe.',
     fq8_q:'How do I deduct miles if I drive for Uber, DoorDash or Lyft?',
     fq8_a:'There are two methods and you pick one: the per-mile rate or the actual vehicle costs (gas, maintenance, insurance). For 2026 the IRS sets 72.5 cents per mile from January to June and 76 cents from July to December. Work tolls and parking can be deducted separately with either method. Keep a record of your work miles, because the IRS requires you to be able to substantiate your expenses.',
     fq9_q:'Does the calculator count the child tax credit?',
