@@ -164,3 +164,8 @@ Con esto, el flujo de "editar y subir manualmente por File Manager" que hacían 
 
 ## Más contexto
 Memoria completa del proyecto (reglas de la dueña, historial, causa de fallos pasados, formulario de contacto, Google Business Profile): `project_website_pulido_tax.md` en la memoria de Claude.
+
+## 25 oct 2026 — correcciones de calculadora, correo y og:image (publicado)
+- calculadora.html: base del QBI = ganancia neta − mitad del SE tax (deducción = menor entre 20% de la base y 20% del gravable antes de QBI; mínimo $400 evaluado sobre esa base); SE tax = $0 si neta × 0.9235 < $400 (también aplica al Medicare adicional). Verificado contra referencia independiente en 17 escenarios. Ejemplo del amigo (W-2 + Uber, 2 hijos): reembolso $5,082 (antes $5,094). Tarjeta del inicio sin cambio ($8,579 / $2,145 trimestral).
+- blog.html: mailto ypulido87@gmail.com → yudit@pulidotax.com. Pendiente ofrecido: teléfono/correo siguen en el HTML estático del blog (ocultos tras el botón), las otras páginas los arman con JavaScript.
+- og:title/description/image(+width/height/alt) en las 32 páginas y en plantilla-articulo.html; twitter:card summary_large_image. Imagen: sitio-pulidotax/og-image.png (1200×630, logo real: rombo doble contorno + P), subida por upload_files.
