@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-10-26
+**Title ES:** Formulario 941 del tercer trimestre: vence el lunes 2 de noviembre, no el 31 de octubre
+**Title EN:**
+**Category:** Payroll
+**Primary topic:** Form 941 for Q3 2026 (July–September): due Oct 31, which is a Saturday, so the next business day Monday Nov 2, 2026; 10 additional calendar days (Nov 10) if all payroll taxes were timely deposited; Schedule B for semiweekly depositors; filing is not the same as depositing
+**Primary keyword:** formulario 941 tercer trimestre 2026
+**Main official source:** IRS Employment Tax Due Dates page; IRS About Form 941; IRS Instructions for Form 941 (03/2026)
+**Reason selected:** First article created by the scheduled task under the one-page-per-article architecture (26 Oct 2026); deadline within the week and directly affects employers. Claude fact-checked it against the IRS sources and corrected one inaccuracy (Schedule B applies to semiweekly depositors, not "every two weeks"). Distinct from the 2026-07-06 article on the Q2 Form 941 (July 31).
+**URL:** https://pulidotax.com/formulario-941-tercer-trimestre.html
+**Status:** Published
+
 ### 2026-10-19
 **Title ES:** 15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo)
 **Title EN:**
