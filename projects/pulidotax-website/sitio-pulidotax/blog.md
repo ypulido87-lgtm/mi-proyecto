@@ -12,7 +12,10 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
-1. **[Fechas límite] 19 de octubre, 2026 — 15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo).** El cuarto pago de impuestos estimados de 2026 vence el 15 de enero de 2027. Quién lo hace, quién puede omitirlo y qué evitar.
+1. **[Nómina] 26 de octubre, 2026 — Formulario 941 del tercer trimestre: vence el lunes 2 de noviembre, no el 31 de octubre.** El reporte trimestral de nómina de julio a septiembre se presenta esta semana. Por qué la fecha corre al 2 de noviembre, quién lo presenta y qué plazo extra existe si depositó a tiempo.
+   Leer: https://pulidotax.com/formulario-941-tercer-trimestre.html
+
+2. **[Fechas límite] 19 de octubre, 2026 — 15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo).** El cuarto pago de impuestos estimados de 2026 vence el 15 de enero de 2027. Quién lo hace, quién puede omitirlo y qué evitar.
    Leer: https://pulidotax.com/ultimo-pago-estimado-15-de-enero-2027.html
 
 2. **[Nómina] 13 de octubre, 2026 — 1099-NEC: el umbral sube de $600 a $2,000 — lo que debe saber antes de pagar a contratistas en 2026.** A partir de 2026, el IRS exige el Formulario 1099-NEC desde $2,000 y ya no desde $600. Qué cambia, qué no, y qué hacer antes de que termine el año.
