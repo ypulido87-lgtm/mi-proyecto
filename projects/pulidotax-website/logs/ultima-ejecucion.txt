@@ -1,9 +1,10 @@
-Fecha y hora: 2026-10-19 11:02 (la tarea arrancó a las 11:02 AM al abrir la app; la hora programada era 9:13 AM)
-Tarea: articulo-semanal-blog-pulidotax — PRIMER LUNES REAL con los permisos nuevos
-Resultado: PUBLICADO (completado con ayuda manual en el último tramo)
-Artículo: "15 de enero de 2027: el último pago estimado del año (y cómo saber si usted puede omitirlo)" (#25, Fechas límite)
+Fecha y hora: 2026-10-26 09:16 (la tarea arrancó a tiempo, con la app abierta) — completado 09:50
+Tarea: articulo-semanal-blog-pulidotax — SEGUNDO lunes real con los permisos nuevos y PRIMERO con la arquitectura de una página por artículo
+Resultado: PUBLICADO (la tarea hizo casi todo sola; el último tramo lo completó Claude en conversación)
+Artículo: "Formulario 941 del tercer trimestre: vence el lunes 2 de noviembre, no el 31 de octubre" (#26, Nómina)
+URL: https://pulidotax.com/formulario-941-tercer-trimestre.html  (HTTP 200 en vivo; en el sitemap; enlazado desde el artículo anterior)
 
-Lo que la tarea hizo SOLA, sin colgarse: calcular la semana, invocar el skill, revisar el registro, consultar las páginas del IRS, insertar el artículo en blog.html (25/25), verificar conteos y actualizar blog.md.
-Dónde se detuvo: tras escribir blog.md se quedó esperando una respuesta en un paso de lectura/edición del registro (>5 min sin actividad); no llegó a la subida a GoDaddy ni a la bitácora. Las ediciones del registro del skill tampoco quedaron.
-Lo que se completó a mano (Claude, en conversación): verificación del texto contra el Formulario 1040-ES (2026); se quitó la frase no respaldada "el IRS no envía recordatorios"; subida de blog.html y blog.md a GoDaddy (status 1, verificado en vivo); entrada del registro en ambas copias; esta bitácora.
-Pendiente: identificar qué paso exacto quedó esperando permiso (ver memoria) y cubrirlo con una regla.
+Lo que la tarea hizo SOLA, sin colgarse y sin ayuda: calcular la semana, invocar el skill, investigar, elegir tema y slug, crear la página desde la plantilla, enlazar el artículo anterior (PASO 5), añadir la tarjeta al índice (26 tarjetas, sin modales), añadir la entrada al sitemap y a blog.md.
+Dónde se detuvo: intentó renumerar la lista de blog.md con un comando de PowerShell compuesto (la tarea le pedía "renumerar las demás"); PowerShell no tiene permiso y la sesión quedó esperando >7 min. Es la única causa del atasco.
+Arreglo definitivo: blog.md pasó de lista numerada a VIÑETAS (nada que renumerar nunca más); el PASO 7 ahora dice "un solo Edit, sin tocar las demás entradas"; ambas tareas prohíben usar PowerShell.
+Lo que completó Claude: verificó el texto contra el IRS (fecha 31 oct / siguiente día hábil, 10 días extra → 10 nov, Anexo B) y CORRIGIÓ un error ("depositan cada dos semanas" → depositantes semiweekly); subió los 5 archivos por cPanel (status 1) y comprobó todo en vivo; registro del skill en ambas copias; esta bitácora; git.
