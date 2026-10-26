@@ -110,7 +110,8 @@
       "PowerShell(& \"C:\\\\Users\\\\yudit\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Claude\\\\6c2077fc-e221-4bfc-b41f-ad1eb71ce0ce\\\\scratchpad\\\\make_og.ps1\")",
       "Bash(sed -i \"s/espa'+'ol//; s/en español/en espa\\\\$\\([char]0xF1\\)ol/; s/ · /  \\\\$\\([char]0xB7\\)  /g\" make_og.ps1)",
       "Bash(sed -i \"s/'TAX & ACCOUNTING  \\\\$\\(\\\\[char\\\\]0xB7\\)  LLC'/\\\\\"TAX \\\\& ACCOUNTING \\\\$\\([char]0xB7\\) LLC\\\\\"/; s/'Contabilidad e impuestos en espa\\\\$\\(\\\\[char\\\\]0xF1\\)ol'/\\\\\"Contabilidad e impuestos en espa\\\\$\\([char]0xF1\\)ol\\\\\"/; s/'Orlando, FL  \\\\$\\(\\\\[char\\\\]0xB7\\)  pulidotax.com'/\\\\\"Orlando, FL \\\\$\\([char]0xB7\\) pulidotax.com\\\\\"/\" make_og.ps1)",
-      "Bash(powershell -NoProfile -File make_og.ps1)"
+      "Bash(powershell -NoProfile -File make_og.ps1)",
+      "Bash(cd /c/Claude/projects/pulidotax-website/google-business-profile && ls; grep -n -i \"bing\\\\|apple business\" ../NOTES.md /c/Users/yudit/.claude/projects/C--Claude/memory/project_website_pulido_tax.md | cut -c1-300 | head -12)"
     ]
   }
 }
