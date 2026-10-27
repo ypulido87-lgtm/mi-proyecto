@@ -12,4 +12,4 @@ Misma marca que los flyers (marino #0D2B45, cobre #B87333, Cormorant Garamond + 
 `powershell -File render.ps1` (corre `build.py` y luego Edge sin pantalla). Textos y estilos en `build.py`.
 
 ## Reglas aplicadas
-Sin teléfono ni email impresos (contacto por QR + pulidotax.com) · sin "bilingüe" · sin llamarse CPA · cargo genérico "Contabilidad e impuestos".
+Teléfono (689) 270-8845 y yudit@pulidotax.com impresos (tarjeta de entrega en persona, no se publica) + QR · sin "bilingüe" · sin llamarse CPA · cargo genérico "Contabilidad e impuestos".
