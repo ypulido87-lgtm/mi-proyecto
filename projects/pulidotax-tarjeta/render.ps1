@@ -12,7 +12,7 @@ foreach ($v in @(@("tarjeta","tarjeta-pulido-tax"), @("tarjeta-sangrado","tarjet
     $src = "file:///" + ((Resolve-Path "$root\$($v[0]).html").Path -replace '\\','/')
     & $edge @common "--print-to-pdf=$out\$($v[1]).pdf" $src 2>$null | Out-Null
 }
-# PNG de vista previa (frente y reverso), 4x. Se toma la página completa y se recorta con Python.
+# PNG de vista previa (frente y reverso), 4x. Frente arriba y reverso abajo.
 $src = "file:///" + ((Resolve-Path "$root\tarjeta.html").Path -replace '\\','/')
-& $edge @common "--hide-scrollbars" "--force-device-scale-factor=4" "--window-size=336,384" "--screenshot=$out\tarjeta-vista-previa-raw.png" $src 2>$null | Out-Null
+& $edge @common "--hide-scrollbars" "--force-device-scale-factor=4" "--window-size=336,384" "--screenshot=$out\tarjeta-vista-previa.png" $src 2>$null | Out-Null
 Get-ChildItem $out | Select-Object Name, Length
