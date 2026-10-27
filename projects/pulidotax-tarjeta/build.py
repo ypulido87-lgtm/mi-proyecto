@@ -84,3 +84,31 @@ def build(name, bleed):
 build("tarjeta.html", False)
 build("tarjeta-sangrado.html", True)
 print("ok")
+
+
+# Un solo lado por archivo, para las imágenes digitales
+def build_side(name, hide):
+    html = (ROOT / "tarjeta.html").read_text(encoding="utf-8")
+    html = html.replace("</style>", ".%s{display:none}html,body{height:192px}</style>" % hide)
+    (ROOT / name).write_text(html, encoding="utf-8")
+
+
+build_side("tarjeta-frente.html", "back")
+build_side("tarjeta-reverso.html", "front")
+
+# Contacto para guardar en el teléfono (vCard 3.0)
+VCF = [
+    "BEGIN:VCARD", "VERSION:3.0",
+    "N:Pulido;Yudit;;;", "FN:Yudit Pulido",
+    "ORG:Pulido Tax & Accounting LLC", "TITLE:Contabilidad e impuestos",
+    "TEL;TYPE=CELL,VOICE:+1-689-270-8845",
+    "EMAIL;TYPE=WORK:yudit@pulidotax.com",
+    "URL:https://pulidotax.com",
+    "ADR;TYPE=WORK:;;;Orlando;FL;;US",
+    "X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/profile.php?id=61590203373739",
+    "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/pulidotax.accounting",
+    "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/yuditpulidotax",
+    "END:VCARD",
+]
+(ROOT / "salida").mkdir(exist_ok=True)
+(ROOT / "salida" / "yudit-pulido.vcf").write_bytes(("\r\n".join(VCF) + "\r\n").encode("utf-8"))
