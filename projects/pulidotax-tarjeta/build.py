@@ -20,7 +20,8 @@ ICONS = {
     "facebook": '<svg viewBox="0 0 24 24" fill="none" stroke="#B87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M16 21v-7h2.5l.5-3H16V9.5c0-.9.4-1.5 1.5-1.5H19V5.3C18.6 5.2 17.7 5 16.8 5 14.6 5 13 6.300 13 8.700V11h-2.500v3H13v7"/></svg>',
 }
 # Redes que se imprimen, en orden. Para agregar Facebook: ("facebook", "facebook.com/<cuenta>")
-SOCIAL = [("instagram", "@pulidotax.accounting"), ("linkedin", "in/yuditpulidotax")]
+# Facebook: https://www.facebook.com/profile.php?id=61590203373739 (el enlace con id no cabe impreso; se muestra el nombre)
+SOCIAL = [("facebook", "Pulido Tax &amp; Accounting"), ("instagram", "@pulidotax.accounting"), ("linkedin", "in/yuditpulidotax")]
 SOCIAL_HTML = "".join('<li>%s<span>%s</span></li>' % (ICONS[k], t) for k, t in SOCIAL)
 
 CSS = """
