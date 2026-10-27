@@ -18,6 +18,6 @@ $src = "file:///" + ((Resolve-Path "$root\tarjeta.html").Path -replace '\\','/')
 Get-ChildItem $out | Select-Object Name, Length
 # Imagenes digitales: un PNG por lado (4x = 1344x768)
 foreach ($lado in "frente","reverso") {
-    $src = "file:///" + ((Resolve-Path "$root\tarjeta-$lado.html").Path -replace '\','/')
+    $src = "file:///" + ((Resolve-Path "$root\tarjeta-$lado.html").Path -replace '\\','/')
     & $edge @common "--hide-scrollbars" "--force-device-scale-factor=4" "--window-size=336,192" "--screenshot=$out\tarjeta-digital-$lado.png" $src 2>$null | Out-Null
 }
