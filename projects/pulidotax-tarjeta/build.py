@@ -19,7 +19,7 @@ CSS = """
 :root{--blue:#0D2B45;--blue-mid:#1A4A72;--gold:#B87333;--cream:#FDF6EE;--ink:#2B3A47;
 --fd:'Cormorant Garamond',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:%(w)dpx;height:%(h)dpx;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{width:%(w)dpx;height:%(h)dpx;background:#fff;font-family:var(--fb);-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .side{width:%(w)dpx;height:%(h)dpx;position:relative;overflow:hidden;page-break-after:always;break-after:page}
 .side:last-child{page-break-after:auto;break-after:auto}
 .safe{position:absolute;left:%(b)dpx;top:%(b)dpx;width:336px;height:192px}
