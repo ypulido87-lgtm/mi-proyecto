@@ -1,6 +1,6 @@
-Fecha y hora: 2026-10-27 (corrida automática, ~10:05)
+Fecha y hora: 2026-10-29 (corrida automática, ~10:05)
 Resultado: TODO EN ORDEN
 Artículo más reciente en vivo: 2026-10-26 (lunes de la semana: 2026-10-26)
-Página del artículo: formulario-941-tercer-trimestre.html → HTTP 200; en sitemap.xml: sí (1)
+Página del artículo: formulario-941-tercer-trimestre.html → HTTP 200; en sitemap.xml: sí (1); tarjeta en blog.html: sí
 Conexión a GoDaddy/cPanel (solo lectura): 1 = subida automática posible
 Errores: ninguno. No fue necesario publicar nada.
