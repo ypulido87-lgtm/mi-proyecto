@@ -12,6 +12,9 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
+- **[Cambios del IRS] 2 de noviembre, 2026 — Recibió una carta del IRS: qué hacer en los primeros pasos.** Cómo leer la carta, cuándo responder, qué hacer si debe dinero o no está de acuerdo, y cómo reconocer una comunicación falsa.
+   Leer: https://pulidotax.com/carta-del-irs-que-hacer.html
+
 - **[Nómina] 26 de octubre, 2026 — Formulario 941 del tercer trimestre: vence el lunes 2 de noviembre, no el 31 de octubre.** El reporte trimestral de nómina de julio a septiembre se presenta esta semana. Por qué la fecha corre al 2 de noviembre, quién lo presenta y qué plazo extra existe si depositó a tiempo.
    Leer: https://pulidotax.com/formulario-941-tercer-trimestre.html
 
