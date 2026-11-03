@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-11-02
+**Title ES:** Recibió una carta del IRS: qué hacer en los primeros pasos
+**Title EN:**
+**Category:** Taxes (IRS)
+**Primary topic:** Evergreen: what to do on receiving an IRS notice/letter — read and keep it, CP/LTR number, respond by the due date (protects appeal rights), agree/disagree/owe/changed-return paths, pay by due date even if unable to pay in full, payment plan online, scam warning signs, .gov check, call 800-829-1040 if suspicious, online account notices
+**Primary keyword:** carta del IRS qué hacer
+**Main official source:** IRS "Understanding your IRS notice or letter"; IRS Tax scams/consumer alerts
+**Reason selected:** No urgent news item verified; evergreen high-value topic not previously covered (distinct from scam-alert articles of 2026-07-20 and 2026-09-23)
+**URL:** https://pulidotax.com/carta-del-irs-que-hacer.html
+**Status:** Published
+
 ### 2026-10-26
 **Title ES:** Formulario 941 del tercer trimestre: vence el lunes 2 de noviembre, no el 31 de octubre
 **Title EN:**
