@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-11-10
+**Title ES:** Formulario W-9: pídalo a sus contratistas antes de pagarles
+**Title EN:**
+**Category:** Payroll
+**Primary topic:** Evergreen/year-end: request Form W-9 (TIN) from contractors before first payment; feeds 1099-NEC; backup withholding 24% when TIN not provided correctly, reported on Form 1099; current W-9 revision 03/2024
+**Primary keyword:** formulario W-9 contratistas
+**Main official source:** IRS About Form W-9; IRS Topic 307 (Backup withholding)
+**Reason selected:** Written by the vigilante task (rescue run, 10 Nov 2026) because the Monday article was missing. No urgent news verified; evergreen, practical before 1099 season; distinct from the 2026-10-13 threshold article.
+**URL:** https://pulidotax.com/formulario-w9-contratistas.html
+**Status:** Published
+
 ### 2026-11-02
 **Title ES:** Recibió una carta del IRS: qué hacer en los primeros pasos
 **Title EN:**

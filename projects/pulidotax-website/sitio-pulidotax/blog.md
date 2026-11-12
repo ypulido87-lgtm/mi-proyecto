@@ -12,6 +12,9 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
+- **[Nómina] 10 de noviembre, 2026 — Formulario W-9: pídalo a sus contratistas antes de pagarles.** Qué es el W-9, por qué importa para el 1099-NEC y qué es la retención adicional del 24%.
+   Leer: https://pulidotax.com/formulario-w9-contratistas.html
+
 - **[Cambios del IRS] 2 de noviembre, 2026 — Recibió una carta del IRS: qué hacer en los primeros pasos.** Cómo leer la carta, cuándo responder, qué hacer si debe dinero o no está de acuerdo, y cómo reconocer una comunicación falsa.
    Leer: https://pulidotax.com/carta-del-irs-que-hacer.html
 
