@@ -12,6 +12,9 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
+- **[Impuestos personales] 16 de noviembre, 2026 — Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan.** Cómo se calcula el impuesto de autoempleo (Seguro Social y Medicare), un ejemplo, la deducción de la mitad y cómo prepararse.
+   Leer: https://pulidotax.com/impuesto-trabajo-cuenta-propia.html
+
 - **[Nómina] 10 de noviembre, 2026 — Formulario W-9: pídalo a sus contratistas antes de pagarles.** Qué es el W-9, por qué importa para el 1099-NEC y qué es la retención adicional del 24%.
    Leer: https://pulidotax.com/formulario-w9-contratistas.html
 
