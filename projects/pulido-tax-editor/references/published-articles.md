@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-11-16
+**Title ES:** Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan
+**Title EN:**
+**Category:** Taxes
+**Primary topic:** Evergreen: self-employment tax — $400 net earnings threshold, 92.35% base, 12.4% Social Security (annual wage base, not stated) + 2.9% Medicare = 15.3%, Schedule SE, deduct half on Form 1040, Additional Medicare Tax thresholds ($250k MFJ / $125k MFS / $200k others), estimated payments via 1040-ES
+**Primary keyword:** impuesto de trabajo por cuenta propia
+**Main official source:** IRS Topic 554 (Self-Employment Tax); IRS Self-Employed Individuals Tax Center
+**Reason selected:** No urgent news verified; evergreen high-value topic for contractors/single-member LLC owners, not previously covered; ties to year-end planning and estimated payments (2026-10-19).
+**URL:** https://pulidotax.com/impuesto-trabajo-cuenta-propia.html
+**Status:** Published
+
 ### 2026-11-10
 **Title ES:** Formulario W-9: pídalo a sus contratistas antes de pagarles
 **Title EN:**
