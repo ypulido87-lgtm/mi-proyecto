@@ -1,8 +1,7 @@
-Fecha y hora: 2026-11-02 21:30 (la tarea arrancó tarde: la app estaba cerrada el lunes por la mañana y se ejecutó al abrirla) — tarea articulo-semanal-blog-pulidotax
-Resultado: PUBLICADO (pasos 0-11 hechos por la tarea sola; se colgó en el cierre)
-Artículo: "Recibió una carta del IRS: qué hacer en los primeros pasos" (#27, Cambios del IRS)
-URL: https://pulidotax.com/carta-del-irs-que-hacer.html  (HTTP 200 en vivo; en sitemap; tarjeta en blog.html; enlazado desde el artículo anterior)
-
-Qué hizo la tarea sola: investigar, redactar, crear la página, enlazar el artículo anterior, tarjeta, blog.md, sitemap, subir los 5 archivos por cPanel y verificar el 200 en vivo; registro del skill en la copia del proyecto.
-Dónde se colgó: emitió en paralelo tres llamadas finales (cp de la copia instalada, `git -C C:/Claude add -A` y el Write de esta bitácora). `git -C ...` no coincide con la regla de permiso `Bash(git add *)`, así que esperó aprobación y bloqueó las otras dos. No afectó la publicación (auto-sync ya había subido todo a GitHub).
-Arreglo (4 nov): PASO 12 de la tarea ahora es "no hacer nada de git" (auto-sync lo hace); nueva regla "una herramienta por turno, nunca en paralelo, nunca git -C ni cd". Copia instalada del registro y esta bitácora completadas a mano.
+Fecha y hora: 2026-11-16 — tarea articulo-semanal-blog-pulidotax
+Resultado: ARTÍCULO CREADO; SUBIDA EN CURSO (pasos 0-9 hechos)
+Artículo: "Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan" (#29, Impuestos personales)
+URL: https://pulidotax.com/impuesto-trabajo-cuenta-propia.html
+Fuente: IRS Tema 554 (Self-Employment Tax) e IRS Self-Employed Individuals Tax Center. Tema evergreen; no se verificó noticia urgente.
+Hecho en local: página creada, enlace desde formulario-w9-contratistas.html, tarjeta en blog.html (28→29), blog.md, sitemap.xml.
+Pendiente: subida a GoDaddy (5 archivos), verificación 200, registro del skill.
