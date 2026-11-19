@@ -1,5 +1,6 @@
-Vigilante verificar-blog-pulidotax — 2026-11-17 (~10:05)
+Vigilante verificar-blog-pulidotax — 2026-11-19 (~10:55)
 Resultado: TODO EN ORDEN. No se escribió ni subió nada.
 Lunes de la semana: 2026-11-16. Artículo más reciente en vivo: data-date 2026-11-16 ("Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan").
 Página: https://pulidotax.com/impuesto-trabajo-cuenta-propia.html -> HTTP 200; en sitemap.xml: sí (1 coincidencia); tarjeta presente en blog.html y enlazada a esa página.
+Extra: 1099-nec-umbral-2000.html (modificada el 17 nov, enlace del artículo anterior) -> HTTP 200, en sitemap (1), enlazada en blog.html.
 Conexión a GoDaddy (cPanel, solo lectura): funciona (resultado 1).
