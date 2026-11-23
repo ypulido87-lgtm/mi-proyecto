@@ -61,6 +61,11 @@ PROHIBIDO_EN_TEXTO = [
     (r'<script', 'etiqueta <script> dentro del cuerpo'),
 ]
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
 PRUEBA = '--prueba' in sys.argv
 FORZAR = '--forzar' in sys.argv
 FECHA_ARG = None
@@ -240,7 +245,7 @@ def tarjeta_blog(sitio, a, d, ant_slug, lectura):
         '      </article>' % {'c': c, 'f': d.isoformat(), 'ct': CATEGORIAS[c], 'ft': fecha_texto(d),
                               's': a['slug'], 't': a['titulo'], 'e': a['extracto'], 'l': lectura})
     m = ms[0]
-    nuevo = html[:m.end()] + '\n\n' + tarjeta + html[m.end():]
+    nuevo = html[:m.end()] + nl + nl + tarjeta.replace('\n', nl) + html[m.end():]
     escribir(ruta, nuevo)
     despues = nuevo.count('<article class="post-card')
     if despues != antes + 1:
