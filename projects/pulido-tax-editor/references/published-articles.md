@@ -8,6 +8,17 @@ Note: all 18 articles below were written and published before this skill was ins
 
 ## Existing articles
 
+### 2026-11-23
+**Title ES:** Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X
+**Title EN:**
+**Category:** Taxes
+**Primary topic:** Evergreen: amending a filed return with Form 1040-X — when to amend (filing status, income, deductions, credits, tax), when not needed (IRS may fix some errors / accept missing forms), 3-years-from-filing or 2-years-from-payment refund deadline, e-file for current + 2 prior years (new Form 8879 each time), 8–12 weeks processing (up to 16), Where's My Amended Return tracking after 3 weeks
+**Primary keyword:** formulario 1040-X declaración enmendada
+**Main official source:** IRS Topic 308 (Amended Returns); IRS About Form 1040-X; IRS Amended Return FAQs (reviewed 2 Sep 2026)
+**Reason selected:** No urgent news verified; evergreen, practical topic not previously covered; fits the post-filing/year-end audience
+**URL:** https://pulidotax.com/corregir-declaracion-1040-x.html
+**Status:** Published
+
 ### 2026-11-16
 **Title ES:** Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan
 **Title EN:**
