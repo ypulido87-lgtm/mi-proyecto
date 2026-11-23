@@ -1,0 +1,15 @@
+{
+ "titulo": "Artículo de ensayo para probar la publicación automática",
+ "slug": "ensayo-publicacion-automatica-prueba",
+ "categoria": "irs",
+ "descripcion": "Texto de ensayo para comprobar que la publicación automática del blog crea la página, el índice, el mapa del sitio y las verificaciones sin errores.",
+ "extracto": "Texto de ensayo para probar el sistema.",
+ "cuerpo_html": "<p>Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. </p>\n<h3>Subtítulo de ensayo</h3>\n<p>Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. </p>\n<ul>\n<li>Primer punto de la lista de ensayo con texto suficiente.</li>\n<li>Segundo punto de la lista.</li>\n</ul>\n<p>Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. </p>\n<p>Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. </p>\n<p>Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. Este es un párrafo de ensayo para probar la publicación automática del blog, y no se publica en ningún sitio real. </p>",
+ "registro": {
+  "category": "Taxes",
+  "primary_topic": "Ensayo",
+  "primary_keyword": "ensayo",
+  "main_source": "ninguna",
+  "reason": "prueba"
+ }
+}
