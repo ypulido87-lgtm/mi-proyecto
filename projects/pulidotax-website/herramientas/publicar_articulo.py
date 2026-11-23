@@ -453,7 +453,32 @@ def main():
     return 0
 
 
+def estado():
+    """--estado: dice si esta semana ya hay articulo (en local y en vivo). No escribe nada."""
+    d = hoy()
+    lunes = lunes_de(d).isoformat()
+    local = [f for f in fechas_blog(leer(os.path.join(SITIO_REAL, 'blog.html'))) if f >= lunes]
+    try:
+        _, vivo_html = http('%s/blog.html?v=%d' % (DOMINIO, int(time.time())))
+        vivo = [f for f in fechas_blog(vivo_html) if f >= lunes]
+    except Exception:
+        vivo = None
+    print('Hoy: %s | lunes de esta semana: %s' % (d.isoformat(), lunes))
+    print('En local: %s | En vivo: %s' % (local[-1] if local else 'NO HAY', (vivo[-1] if vivo else 'NO HAY') if vivo is not None else 'no se pudo consultar'))
+    if local and vivo:
+        print('ESTADO: HAY ARTICULO ESTA SEMANA (no hacer nada)')
+    elif local and vivo is not None:
+        print('ESTADO: SUBIDA PENDIENTE (el articulo esta en local pero no en vivo)')
+    elif local:
+        print('ESTADO: HAY ARTICULO EN LOCAL (no se pudo comprobar en vivo)')
+    else:
+        print('ESTADO: FALTA EL ARTICULO DE ESTA SEMANA')
+    return 0
+
+
 if __name__ == '__main__':
+    if '--estado' in sys.argv:
+        sys.exit(estado())
     try:
         sys.exit(main())
     except Fallo as e:
