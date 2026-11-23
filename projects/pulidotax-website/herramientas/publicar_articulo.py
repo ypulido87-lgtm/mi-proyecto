@@ -219,8 +219,9 @@ def tarjeta_blog(sitio, a, d, ant_slug, lectura):
         log('blog.html: la tarjeta ya estaba')
         return
     antes = html.count('<article class="post-card')
+    nl = '\r\n' if '\r\n' in html else '\n'
     ancla = re.compile(
-        r'(          <a class="post-more" href="%s\.html">.*?</a>\n        </div>\n      </article>)' % re.escape(ant_slug),
+        r'(          <a class="post-more" href="%s\.html">.*?</a>\r?\n        </div>\r?\n      </article>)' % re.escape(ant_slug),
         re.S)
     ms = list(ancla.finditer(html))
     if len(ms) != 1:
