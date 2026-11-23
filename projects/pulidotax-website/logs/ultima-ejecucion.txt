@@ -1,7 +1,9 @@
-Fecha y hora: 2026-11-23 — tarea articulo-semanal-blog-pulidotax
-Resultado: ARTÍCULO CREADO; SUBIDA EN CURSO (pasos 0-9 hechos)
+Fecha y hora: 2026-11-23 09:24 (la tarea corrió a tiempo, con la app abierta) — tarea articulo-semanal-blog-pulidotax
+Resultado: PUBLICADO (pasos 0-11 hechos por la tarea sola; se colgó en el último cp)
 Artículo: "Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X" (#30, Impuestos personales)
-URL: https://pulidotax.com/corregir-declaracion-1040-x.html
-Fuente: IRS Topic 308 (Amended Returns), IRS About Form 1040-X, IRS Amended Return FAQs (rev. 2 sep 2026). Tema evergreen; no se verificó noticia urgente.
-Hecho en local: página creada, enlace desde impuesto-trabajo-cuenta-propia.html, tarjeta en blog.html (29→30), blog.md, sitemap.xml. Verificado: 30 tarjetas, 2 enlaces, 0 modal-overlay, 0 marcadores sin sustituir.
-Pendiente: subida a GoDaddy (5 archivos), verificación 200, registro del skill.
+URL: https://pulidotax.com/corregir-declaracion-1040-x.html (HTTP 200 en vivo; en sitemap; tarjeta en blog.html; enlazado desde el artículo anterior)
+Fuentes: IRS Topic 308, About Form 1040-X, Amended Return FAQs (2 sep 2026).
+
+Dónde se colgó: el `cp` del registro hacia C:\Users\yudit\.claude\skills\... (carpeta protegida) quedó esperando permiso. Es la TERCERA vez (2 nov, 10 nov, 23 nov). No afectó la publicación.
+Arreglo (23 nov): PASO 11 ya NO copia hacia la carpeta del skill; el registro que vale es el de C:\Claude\projects\pulido-tax-editor\references\ y el PASO 1 lo lee de ahí. Claude sincroniza la copia instalada en conversación.
+Fact-check (Claude, contra irs.gov): plazo 3 años/2 años, e-file año actual + 2 anteriores, Formulario 8879, 8-12 semanas (hasta 16), 3 semanas, 866-464-2050, estados recibida/ajustada/completada: todo coincide. Se corrigieron 2 frases: "normalmente no tiene que enmendar" (ahora "según el IRS, no hace falta enmendar") y "un año por formulario" (no estaba en esas páginas; ahora el límite de 3 enmiendas electrónicas por año fiscal). Resubido.
