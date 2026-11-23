@@ -1,5 +1,5 @@
-Borrador 2026-11-02 — slug: carta-del-irs-que-hacer — categoría: irs — fuente: IRS "Understanding your IRS notice or letter" (irs.gov/individuals/understanding-your-irs-notice-or-letter) e IRS Tax scams/consumer alerts.
-Título: Recibió una carta del IRS: qué hacer en los primeros pasos
-Extracto: Una carta del IRS no siempre significa un problema. Le explicamos cómo leerla, cuándo debe responder, qué hacer si debe dinero o no está de acuerdo, y cómo reconocer una falsa.
-Lectura: 3 min
+Borrador 2026-11-23 — slug: corregir-declaracion-1040-x — categoría: personal — fuente: IRS Topic 308 (irs.gov/taxtopics/tc308); IRS About Form 1040-X; IRS Amended Return FAQs (revisada 2 sep 2026).
+Título: Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X
+Extracto: Si ya presentó su declaración y se dio cuenta de un error, no siempre hay que enmendarla. Le explicamos cuándo sí, cuál es el plazo, cuánto tarda y cómo darle seguimiento.
+Lectura: 4 min
 (Cuerpo publicado en la página del artículo.)
