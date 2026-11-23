@@ -1,7 +1,7 @@
-Fecha y hora: 2026-11-16 — tarea articulo-semanal-blog-pulidotax
+Fecha y hora: 2026-11-23 — tarea articulo-semanal-blog-pulidotax
 Resultado: ARTÍCULO CREADO; SUBIDA EN CURSO (pasos 0-9 hechos)
-Artículo: "Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan" (#29, Impuestos personales)
-URL: https://pulidotax.com/impuesto-trabajo-cuenta-propia.html
-Fuente: IRS Tema 554 (Self-Employment Tax) e IRS Self-Employed Individuals Tax Center. Tema evergreen; no se verificó noticia urgente.
-Hecho en local: página creada, enlace desde formulario-w9-contratistas.html, tarjeta en blog.html (28→29), blog.md, sitemap.xml.
+Artículo: "Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X" (#30, Impuestos personales)
+URL: https://pulidotax.com/corregir-declaracion-1040-x.html
+Fuente: IRS Topic 308 (Amended Returns), IRS About Form 1040-X, IRS Amended Return FAQs (rev. 2 sep 2026). Tema evergreen; no se verificó noticia urgente.
+Hecho en local: página creada, enlace desde impuesto-trabajo-cuenta-propia.html, tarjeta en blog.html (29→30), blog.md, sitemap.xml. Verificado: 30 tarjetas, 2 enlaces, 0 modal-overlay, 0 marcadores sin sustituir.
 Pendiente: subida a GoDaddy (5 archivos), verificación 200, registro del skill.

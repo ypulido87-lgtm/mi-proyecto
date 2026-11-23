@@ -12,6 +12,9 @@ Los artículos de este blog son informativos y no constituyen asesoría fiscal o
 
 ## Artículos (más recientes primero)
 
+- **[Impuestos personales] 23 de noviembre, 2026 — Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X.** Cuándo hay que enmendar una declaración, el plazo de 3 años, cómo se presenta, cuánto tarda y cómo darle seguimiento.
+   Leer: https://pulidotax.com/corregir-declaracion-1040-x.html
+
 - **[Impuestos personales] 16 de noviembre, 2026 — Impuesto de trabajo por cuenta propia: el 15.3% que muchos no esperan.** Cómo se calcula el impuesto de autoempleo (Seguro Social y Medicare), un ejemplo, la deducción de la mitad y cómo prepararse.
    Leer: https://pulidotax.com/impuesto-trabajo-cuenta-propia.html
 
