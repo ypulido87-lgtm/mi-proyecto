@@ -1,4 +1,4 @@
-Vigilante verificar-blog-pulidotax — 2026-11-24
+Vigilante verificar-blog-pulidotax — 2026-11-26
 Resultado: TODO EN ORDEN. No se escribió ni subió nada.
 ESTADO del programa: HAY ARTICULO ESTA SEMANA (no hacer nada). Local: 2026-11-23 | En vivo: 2026-11-23 (lunes de la semana: 2026-11-23).
 Artículo más reciente: "Cometió un error en su declaración: cómo corregirla con el Formulario 1040-X" -> https://pulidotax.com/corregir-declaracion-1040-x.html -> HTTP 200.
